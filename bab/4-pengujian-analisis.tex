@@ -119,22 +119,27 @@ Dari hasil klasifikasi tersebut, selanjutnya dapat dihitung nilai validasi model
 
 Dilihat dari Tabel \ref{tb:vs_model}, nilai \emph{accuracy}, \emph{precision}, \emph{recall}, dan \emph{f1-score} pada semua kelas bernilai sama. Untuk kelas 'Kanan' , didapatkan nilai \emph{accuracy} sebesar 100\%, nilai \emph{precision} sebesar 100\%, nilai \emph{recall} sebesar 100\%, dan nilai \emph{f1-score} sebesar 100\%. Kemudian untuk kelas 'Kiri' , didapatkan nilai \emph{accuracy} sebesar 100\%, nilai \emph{precision} sebesar 100\%, nilai \emph{recall} sebesar 100\%, dan nilai \emph{f1-score} sebesar 100\%. Selanjutnya pada kelas 'Maju' , didapatkan nilai \emph{accuracy} sebesar 100\%, nilai \emph{precision} sebesar 100\%, nilai \emph{recall} sebesar 100\%, dan nilai \emph{f1-score} sebesar 100\%. Untuk kelas 'Mundur' , didapatkan nilai \emph{accuracy} sebesar 100\%, nilai \emph{precision} sebesar 100\%, nilai \emph{recall} sebesar 100\%, dan nilai \emph{f1-score} sebesar 100\%. Terakhir pada kelas 'Stop' , didapatkan nilai \emph{accuracy} sebesar 100\%, nilai \emph{precision} sebesar 100\%, nilai \emph{recall} sebesar 100\%, dan nilai \emph{f1-score} sebesar 100\%. Nilai validasi tersebut bisa didapatkan karena nilai \emph{true positive}, \emph{true negative}, \emph{false positive}, dan \emph{false negative} dari \emph{confusion matrix} yang dipaparkan pada Tabel \ref{tb:cm_model} memiliki nilai prediksi yang baik untuk kelima kelas.
 
-
 \section{Pengujian Performa Model dengan menggunakan Variasi Jarak}
 
-Pada skenario pengujian selanjutnya, model diuji berdasarkan beberapa variasi jarak. Pengujian jarak berguna untuk mengetahui performa dan tingkat akurasi model jika diuji berdasarkan input citra dari jarak yang berbeda-beda. Hal ini perlu diuji karena semakin jauh jarak pendeteksi citra, maka semakin kecil data visual citra yang diperoleh.
+Pada skenario pengujian selanjutnya, model diuji berdasarkan beberapa variasi jarak. Pengujian jarak berguna untuk mengetahui performa dan tingkat akurasi model jika input citra diambil dari jarak yang berbeda-beda. Hal ini perlu diuji karena semakin jauh jarak pendeteksi citra, maka semakin kecil data visual citra yang diperoleh. Variasi jarak yang digunakan adalah 30 sentimeter, 50 sentimeter, 70 sentimeter, 90 sentimeter, dan 110 sentimeter. 
 
-\subsection{Jarak 30 cm}
+Model diuji menggunakan \emph{dataset} validasi yang terdiri dari 600 data citra yang dibagi rata sebanyak 120 data citra yang dikelompokkan ke dalam lima kelas. Pengujian model dihitung dengan menggunakan \emph{confusion matrix}. Yang kemudian, dari \emph{confusion matrix} didapatkan nilai \emph{true positive} (TP), \emph{true negative} (TN), \emph{false positive} (FP), dan \emph{false negative} (FN) dari masing-masing kelas yang diuji. Selanjutnya dari keempat variabel tersebut, dapat dihitung \emph{accuracy}, \emph{precision}, \emph{recall}, dan \emph{f-1 score}. 
+
+\subsection{Jarak 30 sentimeter}
+
+Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari kamera ke objek deteksi. Berdasarkan \emph{confusion matrix} pada Gambar \ref{fig:matrix2} dapat diamati bahwa hasil pengujian dengan jarak 30 sentimeter memiliki hasil prediksi yang akurat pada semua kelas dimana semua label yang diprediksi sesuai dengan semua label yang sebenarnya.
 
 %Gambar 4.4
 \begin{figure} [ht] \centering
   % Nama dari file gambar yang diinputkan
-  \includegraphics[width=0.25\textwidth]{gambar/bab4/model5 (30cm)/matrix.png}
+  \includegraphics[scale=0.1]{gambar/bab4/model5 (30cm)/matrix.png}
   % Keterangan gambar yang diinputkan
-  \caption{\emph{Confusion Matrix} Model Hasil Pelatihan}
+  \caption{\emph{Confusion Matrix} Model Pengujian dengan Jarak 30 cm}
   % Label referensi dari gambar yang diinputkan
   \label{fig:matrix2}
 \end{figure}
+
+
 
 %Tabel 4.4
 \begin{longtable}{|l|c|c|c|c|}
@@ -916,159 +921,83 @@ Pada skenario pengujian selanjutnya, model diuji berdasarkan beberapa variasi ja
 
 \section{Pengujian Performa \emph{Frame Per Second} (FPS) pada Sistem}
 
-\begin{longtable}{|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|c|c|c|c|c|}
   \caption{Hasil performa FPS pada kelas kanan}
-  \label{tb:fpskanan} \\
-  \hline
+  \label{tb:fpskanankiri} \\
+  \cline{1-3} \cline{5-7}
   \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} \\ \hline
-  Kanan          & 13.007              & 10.018           \\ \hline
-  Kanan          & 13.293              & 11.369           \\ \hline
-  Kanan          & 10.927              & 10.043           \\ \hline
-  Kanan          & 10.697              & 7.762            \\ \hline
-  Kanan          & 13.125              & 11.295           \\ \hline
-  Kanan          & 13.672              & 12.177           \\ \hline
-  Kanan          & 11.709              & 11.977           \\ \hline
-  Kanan          & 13.803              & 10.231           \\ \hline
-  Kanan          & 12.866              & 10.057           \\ \hline
-  Kanan          & 12.687              & 11.284           \\ \hline
-  Kanan          & 12.236              & 10.222           \\ \hline
-  Kanan          & 13.295              & 10.307           \\ \hline
-  Kanan          & 12.297              & 10.119           \\ \hline
-  Kanan          & 13.139              & 11.097           \\ \hline
-  Kanan          & 13.439              & 9.025            \\ \hline
-  Kanan          & 13.644              & 11.983           \\ \hline
-  Kanan          & 13.380              & 9.974            \\ \hline
-  Kanan          & 13.271              & 11.311           \\ \hline
-  Kanan          & 12.906              & 8.927            \\ \hline
-  Kanan          & 13.689              & 11.751           \\ \hline
-  Kanan          & 12.937              & 11.887           \\ \hline
-  Kanan          & 12.909              & 9.864            \\ \hline
-  Kanan          & 13.348              & 11.985           \\ \hline
-  Kanan          & 13.959              & 10.505           \\ \hline
-  Kanan          & 10.389              & 9.972            \\ \hline
-  Kanan          & 12.073              & 11.274           \\ \hline
-  Kanan          & 11.279              & 10.540           \\ \hline
-  Kanan          & 12.669              & 10.023           \\ \hline
-  Kanan          & 13.948              & 9.763            \\ \hline
-  Kanan          & 13.765              & 10.257           \\ \hline
+  \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} &\cellcolor[HTML]{FFFFFF}  & \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 13.007              & 10.018           &  & Kiri           & 10.819              & 13.127           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 13.293              & 11.369           &  & Kiri           & 12.150              & 10.089           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 10.927              & 10.043           &  & Kiri           & 13.880              & 11.828           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 10.697              & 7.762            &  & Kiri           & 14.280              & 10.205           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 13.125              & 11.295           &  & Kiri           & 10.916              & 9.879            \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 13.672              & 12.177           &  & Kiri           & 12.748              & 8.665            \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 11.709              & 11.977           &  & Kiri           & 10.617              & 9.901            \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 13.803              & 10.231           &  & Kiri           & 13.403              & 11.823           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 12.866              & 10.057           &  & Kiri           & 12.335              & 10.071           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 12.687              & 11.284           &  & Kiri           & 13.354              & 10.061           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 12.236              & 10.222           &  & Kiri           & 12.110              & 10.147           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 13.295              & 10.307           &  & Kiri           & 13.025              & 11.725           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 12.297              & 10.119           &  & Kiri           & 13.230              & 12.093           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 13.139              & 11.097           &  & Kiri           & 14.249              & 8.660            \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 13.439              & 9.025            &  & Kiri           & 11.462              & 11.752           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 13.644              & 11.983           &  & Kiri           & 13.121              & 8.554            \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 13.380              & 9.974            &  & Kiri           & 12.739              & 10.001           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 13.271              & 11.311           &  & Kiri           & 11.925              & 9.930            \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 12.906              & 8.927            &  & Kiri           & 12.713              & 10.125           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 13.689              & 11.751           &  & Kiri           & 13.314              & 10.047           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 12.937              & 11.887           &  & Kiri           & 13.879              & 11.830           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 12.909              & 9.864            &  & Kiri           & 11.505              & 10.171           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 13.348              & 11.985           &  & Kiri           & 13.413              & 9.846            \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 13.959              & 10.505           &  & Kiri           & 12.483              & 10.051           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 10.389              & 9.972            &  & Kiri           & 11.470              & 11.838           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 12.073              & 11.274           &  & Kiri           & 12.808              & 10.086           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 11.279              & 10.540           &  & Kiri           & 12.279              & 11.760           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 11.669              & 10.023           &  & Kiri           & 13.388              & 12.355           \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 12.948              & 9.763            &  & Kiri           & 12.619              & 9.906            \\ \cline{1-3} \cline{5-7} 
+  Kanan          & 13.765              & 10.257           &  & Kiri           & 12.814              & 11.979           \\ \cline{1-3} \cline{5-7} 
 \end{longtable}
 
-\begin{longtable}{|c|c|c|c|c|c|}
-  \caption{Hasil performa FPS pada kelas kiri}
-  \label{tb:fpskiri} \\
-  \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} \\ \hline
-  Kiri           & 10.819              & 13.127           \\ \hline
-  Kiri           & 12.150              & 10.089           \\ \hline
-  Kiri           & 13.880              & 11.828           \\ \hline
-  Kiri           & 14.280              & 10.205           \\ \hline
-  Kiri           & 10.916              & 9.879            \\ \hline
-  Kiri           & 12.748              & 8.665            \\ \hline
-  Kiri           & 10.617              & 9.901            \\ \hline
-  Kiri           & 13.403              & 11.823           \\ \hline
-  Kiri           & 12.335              & 10.071           \\ \hline
-  Kiri           & 13.354              & 10.061           \\ \hline
-  Kiri           & 12.110              & 10.147           \\ \hline
-  Kiri           & 13.025              & 11.725           \\ \hline
-  Kiri           & 13.230              & 12.093           \\ \hline
-  Kiri           & 14.249              & 8.660            \\ \hline
-  Kiri           & 11.462              & 11.752           \\ \hline
-  Kiri           & 13.121              & 8.554            \\ \hline
-  Kiri           & 12.739              & 10.001           \\ \hline
-  Kiri           & 11.925              & 9.930            \\ \hline
-  Kiri           & 12.713              & 10.125           \\ \hline
-  Kiri           & 13.314              & 10.047           \\ \hline
-  Kiri           & 13.879              & 11.830           \\ \hline
-  Kiri           & 11.505              & 10.171           \\ \hline
-  Kiri           & 13.413              & 9.846            \\ \hline
-  Kiri           & 12.483              & 10.051           \\ \hline
-  Kiri           & 11.470              & 11.838           \\ \hline
-  Kiri           & 12.808              & 10.086           \\ \hline
-  Kiri           & 12.279              & 11.760           \\ \hline
-  Kiri           & 13.388              & 12.355           \\ \hline
-  Kiri           & 12.619              & 9.906            \\ \hline
-  Kiri           & 12.814              & 11.979           \\ \hline
-\end{longtable}
-
-\begin{longtable}{|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|c|c|c|c|c|}
   \caption{Hasil performa FPS pada kelas maju}
-  \label{tb:fpsmaju} \\
-  \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} \\ \hline
-  Maju           & 13.574              & 9.883            \\ \hline
-  Maju           & 13.792              & 10.030           \\ \hline
-  Maju           & 11.709              & 12.068           \\ \hline
-  Maju           & 13.372              & 11.429           \\ \hline
-  Maju           & 13.923              & 9.969            \\ \hline
-  Maju           & 13.048              & 10.374           \\ \hline
-  Maju           & 12.818              & 10.066           \\ \hline
-  Maju           & 11.867              & 11.375           \\ \hline
-  Maju           & 12.701              & 10.430           \\ \hline
-  Maju           & 13.710              & 10.021           \\ \hline
-  Maju           & 13.882              & 9.565            \\ \hline
-  Maju           & 12.945              & 8.903            \\ \hline
-  Maju           & 12.120              & 11.475           \\ \hline
-  Maju           & 13.302              & 8.879            \\ \hline
-  Maju           & 12.778              & 10.026           \\ \hline
-  Maju           & 13.728              & 8.557            \\ \hline
-  Maju           & 13.972              & 10.014           \\ \hline
-  Maju           & 13.437              & 9.865            \\ \hline
-  Maju           & 12.809              & 10.123           \\ \hline
-  Maju           & 12.971              & 10.102           \\ \hline
-  Maju           & 12.206              & 9.941            \\ \hline
-  Maju           & 13.330              & 7.558            \\ \hline
-  Maju           & 13.263              & 9.849            \\ \hline
-  Maju           & 14.142              & 11.985           \\ \hline
-  Maju           & 11.098              & 9.988            \\ \hline
-  Maju           & 12.809              & 9.782            \\ \hline
-  Maju           & 12.813              & 8.755            \\ \hline
-  Maju           & 13.392              & 9.944            \\ \hline
-  Maju           & 13.915              & 10.013           \\ \hline
-  Maju           & 12.905              & 11.077           \\ \hline
+  \label{tb:fpsmajumundur} \\ 
+  \cline{1-3} \cline{5-7}
+  \rowcolor[HTML]{C0C0C0}
+  \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} &\cellcolor[HTML]{FFFFFF}  & \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} \\ \cline{1-3} \cline{5-7} 
+  Maju           & 13.574              & 9.883            &  & Mundur         & 14.144              & 8.695            \\ \cline{1-3} \cline{5-7} 
+  Maju           & 13.792              & 10.030           &  & Mundur         & 14.076              & 9.992            \\ \cline{1-3} \cline{5-7} 
+  Maju           & 11.709              & 12.068           &  & Mundur         & 13.874              & 9.845            \\ \cline{1-3} \cline{5-7} 
+  Maju           & 13.372              & 11.429           &  & Mundur         & 11.190              & 11.983           \\ \cline{1-3} \cline{5-7} 
+  Maju           & 13.923              & 9.969            &  & Mundur         & 13.725              & 10.024           \\ \cline{1-3} \cline{5-7} 
+  Maju           & 13.048              & 10.374           &  & Mundur         & 13.693              & 11.980           \\ \cline{1-3} \cline{5-7} 
+  Maju           & 12.818              & 10.066           &  & Mundur         & 14.066              & 10.045           \\ \cline{1-3} \cline{5-7} 
+  Maju           & 11.867              & 11.375           &  & Mundur         & 14.028              & 10.116           \\ \cline{1-3} \cline{5-7} 
+  Maju           & 12.701              & 10.430           &  & Mundur         & 13.852              & 9.863            \\ \cline{1-3} \cline{5-7} 
+  Maju           & 13.710              & 10.021           &  & Mundur         & 13.271              & 11.958           \\ \cline{1-3} \cline{5-7} 
+  Maju           & 13.882              & 9.565            &  & Mundur         & 13.308              & 10.026           \\ \cline{1-3} \cline{5-7} 
+  Maju           & 12.945              & 8.903            &  & Mundur         & 14.076              & 10.444           \\ \cline{1-3} \cline{5-7} 
+  Maju           & 12.120              & 11.475           &  & Mundur         & 13.201              & 11.415           \\ \cline{1-3} \cline{5-7} 
+  Maju           & 13.302              & 8.879            &  & Mundur         & 14.040              & 7.512            \\ \cline{1-3} \cline{5-7} 
+  Maju           & 12.778              & 10.026           &  & Mundur         & 13.606              & 9.935            \\ \cline{1-3} \cline{5-7} 
+  Maju           & 13.728              & 8.557            &  & Mundur         & 14.195              & 8.612            \\ \cline{1-3} \cline{5-7} 
+  Maju           & 13.972              & 10.014           &  & Mundur         & 13.660              & 8.403            \\ \cline{1-3} \cline{5-7} 
+  Maju           & 13.437              & 9.865            &  & Mundur         & 13.265              & 10.269           \\ \cline{1-3} \cline{5-7} 
+  Maju           & 12.809              & 10.123           &  & Mundur         & 14.458              & 8.545            \\ \cline{1-3} \cline{5-7} 
+  Maju           & 12.971              & 10.102           &  & Mundur         & 13.465              & 10.016           \\ \cline{1-3} \cline{5-7} 
+  Maju           & 12.206              & 9.941            &  & Mundur         & 13.505              & 9.981            \\ \cline{1-3} \cline{5-7} 
+  Maju           & 13.330              & 7.558            &  & Mundur         & 13.840              & 9.979            \\ \cline{1-3} \cline{5-7} 
+  Maju           & 13.263              & 9.849            &  & Mundur         & 13.855              & 10.015           \\ \cline{1-3} \cline{5-7} 
+  Maju           & 14.142              & 11.985           &  & Mundur         & 13.223              & 12.032           \\ \cline{1-3} \cline{5-7} 
+  Maju           & 11.098              & 9.988            &  & Mundur         & 14.083              & 7.481            \\ \cline{1-3} \cline{5-7} 
+  Maju           & 12.809              & 9.782            &  & Mundur         & 13.281              & 6.661            \\ \cline{1-3} \cline{5-7} 
+  Maju           & 12.813              & 8.755            &  & Mundur         & 11.100              & 8.592            \\ \cline{1-3} \cline{5-7} 
+  Maju           & 13.392              & 9.944            &  & Mundur         & 13.888              & 7.570            \\ \cline{1-3} \cline{5-7} 
+  Maju           & 13.915              & 10.013           &  & Mundur         & 12.248              & 10.004           \\ \cline{1-3} \cline{5-7} 
+  Maju           & 12.905              & 11.077           &  & Mundur         & 12.984              & 10.034           \\ \cline{1-3} \cline{5-7} 
 \end{longtable}
 
-\begin{longtable}{|c|c|c|c|c|c|}
-  \caption{Hasil performa FPS pada kelas mundur}
-  \label{tb:fpsmundur} \\
-  \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} \\ \hline
-  Mundur         & 14.144              & 8.695            \\ \hline
-  Mundur         & 14.076              & 9.992            \\ \hline
-  Mundur         & 13.874              & 9.845            \\ \hline
-  Mundur         & 11.190              & 11.983           \\ \hline
-  Mundur         & 13.725              & 10.024           \\ \hline
-  Mundur         & 13.693              & 11.980           \\ \hline
-  Mundur         & 14.066              & 10.045           \\ \hline
-  Mundur         & 14.028              & 10.116           \\ \hline
-  Mundur         & 13.852              & 9.863            \\ \hline
-  Mundur         & 13.271              & 11.958           \\ \hline
-  Mundur         & 13.308              & 10.026           \\ \hline
-  Mundur         & 14.076              & 10.444           \\ \hline
-  Mundur         & 13.201              & 11.415           \\ \hline
-  Mundur         & 14.040              & 7.512            \\ \hline
-  Mundur         & 13.606              & 9.935            \\ \hline
-  Mundur         & 14.195              & 8.612            \\ \hline
-  Mundur         & 13.660              & 8.403            \\ \hline
-  Mundur         & 13.265              & 10.269           \\ \hline
-  Mundur         & 14.458              & 8.545            \\ \hline
-  Mundur         & 13.465              & 10.016           \\ \hline
-  Mundur         & 13.505              & 9.981            \\ \hline
-  Mundur         & 13.840              & 9.979            \\ \hline
-  Mundur         & 13.855              & 10.015           \\ \hline
-  Mundur         & 13.223              & 12.032           \\ \hline
-  Mundur         & 14.083              & 7.481            \\ \hline
-  Mundur         & 13.281              & 6.661            \\ \hline
-  Mundur         & 11.100              & 8.592            \\ \hline
-  Mundur         & 13.888              & 7.570            \\ \hline
-  Mundur         & 12.248              & 10.004           \\ \hline
-  Mundur         & 12.984              & 10.034           \\ \hline
-\end{longtable}
-
-\begin{longtable}{|c|c|c|c|c|c|}
+\begin{longtable}{|c|c|c|}
   \caption{Hasil performa FPS pada kelas stop}
   \label{tb:fpsstop} \\
   \hline
