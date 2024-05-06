@@ -1,0 +1,105 @@
+\chapter{PENDAHULUAN}
+\label{chap:pendahuluan}
+
+% Ubah bagian-bagian berikut dengan isi dari pendahuluan
+
+\section{Latar Belakang}
+\label{sec:latarbelakang}
+
+Disabilitas adalah kondisi dimana tubuh atau pikiran terganggu yang membuat orang dengan kondisi tersebut lebih sulit melakukan aktivitas tertentu dan lebih sulit untuk berinteraksi dengan dunia di sekelilingnya \parencite{CDC_2020}. Menurut \textit{World Health Organization}, disabilitas adalah bagian dari diri manusia dan merupakan bagian yang tidak terpisahkan dari pengalaman manusia. Hal ini merupakan hasil dari interaksi antara kondisi kesehatan seperti demensia, kebutaan atau cedera tulang belakang, dan berbagai faktor lingkungan dan pribadi. Diperkirakan 1,3 miliar orang - atau 16\% dari populasi global - mengalami disabilitas yang signifikan saat ini. Jumlah ini terus bertambah karena meningkatnya penyakit tidak menular dan orang yang hidup lebih lama \parencite{WHO_2023}.
+
+Salah satu kondisi yang dapat menyebabkan disabilitas yaitu tetraplegia merupakan salah satu kondisi cedera tulang belakang dimana manusia hanya dapat menggerakkan bagian tubuh bagian atas, seperti kepala, leher, dan bahu. Salah satu penyakit yang termasuk dalam kondisi tetraplegia adalah \textit{Amyotrophic Lateral Sclerosis} atau yang biasa disingkat ALS. \textit{Amyotrophic lateral sclerosis} atau ALS, yang sebelumnya dikenal sebagai penyakit Lou Gehrig, adalah kelainan neurologis yang memengaruhi neuron motorik, yaitu sel-sel saraf di otak dan sumsum tulang belakang yang mengontrol gerakan otot dan pernapasan. Ketika neuron motorik mengalami degenerasi dan mati, neuron motorik berhenti mengirimkan pesan ke otot, yang menyebabkan otot melemah, mulai berkedut (fasikulasi), dan mengecil (atrofi). Pada akhirnya, pada penderita ALS, otak kehilangan kemampuannya untuk memulai dan mengontrol gerakan otot yang dibutuhkan untuk berjalan, berbicara, mengunyah dan fungsi lainnya, serta bernapas. ALS bersifat progresif, yang berarti gejalanya memburuk dari waktu ke waktu \parencite{NINDS}. 
+
+Dalam stadium terakhir penyakit ALS, dimana rata-rata waktu dalam dua hingga lima tahun \parencite{ALS_2023}, pasien ALS biasanya kehilangan kemampuan gerakan fisik termasuk berbicara dan menulis tangan, tetapi untungnya mereka masih bisa menggerakkan mata mereka \parencite{Eyesay_2023}. Oleh sebab itu, pasien ALS perlu pendamping dalam melakukan aktivitas sehari-hari, namun ada saatnya dimana mereka harus bisa beraktivitas secara mandiri. Dalam hal tersebut, mereka membutuhkan kursi roda untuk bergerak dalam melakukan aktivitas sehari-hari. Di sisi lain, kursi roda elektrik yang ada pada saat ini, bergantung pada lengan atas pengguna untuk kontrol yang menyulitkan pasien tetraplegia untuk mengendalikannya \parencite{9935646}. 
+
+Untuk mengatasi permasalahan tersebut, penting untuk mencari solusi untuk dapat mempermudah sistem kontrol kursi roda sehingga dapat meningkatkan kemandirian pasien ALS. Pendekatan yang menjanjikan adalah pemanfaatan teknologi visi komputer dan sistem tertanam. Visi komputer memungkinkan komputer untuk "melihat" dan memproses citra \parencite{TIAN20201}, teknologi ini menggunakan kamera untuk mengidentifikasi, melacak, hingga mengukur target untuk pemrosesan citra lebih lanjut. Visi komputer memberikan kemampuan untuk mengenali dan memahami lingkungan sekitar. Penting untuk menggunakan perangkat keras yang sesuai untuk tujuan tersebut. Baru-baru ini, model pengenalan gambar telah ditanam pada platform target yang sebenarnya, yang merupakan komputer dengan tujuan khusus, seperti perangkat IoT seluler atau kendaraan otonom, dan bukan pada server atau PC yang digunakan di laboratorium. Sistem tertanam umumnya digunakan di lapangan, namun ada persyaratan operasional untuk lingkungan, ukuran fisik, dll \parencite{8939843}. Dengan menggabungkan kedua teknologi tersebut, maka pada penelitian ini memberikan solusi yaitu dengan mengembangkan sistem kontrol pergerakan kursi roda yang dapat dikendalikan melalui gerakan mata.
+
+Dalam mewujudkan solusi tersebut, maka penelitian ini difokuskan untuk mengembangkan sistem kontrol kursi roda yang dapat berinteraksi dengan teknologi visi komputer dalam sistem tertanam. NUC \textit{(Next Unit of Computing)} adalah pilihan yang tepat untuk pengembangan sistem tertanam karena efektivitas biaya, kemudahan penggunaan, dan fleksibilitas. Penelitian ini diharapkan dapat menciptakan sistem kontrol kursi roda yang efisien dan responsif dalam mengatasi masalah mobilitas pada penderita ALS.
+
+\section{Permasalahan}
+\label{sec:permasalahan}
+
+Berdasarkan hal-hal yang telah dipaparkan pada latar belakang, para penderita ALS tidak dapat menggerakkan otot pada seluruh anggota badan selain mata dan akan kesulitan jika harus mengontrol pergerakan kursi roda elektrik yang menggunakan joystick. Maka dari itu, dibutuhkan suatu metode untuk mengontrol pergerakan kursi roda dengan lebih praktis yaitu dengan menggunakan visi komputer berbasis gerakan mata dan NUC \textit{(Next Unit of Computing)}. MediaPipe digunakan sebagai \textit{framework} untuk visi komputer karena kemampuannya untuk \textit{real-time performance}, \textit{cross-platform}, dan juga proses integrasi ke \textit{framework} lain yang lebih mudah \parencite{lugaresi2019mediapipe}. NUC yang akan digunakan sebagai pengolah data visi komputer, sebaiknya memiliki GPU \textit{(Graphic Processing Unit)} sehingga dapat memproses data visi komputer dengan lebih cepat dan efisien.
+
+\section{Tujuan}
+\label{sec:Tujuan}
+
+Tujuan dari penelitian ini adalah untuk mengembangkan sistem kontrol untuk kursi roda yang dapat dikendalikan menggunakan MediaPipe sesuai dengan gestur mata dari kamera dan diimplementasikan ke NUC \textit{(Next Unit of Computing)}.
+
+\begin{enumerate}[nolistsep]
+
+  \item Membuat \lipsum[2][1-3]
+
+  \item \lipsum[3][1-3]
+
+\end{enumerate}
+
+\section{Batasan Masalah}
+\label{sec:batasanmasalah}
+
+Adapun beberapa batasan masalah pada penelitian ini adalah:
+
+\begin{enumerate}[nolistsep]
+
+  \item Laptop atau NUC digunakan sebagai pengolah data visi komputer.
+  
+  \item Deteksi visi komputer dari kamera menggunakan MediaPipe berbasis gestur mata.
+
+  \item Subjek yang digunakan pada dataset merupakan etnis Batak Indonesia, dimana bentuk mata yang dimiliki berbeda dengan bentuk mata etnis lainnya.
+
+  \item Klasifikasi posisi mata menggunakan CNN.
+
+  \item Pengujian sistem akan dilakukan dalam lingkungan yang terkendali, dengan keterbatasan terhadap variasi lingkungan luar ruangan.
+
+\end{enumerate}
+
+\section{Manfaat}
+
+% Ubah paragraf berikut sesuai dengan tujuan penelitian dari tugas akhir
+
+Adapun manfaat yang diharapkan dari ponelitian ini adalah sebagai berikut:
+
+\begin{enumerate}[nolistsep]
+
+  \item Bagi penulis, proses pengerjaan penelitian dan Tugas Akhir ini akan membantu untuk mengembangkan pemahaman mendalam tentang teknologi MediaPipe, Jetson Nano, dan aplikasi pengenalan gestur mata.
+  \item Bagi pengguna kursi roda, diharap akan mendapatkan manfaat langsung dari pengembangan sistem kontrol yang lebih baik. Mereka akan memiliki alat yang lebih mudah digunakan dan intuitif untuk bergerak, yang akan meningkatkan kemandirian dan mobilitas mereka dalam kehidupan sehari-hari.
+  \item Bagi penelitian selanjutnya, penulis berharap penelitian ini akan menyediakan dasar yang kuat dalam pengembangan teknologi pengenalan gestur mata dan pengendalian kursi roda yang dapat mendorong pengembangan teknologi mobilitas dan aksesibilitas yang lebih maju dan fleksibel sehingga membuka peluang untuk inovasi dalam mengintegrasikan teknologi pengenalan gestur mata ke dalam berbagai aplikasi lain.
+
+\end{enumerate}
+
+\section{Sistematika Penulisan}
+\label{sec:sistematikapenulisan}
+
+Laporan penelitian tugas akhir ini terbagi menjadi \lipsum[1][1-3] yaitu:
+
+\begin{enumerate}[nolistsep]
+
+  \item \textbf{BAB I Pendahuluan}
+
+        Bab ini berisi \lipsum[2][1-5]
+
+        \vspace{2ex}
+
+  \item \textbf{BAB II Tinjauan Pustaka}
+
+        Bab ini berisi \lipsum[3][1-5]
+
+        \vspace{2ex}
+
+  \item \textbf{BAB III Desain dan Implementasi Sistem}
+
+        Bab ini berisi \lipsum[4][1-5]
+
+        \vspace{2ex}
+
+  \item \textbf{BAB IV Pengujian dan Analisa}
+
+        Bab ini berisi \lipsum[5][1-5]
+
+        \vspace{2ex}
+
+  \item \textbf{BAB V Penutup}
+
+        Bab ini berisi \lipsum[6][1-5]
+
+\end{enumerate}

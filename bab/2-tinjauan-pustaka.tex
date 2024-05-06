@@ -1,0 +1,168 @@
+\chapter{TINJAUAN PUSTAKA}
+\label{chap:tinjauanpustaka}
+
+% Ubah bagian-bagian berikut dengan isi dari tinjauan pustaka
+
+%Section 2.1
+\section{Penelitian Terdahulu}
+\label{sec:PenelitianTerdahulu}
+
+\subsection{\textit{CONTROL OF WHEELCHAIR BY EYE MOVEMENT USING IMAGE PROCESSING}}
+
+Salah satu penelitian terkait yang telah dilakukan pada tahun 2020 dengan judul penelitian \textit{“Control of Wheelchair by Eye Movement using Image Processing”} yang dikerjakan oleh sekelompok peneliti yang terdiri dari 4 orang yaitu Tara Preeth M., Lokesh Arijilli, Siddhartha Reddy, dan Shanmugasundaram M. dari Sekolah Teknik Elektro, Universitas Institut Teknologi Vellore, Vellore, India \parencite{control_2020}.
+
+Pada penelitian ini dikembangkan kontrol kursi roda menggunakan salah satu MATLAB \textit{Computer Vision Toolbox} yaitu\textit{ Haar Cascade Object Detection Algorithm} berbasis gerakan mata. Metode ini menggunakan fitur Haar, yang dihitung sebagai perbedaan nilai pixel antara wilayah rektangular yang berdekatan, dan gambar integral, yang memungkinkan perhitungan cepat dari fitur-fitur ini di seluruh gambar.
+
+\subsection{Prototipe Kursi Roda Elektrik Dengan Kendali \emph{Joystick} dan \emph{Smartphone}}
+
+Pada tahun 2019 telah dilakukan penelitian yang berjudul "Prototipe Kursi Roda Elektrik Dengan Kendali \emph{Joystick} dan \emph{Smartphone}" oleh Andy Sadewa Junior dan Fatchul Arifin dari Program Studi Teknik Elektronika, Fakultas Teknik Universitas Negeri Yogyakarta, Yogyakarta, Indonesia \parencite{junior2019prototipe}.
+
+Penelitian ini menyimpulkan bahwa total \emph{error} yang dihasilkan dari pengujian tegangan motor kiri dan kanan adalah sebesar 0,144\% dan rata-rata \emph{error} dari seluruh pengujian yang dilakukan adalah sebesar 0,024\%. Pada pengujian bluetooth didapatkan kesimpulan bahwa jangkauan transmisi optimal Bluetooth apabila tidak ada hambatan adalah sebesar 1 meter hingga 10 meter.
+
+\subsection{\textit{Head Gestures Based Movement Control of Electric Wheelchair for People with Tetraplegia }}
+
+Pada tahun 2022, dilakukan penelitian dengan judul "\textit{Head Gestures Based Movement Control of Electric Wheelchair for People with Tetraplegia }" yang dilakukan oleh M. A. Mohd Azraai, S. Z. Yahaya, I. Almanzo Chong, Z. H. Che Soh, Z. Hussain, dan R. Boudville dari Program Studi Teknik Elektro, Universitas Teknologi MARA, Pulau Pinang, Malaysia \parencite{9935646}
+
+Penelitian ini menguraikan desain dan pengembangan kepala sistem kontrol kursi roda listrik berbasis gerakan yang memanfaatkan prototipe skala kecil yang dapat dikembangkan menjadi kursi 
+kursi roda. Kursi roda dapat disesuaikan dengan kebutuhan pasien persyaratan dengan menyesuaikan nilai ambang batas untuk kemiringan kepala di sepanjang sumbu X dan Y. Selanjutnya, proyek ini membuktikan bahwa model dapat beroperasi dengan mempertimbangkan karakteristik dan fungsi kursi roda listrik skala penuh yang sebenarnya, serta banyak kondisi di mana kursi roda listrik kursi roda listrik dapat beroperasi. Untuk rekomendasi di masa depan studi, fitur kecerdasan buatan tambahan bisa diimplementasikan untuk memastikan kinerja sistem yang lebih baik.
+
+%Section 2.2
+\section{Teori/Konsep Dasar}
+
+\subsection{Kursi Roda Elektrik}
+\label{subsec:kursirodaelektrik}
+
+Kursi roda adalah perangkat yang dioperasikan secara manual atau digerakkan dengan tenaga yang dirancang terutama untuk digunakan oleh individu dengan disabilitas mobilitas untuk tujuan utama bergerak di dalam ruangan, atau di dalam dan di luar ruangan.  Individu dengan disabilitas mobilitas harus diizinkan menggunakan kursi roda dan alat bantu mobilitas bertenaga manual, misalnya alat bantu jalan, kruk, tongkat, atau perangkat serupa lainnya yang dirancang untuk digunakan oleh individu dengan disabilitas mobilitas, di area mana pun yang terbuka untuk lalu lintas pejalan kaki \parencite{ADA_2023}.
+
+%Gambar 2.1
+% Contoh input gambar
+\begin{figure}[H]
+  \centering
+
+  % Ubah dengan nama file gambar dan ukuran yang akan digunakan
+  \includegraphics[width=.43\textwidth]{gambar/bab3/kursi.jpeg}
+
+  % Ubah dengan keterangan gambar yang diinginkan
+  \caption{Kursi Roda Elektrik}
+  \label{fig:kursiroda}
+\end{figure}
+
+Kursi roda elektrik telah dikembangkan selama bertahun-tahun untuk digunakan oleh pasien dengan gangguan mobilitas di rumah dan masyarakat. Secara konvensional, lebih dari 80\% pengguna kursi roda elektrik mengoperasikan kursi rodanya dengan sebuah joystick sebagai antarmuka kendali. Joystick yang mendeteksi gerakan umumnya digunakan untuk mengoperasikan kursi roda elektrik. Selain itu, kecepatan kursi roda berubah seiring dengan jumlah defleksi dari joystick yang dilengkapi dengan pegas. Pengguna diharuskan menggunakan kendali proporsional dengan efisien untuk proprioception dan keterampilan sendi. Operasi yang tepat dari joystick memerlukan kontrol keterampilan motorik halus di tangan dan pergelangan tangan \parencite{koyama23}.
+
+\subsection{\emph{Eye Gesture}}
+
+\textit{Eye gesture} atau gerakan mata mengacu pada pergerakan mata, seperti tatapan mata, gerakan mata, dan ekspresi wajah, yang memainkan peran penting dalam komunikasi dan interaksi manusia \parencite{vanni_2022}. Perangkat pelacak mata telah digunakan untuk mempelajari berbagai aspek gerakan mata, termasuk pengaruh faktor sosial, faktor fisik, dan hubungan antara gerakan mata dan ucapan. Perangkat ini dapat merekam gerakan mata partisipan dengan kamera refleks kornea dan menganalisis gerakan tubuh dan gerakan mata dengan akurasi temporal\parencite{gullberg_kita_2009}.
+
+% Gambar 2.2
+\begin{figure} [ht] \centering
+    % Nama dari file gambar yang diinputkan
+    \includegraphics[width=.6\textwidth]{gambar/bab3/gaze.png}
+    % Keterangan gambar yang diinputkan
+    \caption{Gerakan Mata}
+    % Label referensi dari gambar yang diinputkan
+    \label{fig:gaze}
+\end{figure}
+
+Gerakan mata dapat digunakan dalam berbagai aplikasi, seperti kontrol komputer bebas genggam  dan gerakan yang menyertai ucapan. Sebagai contoh, teknik pelacakan tatapan mata untuk aplikasi interaktif, dengan fokus pada penggunaan gerakan mata sebagai alat kontrol \parencite{Morimoto_Mimica_2005}. 
+
+\subsection{MediaPipe Face Mesh}
+
+MediaPipe Face Mesh adalah solusi pendeteksi \textit{landmark} wajah yang memperkirakan 468 \textit{landmark} wajah 3D secara real-time, bahkan pada perangkat seluler. Solusi ini menggunakan \textit{pipeline} dari dua jaringan saraf untuk mengidentifikasi koordinat 3D landmark wajah dari gambar 2D. Jaringan pertama, BlazeFace, menghitung lokasi wajah dari gambar penuh, sementara jaringan kedua beroperasi pada wilayah yang dipotong untuk mengidentifikasi lokasi \textit{landmark} \parencite{mediapipe_2020}. Teknologi ini memiliki berbagai aplikasi, termasuk deteksi masker wajah, kontrol komputer bebas genggam, dan gerakan yang menyertai ucapan \parencite{thaman_2022}.
+
+% Gambar 2.3
+\begin{figure} [ht] \centering
+    % Nama dari file gambar yang diinputkan
+    \includegraphics[width=.55\textwidth]{gambar/face_landmark.png}
+    % Keterangan gambar yang diinputkan
+    \caption{MediaPipe Face Mesh}
+    % Label referensi dari gambar yang diinputkan
+    \label{fig:facemesh}
+\end{figure}
+
+MediaPipe Face Mesh menyediakan antarmuka pemrograman yang sederhana, yang memungkinkan pengembang untuk mengakses koordinat \textit{landmark} di Python dan mengimplementasikan MediaPipe Face Mesh di berbagai aplikasi. Ini telah digunakan untuk deteksi \textit{landmark} wajah lintas platform secara \textit{real-time} dan dapat diintegrasikan ke dalam mesin grafis khusus untuk berbagai proyek \parencite{mediapipe_2020}. Model MediaPipe Face Mesh kompatibel dengan alat visualisasi MediaPipe dan dapat digunakan untuk membuat aplikasi untuk mendeteksi landmark wajah, ekspresi wajah, dan menerapkan filter dan efek wajah pada gambar dan video \parencite{Mediapipe_2023}.
+
+Singkatnya, MediaPipe Face Mesh adalah alat yang ampuh untuk mendeteksi landmark wajah secara real-time, dengan berbagai aplikasi dalam visi komputer, interaksi manusia-komputer, dan \textit{augmented reality} (AR). Alat ini menawarkan antarmuka yang sederhana kepada para pengembang untuk mengakses dan memanfaatkan data \textit{landmark} wajah manusia untuk berbagai tujuan inovatif.
+
+\subsection{\emph{Convolutional Neural Network} (CNN)}
+
+\emph{Convolutional Neural Network} (CNN) adalah jenis jaringan syaraf tiruan yang digunakan terutama untuk pengenalan dan pemrosesan gambar. Ini adalah bagian dari pembelajaran mesin dan dirancang khusus untuk mengidentifikasi dan mengenali objek dalam gambar, serta untuk tugas-tugas seperti klasifikasi objek dan pengenalan pola \parencite{arm_2023}. CNN dicirikan oleh kemampuannya untuk mempelajari rekayasa fitur dengan sendirinya melalui pengoptimalan filter, dan mereka mencegah masalah seperti gradien yang menghilang dan gradien yang meledak, yang terlihat pada jaringan saraf sebelumnya, dengan menggunakan bobot yang diatur melalui koneksi yang lebih sedikit. 
+
+Arsitektur CNN dianalogikan dengan pola konektivitas otak manusia, dengan neuron yang disusun dengan cara tertentu untuk memproses rangsangan visual, dan terdiri dari lapisan-lapisan seperti lapisan konvolusi, lapisan penyatuan, dan lapisan yang terhubung sepenuhnya \parencite{ibm_2023}. CNN memiliki berbagai macam aplikasi, termasuk klasifikasi gambar, pemrosesan bahasa alami, dan estimasi kedalaman untuk mobil swakemudi \parencite{arm_2023}.
+
+Arsitektur pada CNN terdiri dari tiga bagian, yaitu input, \emph{feature learning}, dan \emph{classification}. \emph{Feature Learning} terdiri dari dua buah \emph{convolution layer} dan dua buah \emph{pooling layer}. Pada \emph{classification} terdiri dari dua \emph{hidden layer} dan satu \emph{output layer}. Arsitektur CNN dapat digambarkan seperti pada Gambar \ref{fig:arsitektur cnn}.
+
+% Gambar 2.4
+\begin{figure} [ht] \centering
+    % Nama dari file gambar yang diinputkan
+    \includegraphics[width=1\textwidth]{gambar/cnn.jpg}
+    % Keterangan gambar yang diinputkan
+    \caption{Arsitektur pada \emph{Convolutional Neural Network}}
+    % Label referensi dari gambar yang diinputkan
+    \label{fig:arsitektur cnn}
+\end{figure}
+
+Input CNN merupakan array tiga dimensi dengan ukuran seperti pada Persamaan \ref{eq:cnn}. Apabila input merupakan suatu citra maka citra tersebut harus diubah menjadi array dua dimensi. 
+
+% Persamaan 2.1
+\begin{equation}
+\label{eq:cnn}
+Baris * Kolom * Depth
+\end{equation}
+
+\emph{Convolution Layer} digunakan untuk menyaring (\emph{filter}) matriks dari citra \emph{input}. \emph{Zero Padd-ing} akan diperlukan untuk mempertahankan ukuran matriks dari citra \parencite{dwitama2019klasifikasi}. Ukuran kernel yang digunakan pada layer konvolusi adalah \(3 \times 3\) dan \(5 \times 5\). \emph{Output} dari lapisan konvolusi ini akan digunakan sebagai \emph{input} pada \emph{Pooling Layer} \parencite{hakim2018penerapan}. Apabila output dari \emph{Convolution Layer} bernilai negatif maka akan dilakukan perhitungan tambahan berupa aktifasi ReLU. Fungsi aktivasi ReLU akan nilai matriks yang bernilai negatif menjadi nol. Contoh penerapan dari aktivasi ReLU dapat dilihat pada Gambar \ref{fig:Aktivasi ReLU}.
+
+% Gambar 2.5
+\begin{figure} [ht] \centering
+    % Nama dari file gambar yang diinputkan
+    \includegraphics[width=.6\textwidth]{gambar/relu.png}
+    % Keterangan gambar yang diinputkan
+    \caption{\emph{Aktivasi ReLU}}
+    % Label referensi dari gambar yang diinputkan
+    \label{fig:Aktivasi ReLU}
+\end{figure}
+
+\emph{Pooling Layer} digunakan untuk mengurangi jumlah parameter ketika ukuran citra terlalu besar dengan cara mengurangi dimensi setiap fitur. Karena ukuran citra menjadi lebih kecil maka proses \emph{feature map} akan menjadi lebih cepat \parencite{hakim2018penerapan}. \emph{Max Pooling} dilakukan dengan cara mengambil nilai dengan elemen terbesar sesuai dengan ukuran filter. Sebagai contoh pada Gambar \ref{fig:Max Pooling} merupakan \emph{max pooling} dengan filter \(2 \times 2\) dengan \emph{stride} sebesar 2.
+
+% Gambar 2.6
+\begin{figure} [ht] \centering
+    % Nama dari file gambar yang diinputkan
+    \includegraphics[width=.6\textwidth]{gambar/pooling.png}
+    % Keterangan gambar yang diinputkan
+    \caption{\emph{Max Pooling}}
+    % Label referensi dari gambar yang diinputkan
+    \label{fig:Max Pooling}
+\end{figure}
+
+Dalam \textit{feature learning}, data yang umumnya berbentuk multi-dimensi (seperti gambar yang memiliki lebar, tinggi, dan kedalaman warna) diproses melalui lapisan-lapisan untuk menghasilkan fitur yang lebih abstrak dan representatif. Namun, lapisan selanjutnya dalam jaringan saraf, yaitu lapisan \textit{fully connected} atau lapisan yang sepenuhnya terhubung, memerlukan input berbentuk vektor satu dimensi.
+
+Proses \textit{Flatten} berfungsi untuk mengubah output multi-dimensi dari \textit{feature learning} menjadi vektor satu dimensi. Caranya adalah dengan mengatur ulang seluruh elemen matriks hasil \textit{feature learning} menjadi sebuah barisan panjang elemen-elemen. Proses ini memastikan bahwa semua informasi yang diperoleh dari \textit{feature learning} dapat diproses secara efektif dalam lapisan klasifikasi, memungkinkan jaringan untuk membuat keputusan atau prediksi berdasarkan fitur yang telah dipelajari. Flatten dapat digambarkan seperti pada Gambar \ref{fig:Proses Flattening}.
+
+% Gambar 2.7
+\begin{figure} [ht] \centering
+    % Nama dari file gambar yang diinputkan
+    \includegraphics[width=.6\textwidth]{gambar/flatten.png}
+    % Keterangan gambar yang diinputkan
+    \caption{Proses \emph{Flattening}}
+    % Label referensi dari gambar yang diinputkan
+    \label{fig:Proses Flattening}
+\end{figure}
+
+\newpage
+
+\subsection{NUC \textit{(Next Unit of Computing)}}
+
+% Gambar 2.8
+\begin{figure} [ht] \centering
+    % Nama dari file gambar yang diinputkan
+    \includegraphics[scale=0.25]{gambar/nuc.jpg}
+    % Keterangan gambar yang diinputkan
+    \caption{Perangkat NUC}
+    % Label referensi dari gambar yang diinputkan
+    \label{fig:Perangkat NUC}
+\end{figure}
+
+Pada tahun 2012, Intel meluncurkan arsitektur \textit{Next Unit of Computing}, yang disebut dengan konsep "NUC", yang sebenarnya adalah \textit{mini quasi-system PC}. Intel Hades Canyon NUC generasi pertama mengungguli semua PC mini lainnya dengan ukuran tablet 7 inci. Performa yang kuat, berbagai antarmuka dan desain penampilan yang luar biasa adalah unik di hadapan produk dari berbagai OEM, bahkan lebih baik daripada Mac mini\parencite{8858650}.
+
+Selama bertahun-tahun, dibatasi oleh ukurannya yang kecil, NUC hanya dapat menggunakan kartu grafis inti Intel, yang tertinggal di belakang kartu grafis eksternal, bahkan lebih rendah dari AMD APU. Pada tahun 2017, Intel dan AMD mulai mengembangkan chip hybrid. Pada tahun 2018, chip hybrid Intel pada awalnya dibentuk dan lima produk pertama diumumkan, termasuk i7-8809G. Prosesor Intel, yang mengintegrasikan prosesor grafis AMD RX Vega, merupakan bagian dari seri Kaby Lake-G, sehingga Intel dapat menutupi kekurangannya dalam kinerja GPU\parencite{8858650}.
+
+Pada penelitian ini digunakan Intel NUC 11 Pro Performance Kit dengan versi NUC11PAHi7 memiliki prosesor Intel Core i7-1165G7 generasi ke-11. Prosesor ini memiliki kecepatan dasar sebesar 2,8 GHz dan dapat mencapai kecepatan boost hingga 4,7 GHz. Selain itu, terdapat Intel Iris Xe Graphics yang memungkinkan perangkat untuk menjalankan berbagai aplikasi berbasis GPU dengan lancar. Dilengkapi dengan 16 GB RAM DDR4 dan 256 GB SSD PCIe M.2. Mendukung hingga 4 monitor melalui HDMI, mini DP, dan 2 port Thunderbolt (memerlukan adaptor). Resolusi maksimum monitor dapat mencapai 4K (3840x2160). Serta fitur-fitur lainnya seperti Wi-Fi 6 AX201, Bluetooth 5.2, Ethernet LAN (RJ-45), dan jack headset stereo depan.
