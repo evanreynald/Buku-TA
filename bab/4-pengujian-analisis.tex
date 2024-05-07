@@ -30,7 +30,7 @@ Pada penelitian ini digunakan metode \emph{Convolutional Neural Network} (CNN) u
 Secara keseluruhan, \emph{dataset} citra \emph{landmark} mata yang digunakan dalam penelitian ini, berjumlah 2000 data citra yang dibagi ke dalam 5 kelas, dengan pembagian data pelatihan sebanyak 280 data citra dan data validasi sebanyak 120 data citra. Visualisasi pembagian \emph{dataset} yang digunakan pada penelitian ini dapat dilihat pada Gambar \ref{fig:dataset} beserta rinciannya pada Tabel \ref{tb:datadiagram}.
 
 %Gambar 4.1
-\begin{figure} [ht] \centering
+\begin{figure} [H] \centering
   % Nama dari file gambar yang diinputkan
   \includegraphics[width=1\textwidth]{gambar/bab4/visualdataset.png}
   % Keterangan gambar yang diinputkan
@@ -56,14 +56,14 @@ Secara keseluruhan, \emph{dataset} citra \emph{landmark} mata yang digunakan dal
 Selanjutnya, setelah proses akuisisi data telah dilakukan, model CNN dibangun dengan menggunakan \emph{dataset} pelatihan dan \emph{dataset} validasi yang sebelumnya telah diambil sebagai data pelatihan dan data pengujian. Dalam pembuatan model CNN, proses pelatihan dilakukan dengan menggunakan model CNN yang terdiri dari sebelas lapisan seperti struktur yang telah dipaparkan pada metodologi penelitian. Pelatihan pada model CNN dilakukan dengan konfigurasi 40 tahapan \emph{epoch} dengan 10 langkah pelatihan per \emph{epoch}. Ditambahkan juga modul \emph{early stopping} selama pelatihan model agar didapatkan model terbaik, yaitu pada \emph{epoch} ke-30. Berdasarkan hasil pelatihan tersebut, dihasilkan nilai akurasi sebesar 100\% dengan akurasi pengujian sebesar 99.83\%. Selain itu, hasil pelatihan juga menunjukkan nilai \emph{loss} sebesar 0.22\% dengan \emph{loss} pengujian sebesar 1.14\%. Variabel tersebut dapat dilihat pada Gambar \ref{fig:acc_loss} yang telah memvisualisasikan hasil akurasi dan akurasi pengujian serta hasil \emph{loss} dan \emph{loss} pengujian dalam bentuk grafik dengan nilai akurasi, akurasi pengujian, \emph{loss}, dan \emph{loss} pengujian terhadap tiap tahapan \emph{epoch}.
 
 %Gambar 4.2
-\begin{figure}[ht]
+\begin{figure}[H]
   \centering
-  \begin{subfigure}[b]{0.72\textwidth}
+  \begin{subfigure}[b]{0.5\textwidth}
       \includegraphics[width=\textwidth]{gambar/bab4/model5 (30cm)/train.png}
       \caption{Akurasi}
   \end{subfigure}
 
-  \begin{subfigure}[b]{0.72\textwidth}
+  \begin{subfigure}[b]{0.5\textwidth}
       \includegraphics[width=\textwidth]{gambar/bab4/model5 (30cm)/loss.png}
       \caption{\emph{Loss}}
   \end{subfigure}
@@ -74,9 +74,9 @@ Selanjutnya, setelah proses akuisisi data telah dilakukan, model CNN dibangun de
 Setelah didapatkan grafik akurasi dan \emph{loss} untuk hasil pelatihan model, selanjutnya dilakukan perhitungan untuk \emph{confusion matrix} yang dibuat berdasarkan \emph{dataset} validasi. \emph{Confusion matrix} dihitung dengan membandingkan label yang sebenarnya (\emph{true label}) dengan label yang diprediksi (\emph{predicted label}) yang kemudian kedua label tersebut akan divisualisasikan menjadi \emph{matrix} yang dibagi menjadi tiap kelas kontrol, dimana \emph{predicted label} menjadi sumbu X dan \emph{true label} menjadi sumbu Y. Dari visualisasi \emph{confusion matrix}, dapat diamati bahwa keseluruhan 600 \emph{dataset} validasi yang telah diuji berdasarkan label yang sebenarnya sudah terprediksi dengan benar.
 
 %Gambar 4.3
-\begin{figure} [ht] \centering
+\begin{figure} [H] \centering
   % Nama dari file gambar yang diinputkan
-  \includegraphics[width=0.45\textwidth]{gambar/bab4/model5 (30cm)/matrix.png}
+  \includegraphics[width=0.2965\textwidth]{gambar/bab4/model5 (30cm)/matrix.png}
   % Keterangan gambar yang diinputkan
   \caption{\emph{Confusion Matrix} Model Hasil Pelatihan}
   % Label referensi dari gambar yang diinputkan
@@ -130,20 +130,20 @@ Model diuji menggunakan \emph{dataset} validasi yang terdiri dari 600 data citra
 Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari kamera ke objek deteksi. Berdasarkan \emph{confusion matrix} pada Gambar \ref{fig:matrix2} dapat diamati bahwa hasil pengujian dengan jarak 30 sentimeter memiliki hasil prediksi yang akurat pada semua kelas dimana semua label yang diprediksi sesuai dengan semua label yang sebenarnya.
 
 %Gambar 4.4
-\begin{figure} [ht] \centering
+\begin{figure} [H] \centering
   % Nama dari file gambar yang diinputkan
-  \includegraphics[scale=0.1]{gambar/bab4/model5 (30cm)/matrix.png}
+  \includegraphics[width=0.3\textwidth]{gambar/bab4/model5 (30cm)/matrix.png}
   % Keterangan gambar yang diinputkan
   \caption{\emph{Confusion Matrix} Model Pengujian dengan Jarak 30 cm}
   % Label referensi dari gambar yang diinputkan
   \label{fig:matrix2}
 \end{figure}
 
-
+Kemudian dari \emph{confusion matrix} yang didapat, diperoleh nilai TP, TN, FP, dan FN seperti yang tertera pada Tabel \ref{tb:cm_model2}. Dapat dilihat bahwa pada semua kelas, nilai TP yang diperoleh sebanyak 120 data citra, nilai TN sebanyak 480 data citra, nilai FP sebanyak 0 data citra, dan nilai FN sebanyak 0 data citra.
 
 %Tabel 4.4
 \begin{longtable}{|l|c|c|c|c|}
-  \caption{Hasil klasifikasi model dengan \emph{confusion matrix}}
+  \caption{Tabel Hasil Klasifikasi dari Jarak 30 cm}
   \label{tb:cm_model2} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -155,9 +155,11 @@ Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari 
   Stop  & 120          & 480         & 0           & 0           \\ \hline
 \end{longtable}
 
+Dari nilai TP, TN , FP, dan FN diatas, dapat dihitung nilai \emph{accuracy}, \emph{precision}, \emph{recall}, dan \emph{f-1 score} seperti yang tertera pada Tabel \ref{tb:vs_model2}. Pada semua kelas, didapat nilai \emph{accuracy} sebesar 100\%, nilai \emph{precision} sebesar 100\%, nilai \emph{recall} sebesar 100\%, dan nilai \emph{f-1 score} sebesar 100\%. Keempat variabel tersebut dapat bernilai bagus karena hasil perhitungannya berbanding lurus dengan perhitungan \emph{confusion matrix}. 
+
 %Tabel 4.5
 \begin{longtable}{|l|c|c|c|c|}
-  \caption{Hasil validasi nilai model}
+  \caption{Hasil Validasi Nilai Model dengan Jarak 30 cm}
   \label{tb:vs_model2} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -171,15 +173,19 @@ Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari 
 
 \subsection{Jarak 50 cm}
 
+Selanjutnya, pengujian dilakukan dengan variasi jarak 50 sentimeter. Dari data pada \emph{confusion matrix}, dapat dilihat bahwa setiap kelas memiliki 120 prediksi yang benar dan tidak terdapat kesalahan klasifikasi antarkelas mana pun. Setiap nilai diagonal yang mencapai 120 mengindikasikan bahwa semua prediksi untuk kelas tersebut sesuai dengan label sebenarnya, tanpa ada satu pun yang salah. Ini menandakan bahwa model mampu dengan sempurna menginterpretasikan sinyal input untuk menghasilkan respons yang tepat sesuai dengan perintah yang diharapkan.
+
 %Gambar 4.5
-\begin{figure} [ht] \centering
+\begin{figure} [H] \centering
   % Nama dari file gambar yang diinputkan
   \includegraphics[width=0.25\textwidth]{gambar/bab4/model6 (50cm)/matrix.png}
   % Keterangan gambar yang diinputkan
-  \caption{\emph{Confusion Matrix} Model Hasil Pelatihan}
+  \caption{\emph{Confusion Matrix} Model Pengujian dengan Jarak 30 cm}
   % Label referensi dari gambar yang diinputkan
   \label{fig:matrix3}
 \end{figure}
+
+Pada Tabel \ref{tb:cm_model3} yang disajikan menampilkan hasil pengujian model klasifikasi yang digunakan untuk mengendalikan kursi roda melalui gestur mata dari jarak 50 cm. Untuk semua kelas, angka True Positive mencatat 120, menunjukkan bahwa model secara konsisten berhasil mengidentifikasi setiap gestur dengan benar sebanyak 120 kali. True Negative, yang juga mencapai 480 untuk setiap kelas, mengindikasikan bahwa model sangat efisien dalam tidak salah mengklasifikasikan gestur lain sebagai gestur yang sedang diuji. Sementara itu, nilai untuk False Positive dan False Negative adalah nol, menunjukkan bahwa tidak ada kesalahan dalam pengklasifikasian gestur. Secara keseluruhan, tabel ini menggambarkan performa yang sangat baik dari model dalam mengklasifikasikan gestur mata dari jarak 50 sentimeter untuk pengendalian kursi roda, dengan tingkat akurasi dan keandalan yang tinggi.
 
 %Tabel 4.6
 \begin{longtable}{|l|c|c|c|c|}
@@ -194,6 +200,8 @@ Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari 
   Mundur     & 120          & 480         & 0           & 0           \\ \hline
   Stop  & 120          & 480         & 0           & 0           \\ \hline
 \end{longtable}
+
+Berdasarkan nilai TP, TN, FP, dan FN yang didapatkan, dapat didapatkan nilai 100\% di semua metrik evaluasi—\emph{Accuracy, Precision, Recall}, dan \emph{F1-Score}—untuk kelima kelas: "Kanan", "Kiri", "Maju", "Mundur", dan "Stop" pada jarak 50 sentimeter. Akurasi sempurna menunjukkan tidak adanya kesalahan dalam klasifikasi, sementara presisi 100\% mengindikasikan tidak ada FP, dan \emph{recall} 100\% menandakan model berhasil menangkap semua kasus positif sebenarnya tanpa kehilangan satu pun. Skor F1 yang juga sempurna menunjukkan keseimbangan optimal antara presisi dan \emph{recall}.
 
 %Tabel 4.7
 \begin{longtable}{|l|c|c|c|c|}
@@ -211,48 +219,10 @@ Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari 
 
 \subsection{Jarak 70 cm}
 
-%Gambar 4.6
-\begin{figure} [ht] \centering
-  % Nama dari file gambar yang diinputkan
-  \includegraphics[width=0.25\textwidth]{gambar/bab4/model7 (70cm)/matrix.png}
-  % Keterangan gambar yang diinputkan
-  \caption{\emph{Confusion Matrix} Model Hasil Pelatihan}
-  % Label referensi dari gambar yang diinputkan
-  \label{fig:matrix4}
-\end{figure}
-
-%Tabel 4.8
-\begin{longtable}{|l|c|c|c|c|}
-  \caption{Hasil klasifikasi model dengan \emph{confusion matrix}}
-  \label{tb:cm_model4} \\
-  \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{TP} & \textbf{TN} & \textbf{FP} & \textbf{FN} \\ \hline
-  Kanan    & 120          & 480         & 0           & 0           \\ \hline
-  Kiri      & 120          & 480         & 0           & 0           \\ \hline
-  Maju      & 120          & 480         & 0           & 0           \\ \hline
-  Mundur     & 120          & 480         & 0           & 0           \\ \hline
-  Stop  & 120          & 480         & 0           & 0           \\ \hline
-\end{longtable}
-
-%Tabel 4.9
-\begin{longtable}{|l|c|c|c|c|}
-  \caption{Hasil validasi nilai model}
-  \label{tb:vs_model4} \\
-  \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{Accuracy} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-Score} \\ \hline
-  Kanan    & 100\%            & 100\%             & 100\%           & 100\%            \\ \hline
-  Kiri     & 100\%          & 100\%           & 100\%           & 100\%           \\ \hline
-  Maju      & 100\%          & 100\%           & 100\%          & 100\%          \\ \hline
-  Mundur     & 100\%            & 100\%             & 100\%           & 100\%            \\ \hline
-  Stop  & 100\%            & 100\%             & 100\%           & 100\%            \\ \hline
-\end{longtable}
-
-\subsection{Jarak 90 cm}
+Pada tahap pengujian berikutnya, dilakukan pengujian model dengan jarak 70 sentimeter. Dari \emph{confusion matrix} pada Gambar \ref{fig:matrix5}, dapat diamati performa model klasifikasi gestur dalam mengontrol pergerakan kursi roda, yang mencakup lima kelas: Kanan, Kiri, Maju, Mundur, dan Stop. Kinerja model secara keseluruhan sangat baik dengan setiap kelas kecuali 'Maju'. Untuk kelas 'Maju', model berhasil mengidentifikasi 117 kasus dengan benar namun, ada 3 kasus yang keliru diidentifikasi sebagai 'Mundur', menunjukkan sedikit kelemahan dalam membedakan antara dua gestur ini.
 
 %Gambar 4.7
-\begin{figure} [ht] \centering
+\begin{figure} [H] \centering
   % Nama dari file gambar yang diinputkan
   \includegraphics[width=0.25\textwidth]{gambar/bab4/model8 (90cm)/matrix.png}
   % Keterangan gambar yang diinputkan
@@ -261,7 +231,9 @@ Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari 
   \label{fig:matrix5}
 \end{figure}
 
-%Tabel 4.10
+Dari analisis tabel performa klasifikasi model dengan jarak 70 sentimeter dapat dilihat untuk kelas Kanan, Kiri, dan Stop, model mencapai \emph{True Positives} (TP) maksimal yaitu 120, dengan \emph{True Negatives} (TN) 480, dan tidak ada \emph{False Positives} (FP) atau \emph{False Negatives} (FN), menandakan tidak ada kesalahan klasifikasi. Sementara itu, kelas Maju juga menunjukkan kinerja yang baik dengan 117 TP dan 3 FN, yang berarti ada tiga kasus di mana gestur Maju tidak diidentifikasi dengan benar. Untuk kelas Mundur, terdapat sedikit gangguan di mana meskipun mendapat 120 TP, terdapat 3 FP yang berarti model salah mengklasifikasikan tiga gestur lain sebagai Mundur.
+
+%Tabel 4.8
 \begin{longtable}{|l|c|c|c|c|}
   \caption{Hasil klasifikasi model dengan \emph{confusion matrix}}
   \label{tb:cm_model5} \\
@@ -275,7 +247,9 @@ Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari 
   Stop  & 120          & 480         & 0           & 0           \\ \hline
 \end{longtable}
 
-%Tabel 4.11
+Setelah didapatkan nilai TP, TN, FP, dan FN untuk masing-masing kelas, selanjutnya didapatkan untuk kelas Kanan, Kiri, dan Stop, model mencapai skor sempurna di semua metrik—\emph{Accuracy, Precision, Recall}, dan \emph{F1-Score}—semuanya 100\%. Sedangkan untuk kelas Maju, model ini masih menunjukkan hasil yang sangat baik dengan \emph{Accuracy} sebesar 99.50\%, \emph{Precision} 100\%, \emph{Recall} 97.50\%, dan \emph{F1-Score} 98.73\%. Untuk kelas Mundur, model mencatat \emph{Accuracy} 99.50\%, namun dengan \emph{Precision} sedikit menurun menjadi 97.56\%, yang mencerminkan adanya beberapa kesalahan dalam memprediksi gestur sebagai Mundur. Namun, dengan \emph{Recall} 100\% dan \emph{F1-Score} 98.77\%, dapat dilihat bahwa model tersebut secara konsisten mengidentifikasi semua gestur Mundur yang sebenarnya, menegaskan keandalan dan efektivitasnya dalam aplikasi praktis.
+
+%Tabel 4.9
 \begin{longtable}{|l|c|c|c|c|}
   \caption{Hasil validasi nilai model}
   \label{tb:vs_model5} \\
@@ -289,10 +263,12 @@ Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari 
   Stop  & 100\%            & 100\%             & 100\%           & 100\%            \\ \hline
 \end{longtable}
 
-\subsection{Jarak 110 cm}
+\subsection{Jarak 90 cm}
 
+Skenario pengujian jarak yang terakhir adalah dengan jarak 90 sentimeter dari kamera ke objek yang dijadikan data citra. Melalui analisis \emph{confusion matrix} pada Gambar \ref{fig:matrix6} untuk kelas Kanan, model berhasil mengidentifikasi 119 dari 120 gestur dengan benar, hanya salah satu gestur diklasifikasikan sebagai Maju. Untuk kelas Kiri, model menunjukkan kelemahan yang lebih signifikan dengan hanya 114 gestur yang diklasifikasikan dengan benar dan 6 gestur yang salah diklasifikasikan sebagai Maju. Hal ini menunjukkan kesulitan model dalam membedakan gestur Kiri dari Maju. Untuk kelas Maju, ada satu gestur yang salah diklasifikasikan sebagai Mundur. Sementara itu, kelas Mundur dan Stop memiliki tingkat akurasi yang tinggi, meskipun kelas Stop mengalami empat gestur yang salah diklasifikasikan sebagai Mundur. Kesalahan ini mungkin disebabkan oleh kemiripan gestur atau penurunan akurasi deteksi karena peningkatan jarak, sebab semakin jauh jarak maka semakin kecil data citra yang didapat.
+  
 %Gambar 4.8
-\begin{figure} [ht] \centering
+\begin{figure} [H] \centering
   % Nama dari file gambar yang diinputkan
   \includegraphics[width=0.25\textwidth]{gambar/bab4/model5 (30cm)/110cm/matrix.png}
   % Keterangan gambar yang diinputkan
@@ -301,7 +277,9 @@ Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari 
   \label{fig:matrix6}
 \end{figure}
 
-%Tabel 4.12
+Dari hasil perhitungan \emph{confusion matrix} didapatkan hasil klasifikasi model. Untuk kelas Kanan, model hampir sempurna dengan 119 TP dan hanya satu FN, menunjukkan efektivitas tinggi dalam mengenali gestur ini. Sementara itu, kelas Kiri mengalami sedikit kesulitan dengan 6 FN, mengindikasikan beberapa kasus di mana gestur Kiri tidak terdeteksi dengan akurat. Untuk kelas Maju, model ini mengalami 11 FP dan satu FN, menandakan bahwa peningkatan kemampuan model dalam membedakan gestur Maju dari yang lain diperlukan. Kelas Mundur menunjukkan performa yang sangat baik dengan tidak adanya FP atau FN. Akhirnya, untuk kelas Stop, ada satu FP dan empat FN, yang menunjukkan bahwa beberapa gestur Stop tidak teridentifikasi sebagai Stop. Hasil ini menyoroti beberapa kekuatan dan kelemahan dalam model yang perlu diperbaiki untuk mencapai akurasi yang lebih tinggi, terutama dalam mengurangi FN dan FP di kelas tertentu.
+
+%Tabel 4.10
 \begin{longtable}{|l|c|c|c|c|}
   \caption{Hasil klasifikasi model dengan \emph{confusion matrix}}
   \label{tb:cm_model6} \\
@@ -315,7 +293,9 @@ Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari 
   Stop  & 116          & 479         & 1           & 4           \\ \hline
 \end{longtable}
 
-%Tabel 4.13
+Dari hasil perhitungan yang dilakukan berdasarkan nilai TP, TN, FP, dan FN, pada Tabel \ref{tb:vs_model6} berisi hasil validasi untuk setiap kelas dalam model klasifikasi gestur yang dikembangkan. Untuk kelas Kanan, model menunjukkan keakuratan tinggi dengan \textit{Accuracy} sebesar 99.83\%, \textit{Precision} 100\%, \textit{Recall} 99.17\%, dan \textit{F1-Score} 99.58\%. Pada kelas Kiri, model mencatatkan \textit{Accuracy} 99\%, \textit{Precision} 100\%, \textit{Recall} 95\%, dan \textit{F1-Score} 97.44\%. Untuk kelas Maju, metrik yang tercatat adalah \textit{Accuracy} 98\%, \textit{Precision} 91.54\%, \textit{Recall} 99.17\%, dan \textit{F1-Score} 95.20\%. Kelas Mundur menunjukkan performa sempurna dengan 100\% di semua metrik, dan kelas Stop memiliki \textit{Accuracy} 99.17\%, \textit{Precision} 99.15\%, \textit{Recall} 96.67\%, serta \textit{F1-Score} 97.89\%. 
+
+%Tabel 4.11
 \begin{longtable}{|l|c|c|c|c|}
   \caption{Hasil validasi nilai model}
   \label{tb:vs_model6} \\
@@ -331,598 +311,79 @@ Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari 
 
 \section{Pengujian Performa Model dengan menggunakan Variasi Pencahayaan}
 
-%Tabel 4.14
+Pada sistem kontrol kursi roda berbasis \emph{gesture} mata, variasi pencahayaan memiliki pengaruh signifikan terhadap performa model deteksi. Model yang diimplementasikan harus mampu beroperasi secara andal dalam berbagai kondisi pencahayaan. Sub-bab ini akan membahas pengujian performa model dengan menggunakan variasi pencahayaan. Tujuan dari pengujian ini adalah untuk mengevaluasi tingkat keberhasilan dan ketidakberhasilan model dalam mendeteksi gerakan mata pada tiga kondisi pencahayaan, seperti pencahayaan terang (131 Lux), normal (77 Lux), dan redup (35 Lux).
+
+Jenis pencahayaan yang diuji adalah \emph{ambient light}, yang mensimulasikan pencahayaan lingkungan sekitar dengan variasi intensitas yang berbeda. \emph{Ambient light} adalah pencahayaan umum yang ada di sekitar lingkungan, yang dapat berasal dari sumber cahaya alami seperti sinar matahari atau buatan seperti lampu.Tingkat keberhasilan dan ketidakberhasilan dihitung dalam persentase, dengan data yang dikumpulkan selama tiga puluh sesi pengujian. Hasil dari analisis ini akan memberikan gambaran mengenai seberapa baik model dapat beradaptasi terhadap variasi pencahayaan yang berbeda.
+
 \subsection{Pengujian pada cahaya 35 Lux}
-\begin{longtable}{|l|c|}
-  \caption{Hasil pengujian kelas kanan pada 35 Lux}
-  \label{tb:luxkanan} \\
+
+Pengujian pada kondisi pencahayaan 35 lux bertujuan untuk mengevaluasi performa model dalam mendeteksi gerakan mata pada situasi pencahayaan yang redup. Kondisi ini mensimulasikan lingkungan dengan cahaya minimal yaitu di ruangan yang hanya diterangi lampu yang redup. Dalam kondisi ini, model diuji untuk mengenali dan mengklasifikasikan perintah gerakan mata dengan benar. Pada pengujian ini ditunjukkan kemampuan model dalam mengeksekusi perintah kontrol pada pencahayaan rendah.
+
+%Tabel 4.12
+\begin{longtable}{|l|c|c|c|c|}
+  \caption{Pengujian Kinerja Model dengan Pencahayaan 77 Lux}
+  \label{tb:lux35} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{Detection State}                           \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
+  \textbf{Kelas} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Keberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Keridakberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Persentase \\ Keberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Persentase\\ Ketidakberhasilan\end{tabular}}} \\ \hline
+  Kanan  & 30                                                                                  & 0                                                                                        & 100\%                                                                                   & 0\%                                                                                         \\ \hline
+  Kiri   & 30                                                                                  & 0                                                                                        & 100\%                                                                                   & 0\%                                                                                         \\ \hline
+  Maju   & 27                                                                                  & 3                                                                                        & 90\%                                                                                    & 10\%                                                                                        \\ \hline
+  Mundur & 28                                                                                  & 2                                                                                        & 93.33\%                                                                                 & 6.67\%                                                                                      \\ \hline
+  Stop   & 30                                                                                  & 0                                                                                        & 100\%                                                                                   & 0\%                                                                                         \\ \hline
 \end{longtable}
 
-%Tabel 4.15
-\begin{longtable}{|l|c|}
-  \caption{Hasil pengujian kelas kiri pada 35 Lux}
-  \label{tb:luxkiri} \\
-  \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{Detection State}                           \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-\end{longtable}
-
-%Tabel 4.16
-\begin{longtable}{|l|c|}
-  \caption{Hasil pengujian kelas maju pada 35 Lux}
-  \label{tb:luxmaju} \\
-  \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{Detection State}                           \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-\end{longtable}
-
-%Tabel 4.17
-\begin{longtable}{|l|c|}
-  \caption{Hasil pengujian kelas mundur pada 35 Lux}
-  \label{tb:luxmundur} \\
-  \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{Detection State}                           \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-\end{longtable}
-
-%Tabel 4.18
-\begin{longtable}{|l|c|}
-  \caption{Hasil pengujian kelas stop pada 35 Lux}
-  \label{tb:luxstop} \\
-  \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{Detection State}                           \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-\end{longtable}
+Berdasarkan hasil pengujian performa model dengan variasi pencahayaan 35 Lux pada Tabel \ref{tb:lux35}, model menunjukkan tingkat keberhasilan yang sempurna pada kelas "Kanan", "Kiri", dan "Stop" dengan masing-masing tingkat keberhasilan 100\% dan tanpa kesalahan deteksi. Namun, pada kelas "Maju", tingkat keberhasilan sebesar 90\% dengan 3 kesalahan deteksi (10\%), dan pada kelas "Mundur", tingkat keberhasilan 93.33\% dengan 2 kesalahan deteksi (6.67\%). Hasil ini menunjukkan bahwa meskipun model umumnya memiliki performa yang baik, akurasi deteksi pada kelas "Maju" dan "Mundur" masih dipengaruhi oleh variasi pencahayaan.
 
 \subsection{Pengujian pada cahaya 77 Lux}
 
-\begin{longtable}{|l|c|}
-  \caption{Hasil pengujian kelas kanan pada 77 Lux}
-  \label{tb:lux77kanan} \\
+Pada bagian ini, akan dianalisis bagaimana model beroperasi di bawah pencahayaan sebesar 77 Lux. Pencahayaan ini mensimulasikan kondisi ruangan yang normal. Pengujian ini bertujuan untuk memastikan bahwa model dapat mendeteksi dan mengklasifikasikan gerakan mata dengan akurasi tinggi dalam kondisi pencahayaan normal. Hasil pengujian ini akan memberikan gambaran mengenai kemampuan model beradaptasi dengan baik terhadap variasi pencahayaan dalam lingkungan sehari-hari.
+
+%Tabel 4.14
+\begin{longtable}{|l|c|c|c|c|}
+  \caption{Pengujian Kinerja Model dengan Pencahayaan 77 Lux}
+  \label{tb:lux77} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{Detection State}                           \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
+  \textbf{Kelas} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Keberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Keridakberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Persentase \\ Keberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Persentase\\ Ketidakberhasilan\end{tabular}}} \\ \hline
+  Kanan  & 30                                                                                  & 0                                                                                        & 100\%                                                                                   & 0\%                                                                                         \\ \hline
+  Kiri   & 30                                                                                  & 0                                                                                        & 100\%                                                                                   & 0\%                                                                                         \\ \hline
+  Maju   & 29                                                                                  & 1                                                                                        & 96.67\%                                                                                    & 3.33\%                                                                                        \\ \hline
+  Mundur & 28                                                                                  & 2                                                                                        & 93.33\%                                                                                 & 6.67\%                                                                                      \\ \hline
+  Stop   & 30                                                                                  & 0                                                                                        & 100\%                                                                                   & 0\%                                                                                         \\ \hline
 \end{longtable}
 
-%Tabel 4.15
-\begin{longtable}{|l|c|}
-  \caption{Hasil pengujian kelas kiri pada 77 Lux}
-  \label{tb:lux77kiri} \\
-  \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{Detection State}                           \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-\end{longtable}
-
-%Tabel 4.16
-\begin{longtable}{|l|c|}
-  \caption{Hasil pengujian kelas maju pada 77 Lux}
-  \label{tb:lux77maju} \\
-  \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{Detection State}                           \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-\end{longtable}
-
-%Tabel 4.17
-\begin{longtable}{|l|c|}
-  \caption{Hasil pengujian kelas mundur pada 77 Lux}
-  \label{tb:lux77mundur} \\
-  \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{Detection State}                           \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-\end{longtable}
-
-%Tabel 4.18
-\begin{longtable}{|l|c|}
-  \caption{Hasil pengujian kelas stop pada 77 Lux}
-  \label{tb:lux77stop} \\
-  \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{Detection State}                           \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-\end{longtable}
+Pada Tabel \ref{tb:lux77}, pengujian kinerja model dengan pencahayaan 77 Lux, hasil menunjukkan bahwa model secara umum memiliki tingkat akurasi yang baik. Perintah "Kanan", "Kiri", dan "Stop" mencapai tingkat keberhasilan 100\% tanpa ada kegagalan deteksi. Sementara itu, perintah "Maju" dan "Mundur" masing-masing mencapai tingkat keberhasilan 96,67\% dan 93,33\%, dengan tingkat ketidakberhasilan sebesar 3,33\% dan 6,67\%. Perbedaan dalam tingkat keberhasilan ini menunjukkan bahwa model sedikit kurang optimal dalam mendeteksi perintah "Maju" dan "Mundur" dibandingkan dengan perintah lainnya. Meski demikian, hasil keseluruhan tetap menunjukkan bahwa model memiliki kinerja yang andal dalam lingkungan bercahaya normal.
 
 \subsection{Pengujian pada cahaya 131 Lux}
 
-\begin{longtable}{|l|c|}
-  \caption{Hasil pengujian kelas kanan pada 131 Lux}
-  \label{tb:lux131kanan} \\
+Pengujian kinerja model pada kondisi pencahayaan 131 Lux dilakukan untuk mengevaluasi kemampuan sistem kontrol kursi roda berbasis gerakan mata dalam lingkungan dengan pencahayaan terang. Pengujian ini bertujuan untuk memastikan bahwa model dapat mendeteksi dan mengklasifikasikan gerakan mata dengan akurasi tinggi dalam kondisi pencahayaan terang. Hasil pengujian ini akan memberikan gambaran mengenai kemampuan model beradaptasi dengan baik terhadap variasi pencahayaan dalam lingkungan sehari-hari yang lebih terang.
+
+\begin{longtable}{|l|c|c|c|c|}
+  \caption{Pengujian Kinerja Model dengan Pencahayaan 131 Lux}
+  \label{tb:lux131} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{Detection State}                           \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
-  Kanan          & Frame detected!: Class ID = 0, Class Name = Kanan \\ \hline
+  \textbf{Kelas} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Keberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Keridakberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Persentase \\ Keberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Persentase\\ Ketidakberhasilan\end{tabular}}} \\ \hline
+  Kanan          & 30                                                                                           & 0                                                                                                 & 100\%                                                                                            & 0\%                                                                                                  \\ \hline
+  Kiri           & 30                                                                                           & 0                                                                                                 & 100\%                                                                                            & 0\%                                                                                                  \\ \hline
+  Maju           & 30                                                                                           & 0                                                                                                 & 100\%                                                                                            & 0\%                                                                                                  \\ \hline
+  Mundur         & 30                                                                                           & 0                                                                                                 & 100\%                                                                                            & 0\%                                                                                                  \\ \hline
+  Stop           & 30                                                                                           & 0                                                                                                 & 100\%                                                                                            & 0\%                                                                                                  \\ \hline
 \end{longtable}
 
-%Tabel 4.15
-\begin{longtable}{|l|c|}
-  \caption{Hasil pengujian kelas kiri pada 131 Lux}
-  \label{tb:lux131kiri} \\
-  \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{Detection State}                           \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-  Kiri           & Frame detected!: Class ID = 1, Class Name = Kiri \\ \hline
-\end{longtable}
-
-%Tabel 4.16
-\begin{longtable}{|l|c|}
-  \caption{Hasil pengujian kelas maju pada 131 Lux}
-  \label{tb:lux131maju} \\
-  \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{Detection State}                           \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-  Maju           & Frame detected!: Class ID = 2, Class Name = Maju   \\ \hline
-\end{longtable}
-
-%Tabel 4.17
-\begin{longtable}{|l|c|}
-  \caption{Hasil pengujian kelas mundur pada 131 Lux}
-  \label{tb:lux131mundur} \\
-  \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{Detection State}                           \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur        & Frame detected!: Class ID = 3, Class Name = Mundur   \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur        & Frame detected!: Class ID = 3, Class Name = Mundur   \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-  Mundur         & Frame detected!: Class ID = 3, Class Name = Mundur \\ \hline
-\end{longtable}
-
-%Tabel 4.18
-\begin{longtable}{|l|c|}
-  \caption{Hasil pengujian kelas stop pada 131 Lux}
-  \label{tb:lux131stop} \\
-  \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{Detection State}                           \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-  Stop           & Frame detected!: Class ID = 4, Class Name = Stop \\ \hline
-\end{longtable}
+Berdasarkan Tabel \ref{tb:lux131} diatas, hasil menunjukkan bahwa model memiliki tingkat akurasi yang sempurna dalam mendeteksi semua perintah gerakan mata. Setiap perintah, termasuk "Kanan", "Kiri", "Maju", "Mundur", dan "Stop", berhasil terdeteksi dengan tingkat keberhasilan 100\% tanpa ada satu pun kesalahan atau kegagalan deteksi. Hasil ini menegaskan bahwa model bekerja secara optimal dalam kondisi pencahayaan terang, menunjukkan bahwa pencahayaan 131 Lux mendukung model untuk memberikan kinerja yang sangat andal dalam mengenali dan mengklasifikasikan \emph{gesture} mata dengan tepat.
 
 \section{Pengujian Performa \emph{Frame Per Second} (FPS) pada Sistem}
 
+Pengujian performa \emph{Frame Per Second} (FPS) bertujuan untuk mengevaluasi kecepatan sistem dalam memproses gerakan mata secara real-time untuk mengontrol kursi roda. FPS merupakan indikator penting dalam menilai kelancaran dan responsivitas sistem, terutama dalam aplikasi yang memerlukan deteksi gerakan dan pengambilan keputusan yang cepat. Pada sub-bagian ini, dilakukan pengujian performa FPS untuk memastikan bahwa sistem dapat mempertahankan tingkat kecepatan pemrosesan yang memadai, sehingga kontrol kursi roda dapat berjalan lancar dan responsif. Pengujian dilakukan sebanyak tiga puluh kali pada setiap kelas.
+
+Hasil pengujian pada Tabel \ref{tb:fpskanankiri} menunjukkan bahwa performa FPS pada laptop secara konsisten lebih tinggi dibandingkan Intel NUC untuk kedua perintah "Kanan" dan "Kiri". Pada perintah "Kanan," FPS rata-rata pada laptop mencapai 12,745, sementara pada Intel NUC hanya mencapai 10,567. Pada perintah "Kiri", FPS rata-rata pada laptop mencapai 12,635, sedangkan pada Intel NUC hanya mencapai 10,617.
+
+Perbedaan kinerja FPS ini menunjukkan bahwa laptop mampu memproses gambar lebih cepat dan stabil dibandingkan Intel NUC. Untuk perintah "Kanan", kisaran FPS pada laptop berada antara 10,389 hingga 13,959, sementara pada Intel NUC antara 7,762 hingga 12,177. Sedangkan pada perintah "Kiri", kisaran FPS pada laptop berada antara 10,617 hingga 14,280, sementara pada Intel NUC antara 8,554 hingga 13,127.
+
 \begin{longtable}{|c|c|c|c|c|c|c|}
-  \caption{Hasil performa FPS pada kelas kanan}
+  \caption{Hasil Performa FPS pada Kelas Kanan dan Kiri}
   \label{tb:fpskanankiri} \\
   \cline{1-3} \cline{5-7}
   \rowcolor[HTML]{C0C0C0} 
@@ -959,8 +420,10 @@ Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari 
   Kanan          & 13.765              & 10.257           &  & Kiri           & 12.814              & 11.979           \\ \cline{1-3} \cline{5-7} 
 \end{longtable}
 
+Selanjuntya, berdasarkan hasil pengujian performa \emph{Frame Per Second} (FPS) dari Tabel \ref{tb:fpsmajumundur}, pada perintah "Maju," FPS rata-rata pada laptop adalah 13,078 dengan kisaran antara 11,098 hingga 14,142, sedangkan pada Intel NUC, FPS rata-rata adalah 10,068 dengan kisaran antara 7,558 hingga 12,068. Sementara itu, pada perintah "Mundur," FPS rata-rata pada laptop mencapai 13,507 dengan kisaran antara 11,100 hingga 14,458, sementara pada Intel NUC, FPS rata-rata adalah 9,734 dengan kisaran antara 6,661 hingga 12,032.
+
 \begin{longtable}{|c|c|c|c|c|c|c|}
-  \caption{Hasil performa FPS pada kelas maju}
+  \caption{Hasil Performa FPS pada Kelas Maju dan Mundur}
   \label{tb:fpsmajumundur} \\ 
   \cline{1-3} \cline{5-7}
   \rowcolor[HTML]{C0C0C0}
@@ -997,8 +460,10 @@ Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari 
   Maju           & 12.905              & 11.077           &  & Mundur         & 12.984              & 10.034           \\ \cline{1-3} \cline{5-7} 
 \end{longtable}
 
+Pada hasil pengujian terakhir di Tabel \ref{tb:fpsstop} ditunjukkan bahwa pada laptop, kisaran FPS menunjukkan stabilitas yang cukup baik, dengan nilai minimum 10,415 dan nilai maksimum 13,972. Sebaliknya, kisaran FPS pada Intel NUC lebih variatif, dengan nilai minimum serendah 8,405 dan nilai maksimum 12,448.
+ 
 \begin{longtable}{|c|c|c|}
-  \caption{Hasil performa FPS pada kelas stop}
+  \caption{Hasil Performa FPS pada Kelas Stop}
   \label{tb:fpsstop} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -1035,16 +500,30 @@ Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari 
   Stop           & 13.530              & 10.028           \\ \hline
 \end{longtable}
 
+Secara keseluruhan, laptop memiliki performa FPS rata-rata yang lebih tinggi dibandingkan Intel NUC untuk semua perintah gerakan mata. Laptop mampu memproses gerakan mata dengan kecepatan dan stabilitas yang lebih baik, memberikan kontrol yang lebih responsif terhadap kursi roda. Variabilitas FPS pada laptop juga lebih rendah, menunjukkan kestabilan pemrosesan yang lebih baik dibandingkan Intel NUC.
+
+Meskipun performa FPS pada Intel NUC lebih rendah dibandingkan laptop, perangkat ini tetap memiliki beberapa keunggulan. Pertama, Intel NUC memiliki desain yang kecil dan kompak, sehingga lebih mudah dipasang pada kursi roda dan tidak memakan banyak ruang. Kedua, konsumsi daya Intel NUC lebih rendah dibandingkan laptop, membuatnya lebih efisien dan ideal untuk aplikasi dengan daya terbatas. Ketiga, Intel NUC menyediakan berbagai opsi konektivitas, seperti HDMI, USB, dan jaringan, sehingga memudahkan integrasi dengan komponen sistem lain. Terakhir, dibandingkan dengan laptop, Intel NUC cenderung lebih terjangkau, sehingga dapat mengurangi biaya total sistem.
+
 \section{Pengujian Waktu dari \emph{Inference Time} pada Model ke \emph{Response Time} pada Motor Kursi Roda}
 
+Pengujian waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda bertujuan untuk mengevaluasi seberapa cepat sistem kontrol kursi roda berbasis gerakan mata dapat merespons perintah dari pengguna. \emph{Inference Time} mengukur waktu yang dibutuhkan oleh model untuk mendeteksi dan mengklasifikasikan gerakan mata, sementara \emph{Response Time} mengukur waktu yang diperlukan motor kursi roda untuk mulai bergerak setelah menerima sinyal dari model.
+
+Pengujian ini sangat penting karena waktu respons yang cepat dan akurat merupakan kunci dalam memberikan kontrol yang aman dan nyaman bagi pengguna kursi roda. Untuk mendapatkan hasil yang lebih representatif, pengujian akan dilakukan untuk setiap kelas perintah (seperti "Maju," "Mundur," "Kanan," "Kiri," dan "Stop") sebanyak 30 kali pengujian per kelas. Hasil pengujian akan dianalisis untuk memberikan wawasan tentang efisiensi sistem secara keseluruhan dan area yang dapat ditingkatkan untuk mencapai kinerja yang lebih baik.
+
 \subsection{Kelas Kanan}
+
+Pada bagian ini, dilakukan pengujian waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda untuk perintah "Kanan." Pengujian ini bertujuan untuk mengevaluasi seberapa cepat sistem kontrol kursi roda berbasis gerakan mata dapat merespons perintah "Kanan" dari pengguna. Setiap pengujian dilakukan sebanyak 30 kali untuk memastikan hasil yang konsisten dan representatif. 
+
+Berdasarkan Tabel \ref{tb:delaykanan} di bawah, ditunjukkan waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda untuk perintah "Kanan." Rata-rata \emph{response time} keseluruhan untuk perintah "Kanan" adalah 0,2328 detik, dengan variabilitas waktu respons berkisar antara 0,035 hingga 0,399 detik.
+
+\emph{Inference Time}, yaitu waktu yang dibutuhkan oleh model untuk mendeteksi dan mengklasifikasikan perintah "Kanan," memiliki rata-rata sekitar 0,0626 detik. Variabilitas \emph{Inference Time} cukup kecil, dengan kisaran antara 0,0491 hingga 0,0777 detik.
 
 \begin{longtable}{|c|c|c|c|c|c|}
   \caption{Hasil pengujian \emph{response time} pada kelas kanan}
   \label{tb:delaykanan} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
-      \textbf{Kelas} & \textbf{Inference Time} & \textbf{Sent Time} & \textbf{Received Time} & \textbf{Motor Time } & \textbf{Response Time} \\ \hline
+  \multicolumn{1}{|l|}{\textbf{Kelas}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Inference \\ Time\end{tabular}}} & \multicolumn{1}{c|}{\textbf{Sent Time}} & \multicolumn{1}{l|}{\textbf{Received Time}} & \multicolumn{1}{l|}{\textbf{Motor Time}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Response \\ Time\end{tabular}}} \\ \hline
       Kanan & 0.062386 & 21:48:29.354 & 21:48:29.394 & 21:48:29.394 & 0.040 \\ \hline
       Kanan & 0.061566 & 21:48:29.735 & 21:48:29.780 & 21:48:29.780 & 0.045 \\ \hline
       Kanan & 0.077753 & 21:48:31.928 & 21:48:32.256 & 21:48:32.256 & 0.328 \\ \hline
@@ -1084,7 +563,7 @@ Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari 
   \label{tb:delaykiri} \\
   \hline
   \rowcolor[HTML]{C0C0C0}
-      \textbf{Kelas} & \textbf{Inference Time} & \textbf{Sent Time} & \textbf{Received Time} & \textbf{Motor Time} & \textbf{Response Time} \\ \hline
+  \multicolumn{1}{|l|}{\textbf{Kelas}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Inference \\ Time\end{tabular}}} & \multicolumn{1}{c|}{\textbf{Sent Time}} & \multicolumn{1}{l|}{\textbf{Received Time}} & \multicolumn{1}{l|}{\textbf{Motor Time}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Response \\ Time\end{tabular}}} \\ \hline
       Kiri & 0.052666 & 21:14:16.832 & 21:14:16.882 & 21:14:16.882 & 0.050 \\ \hline
       Kiri & 0.061696 & 21:14:20.393 & 21:14:20.446 & 21:14:20.446 & 0.053 \\ \hline
       Kiri & 0.052505 & 21:14:21.589 & 21:14:21.712 & 21:14:21.712 & 0.123 \\ \hline
@@ -1124,7 +603,7 @@ Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari 
   \label{tb:delaymaju} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
-      \textbf{Kelas} & \textbf{Inference Time} & \textbf{Sent Time} & \textbf{Received Time} & \textbf{Motor Time} & \textbf{Response Time} \\ \hline
+  \multicolumn{1}{|l|}{\textbf{Kelas}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Inference \\ Time\end{tabular}}} & \multicolumn{1}{c|}{\textbf{Sent Time}} & \multicolumn{1}{l|}{\textbf{Received Time}} & \multicolumn{1}{l|}{\textbf{Motor Time}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Response \\ Time\end{tabular}}} \\ \hline
       Maju & 0.071632 & 02:19:50.650 & 02:19:50.687 & 02:19:51.071 & 0.421 \\ \hline
       Maju & 0.072398 & 02:19:52.771 & 02:19:52.839 & 02:19:52.988 & 0.217 \\ \hline
       Maju & 0.060674 & 02:19:55.208 & 02:19:55.257 & 02:19:55.618 & 0.410 \\ \hline
@@ -1164,7 +643,7 @@ Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari 
   \label{tb:delaymundur} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
-      \textbf{Kelas} & \textbf{Inference Time} & \textbf{Sent Time} & \textbf{Received Time} & \textbf{Motor Time} & \textbf{Response Time} \\ \hline
+  \multicolumn{1}{|l|}{\textbf{Kelas}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Inference \\ Time\end{tabular}}} & \multicolumn{1}{c|}{\textbf{Sent Time}} & \multicolumn{1}{l|}{\textbf{Received Time}} & \multicolumn{1}{l|}{\textbf{Motor Time}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Response \\ Time\end{tabular}}} \\ \hline
       Mundur & 0.071819 & 03:31:55.289 & 03:31:55.373 & 03:31:55.540 & 0.251 \\ \hline
       Mundur & 0.064442 & 03:32:00.337 & 03:32:00.374 & 03:32:00.408 & 0.071 \\ \hline
       Mundur & 0.079433 & 03:32:00.691 & 03:32:00.742 & 03:32:00.742 & 0.051 \\ \hline
@@ -1204,7 +683,7 @@ Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari 
   \label{tb:delaystop} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
-      \textbf{Kelas} & \textbf{Inference Time} & \textbf{Sent Time} & \textbf{Received Time} & \textbf{Motor Time} & \textbf{Response Time} \\ \hline
+  \multicolumn{1}{|l|}{\textbf{Kelas}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Inference \\ Time\end{tabular}}} & \multicolumn{1}{c|}{\textbf{Sent Time}} & \multicolumn{1}{l|}{\textbf{Received Time}} & \multicolumn{1}{l|}{\textbf{Motor Time}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Response \\ Time\end{tabular}}} \\ \hline
       Stop & 0.065822 & 02:19:51.590 & 02:19:51.640 & 02:19:52.007 & 0.417 \\ \hline
       Stop & 0.058279 & 02:19:53.439 & 02:19:53.488 & 02:19:53.840 & 0.401 \\ \hline
       Stop & 0.062168 & 02:19:56.840 & 02:19:56.870 & 02:19:57.281 & 0.441 \\ \hline
