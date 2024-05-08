@@ -23,11 +23,11 @@ Pada sub-bab ini, dipaparkan mengenai hasil dari skenario pengujian yang telah d
 
 \section{Pengujian Performa Model dengan menggunakan \emph{Confusion Matrix}}
 
-Pada penelitian ini digunakan metode \emph{Convolutional Neural Network} (CNN) untuk membuat model. Selama pembuatan model CNN, dilakukan pengambilan dan pengelompokan data citra yang kemudian digunakan sebagai \emph{dataset} untuk pelatihan dan validasi model CNN. Data yang dilatih berupa citra \emph{landmark} mata yang telah dikelompokkan menjadi lima kelas seperti yang telah dipaparkan pada metodologi. Lima kelas yang mengelompokkan data citra \emph{landmark} mata adalah 'Kanan', 'Kiri', 'Maju', 'Mundur', dan 'Stop'.
+Pada penelitian ini digunakan metode \emph{Convolutional Neural Network} (CNN) untuk membuat model. Selama pembuatan model CNN, dilakukan pengambilan dan pengelompokan data citra yang kemudian digunakan sebagai \emph{dataset} untuk pelatihan dan validasi model CNN. Data yang dilatih berupa citra \emph{landmark} mata yang telah dikelompokkan menjadi lima kelas seperti yang telah dipaparkan pada metodologi. Lima kelas yang mengelompokkan data citra \emph{landmark} mata adalah 'Kanan', 'Kiri', 'Maju', 'Mundur', dan 'Stop'. \emph{Dataset} yang digunakan dalam penelitian ini terdiri dari data citra yang berjumlah 2000 data, dimana data citra tersebut dikelompokkan kelima kelas sehingga jumlahnya masing-masing 400 data per kelas. 
 
-\emph{Dataset} yang digunakan dalam penelitian ini terdiri dari data citra yang berjumlah 2000 data, dimana kemudian data citra tersebut dikelompokkan berdasarkan lima kelas sehingga jumlahnya masing-masing 400 data per kelas. Data-data citra tersebut dimasukkan ke dalam lima folder dengan label sesuai dengan nama kelas yang dipaparkan sebelumnya. Selanjutnya dalam masing-masing folder kelas, 400 data citra tersebut dibagi (\emph{split}) dengan bobot 70\% untuk data \emph{training} (pelatihan) sehingga berjumlah 280 data citra yang dimasukkan pada folder \emph{training }dan bobot 30\% untuk data \emph{validation} (validasi) sehingga berjumlah 120 data citra yang dimasukkan dalam folder \emph{validation}. Kelima folder kelas tersebut akan digunakan sebagai \emph{input} data \emph{training} dan data \emph{validation} dalam pembuatan model.
+Data-data citra tersebut dimasukkan ke dalam lima folder dengan label sesuai dengan nama kelas yang dipaparkan sebelumnya. Selanjutnya dalam masing-masing folder kelas, 400 data citra tersebut dibagi (\emph{split}) dengan bobot 70\% untuk data \emph{training} (pelatihan) sehingga berjumlah 280 data citra yang dimasukkan pada folder \emph{training }dan bobot 30\% untuk data \emph{validation} (validasi) sehingga berjumlah 120 data citra yang dimasukkan dalam folder \emph{validation}. Kelima folder kelas tersebut akan digunakan sebagai \emph{input} data \emph{training} dan data \emph{validation} dalam pembuatan model.
 
-Secara keseluruhan, \emph{dataset} citra \emph{landmark} mata yang digunakan dalam penelitian ini, berjumlah 2000 data citra yang dibagi ke dalam 5 kelas, dengan pembagian data pelatihan sebanyak 280 data citra dan data validasi sebanyak 120 data citra. Visualisasi pembagian \emph{dataset} yang digunakan pada penelitian ini dapat dilihat pada Gambar \ref{fig:dataset} beserta rinciannya pada Tabel \ref{tb:datadiagram}.
+Secara keseluruhan, \emph{dataset} citra \emph{landmark} mata yang digunakan dalam penelitian ini, berjumlah 2000 data citra yang dibagi ke dalam 5 kelas, dengan pembagian data pelatihan sebanyak 280 data citra dan data validasi sebanyak 120 data citra. Visualisasi pembagian \emph{dataset} yang digunakan dapat dilihat pada Gambar \ref{fig:dataset} beserta rinciannya pada Tabel \ref{tb:datadiagram}.
 
 %Gambar 4.1
 \begin{figure} [H] \centering
@@ -101,7 +101,7 @@ Kemudian dari \emph{confusion matrix}, didapatkan hasil klasifikasi yang dapat d
 
 Berdasarkan Tabel \ref{tb:cm_model} diatas, dapat dilihat pada semua kelas memiliki 120 data citra yang termasuk dalam \emph{true positive}, 480 data citra yang termasuk dalam \emph{true negative}, 0 data citra yang termasuk dalam \emph{false positive}, dan 0 data citra yang termasuk dalam \emph{false negative}. 
 
-Dari hasil klasifikasi tersebut, selanjutnya dapat dihitung nilai validasi model. Nilai validasi yang dihitung yaitu \emph{accuracy}, \emph{precision}, \emph{recall}, dan \emph{f-1 score}. Penggambaran lebih detail dapat dilihat pada Tabel \ref{tb:vs_model}
+Dari hasil klasifikasi tersebut, selanjutnya dapat dihitung nilai validasi model. Nilai validasi yang dihitung yaitu \emph{accuracy}, \emph{precision}, \emph{recall}, dan \emph{f-1 score}. Penggambaran lebih detail dapat dilihat pada Tabel \ref{tb:vs_model}. 
 
 %Tabel 4.3
 \begin{longtable}{|l|c|c|c|c|}
@@ -116,6 +116,8 @@ Dari hasil klasifikasi tersebut, selanjutnya dapat dihitung nilai validasi model
   Mundur     & 100\%            & 100\%             & 100\%           & 100\%            \\ \hline
   Stop  & 100\%            & 100\%             & 100\%           & 100\%            \\ \hline
 \end{longtable}
+
+\newpage
 
 Dilihat dari Tabel \ref{tb:vs_model}, nilai \emph{accuracy}, \emph{precision}, \emph{recall}, dan \emph{f1-score} pada semua kelas bernilai sama. Untuk kelas 'Kanan' , didapatkan nilai \emph{accuracy} sebesar 100\%, nilai \emph{precision} sebesar 100\%, nilai \emph{recall} sebesar 100\%, dan nilai \emph{f1-score} sebesar 100\%. Kemudian untuk kelas 'Kiri' , didapatkan nilai \emph{accuracy} sebesar 100\%, nilai \emph{precision} sebesar 100\%, nilai \emph{recall} sebesar 100\%, dan nilai \emph{f1-score} sebesar 100\%. Selanjutnya pada kelas 'Maju' , didapatkan nilai \emph{accuracy} sebesar 100\%, nilai \emph{precision} sebesar 100\%, nilai \emph{recall} sebesar 100\%, dan nilai \emph{f1-score} sebesar 100\%. Untuk kelas 'Mundur' , didapatkan nilai \emph{accuracy} sebesar 100\%, nilai \emph{precision} sebesar 100\%, nilai \emph{recall} sebesar 100\%, dan nilai \emph{f1-score} sebesar 100\%. Terakhir pada kelas 'Stop' , didapatkan nilai \emph{accuracy} sebesar 100\%, nilai \emph{precision} sebesar 100\%, nilai \emph{recall} sebesar 100\%, dan nilai \emph{f1-score} sebesar 100\%. Nilai validasi tersebut bisa didapatkan karena nilai \emph{true positive}, \emph{true negative}, \emph{false positive}, dan \emph{false negative} dari \emph{confusion matrix} yang dipaparkan pada Tabel \ref{tb:cm_model} memiliki nilai prediksi yang baik untuk kelima kelas.
 
@@ -132,7 +134,7 @@ Skenario pengujian jarak yang pertama dilakukan dengan jarak 30 sentimeter dari 
 %Gambar 4.4
 \begin{figure} [H] \centering
   % Nama dari file gambar yang diinputkan
-  \includegraphics[width=0.3\textwidth]{gambar/bab4/model5 (30cm)/matrix.png}
+  \includegraphics[width=0.35\textwidth]{gambar/bab4/model5 (30cm)/matrix.png}
   % Keterangan gambar yang diinputkan
   \caption{\emph{Confusion Matrix} Model Pengujian dengan Jarak 30 cm}
   % Label referensi dari gambar yang diinputkan
@@ -143,7 +145,7 @@ Kemudian dari \emph{confusion matrix} yang didapat, diperoleh nilai TP, TN, FP, 
 
 %Tabel 4.4
 \begin{longtable}{|l|c|c|c|c|}
-  \caption{Tabel Hasil Klasifikasi dari Jarak 30 cm}
+  \caption{Hasil Klasifikasi dengan Jarak 30 cm}
   \label{tb:cm_model2} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -173,14 +175,14 @@ Dari nilai TP, TN , FP, dan FN diatas, dapat dihitung nilai \emph{accuracy}, \em
 
 \subsection{Jarak 50 sentimeter}
 
-Selanjutnya, pengujian dilakukan dengan variasi jarak 50 sentimeter. Dari data pada \emph{confusion matrix}, dapat dilihat bahwa setiap kelas memiliki 120 prediksi yang benar dan tidak terdapat kesalahan klasifikasi antarkelas mana pun. Setiap nilai diagonal yang mencapai 120 mengindikasikan bahwa semua prediksi untuk kelas tersebut sesuai dengan label sebenarnya, tanpa ada satu pun yang salah. Ini menandakan bahwa model mampu dengan sempurna menginterpretasikan sinyal input untuk menghasilkan respons yang tepat sesuai dengan perintah yang diharapkan.
+Selanjutnya, pengujian dilakukan dengan variasi jarak 50 sentimeter. Dari data pada \emph{confusion matrix}, dapat dilihat bahwa setiap kelas memiliki 120 prediksi yang benar dan tidak terdapat kesalahan klasifikasi antarkelas mana pun. Setiap nilai diagonal yang mencapai 120 mengindikasikan bahwa semua prediksi untuk kelas tersebut sesuai dengan label sebenarnya. 
 
 %Gambar 4.5
 \begin{figure} [H] \centering
   % Nama dari file gambar yang diinputkan
-  \includegraphics[width=0.25\textwidth]{gambar/bab4/model6 (50cm)/matrix.png}
+  \includegraphics[width=0.35\textwidth]{gambar/bab4/model6 (50cm)/matrix.png}
   % Keterangan gambar yang diinputkan
-  \caption{\emph{Confusion Matrix} Model Pengujian dengan Jarak 30 cm}
+  \caption{\emph{Confusion Matrix} Model Pengujian dengan Jarak 50 cm}
   % Label referensi dari gambar yang diinputkan
   \label{fig:matrix3}
 \end{figure}
@@ -189,7 +191,7 @@ Pada Tabel \ref{tb:cm_model3} yang disajikan menampilkan hasil pengujian model k
 
 %Tabel 4.6
 \begin{longtable}{|l|c|c|c|c|}
-  \caption{Hasil klasifikasi model dengan \emph{confusion matrix}}
+  \caption{Hasil Klasifikasi dengan Jarak 50 cm}
   \label{tb:cm_model3} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -205,7 +207,7 @@ Berdasarkan nilai TP, TN, FP, dan FN yang didapatkan, dapat didapatkan nilai 100
 
 %Tabel 4.7
 \begin{longtable}{|l|c|c|c|c|}
-  \caption{Hasil validasi nilai model}
+  \caption{Hasil Validasi Nilai Model dengan Jarak 50 cm}
   \label{tb:vs_model3} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -224,9 +226,9 @@ Pada tahap pengujian berikutnya, dilakukan pengujian model dengan jarak 70 senti
 %Gambar 4.7
 \begin{figure} [H] \centering
   % Nama dari file gambar yang diinputkan
-  \includegraphics[width=0.25\textwidth]{gambar/bab4/model8 (90cm)/matrix.png}
+  \includegraphics[width=0.35\textwidth]{gambar/bab4/model8 (90cm)/matrix.png}
   % Keterangan gambar yang diinputkan
-  \caption{\emph{Confusion Matrix} Model Hasil Pelatihan}
+  \caption{\emph{Confusion Matrix} Model Pengujian dengan Jarak 70 cm}
   % Label referensi dari gambar yang diinputkan
   \label{fig:matrix5}
 \end{figure}
@@ -235,7 +237,7 @@ Dari analisis tabel performa klasifikasi model dengan jarak 70 sentimeter dapat 
 
 %Tabel 4.8
 \begin{longtable}{|l|c|c|c|c|}
-  \caption{Hasil klasifikasi model dengan \emph{confusion matrix}}
+  \caption{Hasil Klasifikasi dengan Jarak 70 cm}
   \label{tb:cm_model5} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -247,11 +249,11 @@ Dari analisis tabel performa klasifikasi model dengan jarak 70 sentimeter dapat 
   Stop  & 120          & 480         & 0           & 0           \\ \hline
 \end{longtable}
 
-Setelah didapatkan nilai TP, TN, FP, dan FN untuk masing-masing kelas, selanjutnya didapatkan untuk kelas Kanan, Kiri, dan Stop, model mencapai skor sempurna di semua metrik—\emph{Accuracy, Precision, Recall}, dan \emph{F1-Score}—semuanya 100\%. Sedangkan untuk kelas Maju, model ini masih menunjukkan hasil yang sangat baik dengan \emph{Accuracy} sebesar 99.50\%, \emph{Precision} 100\%, \emph{Recall} 97.50\%, dan \emph{F1-Score} 98.73\%. Untuk kelas Mundur, model mencatat \emph{Accuracy} 99.50\%, namun dengan \emph{Precision} sedikit menurun menjadi 97.56\%, yang mencerminkan adanya beberapa kesalahan dalam memprediksi gestur sebagai Mundur. Namun, dengan \emph{Recall} 100\% dan \emph{F1-Score} 98.77\%, dapat dilihat bahwa model tersebut secara konsisten mengidentifikasi semua gestur Mundur yang sebenarnya, menegaskan keandalan dan efektivitasnya dalam aplikasi praktis.
+Pada Tabel \ref{tb:vs_model5}, untuk kelas Maju, model menunjukkan hasil dengan \emph{Accuracy} sebesar 99.50\%, \emph{Precision} 100\%, \emph{Recall} 97.50\%, dan \emph{F1-Score} 98.73\%. Untuk kelas Mundur, model mencatat \emph{Accuracy} 99.50\%, namun dengan \emph{Precision} sedikit menurun menjadi 97.56\%, yang mencerminkan adanya beberapa kesalahan dalam memprediksi gestur sebagai Mundur. Namun, dengan \emph{Recall} 100\% dan \emph{F1-Score} 98.77\%, dapat dilihat bahwa model tersebut secara konsisten mengidentifikasi semua gestur Mundur yang sebenarnya.
 
 %Tabel 4.9
 \begin{longtable}{|l|c|c|c|c|}
-  \caption{Hasil validasi nilai model}
+  \caption{Hasil Validasi Nilai Model dengan Jarak 70 cm}
   \label{tb:vs_model5} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -270,18 +272,18 @@ Skenario pengujian jarak yang terakhir adalah dengan jarak 90 sentimeter dari ka
 %Gambar 4.8
 \begin{figure} [H] \centering
   % Nama dari file gambar yang diinputkan
-  \includegraphics[width=0.25\textwidth]{gambar/bab4/model5 (30cm)/110cm/matrix.png}
+  \includegraphics[width=0.35\textwidth]{gambar/bab4/model5 (30cm)/110cm/matrix.png}
   % Keterangan gambar yang diinputkan
-  \caption{\emph{Confusion Matrix} Model Hasil Pelatihan}
+  \caption{\emph{Confusion Matrix} Model Pengujian dengan Jarak 90 cm}
   % Label referensi dari gambar yang diinputkan
   \label{fig:matrix6}
 \end{figure}
 
-Dari hasil perhitungan \emph{confusion matrix} didapatkan hasil klasifikasi model. Untuk kelas Kanan, model hampir sempurna dengan 119 TP dan hanya satu FN, menunjukkan efektivitas tinggi dalam mengenali gestur ini. Sementara itu, kelas Kiri mengalami sedikit kesulitan dengan 6 FN, mengindikasikan beberapa kasus di mana gestur Kiri tidak terdeteksi dengan akurat. Untuk kelas Maju, model ini mengalami 11 FP dan satu FN, menandakan bahwa peningkatan kemampuan model dalam membedakan gestur Maju dari yang lain diperlukan. Kelas Mundur menunjukkan performa yang sangat baik dengan tidak adanya FP atau FN. Akhirnya, untuk kelas Stop, ada satu FP dan empat FN, yang menunjukkan bahwa beberapa gestur Stop tidak teridentifikasi sebagai Stop. Hasil ini menyoroti beberapa kekuatan dan kelemahan dalam model yang perlu diperbaiki untuk mencapai akurasi yang lebih tinggi, terutama dalam mengurangi FN dan FP di kelas tertentu.
+Dari hasil perhitungan \emph{confusion matrix} didapatkan hasil klasifikasi model. Untuk kelas Kanan, model hampir sempurna dengan 119 TP dan hanya satu FN, menunjukkan efektivitas tinggi dalam mengenali gestur ini. Sementara itu, kelas Kiri mengalami sedikit kesulitan dengan 6 FN, mengindikasikan beberapa kasus di mana gestur Kiri tidak terdeteksi dengan akurat. Untuk kelas Maju, model ini mengalami 11 FP dan satu FN, menandakan bahwa peningkatan kemampuan model dalam membedakan gestur Maju dari yang lain diperlukan. Kelas Mundur menunjukkan performa yang sangat baik dengan tidak adanya FP atau FN. Akhirnya, untuk kelas Stop, ada satu FP dan empat FN, yang menunjukkan bahwa beberapa gestur Stop tidak teridentifikasi sebagai Stop.
 
 %Tabel 4.10
 \begin{longtable}{|l|c|c|c|c|}
-  \caption{Hasil klasifikasi model dengan \emph{confusion matrix}}
+  \caption{Hasil Klasifikasi dengan Jarak 90 cm}
   \label{tb:cm_model6} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -293,11 +295,13 @@ Dari hasil perhitungan \emph{confusion matrix} didapatkan hasil klasifikasi mode
   Stop  & 116          & 479         & 1           & 4           \\ \hline
 \end{longtable}
 
+\newpage
+
 Dari hasil perhitungan yang dilakukan berdasarkan nilai TP, TN, FP, dan FN, pada Tabel \ref{tb:vs_model6} berisi hasil validasi untuk setiap kelas dalam model klasifikasi gestur yang dikembangkan. Untuk kelas Kanan, model menunjukkan keakuratan tinggi dengan \textit{Accuracy} sebesar 99.83\%, \textit{Precision} 100\%, \textit{Recall} 99.17\%, dan \textit{F1-Score} 99.58\%. Pada kelas Kiri, model mencatatkan \textit{Accuracy} 99\%, \textit{Precision} 100\%, \textit{Recall} 95\%, dan \textit{F1-Score} 97.44\%. Untuk kelas Maju, metrik yang tercatat adalah \textit{Accuracy} 98\%, \textit{Precision} 91.54\%, \textit{Recall} 99.17\%, dan \textit{F1-Score} 95.20\%. Kelas Mundur menunjukkan performa sempurna dengan 100\% di semua metrik, dan kelas Stop memiliki \textit{Accuracy} 99.17\%, \textit{Precision} 99.15\%, \textit{Recall} 96.67\%, serta \textit{F1-Score} 97.89\%. 
 
 %Tabel 4.11
 \begin{longtable}{|l|c|c|c|c|}
-  \caption{Hasil validasi nilai model}
+  \caption{Hasil Validasi Nilai Model dengan Jarak 90 cm}
   \label{tb:vs_model6} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -311,7 +315,7 @@ Dari hasil perhitungan yang dilakukan berdasarkan nilai TP, TN, FP, dan FN, pada
 
 Pengujian performa model dengan variasi jarak 30 sentimeter, 50 sentimeter, 70 sentimeter, dan 90 sentimeter menunjukkan tren yang jelas bahwa semakin jauh jarak, performa model semakin berkurang. Hal ini dibuktikan dengan penurunan nilai akurasi, presisi, recall, dan f1 score seiring bertambahnya jarak. Pada jarak 30 sentimeter dan 50 sentimeter, model mencapai performa terbaik dengan akurasi yang tinggi, serta nilai presisi, recall, dan f1 score yang konsisten di setiap kelas perintah. Namun, ketika jarak meningkat 70 sentimeter, mulai terlihat penurunan performa, dengan semakin banyak prediksi yang keliru pada matriks kebingungan. Pada jarak 90 sentimeter, penurunan performa menjadi lebih signifikan dalam nilai presisi, recall, dan f1 score terutama pada kelas "Maju" dan kelas "Mundur".
 
-Secara keseluruhan, hasil pengujian ini menegaskan bahwa jarak antara kamera dan pengguna memiliki pengaruh yang signifikan terhadap performa model. Model bekerja paling optimal pada jarak 30 sentimeter, sedangkan jarak yang lebih jauh seperti 70 sentimeter dan 90 sentimeter performa model menjadi kurang optimal. Dengan demikian, pemilihan jarak ideal menjadi penting dalam implementasi sistem kontrol kursi roda berbasis gerakan mata ini, untuk memastikan akurasi dan responsivitas yang optimal bagi pengguna.
+Secara keseluruhan, hasil pengujian ini menegaskan bahwa jarak antara kamera dan pengguna memiliki pengaruh yang signifikan terhadap performa model. Model bekerja paling optimal pada jarak 30 sentimeter, sedangkan jarak yang lebih jauh seperti 70 sentimeter dan 90 sentimeter performa model menjadi kurang optimal. Dengan demikian, pemilihan jarak ideal menjadi penting dalam implementasi sistem kontrol kursi roda berbasis \emph{gesture} mata.
 
 \section{Pengujian Performa Model dengan menggunakan Variasi Pencahayaan}
 
@@ -321,7 +325,7 @@ Jenis pencahayaan yang diuji adalah \emph{ambient light}, yang mensimulasikan pe
 
 \subsection{Pengujian pada cahaya 35 Lux}
 
-Pengujian pada kondisi pencahayaan 35 lux bertujuan untuk mengevaluasi performa model dalam mendeteksi gerakan mata pada situasi pencahayaan yang redup. Kondisi ini mensimulasikan lingkungan dengan cahaya minimal yaitu di ruangan yang hanya diterangi lampu yang redup. Dalam kondisi ini, model diuji untuk mengenali dan mengklasifikasikan perintah gerakan mata dengan benar. Pada pengujian ini ditunjukkan kemampuan model dalam mengeksekusi perintah kontrol pada pencahayaan rendah.
+Pengujian pada kondisi pencahayaan 35 lux bertujuan untuk mengevaluasi performa model dalam mendeteksi gerakan mata pada situasi pencahayaan yang redup. Kondisi ini mensimulasikan lingkungan dengan cahaya minimal yaitu di ruangan yang hanya diterangi lampu yang redup. Pada pengujian ini ditunjukkan kemampuan model dalam mengeksekusi perintah kontrol pada pencahayaan rendah.
 
 %Tabel 4.12
 \begin{longtable}{|l|c|c|c|c|}
@@ -337,7 +341,7 @@ Pengujian pada kondisi pencahayaan 35 lux bertujuan untuk mengevaluasi performa 
   Stop   & 30                                                                                  & 0                                                                                        & 100\%                                                                                   & 0\%                                                                                         \\ \hline
 \end{longtable}
 
-Berdasarkan hasil pengujian performa model dengan variasi pencahayaan 35 Lux pada Tabel \ref{tb:lux35}, model menunjukkan tingkat keberhasilan yang sempurna pada kelas "Kanan", "Kiri", dan "Stop" dengan masing-masing tingkat keberhasilan 100\% dan tanpa kesalahan deteksi. Namun, pada kelas "Maju", tingkat keberhasilan sebesar 90\% dengan 3 kesalahan deteksi (10\%), dan pada kelas "Mundur", tingkat keberhasilan 93.33\% dengan 2 kesalahan deteksi (6.67\%). Hasil ini menunjukkan bahwa meskipun model umumnya memiliki performa yang baik, akurasi deteksi pada kelas "Maju" dan "Mundur" masih dipengaruhi oleh variasi pencahayaan.
+Berdasarkan hasil pengujian performa model dengan variasi pencahayaan 35 Lux pada Tabel \ref{tb:lux35}, model menunjukkan tingkat keberhasilan yang sempurna pada kelas "Kanan", "Kiri", dan "Stop" dengan masing-masing tingkat keberhasilan 100\%. Namun, pada kelas "Maju", tingkat keberhasilan sebesar 90\% dengan 3 kesalahan deteksi (10\%), dan pada kelas "Mundur", tingkat keberhasilan 93.33\% dengan 2 kesalahan deteksi (6.67\%). Hasil ini menunjukkan bahwa meskipun model umumnya memiliki performa yang baik, akurasi deteksi pada kelas "Maju" dan "Mundur" masih dipengaruhi oleh variasi pencahayaan.
 
 \subsection{Pengujian pada cahaya 77 Lux}
 
@@ -356,6 +360,8 @@ Pada bagian ini, akan dianalisis bagaimana model beroperasi di bawah pencahayaan
   Mundur & 28                                                                                  & 2                                                                                        & 93.33\%                                                                                 & 6.67\%                                                                                      \\ \hline
   Stop   & 30                                                                                  & 0                                                                                        & 100\%                                                                                   & 0\%                                                                                         \\ \hline
 \end{longtable}
+
+\newpage
 
 Pada Tabel \ref{tb:lux77}, pengujian kinerja model dengan pencahayaan 77 Lux, hasil menunjukkan bahwa model secara umum memiliki tingkat akurasi yang baik. Perintah "Kanan", "Kiri", dan "Stop" mencapai tingkat keberhasilan 100\% tanpa ada kegagalan deteksi. Sementara itu, perintah "Maju" dan "Mundur" masing-masing mencapai tingkat keberhasilan 96,67\% dan 93,33\%, dengan tingkat ketidakberhasilan sebesar 3,33\% dan 6,67\%. Perbedaan dalam tingkat keberhasilan ini menunjukkan bahwa model sedikit kurang optimal dalam mendeteksi perintah "Maju" dan "Mundur" dibandingkan dengan perintah lainnya. Meski demikian, hasil keseluruhan tetap menunjukkan bahwa model memiliki kinerja yang andal dalam lingkungan bercahaya normal.
 
@@ -467,7 +473,9 @@ Selanjuntya, berdasarkan hasil pengujian performa \emph{Frame Per Second} (FPS) 
   Maju           & 12.905              & 11.077           &  & Mundur         & 12.984              & 10.034           \\ \cline{1-3} \cline{5-7} 
 \end{longtable}
 
-Pada hasil pengujian terakhir di Tabel \ref{tb:fpsstop} ditunjukkan bahwa pada laptop, kisaran FPS menunjukkan stabilitas yang cukup baik, dengan nilai minimum 10,415 dan nilai maksimum 13,972. Sebaliknya, kisaran FPS pada Intel NUC lebih variatif, dengan nilai minimum serendah 8,405 dan nilai maksimum 12,448.
+Pada hasil pengujian terakhir di Tabel \ref{tb:fpsstop}, terlihat bahwa laptop memiliki kisaran FPS yang cukup stabil, dengan nilai minimum 10,415 dan maksimum 13,972. Ini menunjukkan bahwa laptop mampu menjaga performa pemrosesan gambar secara konsisten, yang penting untuk pengendalian kursi roda yang responsif.
+
+Sebaliknya, kisaran FPS pada Intel NUC lebih bervariasi, dengan nilai minimum serendah 8,405 dan maksimum 12,448. Variasi ini mungkin disebabkan oleh keterbatasan sumber daya pemrosesan Intel NUC dibandingkan dengan laptop. Meski begitu, Intel NUC tetap mampu menjalankan sistem dengan baik, meskipun fluktuasi FPS menunjukkan perlunya optimasi lebih lanjut untuk mencapai stabilitas yang lebih baik dan kontrol yang lebih halus.
 
 %Tabel 4.17
 \begin{longtable}{|c|c|c|}
@@ -510,7 +518,7 @@ Pada hasil pengujian terakhir di Tabel \ref{tb:fpsstop} ditunjukkan bahwa pada l
 
 Secara keseluruhan, laptop memiliki performa FPS rata-rata yang lebih tinggi dibandingkan Intel NUC untuk semua perintah gerakan mata. Laptop mampu memproses gerakan mata dengan kecepatan dan stabilitas yang lebih baik, memberikan kontrol yang lebih responsif terhadap kursi roda. Variabilitas FPS pada laptop juga lebih rendah, menunjukkan kestabilan pemrosesan yang lebih baik dibandingkan Intel NUC.
 
-Meskipun performa FPS pada Intel NUC lebih rendah dibandingkan laptop, perangkat ini tetap memiliki beberapa keunggulan. Pertama, Intel NUC memiliki desain yang kecil dan kompak, sehingga lebih mudah dipasang pada kursi roda dan tidak memakan banyak ruang. Kedua, konsumsi daya Intel NUC lebih rendah dibandingkan laptop, membuatnya lebih efisien dan ideal untuk aplikasi dengan daya terbatas. Ketiga, Intel NUC menyediakan berbagai opsi konektivitas, seperti HDMI, USB, dan jaringan, sehingga memudahkan integrasi dengan komponen sistem lain. Terakhir, dibandingkan dengan laptop, Intel NUC cenderung lebih terjangkau, sehingga dapat mengurangi biaya total sistem.
+Meskipun performa FPS pada Intel NUC lebih rendah dibandingkan laptop, perangkat ini tetap memiliki beberapa keunggulan. Pertama, Intel NUC memiliki desain yang kecil dan kompak, sehingga lebih mudah dipasang pada kursi roda dan tidak memakan banyak ruang. Kedua, konsumsi daya Intel NUC lebih rendah dibandingkan laptop, membuatnya lebih efisien dan ideal untuk aplikasi dengan daya terbatas. Ketiga, Intel NUC menyediakan berbagai opsi konektivitas, seperti HDMI, USB, dan jaringan, sehingga memudahkan integrasi dengan komponen sistem lain. 
 
 \section{Pengujian Waktu dari \emph{Inference Time} pada Model ke \emph{Response Time} pada Motor Kursi Roda}
 
@@ -733,7 +741,7 @@ Rata-rata waktu respons motor kursi roda (\emph{Response Time}) adalah 0,4318 de
 
 Dari semua hasil pengujian pada masing-masing kelas seperti yang tertera pada tabel-tabel di atas, dapat dilihat bahwa perintah "Kiri" memiliki waktu respons terendah dengan rata-rata 0,0933 detik, menunjukkan bahwa sistem dapat merespons perintah "Kiri" dengan cepat dan akurat. Sementara itu, perintah "Maju" dan "Stop" memiliki waktu respons yang lebih tinggi, masing-masing 0,4337 detik dan 0,4318 detik, menunjukkan bahwa sistem memerlukan waktu lebih lama untuk merespons perintah tersebut. Hal tersebut dikarenakan perintah "Maju" memiliki nilai \emph{Pulse Width Modulation} (PWM) yang lebih besar dibandingkan perintah lainnya.
 
-\emph{Inference Time} untuk semua perintah berada pada kisaran yang sama, antara 0,0626 hingga 0,0666 detik, menunjukkan bahwa model dapat mendeteksi dan mengklasifikasikan gerakan mata dengan cepat dan konsisten di semua kelas. Secara keseluruhan, hasil ini menunjukkan bahwa sistem kontrol kursi roda berbasis gerakan mata memiliki kinerja yang andal dan responsif, terutama pada perintah "Kanan," "Kiri," dan "Mundur," yang memiliki waktu respons rata-rata di bawah 0,25 detik.
+\emph{Inference Time} untuk semua perintah berada pada kisaran yang sama, antara 0,0626 hingga 0,0666 detik, menunjukkan bahwa model dapat mendeteksi dan mengklasifikasikan gerakan mata dengan cepat dan konsisten di semua kelas. Secara keseluruhan, hasil ini menunjukkan bahwa sistem kontrol kursi roda berbasis gerakan mata memiliki kinerja yang andal dan responsif, terutama pada perintah "Kanan," "Kiri," dan "Mundur," yang memiliki waktu respons rata-rata di bawah 0,25 detik. Selain itu, kecepatan deteksi dan klasifikasi yang cepat memastikan bahwa sistem dapat beradaptasi dengan perubahan gerakan mata secara real-time, memungkinkan navigasi yang lebih intuitif dan mengurangi risiko keterlambatan atau kesalahan interpretasi. Ini menambah keandalan sistem dalam berbagai kondisi lingkungan dan membantu meningkatkan pengalaman pengguna secara keseluruhan.
 
 \section{Pengujian Kestabilan pada Motor Kursi Roda}
 
@@ -743,9 +751,9 @@ Pengujian ini melibatkan pengukuran waktu yang dibutuhkan oleh motor untuk meres
 
 \subsection{Kestabilan Motor terhadap Kelas Kanan}
 
-Variasi pengujian pertama yang dilakukan adalah pengujian kestabilan motor terhadap perintah "Kanan." Pengujian ini bertujuan untuk mengevaluasi apakah waktu output yang dijalankan oleh motor tetap stabil setiap kali perintah "Kanan" diberikan oleh pengguna melalui sistem kontrol gerakan mata. Hasil pengujian dapat dilihat pada Tabel \ref{tb:motorkanan} di bawah, dimana waktu output motor (\emph{Motor Time}) diukur untuk setiap input yang diberikan oleh pengguna melalui sistem kontrol gerakan mata.
+Variasi pengujian pertama yang dilakukan adalah pengujian kestabilan motor terhadap perintah "Kanan." Pengujian ini bertujuan untuk mengevaluasi apakah waktu output yang dijalankan oleh motor tetap stabil setiap kali perintah "Kanan" diberikan oleh pengguna. Hasil pengujian dapat dilihat pada Tabel \ref{tb:motorkanan} di bawah, dimana waktu output motor (\emph{Motor Time}) diukur untuk setiap input yang diberikan oleh pengguna melalui sistem kontrol gerakan mata.
 
-Waktu output rata-rata motor untuk perintah "Kanan" adalah 6,013 detik, dengan variabilitas waktu berkisar antara 5,439 hingga 7,163 detik. Rentang waktu yang relatif sempit menunjukkan bahwa motor kursi roda dapat merespons perintah "Kanan" dengan cukup stabil dan konsisten. Secara keseluruhan, pengujian kestabilan motor kursi roda menunjukkan bahwa sistem kontrol mampu memberikan waktu respons yang stabil dan konsisten untuk perintah "Kanan." Meskipun ada sedikit variabilitas dalam waktu output motor, hasil ini menunjukkan bahwa sistem kontrol kursi roda berbasis gerakan mata dapat merespons perintah "Kanan" dengan cepat dan akurat.
+Waktu output rata-rata motor untuk perintah "Kanan" adalah 6,013 detik, dengan variabilitas waktu berkisar antara 5,439 hingga 7,163 detik. Rentang waktu yang relatif sempit menunjukkan bahwa motor kursi roda dapat merespons perintah "Kanan" dengan cukup stabil dan konsisten. Secara keseluruhan, pengujian kestabilan motor kursi roda menunjukkan bahwa sistem kontrol mampu memberikan waktu respons yang stabil untuk perintah "Kanan." Meskipun terdapat sedikit variasi dalam waktu respons, kisaran waktu yang relatif sempit memperkuat keandalan sistem kontrol.  
 
 %Tabel 4.23
 \begin{longtable}{|c|c|c|}
@@ -1118,8 +1126,6 @@ Berdasarkan pengamatan dari Tabel \ref{tb:motorstop} di bawah, waktu output rata
   Maju           & 17:33:41.677        &                         \\ \hline
 \end{longtable}
 
-Pengujian kestabilan motor kursi roda terhadap berbagai perintah ("Kanan," "Kiri," "Maju," "Mundur," dan "Stop") menunjukkan tingkat konsistensi yang bervariasi. Waktu output rata-rata untuk perintah "Kanan" adalah 6,013 detik, dengan rentang 5,439 hingga 7,163 detik, menandakan bahwa motor merespons perintah ini dengan cukup stabil meski terdapat beberapa variasi. Untuk perintah "Kiri," waktu output rata-rata adalah 6,469 detik, dengan kisaran 5,931 hingga 8,032 detik, menunjukkan adanya variasi yang lebih besar dalam respons motor.
+Pengujian kestabilan motor kursi roda terhadap berbagai perintah ("Kanan," "Kiri," "Maju," "Mundur," dan "Stop") menunjukkan tingkat konsistensi yang bervariasi. Waktu output rata-rata untuk perintah "Kanan" adalah 6,013 detik, dengan rentang 5,439 hingga 7,163 detik, menandakan bahwa motor merespons perintah ini dengan cukup stabil meski terdapat beberapa variasi. Untuk perintah "Kiri," waktu output rata-rata adalah 6,469 detik, dengan kisaran 5,931 hingga 8,032 detik, menunjukkan adanya variasi yang lebih besar dalam respons motor. Perintah "Maju" memiliki waktu output rata-rata 6,532 detik, dengan rentang antara 6,285 hingga 6,796 detik, menunjukkan konsistensi yang baik dalam kisaran 6 detik. Sementara itu, perintah "Mundur" menunjukkan waktu output rata-rata 6,863 detik, dengan variasi dari 6,470 hingga 7,235 detik, menandakan perlunya peningkatan stabilitas respons. Perintah "Stop" memiliki waktu output rata-rata tercepat, yaitu 4,933 detik, dengan kisaran antara 4,294 hingga 5,785 detik, menunjukkan respons motor yang lebih cepat dibandingkan perintah lainnya.
 
-Perintah "Maju" memiliki waktu output rata-rata 6,532 detik, dengan rentang antara 6,285 hingga 6,796 detik, menunjukkan konsistensi yang baik dalam kisaran 6 detik. Sementara itu, perintah "Mundur" menunjukkan waktu output rata-rata 6,863 detik, dengan variasi dari 6,470 hingga 7,235 detik, menandakan perlunya peningkatan stabilitas respons. Perintah "Stop" memiliki waktu output rata-rata tercepat, yaitu 4,933 detik, dengan kisaran antara 4,294 hingga 5,785 detik, menunjukkan respons motor yang lebih cepat dibandingkan perintah lainnya, meskipun terdapat beberapa variasi.
-
-Secara keseluruhan, sistem kontrol kursi roda mampu merespons semua perintah dengan tingkat stabilitas yang cukup baik. Perintah "Maju" menunjukkan stabilitas respons terbaik dengan rentang waktu output yang sempit, sementara perintah "Kiri" memiliki variasi waktu output terbesar. Meskipun terdapat variasi kecil dalam waktu output pada masing-masing kelas, hasil pengujian ini menunjukkan bahwa motor kursi roda merespons perintah dengan cukup konsisten.
+Secara keseluruhan, sistem kontrol kursi roda mampu merespons semua perintah dengan tingkat stabilitas yang baik. Perintah "Maju" menunjukkan stabilitas respons terbaik dengan rentang waktu output yang sempit, sementara perintah "Kiri" memiliki variasi waktu output terbesar. Meskipun terdapat variasi kecil dalam waktu output pada masing-masing kelas, hasil pengujian ini menunjukkan bahwa motor kursi roda merespons perintah dengan konsisten.
