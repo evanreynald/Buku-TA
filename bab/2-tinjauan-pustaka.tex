@@ -27,9 +27,7 @@ Penelitian ini menguraikan desain dan pengembangan kepala sistem kontrol kursi r
 kursi roda. Kursi roda dapat disesuaikan dengan kebutuhan pasien persyaratan dengan menyesuaikan nilai ambang batas untuk kemiringan kepala di sepanjang sumbu X dan Y. Selanjutnya, proyek ini membuktikan bahwa model dapat beroperasi dengan mempertimbangkan karakteristik dan fungsi kursi roda listrik skala penuh yang sebenarnya, serta banyak kondisi di mana kursi roda listrik kursi roda listrik dapat beroperasi. Untuk rekomendasi di masa depan studi, fitur kecerdasan buatan tambahan bisa diimplementasikan untuk memastikan kinerja sistem yang lebih baik.
 
 %Section 2.2
-\section{Teori/Konsep Dasar}
-
-\subsection{Kursi Roda Elektrik}
+\section{Kursi Roda Elektrik}
 \label{subsec:kursirodaelektrik}
 
 Kursi roda adalah perangkat yang dioperasikan secara manual atau digerakkan dengan tenaga yang dirancang terutama untuk digunakan oleh individu dengan disabilitas mobilitas untuk tujuan utama bergerak di dalam ruangan, atau di dalam dan di luar ruangan.  Individu dengan disabilitas mobilitas harus diizinkan menggunakan kursi roda dan alat bantu mobilitas bertenaga manual, misalnya alat bantu jalan, kruk, tongkat, atau perangkat serupa lainnya yang dirancang untuk digunakan oleh individu dengan disabilitas mobilitas, di area mana pun yang terbuka untuk lalu lintas pejalan kaki \parencite{ADA_2023}.
@@ -49,7 +47,9 @@ Kursi roda adalah perangkat yang dioperasikan secara manual atau digerakkan deng
 
 Kursi roda elektrik telah dikembangkan selama bertahun-tahun untuk digunakan oleh pasien dengan gangguan mobilitas di rumah dan masyarakat. Secara konvensional, lebih dari 80\% pengguna kursi roda elektrik mengoperasikan kursi rodanya dengan sebuah joystick sebagai antarmuka kendali. Joystick yang mendeteksi gerakan umumnya digunakan untuk mengoperasikan kursi roda elektrik. Selain itu, kecepatan kursi roda berubah seiring dengan jumlah defleksi dari joystick yang dilengkapi dengan pegas. Pengguna diharuskan menggunakan kendali proporsional dengan efisien untuk proprioception dan keterampilan sendi. Operasi yang tepat dari joystick memerlukan kontrol keterampilan motorik halus di tangan dan pergelangan tangan \parencite{koyama23}.
 
-\subsection{\emph{Eye Gesture}}
+\newpage
+
+\section{\emph{Eye Gesture}}
 
 \textit{Eye gesture} atau gerakan mata mengacu pada pergerakan mata, seperti tatapan mata, gerakan mata, dan ekspresi wajah, yang memainkan peran penting dalam komunikasi dan interaksi manusia \parencite{vanni_2022}. Perangkat pelacak mata telah digunakan untuk mempelajari berbagai aspek gerakan mata, termasuk pengaruh faktor sosial, faktor fisik, dan hubungan antara gerakan mata dan ucapan. Perangkat ini dapat merekam gerakan mata partisipan dengan kamera refleks kornea dan menganalisis gerakan tubuh dan gerakan mata dengan akurasi temporal\parencite{gullberg_kita_2009}.
 
@@ -65,7 +65,7 @@ Kursi roda elektrik telah dikembangkan selama bertahun-tahun untuk digunakan ole
 
 Gerakan mata dapat digunakan dalam berbagai aplikasi, seperti kontrol komputer bebas genggam  dan gerakan yang menyertai ucapan. Sebagai contoh, teknik pelacakan tatapan mata untuk aplikasi interaktif, dengan fokus pada penggunaan gerakan mata sebagai alat kontrol \parencite{Morimoto_Mimica_2005}. 
 
-\subsection{MediaPipe Face Mesh}
+\section{MediaPipe Face Mesh}
 
 MediaPipe Face Mesh adalah solusi pendeteksi \textit{landmark} wajah yang memperkirakan 468 \textit{landmark} wajah 3D secara real-time, bahkan pada perangkat seluler. Solusi ini menggunakan \textit{pipeline} dari dua jaringan saraf untuk mengidentifikasi koordinat 3D landmark wajah dari gambar 2D. Jaringan pertama, BlazeFace, menghitung lokasi wajah dari gambar penuh, sementara jaringan kedua beroperasi pada wilayah yang dipotong untuk mengidentifikasi lokasi \textit{landmark} \parencite{mediapipe_2020}. Teknologi ini memiliki berbagai aplikasi, termasuk deteksi masker wajah, kontrol komputer bebas genggam, dan gerakan yang menyertai ucapan \parencite{thaman_2022}.
 
@@ -83,7 +83,7 @@ MediaPipe Face Mesh menyediakan antarmuka pemrograman yang sederhana, yang memun
 
 Singkatnya, MediaPipe Face Mesh adalah alat yang ampuh untuk mendeteksi landmark wajah secara real-time, dengan berbagai aplikasi dalam visi komputer, interaksi manusia-komputer, dan \textit{augmented reality} (AR). Alat ini menawarkan antarmuka yang sederhana kepada para pengembang untuk mengakses dan memanfaatkan data \textit{landmark} wajah manusia untuk berbagai tujuan inovatif.
 
-\subsection{\emph{Convolutional Neural Network} (CNN)}
+\section{\emph{Convolutional Neural Network} (CNN)}
 
 \emph{Convolutional Neural Network} (CNN) adalah jenis jaringan syaraf tiruan yang digunakan terutama untuk pengenalan dan pemrosesan gambar. Ini adalah bagian dari pembelajaran mesin dan dirancang khusus untuk mengidentifikasi dan mengenali objek dalam gambar, serta untuk tugas-tugas seperti klasifikasi objek dan pengenalan pola \parencite{arm_2023}. CNN dicirikan oleh kemampuannya untuk mempelajari rekayasa fitur dengan sendirinya melalui pengoptimalan filter, dan mereka mencegah masalah seperti gradien yang menghilang dan gradien yang meledak, yang terlihat pada jaringan saraf sebelumnya, dengan menggunakan bobot yang diatur melalui koneksi yang lebih sedikit. 
 
@@ -147,9 +147,69 @@ Proses \textit{Flatten} berfungsi untuk mengubah output multi-dimensi dari \text
     \label{fig:Proses Flattening}
 \end{figure}
 
+%\newpage
+
+\section{Matriks Performa Klasifikasi}
+
+\emph{Confusion Matrix} adalah alat yang digunakan untuk mengevaluasi kinerja model klasifikasi dalam pembelajaran mesin. Tabel ini memberikan gambaran mendetail tentang bagaimana model klasifikasi bekerja, menunjukkan hubungan antara prediksi model dengan nilai sebenarnya. \emph{Confusion Matrix} adalah representasi tabel yang terdiri dari empat komponen utama, yaitu \emph{True Positive} (TP), \emph{False Positive} (FP), \emph{True Negative} (TN), dan \emph{False Negative} (FN). Setiap komponen memiliki makna yang spesifik dalam konteks prediksi \parencite{provost2013data}. Visualisasi \emph{confusion matrix} dapat dilihat pada Gambar \ref{fig:confusion}.
+
+% Gambar 2.7
+\begin{figure} [ht] \centering
+    % Nama dari file gambar yang diinputkan
+    \includegraphics[width=.5\textwidth]{gambar/bab2/confusion.png}
+    % Keterangan gambar yang diinputkan
+    \caption{Visualisasi \emph{confusion matrix}}
+    % Label referensi dari gambar yang diinputkan
+    \label{fig:confusion}
+\end{figure}
+
+True Positive (TP) adalah prediksi benar terhadap kelas positif. Sebagai contoh, model memprediksi bahwa pasien menderita penyakit tertentu, dan pasien tersebut benar-benar memiliki penyakit tersebut. False Positive (FP), juga dikenal sebagai "Type I Error," adalah prediksi salah terhadap kelas positif. Contohnya adalah ketika model memprediksi bahwa pasien memiliki penyakit tertentu, tetapi sebenarnya pasien tersebut sehat. True Negative (TN) adalah prediksi benar terhadap kelas negatif, yaitu ketika model memprediksi bahwa pasien sehat, dan pasien tersebut benar-benar sehat. False Negative (FN), atau "Type II Error," adalah prediksi salah terhadap kelas negatif, di mana model memprediksi bahwa pasien sehat, tetapi sebenarnya pasien tersebut memiliki penyakit tertentu.
+
+Untuk memahami bagaimana model klasifikasi bekerja, kita perlu memahami beberapa metrik evaluasi kinerja berdasarkan \emph{Confusion Matrix}. Metrik evaluasi kinerja terdiri dari \emph{Accuracy}, \emph{Precision}, \emph{Recall}, dan \emph{F-1 Score}.
+
+\subsection{\emph{Accuracy}}
+\label{subsec:acc_klasifikasi}
+
+\emph{Accuracy} adalah ukuran kinerja yang menunjukkan seberapa tepat model dapat mengklasifikasikan data uji secara benar. Dalam konteks ini, akurasi adalah rasio antara prediksi yang benar (TP dan TN) dengan total jumlah data. Dengan kata lain, akurasi mengukur seberapa dekat nilai prediksi dengan nilai aktual. Nilai \emph{accuracy} dapat diperoleh menggunakan Persamaan \ref{eq:acc}. 
+
+\begin{equation}
+  \label{eq:acc}
+  Accuracy=\frac{TP+TN}{TP+TN+FP+FN}
+\end{equation}
+
+\subsection{\emph{Precision}}
+\label{subsec:prec_klasifikasi}
+
+\emph{Precision} adalah ukuran kinerja yang menunjukkan tingkat keakuratan data yang diminta dibandingkan dengan hasil prediksi yang diberikan oleh model. Dalam konteks ini, presisi adalah rasio antara prediksi positif yang benar (TP) dengan total hasil prediksi positif (TP dan FP). Nilai \emph{precision} dapat diperoleh dengan Persamaan \ref{eq:prec}.
+
+\begin{equation}
+  \label{eq:prec}
+  Precision=\frac{TP}{TP+FP}
+\end{equation}
+
+\subsection{\emph{Recall}}
+\label{subsec:recall_klasifikasi}
+
+\emph{Recall} adalah ukuran kinerja yang menunjukkan seberapa berhasil model dalam menemukan kembali suatu informasi. Dalam konteks ini, recall adalah rasio antara prediksi positif yang benar (TP) dengan total jumlah data aktual positif (TP dan FN). Dengan demikian, nilai recall dapat dihitung menggunakan Persamaan \ref{eq:recall}.
+
+\begin{equation}
+  \label{eq:recall}
+  Recall=\frac{TP}{TP+FN}
+\end{equation}
+
+\subsection{\emph{F1-Score}}
+\label{subsec:score_klasifikasi}
+
+\emph{F1-Score} adalah nilai antara nol (0) hingga satu (1) yang diperoleh dari rata-rata harmonis (\emph{harmonic mean}) antara nilai \emph{precision} dan nilai \emph{recall}. Oleh karena itu, nilai \emph{F1-Score} dapat dihitung menggunakan Persamaan \ref{eq:score}.
+
+\begin{equation}
+  \label{eq:score}
+  F{1}{-}Score=\frac{2 \times Precision \times Recall}{Precision+Recall}
+\end{equation}
+
 \newpage
 
-\subsection{NUC \textit{(Next Unit of Computing)}}
+\section{\textit{Next Unit of Computing} (NUC)}
 
 % Gambar 2.8
 \begin{figure} [ht] \centering
