@@ -11,9 +11,9 @@ Proses pengerjaan dilakukan sesuai dengan desain sistem berikut dan implementasi
 Pada penelitian ini diintegrasikan teknologi visi komputer dengan sistem tertanam agar dapat mengontrol gerak kursi roda menggunakan gerakan mata (\emph{eye gesture}). Berikut merupakan blok diagram \emph{software} yang diimplementasikan dalam penelitian ini.
 
 %Gambar 3.1
-\begin{figure} [ht] \centering
+\begin{figure} [H] \centering
   % Nama dari file gambar yang diinputkan
-  \includegraphics[scale=0.7]{gambar/bab3/software.png}
+  \includegraphics[width=0.8\textwidth]{gambar/bab3/software.png}
   % Keterangan gambar yang diinputkan
   \caption{Blok Diagram \textit{Software}}
   % Label referensi dari gambar yang diinputkan
@@ -25,7 +25,7 @@ Pada penelitian ini diintegrasikan teknologi visi komputer dengan sistem tertana
 Dalam mengerjakan penelitian ini, langkah pertama yang dilakukan adalah pengambilan citra menggunakan kamera atau sumber gambar lainnya. Citra yang diambil harus cukup jelas dan terfokus pada area wajah agar fitur mata dapat diidentifikasi dengan akurat. Pengambilan citra dapat dilihat pada Gambar \ref{fig:citra}.\\
 
 %Gambar 3.2
-\begin{figure} [ht] \centering
+\begin{figure} [H] \centering
   % Nama dari file gambar yang diinputkan
   \includegraphics[scale=0.35]{gambar/bab3/citra.png}
   % Keterangan gambar yang diinputkan
@@ -42,7 +42,7 @@ Pada penelitian ini akan digunakan salah satu fitur dari MediaPipe yaitu MediaPi
 % Gambar 3.3
 \begin{figure} [ht] \centering
   % Nama dari file gambar yang diinputkan
-  \includegraphics[scale=0.07]{gambar/landmark.png}
+  \includegraphics[scale=0.5]{gambar/bab3/landmark2.png}
   % Keterangan gambar yang diinputkan
   \caption{Arsitektur pada MediaPipe Face Mesh \textit{Landmarks}}
   % Label referensi dari gambar yang diinputkan
@@ -75,7 +75,7 @@ Proses pengerjaan penelitian ini akan memanfaatkan teknologi \emph{eye pose dete
 
 Proses estimasi posisi mata dilakukan dengan mendeteksi keberadaan mata pada citra yang didapatkan. Setelah posisi mata didapatkan, selanjutnya dilakukan deteksi untuk 40 titik landmark pada bagian kelopak mata dan iris mata. Untuk melakukan estimasi posisi mata, beberapa titik \emph{landmark} yang terdapat pada Tabel \ref{tbl:titik keypoints} akan digambarkan dan diwarnai dengan warna yang unik untuk membantu membedakan setiap bagian mata. Secara spesifik, warna yang diberikan pada setiap titik \emph{landmark} mencerminkan hubungan dengan bagian mata tertentu, sehingga memberikan representasi visual yang detail dan informatif.
 
-Proses ini sangat penting dalam aplikasi pengenalan wajah dan analisis visual, di mana keakuratan dalam mengidentifikasi dan memetakan titik-titik penting pada mata dapat secara signifikan meningkatkan efektivitas sistem. Melalui pendekatan ini, sistem dapat lebih mudah memahami orientasi dan posisi mata dalam berbagai kondisi pencahayaan dan sudut pandang, memastikan hasil yang lebih \emph{robust} dan akurat.Untuk lebih jelasnya berikut contoh gambar dengan estimasi posisi mata yang dapat dilihat pada Gambar \ref{fig:contoh citra yang telah diestimasi pose}. 
+Proses ini sangat penting dalam aplikasi pengenalan wajah dan analisis visual, di mana keakuratan dalam mengidentifikasi dan memetakan titik-titik penting pada mata dapat secara signifikan meningkatkan efektivitas sistem. Melalui pendekatan ini, sistem dapat lebih mudah memahami orientasi dan posisi mata dalam berbagai kondisi pencahayaan dan sudut pandang, memastikan hasil yang lebih \emph{robust} dan akurat.Untuk lebih jelasnya berikut contoh gambar dengan estimasi posisi mata yang dapat dilihat pada Gambar \ref{fig:contoh citra yang telah diestimasi pose} dan \ref{fig:citratertutup}. 
 
 % Gambar 3.4
 \begin{figure} [ht] \centering
@@ -87,6 +87,15 @@ Proses ini sangat penting dalam aplikasi pengenalan wajah dan analisis visual, d
     \label{fig:contoh citra yang telah diestimasi pose}
 \end{figure}
 
+% Gambar 3.4
+\begin{figure} [ht] \centering
+  % Nama dari file gambar yang diinputkan
+  \includegraphics[scale=0.35]{gambar/bab3/stop.png}
+  % Keterangan gambar yang diinputkan
+  \caption{Citra yang Telah Diestimasi Posisi Kelopak Mata Tertutup}
+  % Label referensi dari gambar yang diinputkan
+  \label{fig:citratertutup}
+\end{figure}
 
 \subsection{Klasifikasi Posisi Mata}
 Setelah proses estimasi posisi mata selesai, maka langkah selanjutnya ada mengelompokkan citra-citra hasil estimasi ke dalam dataset. Dataset ini akan memiliki 3 kelas berbeda, mewakili perintah untuk bergerak ke kanan, bergerak ke kiri, dan berhenti. Kelas ini mewakili perintah dasar untuk menggerakkan kursi roda. 
@@ -111,12 +120,59 @@ Pengelompokan ini memungkinkan sistem untuk mempelajari dan memahami pola-pola g
 
 \subsection{Optimasi Deteksi Mata}
 
-Untuk meningkatkan performa dan akurasi, maka dataset ini kemudian akan melewati proses optimasi menggunakan algoritma \emph{Convolutional Neural Network} (CNN). Langkah ini melibatkan penyesuaian dan peningkatan model CNN untuk meningkatkan akurasi dan efisiensi dalam deteksi mata. Ini mungkin termasuk teknik seperti augmentasi data, tuning parameter, dsb. Penggunaan CNN dalam optimasi dataset diharapkan dapat menghasilkan model yang mampu mengenali pola dan fitur yang kompleks, sehingga sistem dapat memberikan respon yang tepat terhadap perubahan perintah yang diberikan oleh pengguna. Hasil dari model prediksi yang dibuat akan berupa h5.
+Untuk meningkatkan performa dan akurasi, maka dataset melewati proses optimasi menggunakan algoritma \emph{Convolutional Neural Network} (CNN). Langkah ini melibatkan penyesuaian dan peningkatan model CNN untuk meningkatkan akurasi dan efisiensi dalam deteksi mata. Untuk model CNN yang dipakai pada penelitian ini dapat dilihat pada Gambar \ref{fig:layercnn}.
+
+% Gambar 3.5
+\begin{figure} [ht] \centering
+  % Nama dari file gambar yang diinputkan
+  \includegraphics[scale=0.38]{gambar/bab3/layer.png}
+  % Keterangan gambar yang diinputkan
+  \caption{Visualisasi Layer CNN}
+  % Label referensi dari gambar yang diinputkan
+  \label{fig:layercnn}
+\end{figure}
+
+Gambar di atas menggambarkan arsitektur model jaringan saraf tiruan yang dirancang menggunakan Convolutional Neural Network (CNN). Arsitektur ini dimulai dengan lapisan input yang menerima data gambar berwarna berukuran 30x200 piksel. Kemudian, model dilanjutkan dengan dua lapisan konvolusi berturut-turut, di mana lapisan konvolusi pertama (Conv2D 1) menggunakan 32 filter dan menghasilkan fitur dengan dimensi `(None, 30, 200, 32)`, sementara lapisan konvolusi kedua (Conv2D 2) menggunakan 64 filter untuk menghasilkan fitur dengan dimensi `(None, 15, 100, 64)`. Setiap lapisan konvolusi ini diikuti oleh lapisan max pooling untuk mereduksi dimensi fitur sambil mempertahankan informasi penting, sehingga menghasilkan fitur dengan dimensi `(None, 15, 100, 32)` pada pooling pertama dan `(None, 7, 50, 64)` pada pooling kedua. Lapisan dropout kemudian diterapkan dengan probabilitas 0,25 untuk mencegah overfitting.
+
+Selanjutnya, lapisan flatten digunakan untuk mengubah tensor hasil konvolusi menjadi vektor datar dengan dimensi `(None, 9600)`. Vektor ini kemudian diteruskan ke lapisan fully connected pertama yang memiliki 256 unit neuron, memberikan model kemampuan untuk mempelajari pola-pola kompleks. Dropout kembali diterapkan dengan probabilitas 0,5 untuk meningkatkan generalisasi model. Terakhir, lapisan fully connected kedua yang juga merupakan lapisan keluaran memiliki 5 unit neuron yang mewakili jumlah kelas target, menghasilkan distribusi probabilitas untuk setiap kelas perintah kontrol gerakan kursi roda seperti "Maju", "Mundur", "Kanan", "Kiri", dan "Stop". Untuk model tiga dimensi layer CNN dapat dilihat pada Gambar \ref{fig:3dlayercnn}.
+
+% Gambar 3.5
+\begin{figure} [ht] \centering
+  % Nama dari file gambar yang diinputkan
+  \includegraphics[scale=0.25]{gambar/bab3/3dlayer.png}
+  % Keterangan gambar yang diinputkan
+  \caption{Visualisasi 3D Layer CNN}
+  % Label referensi dari gambar yang diinputkan
+  \label{fig:3dlayercnn}
+\end{figure}
+
+Sebelum dataset di-\emph{training} menggunakan \emph{layer} CNN, dilakukan beberapa teknik \emph{preprocessing} seperti augmentasi data dan \emph{tuning} parameter. Augmentasi data dilakukan untuk meningkatkan variasi data pelatihan dan mencegah \emph{overfitting}. Teknik augmentasi yang digunakan antara lain \emph{rotation, shearing}, dan \emph{brightness}. Selain augmentasi, \emph{tuning} parameter juga merupakan bagian penting dalam proses ini. \emph{Tuning} parameter melibatkan pengaturan \emph{hyperparameter} model seperti jumlah lapisan konvolusi, ukuran filter, ukuran kernel pooling, tingkat \emph{dropout}, dan ukuran \emph{batch}. Ditambahkan juga beberapa \emph{callbacks} yaitu \emph{rlrop} dan \emph{early stop}. Proses ini bertujuan untuk menemukan kombinasi parameter yang optimal sehingga model dapat dilatih secara efisien dan akurat.
+
+Selain itu, semua gambar dinormalisasi dengan me\emph{rescale}nya ke rentang [0, 1], dengan cara dibagi dengan nilai 265, untuk memastikan bahwa nilai \emph{pixel} konsisten di seluruh dataset. Ini membantu model belajar lebih cepat dan meningkatkan kinerja secara keseluruhan. Dataset kemudian dibagi menjadi tiga bagian: data pelatihan \emph{(training)}, data validasi \emph{(validation)}, dan data pengujian \emph{(testing)}. Pembagian ini memungkinkan model diuji dan divalidasi selama proses pelatihan untuk memantau kinerja secara akurat. Penggunaan CNN dalam optimasi dataset diharapkan dapat menghasilkan model yang mampu mengenali pola dan fitur \emph{gesture} mata dengan akurat, sehingga sistem dapat memberikan respons yang tepat terhadap perubahan perintah yang diberikan oleh pengguna. Spesifikasi perangkat \emph{hardware} yang digunakan untuk \emph{training} dapat dilihat pada Tabel \ref{tb:speklaptop} di bawah.
+
+\begin{longtable}{|c|c|c|}
+  \caption{Spesifikasi Perangkat Keras}
+  \label{tb:speklaptop} \\
+  \hline
+  \rowcolor[HTML]{C0C0C0}
+  \textbf{Perangkat}        & \textbf{Spesifikasi}    \\ \hline
+  \multicolumn{1}{|c|}{CPU} & AMD Ryzen 5 4600H       \\ \hline
+  \multicolumn{1}{|c|}{GPU} & NVIDIA GeForce GTX 1650 \\ \hline
+  RAM                       & 16 GB                   \\ \hline
+  Storage                   & 512 GB SSD              \\ \hline
+\end{longtable}
+
+Setelah proses \emph{training} selesai, hasil dari model prediksi yang dibuat akan disimpan dalam format h5 (HDF5) untuk memudahkan penyimpanan dan pemuatan. Format ini memungkinkan fleksibilitas dalam menyimpan arsitektur model, bobot, dan konfigurasi lainnya, sehingga memudahkan penggunaan model pada tahap implementasi.
 
 \subsection{Implementasi ke NUC \textit{(Next Unit of Computing)}}
 
-Setelah model CNN dioptimasi, langkah terakhir adalah implementasi model tersebut ke dalam NUC. Ini melibatkan integrasi kode, pengaturan lingkungan runtime, dan pengujian model pada perangkat NUC untuk mengontrol pergerakan kursi roda berbasis gestur mata.
+Setelah model CNN dioptimasi, langkah terakhir adalah implementasi model tersebut ke dalam NUC. Ini melibatkan integrasi kode, pengaturan lingkungan runtime, dan pengujian model pada perangkat NUC untuk mengontrol pergerakan kursi roda berbasis gestur mata. Proses ini dimulai dengan integrasi kode untuk menghubungkan model dengan komponen perangkat keras seperti \emph{microcontroller} dan perangkat lunak di NUC. Model CNN yang disimpan dalam format h5 kemudian dimuat, memastikan bahwa model siap digunakan dalam lingkungan NUC.
 
+Selanjutnya, pengaturan lingkungan runtime dilakukan untuk memastikan kompatibilitas antara perangkat keras NUC dan perangkat lunak yang dibutuhkan oleh model. Hal ini mencakup instalasi pustaka seperti TensorFlow, OpenCV, dan pustaka lain yang diperlukan. Pengaturan ini juga memastikan bahwa NUC dapat menjalankan model secara efisien dengan memanfaatkan sumber daya perangkat keras yang tersedia, seperti CPU atau GPU. Tahap berikutnya adalah pengujian model pada perangkat NUC. Pengujian ini melibatkan simulasi perintah gerakan kursi roda berbasis gestur mata. Data gerakan mata yang dikumpulkan melalui kamera diproses oleh model CNN untuk menghasilkan perintah kontrol gerakan seperti "Maju", "Mundur", "Kanan", "Kiri", dan "Stop". Perintah ini kemudian dikirim ke sistem kontrol kursi roda untuk menggerakkan motor sesuai arah yang diinginkan. Selama pengujian, dilakukan pemantauan performa model dalam mendeteksi gestur mata dan memberikan respons yang tepat terhadap perintah yang diberikan oleh pengguna.
+
+Selain itu, stabilitas dan kecepatan respons model juga dievaluasi dalam berbagai kondisi pencahayaan dan jarak antara pengguna dengan kamera. Dengan demikian, implementasi ke NUC memastikan bahwa model CNN dapat berfungsi secara real-time dalam mengontrol pergerakan kursi roda berdasarkan gestur mata pengguna.
+
+\newpage
 
 %Section 3.2
 \section{Bahan dan Peralatan yang Digunakan}
@@ -126,25 +182,31 @@ Untuk mendukung penelitian ini, perangkat kontrol, yang sudah dikembangkan, dibu
 \subsection{\emph{Hardware} dan \emph{Software} yang Digunakan}
 \label{sec:hardware dan software}
 
+Pada penelitian ini, berbagai perangkat keras dan perangkat lunak digunakan untuk membangun sistem kontrol kursi roda berbasis gerakan mata. Berikut adalah daftar perangkat keras dan perangkat lunak yang digunakan:
+
 %List 3.1
-Berikut beberapa \emph{Hardware} dan \emph{Software} yang digunakan dalam penelitian ini dijabarkan seperti berikut:
-\begin{enumerate}
-    \item Dataset Landmark Posisi Mata
+\begin{enumerate}[itemsep=0cm] 
+    \item Dataset Landmark \emph{Gesture} Mata
     \item Kursi Roda Elektrik
-    \item Laptop 
-    \item Kamera
-    \item Anaconda Navigator
+    \item Laptop ASUS TUF Gaming A15 FA506IH\_FX506IH
+    \item Kamera Logitech C920
     \item Visual Studio Code
     \item MediaPipe Face Mesh
+    \item OpenCV
     \item \textit{Convolutional Neural Network} (CNN)
-    \item NUC \textit{(Next Unit of Computing)}
+    \item Intel NUC 11 Pro Performance Kit NUC11PAHi7
+    \item ESP32 Devkit V1
+    \item Motor Driver H-Bridge
+    \item 2 Baterai 24V
 
 \end{enumerate}
 
 \subsection{Alur Kerja Sistem}
 \label{sec:alur kerja}
 
-Pada penelitian ini dapat dibuat alur kerja sistem untuk menjelaskan lebih detail bagaimana proses antara \textit{software} dan \textit{hardware} dapat berinteraksi. 
+Pada penelitian ini, alur kerja sistem dirancang untuk menjelaskan secara lebih rinci bagaimana perangkat lunak dan perangkat keras berinteraksi dalam mengontrol pergerakan kursi roda menggunakan \emph{gesture} mata. Pertama-tama, kamera menangkap video gerakan mata pengguna dan mengirimkannya ke Intel NUC. Intel NUC kemudian memproses video ini menggunakan algoritma deteksi gerakan mata berbasis \emph{Mediapipe} untuk mengidentifikasi arah pandangan pengguna. Data yang diperoleh dari deteksi arah pandangan ini kemudian diubah menjadi sinyal perintah untuk menggerakkan kursi roda.
+
+Sinyal perintah yang dihasilkan dari pemrosesan data gerakan mata dikirim ke \emph{controller} motor kursi roda melalui protokol komunikasi yang sudah ditentukan. \emph{Controller} motor kemudian menerjemahkan sinyal tersebut ke dalam aksi yang sesuai, seperti maju, mundur, berbelok ke kiri, atau berbelok ke kanan, dengan menggerakkan motor kursi roda. Seluruh alur kerja ini dijalankan dalam lingkungan perangkat lunak yang dikembangkan menggunakan Python, \emph{OpenCV}, dan \emph{Mediapipe}. Intel NUC berfungsi sebagai pusat kendali yang mengkoordinasikan komunikasi antara berbagai komponen perangkat keras dan perangkat lunak. Dengan integrasi perangkat keras dan perangkat lunak yang baik, sistem ini mampu memberikan respons yang cepat dan akurat terhadap gerakan mata pengguna.
 
 %Gambar 3.5
 \begin{figure} [ht] \centering
@@ -156,6 +218,74 @@ Pada penelitian ini dapat dibuat alur kerja sistem untuk menjelaskan lebih detai
   \label{fig:hardware}
 \end{figure}
 
-Berdasarkan alur kerja sistem di atas, pertama-tama, sistem menggunakan kamera yang dihubungkan dengan NUC \textit{(Next Unit of Computing)} sebagai perangkat utama untuk mendapatkan citra.
+Gambar \ref{fig:hardware} menggambarkan alur kerja sistem secara keseluruhan. Intel NUC memproses sinyal dari kamera, mengidentifikasi arah gerakan mata, dan mengirim perintah ke pengendali motor untuk menggerakkan kursi roda sesuai dengan niat pengguna. Diagram ini memberikan gambaran yang jelas tentang interaksi antara perangkat keras dan perangkat lunak dalam sistem kontrol kursi roda berbasis gerakan mata ini.
 
-Setelah itu, citra akan diolah oleh MediaPipe Face Mesh untuk mendapatkan estimasi posisi mata. Kemudian, dari estimasi posiai mata, model CNN \textit{(Convolutional Neural Network)} akan mengklasifikasikan posisi mata. Setelah melakukan klasifikasi, software akan mengirim instruksi. Instruksi kemudian akan dikirim kepada \textit{controller} kursi roda yang nantinya digunakan sebagai petunjuk untuk mengatur gerakan pada motor roda kiri dan motor roda kanan pada kursi roda.
+\subsection{Skematik Alat}
+\label{sec:skematik}
+
+Skema alat ini dijelaskan secara rinci pada Gambar \ref{fig:Skematik Alat}. Sistem ini memanfaatkan kamera yang terhubung dengan laptop atau NUC sebagai perangkat utama untuk menangkap gambar. Alur kerja dimulai ketika kamera menangkap citra objek, yang kemudian diproses oleh laptop atau NUC. 
+
+%Gambar 3.5
+\begin{figure} [H] \centering
+  % Nama dari file gambar yang diinputkan
+  \includegraphics[width=0.5\textwidth]{gambar/bab3/Schematics.png}
+  % Keterangan gambar yang diinputkan
+  \caption{Skematik Alat}
+  % Label referensi dari gambar yang diinputkan
+  \label{fig:Skematik Alat}
+\end{figure}
+
+Kode instruksi ini kemudian dikombinasikan dengan parameter kecepatan maksimal yang telah ditetapkan oleh pengguna. Kombinasi antara kode instruksi dan parameter kecepatan ini menjadi satu paket data yang berfungsi untuk mengontrol gerakan kursi roda. Paket data tersebut kemudian ditransmisikan secara nirkabel, baik melalui Bluetooth atau WiFi, ke modul ESP32 Devkit V1.
+
+ESP32 berperan penting dalam mengendalikan motor kursi roda. ESP32 bertindak sebagai pusat kendali yang menerima paket data yang dikirimkan secara nirkabel. Selanjutnya, ESP32 akan memecah paket data tersebut dan menyesuaikannya dengan variabel-variabel yang telah ditentukan sebelumnya. Proses pemecahan paket data ini menghasilkan variabel arah, yang memiliki fungsi penting untuk menentukan arah gerak kedua motor kursi roda. Variabel ini memastikan motor bergerak sesuai arah yang diinginkan berdasarkan data yang diterima \parencite{ekatama2024perancangan}.
+
+\subsection{Mengirim Data String Melalui WiFi}
+
+\emph{Flowchart} ini dirancang untuk mengirim data string ke perangkat ESP32 melalui WiFi. ESP32 akan bertindak sebagai \emph{Access Point}. Berikut merupakan \emph{flowchart} yang digunakan untuk mengirimkan data string melalui WiFi sesuai Gambar \ref{fig:Flowchart 10 Mengirim String WiFi}.
+
+\begin{figure} [H] \centering
+  % Nama dari file gambar yang diinputkan
+  \includegraphics[scale=0.5]{gambar/bab3/10. Mengirim Data String WiFi.png}
+  % Keterangan gambar yang diinputkan
+  \caption{\emph{Flowchart} Mengirim Data String Melalui WiFi}
+  % Label referensi dari gambar yang diinputkan
+  \label{fig:Flowchart 10 Mengirim String WiFi}
+\end{figure}
+
+Alur kerja program ini menggunakan pustaka \emph{socket}, \emph{time}, dan \emph{datetime}. Pustaka \emph{socket} menyediakan antarmuka untuk membuat dan mengelola soket, sehingga memungkinkan koneksi serta pengiriman dan penerimaan data melalui jaringan. Pustaka \emph{time} menawarkan fungsi-fungsi terkait waktu, seperti \emph{time.sleep()} yang sering digunakan untuk menghentikan sementara eksekusi program selama periode waktu tertentu. Pustaka \emph{datetime} digunakan untuk mendapatkan informasi waktu secara \emph{real-time}.
+
+IP \emph{Address} dari \emph{Access Point} ESP32 kemudian dimasukkan ke dalam variabel \emph{host}, sedangkan nomor port yang digunakan untuk koneksi dimasukkan ke dalam variabel \emph{port}, umumnya port 80. Objek soket dibuat menggunakan \emph{socket.socket()} dengan alamat IPv4 dan tipe soket \emph{streaming}, yang menunjukkan bahwa program ini akan menggunakan protokol TCP/IP untuk koneksi. Program kemudian mencoba terhubung ke server dengan IP \emph{Address} \emph{host} dan nomor \emph{port} yang telah ditentukan.
+
+Setelah koneksi berhasil, program akan berjalan dalam perulangan tak terbatas. Pengguna diminta memasukkan nilai arah dan kecepatan melalui \emph{input}. Nilai-nilai ini kemudian digabung menjadi satu pesan yang dikonversi menjadi \emph{byte} menggunakan \emph{encoding} UTF-8. Setelah dikonversi, pesan tersebut dikirim ke server. Jika pengguna memasukkan "q" sebagai nilai arah atau kecepatan, perulangan akan dihentikan dan program akan menutup koneksi soket \parencite{ekatama2024perancangan}.
+
+\subsection{Menerima Data String Melalui \emph{Access Point} WiFi pada ESP32}
+
+Program ini dirancang sebagai server WiFi yang mampu menerima data dari \emph{client} yang terhubung dan memprosesnya. Program ini memanfaatkan pustaka WiFi untuk mengonfigurasi dan mengelola koneksi WiFi pada ESP32. Pustaka Arduino juga digunakan untuk menyediakan fungsi dasar pemrograman mikrokontroler. Variabel \emph{ssid} digunakan untuk menyimpan nama jaringan WiFi yang akan dibuat, sementara variabel \emph{password} menyimpan kata sandi WiFi server. Kedua variabel ini penting agar ESP32 dapat dikonfigurasi sebagai \emph{Access Point}. Kemudian, objek \emph{server} dibuat dari kelas \emph{WiFiServer} untuk menangani koneksi pada port 80.
+
+Di dalam fungsi \emph{void setup()}, \emph{Serial.begin()} digunakan untuk menginisialisasi komunikasi serial dengan kecepatan 115200 bps. Selanjutnya, ESP32 dikonfigurasi sebagai \emph{Access Point} menggunakan SSID dan kata sandi yang telah ditentukan. Setelah \emph{Access Point} berhasil dikonfigurasi, alamat IP ESP32 disimpan dalam variabel \emph{IP} dan ditampilkan di \emph{Serial Monitor}. Fungsi \emph{server.begin()} digunakan untuk memulai server pada port 80.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{gambar/bab3/4. String WiFi.png}
+\caption{\emph{Flowchart} Menerima Data String Melalui \emph{Access Point} WiFi Pada ESP32}
+\label{fig:Flowchart 4 String}
+\end{figure}
+
+Fungsi \emph{void loop()} berjalan terus-menerus setelah \emph{void setup()} dieksekusi. Di dalam fungsi ini, \emph{WiFiClient} digunakan untuk memeriksa apakah ada \emph{client} yang terhubung ke server. Jika ada \emph{client} yang terhubung, program masuk ke dalam blok \emph{if}. Data yang dikirimkan kemudian dibaca secara terus-menerus melalui \emph{while} hingga \emph{client} mengirimkan karakter \emph{newline} ('\textbackslash n'). Nilai variabel ditampilkan di \emph{Serial Monitor} \parencite{ekatama2024perancangan}.
+
+\subsection{Kontrol Motor Kursi Roda Melalui \emph{Access Point} WiFi}
+
+Program ini dirancang untuk mengendalikan motor DC berdasarkan perintah yang diterima melalui koneksi WiFi. ESP32 bertindak sebagai \emph{Access Point}, menerima data arah dan kemudian mengontrol motor kursi roda sesuai dengan instruksi tersebut. Berikut adalah diagram alurnya seperti yang tertera pada Gambar \ref{fig:Flowchart 8 Kontrol WiFi}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.5]{gambar/bab3/8. Kontrol Motor WiFi.png}
+\caption{\emph{Flowchart} Kontrol Motor Kursi Roda Melalui \emph{Access Point} WiFi}
+\label{fig:Flowchart 8 Kontrol WiFi}
+\end{figure}
+
+Program ini menggunakan pustaka WiFi untuk mengonfigurasi dan mengelola koneksi WiFi pada ESP32, serta pustaka Arduino untuk fungsi dasar pemrograman mikrokontroler. Variabel \emph{ssid} dan \emph{password} menyimpan nama dan kata sandi untuk \emph{access point} yang dibuat oleh ESP32, sementara objek \emph{server} dari kelas \emph{WiFiServer} menangani koneksi pada port 80. Variabel \emph{pwmpin1, dir1,} dan \emph{dir2} mengendalikan motor kiri, sedangkan \emph{pwmPin2}, \emph{dir3}, dan \emph{dir4} mengendalikan motor kanan. Setiap variabel dihubungkan ke pin GPIO tertentu pada ESP32 untuk kontrol motor. Array \emph{stdir} menyimpan kondisi arah motor, sementara variabel \emph{pwmChannel1, pwmChannel2, freq, res, PWM1\_DutyCycle, maxspeed}, dan \emph{turnspeed} digunakan untuk mengonfigurasi frekuensi dan resolusi PWM, serta kecepatan motor.
+
+Fungsi \emph{void setup()} dijalankan satu kali saat program dimulai. Dalam fungsi ini, \emph{Serial.begin()} menginisialisasi komunikasi serial pada 115200 bps, kemudian \emph{access point} dibuat sesuai SSID dan kata sandi yang ditentukan. IP \emph{Address} ditampilkan pada \emph{Serial Monitor}, dan \emph{server} dimulai pada port 80. Pin kontrol motor diatur sebagai \emph{output}, dan saluran PWM dikonfigurasi dengan \emph{ledcSetup()}.
+
+Pada fungsi \emph{void loop()}, koneksi \emph{client} diperiksa. Jika ada \emph{client} yang terhubung, ESP32 akan membaca data hingga karakter \emph{newline} ('\textbackslash n') dan mengurai data tersebut menjadi variabel arah. Kontrol motor dilakukan menggunakan pernyataan \emph{if-else} berdasarkan nilai variabel arah yang diterima. Setiap kondisi melibatkan perulangan \emph{while} untuk memastikan perubahan kecepatan motor terjadi secara bertahap. \emph{digitalWrite()} menetapkan arah motor, sementara \emph{ledcWrite()} mengendalikan kecepatan motor. Perulangan ini terus berlanjut selama ESP32 menerima data melalui WiFi \parencite{ekatama2024perancangan}.
