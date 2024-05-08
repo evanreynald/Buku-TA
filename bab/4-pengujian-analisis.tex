@@ -171,7 +171,7 @@ Dari nilai TP, TN , FP, dan FN diatas, dapat dihitung nilai \emph{accuracy}, \em
   Stop  & 100\%            & 100\%             & 100\%           & 100\%            \\ \hline
 \end{longtable}
 
-\subsection{Jarak 50 cm}
+\subsection{Jarak 50 sentimeter}
 
 Selanjutnya, pengujian dilakukan dengan variasi jarak 50 sentimeter. Dari data pada \emph{confusion matrix}, dapat dilihat bahwa setiap kelas memiliki 120 prediksi yang benar dan tidak terdapat kesalahan klasifikasi antarkelas mana pun. Setiap nilai diagonal yang mencapai 120 mengindikasikan bahwa semua prediksi untuk kelas tersebut sesuai dengan label sebenarnya, tanpa ada satu pun yang salah. Ini menandakan bahwa model mampu dengan sempurna menginterpretasikan sinyal input untuk menghasilkan respons yang tepat sesuai dengan perintah yang diharapkan.
 
@@ -185,7 +185,7 @@ Selanjutnya, pengujian dilakukan dengan variasi jarak 50 sentimeter. Dari data p
   \label{fig:matrix3}
 \end{figure}
 
-Pada Tabel \ref{tb:cm_model3} yang disajikan menampilkan hasil pengujian model klasifikasi yang digunakan untuk mengendalikan kursi roda melalui gestur mata dari jarak 50 cm. Untuk semua kelas, angka True Positive mencatat 120, menunjukkan bahwa model secara konsisten berhasil mengidentifikasi setiap gestur dengan benar sebanyak 120 kali. True Negative, yang juga mencapai 480 untuk setiap kelas, mengindikasikan bahwa model sangat efisien dalam tidak salah mengklasifikasikan gestur lain sebagai gestur yang sedang diuji. Sementara itu, nilai untuk False Positive dan False Negative adalah nol, menunjukkan bahwa tidak ada kesalahan dalam pengklasifikasian gestur. Secara keseluruhan, tabel ini menggambarkan performa yang sangat baik dari model dalam mengklasifikasikan gestur mata dari jarak 50 sentimeter untuk pengendalian kursi roda, dengan tingkat akurasi dan keandalan yang tinggi.
+Pada Tabel \ref{tb:cm_model3} yang disajikan menampilkan hasil pengujian model klasifikasi yang digunakan untuk mengendalikan kursi roda melalui gestur mata dari jarak 50 sentimeter. Untuk semua kelas, angka True Positive mencatat 120, menunjukkan bahwa model secara konsisten berhasil mengidentifikasi setiap gestur dengan benar sebanyak 120 kali. True Negative, yang juga mencapai 480 untuk setiap kelas, mengindikasikan bahwa model sangat efisien dalam tidak salah mengklasifikasikan gestur lain sebagai gestur yang sedang diuji. Sementara itu, nilai untuk False Positive dan False Negative adalah nol, menunjukkan bahwa tidak ada kesalahan dalam pengklasifikasian gestur. Secara keseluruhan, tabel ini menggambarkan performa yang sangat baik dari model dalam mengklasifikasikan gestur mata dari jarak 50 sentimeter untuk pengendalian kursi roda, dengan tingkat akurasi dan keandalan yang tinggi.
 
 %Tabel 4.6
 \begin{longtable}{|l|c|c|c|c|}
@@ -217,7 +217,7 @@ Berdasarkan nilai TP, TN, FP, dan FN yang didapatkan, dapat didapatkan nilai 100
   Stop  & 100\%            & 100\%             & 100\%           & 100\%            \\ \hline
 \end{longtable}
 
-\subsection{Jarak 70 cm}
+\subsection{Jarak 70 sentimeter}
 
 Pada tahap pengujian berikutnya, dilakukan pengujian model dengan jarak 70 sentimeter. Dari \emph{confusion matrix} pada Gambar \ref{fig:matrix5}, dapat diamati performa model klasifikasi gestur dalam mengontrol pergerakan kursi roda, yang mencakup lima kelas: Kanan, Kiri, Maju, Mundur, dan Stop. Kinerja model secara keseluruhan sangat baik dengan setiap kelas kecuali 'Maju'. Untuk kelas 'Maju', model berhasil mengidentifikasi 117 kasus dengan benar namun, ada 3 kasus yang keliru diidentifikasi sebagai 'Mundur', menunjukkan sedikit kelemahan dalam membedakan antara dua gestur ini.
 
@@ -263,7 +263,7 @@ Setelah didapatkan nilai TP, TN, FP, dan FN untuk masing-masing kelas, selanjutn
   Stop  & 100\%            & 100\%             & 100\%           & 100\%            \\ \hline
 \end{longtable}
 
-\subsection{Jarak 90 cm}
+\subsection{Jarak 90 sentimeter}
 
 Skenario pengujian jarak yang terakhir adalah dengan jarak 90 sentimeter dari kamera ke objek yang dijadikan data citra. Melalui analisis \emph{confusion matrix} pada Gambar \ref{fig:matrix6} untuk kelas Kanan, model berhasil mengidentifikasi 119 dari 120 gestur dengan benar, hanya salah satu gestur diklasifikasikan sebagai Maju. Untuk kelas Kiri, model menunjukkan kelemahan yang lebih signifikan dengan hanya 114 gestur yang diklasifikasikan dengan benar dan 6 gestur yang salah diklasifikasikan sebagai Maju. Hal ini menunjukkan kesulitan model dalam membedakan gestur Kiri dari Maju. Untuk kelas Maju, ada satu gestur yang salah diklasifikasikan sebagai Mundur. Sementara itu, kelas Mundur dan Stop memiliki tingkat akurasi yang tinggi, meskipun kelas Stop mengalami empat gestur yang salah diklasifikasikan sebagai Mundur. Kesalahan ini mungkin disebabkan oleh kemiripan gestur atau penurunan akurasi deteksi karena peningkatan jarak, sebab semakin jauh jarak maka semakin kecil data citra yang didapat.
   
@@ -309,11 +309,15 @@ Dari hasil perhitungan yang dilakukan berdasarkan nilai TP, TN, FP, dan FN, pada
   Stop  & 99.17\%            & 99.15\%             & 96.67\%           & 97.89\%            \\ \hline
 \end{longtable}
 
+Pengujian performa model dengan variasi jarak 30 sentimeter, 50 sentimeter, 70 sentimeter, dan 90 sentimeter menunjukkan tren yang jelas bahwa semakin jauh jarak, performa model semakin berkurang. Hal ini dibuktikan dengan penurunan nilai akurasi, presisi, recall, dan f1 score seiring bertambahnya jarak. Pada jarak 30 sentimeter dan 50 sentimeter, model mencapai performa terbaik dengan akurasi yang tinggi, serta nilai presisi, recall, dan f1 score yang konsisten di setiap kelas perintah. Namun, ketika jarak meningkat 70 sentimeter, mulai terlihat penurunan performa, dengan semakin banyak prediksi yang keliru pada matriks kebingungan. Pada jarak 90 sentimeter, penurunan performa menjadi lebih signifikan dalam nilai presisi, recall, dan f1 score terutama pada kelas "Maju" dan kelas "Mundur".
+
+Secara keseluruhan, hasil pengujian ini menegaskan bahwa jarak antara kamera dan pengguna memiliki pengaruh yang signifikan terhadap performa model. Model bekerja paling optimal pada jarak 30 sentimeter, sedangkan jarak yang lebih jauh seperti 70 sentimeter dan 90 sentimeter performa model menjadi kurang optimal. Dengan demikian, pemilihan jarak ideal menjadi penting dalam implementasi sistem kontrol kursi roda berbasis gerakan mata ini, untuk memastikan akurasi dan responsivitas yang optimal bagi pengguna.
+
 \section{Pengujian Performa Model dengan menggunakan Variasi Pencahayaan}
 
 Pada sistem kontrol kursi roda berbasis \emph{gesture} mata, variasi pencahayaan memiliki pengaruh signifikan terhadap performa model deteksi. Model yang diimplementasikan harus mampu beroperasi secara andal dalam berbagai kondisi pencahayaan. Sub-bab ini akan membahas pengujian performa model dengan menggunakan variasi pencahayaan. Tujuan dari pengujian ini adalah untuk mengevaluasi tingkat keberhasilan dan ketidakberhasilan model dalam mendeteksi gerakan mata pada tiga kondisi pencahayaan, seperti pencahayaan terang (131 Lux), normal (77 Lux), dan redup (35 Lux).
 
-Jenis pencahayaan yang diuji adalah \emph{ambient light}, yang mensimulasikan pencahayaan lingkungan sekitar dengan variasi intensitas yang berbeda. \emph{Ambient light} adalah pencahayaan umum yang ada di sekitar lingkungan, yang dapat berasal dari sumber cahaya alami seperti sinar matahari atau buatan seperti lampu.Tingkat keberhasilan dan ketidakberhasilan dihitung dalam persentase, dengan data yang dikumpulkan selama tiga puluh sesi pengujian. Hasil dari analisis ini akan memberikan gambaran mengenai seberapa baik model dapat beradaptasi terhadap variasi pencahayaan yang berbeda.
+Jenis pencahayaan yang diuji adalah \emph{ambient light}, yang mensimulasikan pencahayaan lingkungan sekitar dengan variasi intensitas yang berbeda. \emph{Ambient light} adalah pencahayaan umum yang ada di sekitar lingkungan, yang dapat berasal dari sumber cahaya alami seperti sinar matahari atau buatan seperti lampu. Tingkat keberhasilan dan ketidakberhasilan dihitung dalam persentase, dengan data yang dikumpulkan selama tiga puluh sesi pengujian. Hasil dari analisis ini akan memberikan gambaran mengenai seberapa baik model dapat beradaptasi terhadap variasi pencahayaan yang berbeda.
 
 \subsection{Pengujian pada cahaya 35 Lux}
 
@@ -506,17 +510,13 @@ Meskipun performa FPS pada Intel NUC lebih rendah dibandingkan laptop, perangkat
 
 \section{Pengujian Waktu dari \emph{Inference Time} pada Model ke \emph{Response Time} pada Motor Kursi Roda}
 
-Pengujian waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda bertujuan untuk mengevaluasi seberapa cepat sistem kontrol kursi roda berbasis gerakan mata dapat merespons perintah dari pengguna. \emph{Inference Time} mengukur waktu yang dibutuhkan oleh model untuk mendeteksi dan mengklasifikasikan gerakan mata, sementara \emph{Response Time} mengukur waktu yang diperlukan motor kursi roda untuk mulai bergerak setelah menerima sinyal dari model.
+Pengujian waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda bertujuan untuk mengevaluasi seberapa cepat sistem kontrol kursi roda berbasis gerakan mata dapat merespons perintah dari pengguna. \emph{Inference Time} mengukur waktu yang dibutuhkan oleh model untuk mendeteksi dan mengklasifikasikan gerakan mata, sementara \emph{Response Time} mengukur waktu yang diperlukan motor kursi roda untuk mulai bergerak setelah menerima sinyal dari model. \emph{Response Time} dihitung dengan mengurangi waktu antara \emph{Motor Time} dengan \emph{Sent Time}.
 
 Pengujian ini sangat penting karena waktu respons yang cepat dan akurat merupakan kunci dalam memberikan kontrol yang aman dan nyaman bagi pengguna kursi roda. Untuk mendapatkan hasil yang lebih representatif, pengujian akan dilakukan untuk setiap kelas perintah (seperti "Maju," "Mundur," "Kanan," "Kiri," dan "Stop") sebanyak 30 kali pengujian per kelas. Hasil pengujian akan dianalisis untuk memberikan wawasan tentang efisiensi sistem secara keseluruhan dan area yang dapat ditingkatkan untuk mencapai kinerja yang lebih baik.
 
-\subsection{Kelas Kanan}
+Pertama-tama dilakukan pengujian waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda untuk perintah "Kanan." Pengujian ini bertujuan untuk mengevaluasi seberapa cepat sistem kontrol kursi roda berbasis gerakan mata dapat merespons perintah "Kanan" dari pengguna. Setiap pengujian dilakukan sebanyak 30 kali untuk memastikan hasil yang konsisten dan representatif. 
 
-Pada bagian ini, dilakukan pengujian waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda untuk perintah "Kanan." Pengujian ini bertujuan untuk mengevaluasi seberapa cepat sistem kontrol kursi roda berbasis gerakan mata dapat merespons perintah "Kanan" dari pengguna. Setiap pengujian dilakukan sebanyak 30 kali untuk memastikan hasil yang konsisten dan representatif. 
-
-Berdasarkan Tabel \ref{tb:delaykanan} di bawah, ditunjukkan waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda untuk perintah "Kanan." Rata-rata \emph{response time} keseluruhan untuk perintah "Kanan" adalah 0,2328 detik, dengan variabilitas waktu respons berkisar antara 0,035 hingga 0,399 detik.
-
-\emph{Inference Time}, yaitu waktu yang dibutuhkan oleh model untuk mendeteksi dan mengklasifikasikan perintah "Kanan," memiliki rata-rata sekitar 0,0626 detik. Variabilitas \emph{Inference Time} cukup kecil, dengan kisaran antara 0,0491 hingga 0,0777 detik.
+Berdasarkan Tabel \ref{tb:delaykanan} di bawah, ditunjukkan waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda untuk perintah "Kanan." Rata-rata \emph{response time} keseluruhan untuk perintah "Kanan" adalah 0,2328 detik, dengan variabilitas waktu respons berkisar antara 0,035 hingga 0,399 detik. \emph{Inference Time}, yaitu waktu yang dibutuhkan oleh model untuk mendeteksi dan mengklasifikasikan perintah "Kanan," memiliki rata-rata sekitar 0,0626 detik. Variabilitas \emph{Inference Time} cukup kecil, dengan kisaran antara 0,0491 hingga 0,0777 detik. Hasil ini menunjukkan bahwa sistem dapat merespons perintah "Kanan" dengan cepat dan akurat.
 
 \begin{longtable}{|c|c|c|c|c|c|}
   \caption{Hasil pengujian \emph{response time} pada kelas kanan}
@@ -556,7 +556,9 @@ Berdasarkan Tabel \ref{tb:delaykanan} di bawah, ditunjukkan waktu dari \emph{Inf
       Kanan & 0.073888 & 21:49:37.936 & 21:49:37.998 & 21:49:37.998 & 0.062 \\ \hline
 \end{longtable}
 
-\subsection{Kelas Kiri}
+Selanjutnya, pada Tabel \ref{tb:delaykiri} ditunjukkan waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda untuk perintah "Kiri." Rata-rata waktu respons keseluruhan untuk perintah "Kiri" adalah 0,0933 detik, dengan variabilitas yang relatif rendah di antara 30 pengujian. Waktu rata-rata untuk deteksi dan klasifikasi perintah "Kiri" oleh model (\emph{Inference Time}) adalah sekitar 0,0640 detik, dengan kisaran antara 0,0525 hingga 0,0826 detik.
+
+Sementara itu, rata-rata waktu respons motor kursi roda (\emph{Response Time}) untuk perintah "Kiri" adalah 0,0933 detik, dengan variabilitas waktu respons berkisar antara 0,023 hingga 0,234 detik. Waktu pengiriman perintah (\emph{Sent Time}) dan penerimaan sinyal (\emph{Received Time}) menunjukkan keterlambatan minimal antara model dan motor, dengan selisih biasanya dalam hitungan milidetik. Hasil ini menunjukkan bahwa sistem dapat merespons perintah "Kiri" dengan cepat dan akurat.
 
 \begin{longtable}{|c|c|c|c|c|c|}
   \caption{Hasil pengujian \emph{response time} pada kelas kiri}
@@ -596,7 +598,9 @@ Berdasarkan Tabel \ref{tb:delaykanan} di bawah, ditunjukkan waktu dari \emph{Inf
       Kiri & 0.063332 & 21:33:03.528 & 21:33:03.580 & 21:33:03.580 & 0.052 \\ \hline
 \end{longtable}
 
-\subsection{Kelas Maju}
+Pada hasil pengujian berikutnya yang tertera pada Tabel \ref{tb:delaymaju} di bawah, ditunjukkan waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda untuk perintah "Maju." Rata-rata waktu respons keseluruhan untuk perintah "Maju" adalah 0,4337 detik, dengan variabilitas yang relatif tinggi di antara 30 pengujian. Waktu rata-rata untuk deteksi dan klasifikasi perintah "Maju" oleh model (\emph{Inference Time}) adalah sekitar 0,0656 detik, dengan variabilitas yang kecil, kisaran antara 0,0560 hingga 0,0753 detik.
+
+Rata-rata waktu respons motor kursi roda (\emph{Response Time}) adalah 0,4337 detik, dengan variabilitas waktu respons yang lebih besar, berkisar antara 0,217 hingga 0,767 detik. Waktu pengiriman perintah (\emph{Sent Time}) dan penerimaan sinyal (\emph{Received Time}) menunjukkan keterlambatan minimal antara model dan motor, dengan selisih biasanya hanya dalam hitungan milidetik. Variabilitas waktu respons cukup tinggi, yang berarti konsistensi respons motor untuk perintah "Maju" cukup baik. Secara keseluruhan, hasil ini menunjukkan bahwa sistem dapat merespons perintah "Maju" dengan cepat.
 
 \begin{longtable}{|c|c|c|c|c|c|c|c|}
   \caption{Hasil pengujian \emph{response time} pada kelas maju} 
@@ -636,7 +640,9 @@ Berdasarkan Tabel \ref{tb:delaykanan} di bawah, ditunjukkan waktu dari \emph{Inf
       Maju & 0.062296 & 03:01:55.326 & 03:01:55.375 & 03:01:55.772 & 0.446 \\ \hline
 \end{longtable}
 
-\subsection{Kelas Mundur}
+Hasil pengujian berikutnya dapat dilihat pada Tabel \ref{tb:delaymundur} di bawah menunjukkan waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda untuk perintah "Mundur." Rata-rata waktu respons keseluruhan untuk perintah "Mundur" adalah 0,1409 detik, dengan variabilitas yang relatif rendah di antara 30 pengujian. Waktu rata-rata untuk deteksi dan klasifikasi perintah "Mundur" oleh model (\emph{Inference Time}) adalah sekitar 0,0637 detik, dengan variabilitas yang kecil, kisaran antara 0,0481 hingga 0,0795 detik.
+
+Rata-rata waktu respons motor kursi roda (\emph{Response Time}) adalah 0,1409 detik, dengan variabilitas waktu respons berkisar antara 0,026 hingga 0,426 detik.Meskipun variabilitas waktu respons masih ada, hasil ini menunjukkan bahwa sistem kontrol kursi roda berbasis gerakan mata mampu memberikan kontrol yang andal dan responsif terhadap perintah "Mundur."
 
 \begin{longtable}{|c|c|c|c|c|c|}
   \caption{Hasil pengujian \emph{response time} pada kelas mundur} 
@@ -676,7 +682,9 @@ Berdasarkan Tabel \ref{tb:delaykanan} di bawah, ditunjukkan waktu dari \emph{Inf
       Mundur & 0.065692 & 03:33:00.552 & 03:33:00.607 & 03:33:00.607 & 0.055 \\ \hline
 \end{longtable}
 
-\subsection{Kelas Stop}
+Pengujian yang terakhir dapat dilihat pada Tabel \ref{tb:delaystop} di bawah yang menunjukkan waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda untuk perintah "Stop." Rata-rata waktu respons keseluruhan untuk perintah "Stop" adalah 0,4318 detik, dengan variabilitas yang relatif rendah di antara 30 pengujian. Waktu rata-rata untuk deteksi dan klasifikasi perintah "Stop" oleh model (\emph{Inference Time}) adalah sekitar 0,0666 detik, dengan variabilitas yang kecil, kisaran antara 0,0554 hingga 0,0816 detik.
+
+Rata-rata waktu respons motor kursi roda (\emph{Response Time}) adalah 0,4318 detik, dengan variabilitas waktu respons berkisar antara 0,396 hingga 0,785 detik. Waktu pengiriman perintah (\emph{Sent Time}) dan penerimaan sinyal (\emph{Received Time}) menunjukkan keterlambatan minimal antara model dan motor, dengan selisih hanya dalam hitungan milidetik. Hasil ini menunjukkan bahwa sistem kontrol kursi roda berbasis gerakan mata mampu memberikan kontrol yang andal dan responsif terhadap perintah "Stop."
 
 \begin{longtable}{|c|c|c|c|c|c|}
   \caption{Hasil pengujian \emph{response time} pada kelas stop} 
@@ -716,9 +724,21 @@ Berdasarkan Tabel \ref{tb:delaykanan} di bawah, ditunjukkan waktu dari \emph{Inf
       Stop & 0.074920 & 03:01:56.425 & 03:01:56.505 & 03:01:56.875 & 0.450 \\ \hline
 \end{longtable}
 
+Dari semua hasil pengujian pada masing-masing kelas seperti yang tertera pada tabel-tabel di atas, dapat dilihat bahwa perintah "Kiri" memiliki waktu respons terendah dengan rata-rata 0,0933 detik, menunjukkan bahwa sistem dapat merespons perintah "Kiri" dengan cepat dan akurat. Sementara itu, perintah "Maju" dan "Stop" memiliki waktu respons yang lebih tinggi, masing-masing 0,4337 detik dan 0,4318 detik, menunjukkan bahwa sistem memerlukan waktu lebih lama untuk merespons perintah tersebut. Hal tersebut dikarenakan perintah "Maju" memiliki nilai \emph{Pulse Width Modulation} (PWM) yang lebih besar dibandingkan perintah lainnya.
+
+\emph{Inference Time} untuk semua perintah berada pada kisaran yang sama, antara 0,0626 hingga 0,0666 detik, menunjukkan bahwa model dapat mendeteksi dan mengklasifikasikan gerakan mata dengan cepat dan konsisten di semua kelas. Secara keseluruhan, hasil ini menunjukkan bahwa sistem kontrol kursi roda berbasis gerakan mata memiliki kinerja yang andal dan responsif, terutama pada perintah "Kanan," "Kiri," dan "Mundur," yang memiliki waktu respons rata-rata di bawah 0,25 detik.
+
 \section{Pengujian Kestabilan pada Motor Kursi Roda}
 
-\subsection{Kelas Kanan}
+Pada skenario pengujian yang terakhir adalah pengujian kestabilan pada motor kursi roda. Pengujian kestabilan pada motor kursi roda bertujuan untuk memastikan bahwa waktu output yang dijalankan oleh motor tetap stabil untuk setiap input yang diberikan oleh pengguna melalui sistem kontrol gerakan mata. Stabilitas waktu output ini sangat penting untuk memberikan pengalaman penggunaan yang aman, nyaman, dan konsisten bagi pengguna kursi roda.
+
+Pengujian ini melibatkan pengukuran waktu yang dibutuhkan oleh motor untuk merespons setiap perintah gerakan mata dan memastikan bahwa waktu respons tersebut tetap konsisten di berbagai kondisi input. Untuk memastikan hasil yang representatif, pengujian dilakukan per kelas perintah (seperti "Kanan," "Kiri," "Maju," "Mundur," dan "Stop") dengan masing-masing kelas diuji sebanyak 30 kali. Hasil pengujian akan dianalisis untuk menentukan tingkat kestabilan waktu respons motor dalam merespons perintah dari model kontrol gerakan mata. 
+
+\subsection{Kestabilan Motor terhadap Perintah Kanan}
+
+Variasi pengujian pertama yang dilakukan adalah pengujian kestabilan motor terhadap perintah "Kanan." Pengujian ini bertujuan untuk mengevaluasi apakah waktu output yang dijalankan oleh motor tetap stabil setiap kali perintah "Kanan" diberikan oleh pengguna melalui sistem kontrol gerakan mata. Hasil pengujian dapat dilihat pada Tabel \ref{tb:motorkanan} di bawah, dimana waktu output motor (\emph{Motor Time}) diukur untuk setiap input yang diberikan oleh pengguna melalui sistem kontrol gerakan mata.
+
+Waktu output rata-rata motor untuk perintah "Kanan" adalah 6,013 detik, dengan variabilitas waktu berkisar antara 5,439 hingga 7,163 detik. Rentang waktu yang relatif sempit menunjukkan bahwa motor kursi roda dapat merespons perintah "Kanan" dengan cukup stabil dan konsisten. Secara keseluruhan, pengujian kestabilan motor kursi roda menunjukkan bahwa sistem kontrol mampu memberikan waktu respons yang stabil dan konsisten untuk perintah "Kanan." Meskipun ada sedikit variabilitas dalam waktu output motor, hasil ini menunjukkan bahwa sistem kontrol kursi roda berbasis gerakan mata dapat merespons perintah "Kanan" dengan cepat dan akurat.
 
 \begin{longtable}{|c|c|c|}
   \caption{Hasil pengujian kestabilan motor pada kelas kanan} 
@@ -788,7 +808,11 @@ Berdasarkan Tabel \ref{tb:delaykanan} di bawah, ditunjukkan waktu dari \emph{Inf
   Stop           & 19:50:08.644        &                         \\ \hline
 \end{longtable}
 
-\subsection{Kelas Kiri}
+\subsection{Kestabilan Motor terhadap Perintah Kiri}
+
+Selanjutnya dilakukan pengujian kestabilan motor terhadap perintah "Kiri." Tujuan dari pengujian ini adalah untuk mengevaluasi apakah waktu output yang dijalankan oleh motor tetap stabil dan konsisten setiap kali perintah "Kiri" diberikan oleh pengguna melalui sistem kontrol gerakan mata. Hasil pengujian dapat dilihat pada Tabel \ref{tb:motorkiri} di bawah. Dapat diamati bahwa waktu output rata-rata motor untuk perintah "Kiri" adalah 6,469 detik, dengan rentang waktu mulai dari 5,931 hingga 8,032 detik. 
+
+Sebagian besar waktu output motor berada dalam kisaran 6 detik, menunjukkan bahwa motor kursi roda dapat merespons perintah "Kiri" dengan tingkat stabilitas dan konsistensi yang baik.  Namun, terdapat beberapa variabilitas yang terlihat, seperti waktu output motor mencapai 8,032 detik. Secara keseluruhan, pengujian ini menunjukkan bahwa sistem kontrol kursi roda mampu memberikan waktu respons yang cukup stabil untuk perintah "Kiri".
 
 \begin{longtable}{|c|c|c|}
   \caption{Hasil pengujian kestabilan motor pada kelas kiri} 
@@ -858,7 +882,13 @@ Berdasarkan Tabel \ref{tb:delaykanan} di bawah, ditunjukkan waktu dari \emph{Inf
   Stop           & 20:20:17.920        &                         \\ \hline
 \end{longtable}
 
-\subsection{Kelas Maju}
+\subsection{Kestabilan Motor terhadap Perintah Maju}
+
+Pengujian berikutnya adalah pengujian kestabilan motor terhadap perintah "Maju". Pengujian ini bertujuan untuk mengevaluasi apakah waktu output motor tetap konsisten setiap kali pengguna memberikan perintah "Maju" melalui sistem kontrol gerakan mata. 
+
+Tabel \ref{tb:motormaju} di bawah menunjukkan hasil pengujian kestabilan motor kursi roda untuk perintah "Maju." Waktu rata-rata motor untuk perintah "Maju" adalah 6,532 detik, dengan rentang antara 6,285 hingga 6,796 detik. Sebagian besar waktu output motor berada di kisaran 6,4 hingga 6,6 detik, menunjukkan bahwa motor kursi roda dapat merespons perintah "Maju" dengan cukup stabil dan konsisten.
+
+Secara keseluruhan, sistem kontrol kursi roda mampu memberikan waktu respons yang stabil untuk perintah "Maju." Meskipun ada beberapa variasi dalam waktu output, hasil ini menunjukkan bahwa sistem dapat merespons perintah "Maju" dengan cukup baik.
 
 \begin{longtable}{|c|c|c|}
   \caption{Hasil pengujian kestabilan motor pada kelas maju} 
@@ -928,7 +958,11 @@ Berdasarkan Tabel \ref{tb:delaykanan} di bawah, ditunjukkan waktu dari \emph{Inf
   Stop           & 18:05:46.602        &                         \\ \hline
 \end{longtable}
 
-\subsection{Kelas Mundur}
+\subsection{Kestabilan Motor terhadap Perintah Mundur}
+
+Selanjutnya, dilakukan pengujian untuk mengukur seberapa stabil motor kursi roda merespons perintah "Mundur." Tujuan pengujian ini adalah untuk memastikan bahwa waktu output motor tetap konsisten setiap kali pengguna memberikan perintah "Mundur" melalui sistem kontrol gerakan mata. 
+
+Dari hasil pengujian yang tertera pada Tabel \ref{tb:motormundur} di bawah, waktu output rata-rata motor untuk perintah "Mundur" adalah 6,863 detik, dengan kisaran waktu antara 6,470 hingga 7,235 detik. Sebagian besar waktu output motor berada di kisaran 6,6 hingga 7 detik, menunjukkan bahwa motor kursi roda dapat merespons perintah "Mundur" dengan stabil dan konsisten.
 
 \begin{longtable}{|c|c|c|}
   \caption{Hasil pengujian kestabilan motor pada kelas mundur} 
@@ -997,3 +1031,83 @@ Berdasarkan Tabel \ref{tb:delaykanan} di bawah, ditunjukkan waktu dari \emph{Inf
   Mundur & 18:59:58.397 & \multirow{2}{*}{6.969} \\ \cline{1-2}
   Stop   & 19:00:05.366 &                        \\ \hline
 \end{longtable}
+
+\subsection{Kestabilan Motor terhadap Perintah Stop}
+
+Pengujian yang terakhir adalah pengujian kestabilan motor terhadap perintah "Stop". Perintah "Stop" memiliki peran krusial dalam menghentikan pergerakan kursi roda secara tepat waktu dan akurat. Tujuan pengujian ini adalah untuk mengukur waktu respons motor saat diberikan perintah "Stop," serta memastikan bahwa waktu output motor tetap stabil dan konsisten.
+
+Berdasarkan pengamatan dari Tabel \ref{tb:motorstop} di bawah, waktu output rata-rata motor untuk perintah "Stop" adalah sekitar 4,933 detik, dengan kisaran antara 4,294 hingga 5,785 detik. Sebagian besar waktu output berada di kisaran 4,4 hingga 5,3 detik, menunjukkan bahwa motor merespons perintah "Stop" dengan cukup stabil dan konsisten.
+
+\begin{longtable}{|c|c|c|}
+  \caption{Hasil pengujian kestabilan motor pada kelas stop} 
+  \label{tb:motorstop} \\
+  \hline
+  \rowcolor[HTML]{C0C0C0} 
+  \textbf{Kelas} & \textbf{Motor Time} & \textbf{Detection Time} \\ \hline
+  Stop           & 16:51:16.866        & \multirow{2}{*}{4,952}  \\ \cline{1-2}
+  Maju           & 16:51:21.818        &                         \\ \hline
+  Stop           & 16:51:26.379        & \multirow{2}{*}{5,039}  \\ \cline{1-2}
+  Maju           & 16:51:31.418        &                         \\ \hline
+  Stop           & 16:51:35.931        & \multirow{2}{*}{4.74}   \\ \cline{1-2}
+  Maju           & 16:51:40.671        &                         \\ \hline
+  Stop           & 16:51:45.249        & \multirow{2}{*}{4,533}  \\ \cline{1-2}
+  Maju           & 16:51:49.782        &                         \\ \hline
+  Stop           & 16:51:54.480        & \multirow{2}{*}{5,299}  \\ \cline{1-2}
+  Maju           & 16:51:59.779        &                         \\ \hline
+  Stop           & 16:52:04.266        & \multirow{2}{*}{4,932}  \\ \cline{1-2}
+  Maju           & 16:52:09.198        &                         \\ \hline
+  Stop           & 16:52:13.683        & \multirow{2}{*}{5,296}  \\ \cline{1-2}
+  Maju           & 16:52:18.979        &                         \\ \hline
+  Stop           & 16:52:23.832        & \multirow{2}{*}{4,963}  \\ \cline{1-2}
+  Maju           & 16:52:28.795        &                         \\ \hline
+  Stop           & 16:52:33.913        & \multirow{2}{*}{5.02}   \\ \cline{1-2}
+  Maju           & 16:52:38.933        &                         \\ \hline
+  Stop           & 16:52:43.883        & \multirow{2}{*}{4,981}  \\ \cline{1-2}
+  Maju           & 16:52:48.864        &                         \\ \hline
+  Stop           & 16:52:53.335        & \multirow{2}{*}{5,295}  \\ \cline{1-2}
+  Maju           & 16:52:58.630        &                         \\ \hline
+  Stop           & 16:53:03.496        & \multirow{2}{*}{5,067}  \\ \cline{1-2}
+  Maju           & 16:53:08.563        &                         \\ \hline
+  Stop           & 16:53:13.379        & \multirow{2}{*}{4,906}  \\ \cline{1-2}
+  Maju           & 16:53:18.285        &                         \\ \hline
+  Stop           & 16:53:23.319        & \multirow{2}{*}{4,781}  \\ \cline{1-2}
+  Maju           & 16:53:28.100        &                         \\ \hline
+  Stop           & 16:53:32.816        & \multirow{2}{*}{5,283}  \\ \cline{1-2}
+  Maju           & 16:53:38.099        &                         \\ \hline
+  Stop           & 16:53:42.950        & \multirow{2}{*}{4,883}  \\ \cline{1-2}
+  Maju           & 16:53:47.833        &                         \\ \hline
+  Stop           & 16:53:52.261        & \multirow{2}{*}{5,041}  \\ \cline{1-2}
+  Maju           & 16:53:57.302        &                         \\ \hline
+  Stop           & 16:54:02.598        & \multirow{2}{*}{5,551}  \\ \cline{1-2}
+  Maju           & 16:54:08.149        &                         \\ \hline
+  Stop           & 17:31:56.140        & \multirow{2}{*}{4.85}   \\ \cline{1-2}
+  Maju           & 17:32:00.990        &                         \\ \hline
+  Stop           & 17:32:05.123        & \multirow{2}{*}{4,294}  \\ \cline{1-2}
+  Maju           & 17:32:09.417        &                         \\ \hline
+  Stop           & 17:32:13.623        & \multirow{2}{*}{4,658}  \\ \cline{1-2}
+  Maju           & 17:32:18.281        &                         \\ \hline
+  Stop           & 17:32:22.684        & \multirow{2}{*}{4,638}  \\ \cline{1-2}
+  Maju           & 17:32:27.322        &                         \\ \hline
+  Stop           & 17:32:31.462        & \multirow{2}{*}{4,465}  \\ \cline{1-2}
+  Maju           & 17:32:35.927        &                         \\ \hline
+  Stop           & 17:32:40.077        & \multirow{2}{*}{4,396}  \\ \cline{1-2}
+  Maju           & 17:32:44.473        &                         \\ \hline
+  Stop           & 17:32:48.824        & \multirow{2}{*}{5.32}   \\ \cline{1-2}
+  Maju           & 17:32:54.144        &                         \\ \hline
+  Stop           & 17:32:59.260        & \multirow{2}{*}{5,118}  \\ \cline{1-2}
+  Maju           & 17:33:04.378        &                         \\ \hline
+  Stop           & 17:33:08.959        & \multirow{2}{*}{5,785}  \\ \cline{1-2}
+  Maju           & 17:33:14.744        &                         \\ \hline
+  Stop           & 17:33:18.943        & \multirow{2}{*}{5,265}  \\ \cline{1-2}
+  Maju           & 17:33:24.208        &                         \\ \hline
+  Stop           & 17:33:28.725        & \multirow{2}{*}{4,433}  \\ \cline{1-2}
+  Maju           & 17:33:33.158        &                         \\ \hline
+  Stop           & 17:33:37.263        & \multirow{2}{*}{4,414}  \\ \cline{1-2}
+  Maju           & 17:33:41.677        &                         \\ \hline
+\end{longtable}
+
+Pengujian kestabilan motor kursi roda terhadap berbagai perintah ("Kanan," "Kiri," "Maju," "Mundur," dan "Stop") menunjukkan tingkat konsistensi yang bervariasi. Waktu output rata-rata untuk perintah "Kanan" adalah 6,013 detik, dengan rentang 5,439 hingga 7,163 detik, menandakan bahwa motor merespons perintah ini dengan cukup stabil meski terdapat beberapa variasi. Untuk perintah "Kiri," waktu output rata-rata adalah 6,469 detik, dengan kisaran 5,931 hingga 8,032 detik, menunjukkan adanya variasi yang lebih besar dalam respons motor.
+
+Perintah "Maju" memiliki waktu output rata-rata 6,532 detik, dengan rentang antara 6,285 hingga 6,796 detik, menunjukkan konsistensi yang baik dalam kisaran 6 detik. Sementara itu, perintah "Mundur" menunjukkan waktu output rata-rata 6,863 detik, dengan variasi dari 6,470 hingga 7,235 detik, menandakan perlunya peningkatan stabilitas respons. Perintah "Stop" memiliki waktu output rata-rata tercepat, yaitu 4,933 detik, dengan kisaran antara 4,294 hingga 5,785 detik, menunjukkan respons motor yang lebih cepat dibandingkan perintah lainnya, meskipun terdapat beberapa variasi.
+
+Secara keseluruhan, sistem kontrol kursi roda mampu merespons semua perintah dengan tingkat stabilitas yang cukup baik. Perintah "Maju" menunjukkan stabilitas respons terbaik dengan rentang waktu output yang sempit, sementara perintah "Kiri" memiliki variasi waktu output terbesar. Meskipun terdapat variasi kecil dalam waktu output pada masing-masing kelas, hasil pengujian ini menunjukkan bahwa motor kursi roda merespons perintah dengan cukup konsisten.
