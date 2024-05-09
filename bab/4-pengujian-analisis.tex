@@ -58,12 +58,12 @@ Selanjutnya, setelah proses akuisisi data telah dilakukan, model CNN dibangun de
 %Gambar 4.2
 \begin{figure}[H]
   \centering
-  \begin{subfigure}[b]{0.5\textwidth}
+  \begin{subfigure}[b]{0.55\textwidth}
       \includegraphics[width=\textwidth]{gambar/bab4/model5 (30cm)/train.png}
       \caption{Akurasi}
   \end{subfigure}
 
-  \begin{subfigure}[b]{0.5\textwidth}
+  \begin{subfigure}[b]{0.55\textwidth}
       \includegraphics[width=\textwidth]{gambar/bab4/model5 (30cm)/loss.png}
       \caption{\emph{Loss}}
   \end{subfigure}
@@ -71,12 +71,12 @@ Selanjutnya, setelah proses akuisisi data telah dilakukan, model CNN dibangun de
   \label{fig:acc_loss}
 \end{figure}
 
-Setelah didapatkan grafik akurasi dan \emph{loss} untuk hasil pelatihan model, selanjutnya dilakukan perhitungan untuk \emph{confusion matrix} yang dibuat berdasarkan \emph{dataset} validasi. \emph{Confusion matrix} dihitung dengan membandingkan label yang sebenarnya (\emph{true label}) dengan label yang diprediksi (\emph{predicted label}) yang kemudian kedua label tersebut akan divisualisasikan menjadi \emph{matrix} yang dibagi menjadi tiap kelas kontrol, dimana \emph{predicted label} menjadi sumbu X dan \emph{true label} menjadi sumbu Y. Dari visualisasi \emph{confusion matrix}, dapat diamati bahwa keseluruhan 600 \emph{dataset} validasi yang telah diuji berdasarkan label yang sebenarnya sudah terprediksi dengan benar.
+Setelah didapatkan grafik akurasi dan \emph{loss} untuk hasil pelatihan model, selanjutnya dilakukan perhitungan untuk \emph{confusion matrix}. \emph{Confusion matrix} dihitung dengan membandingkan label yang sebenarnya (\emph{true label}) dengan label yang diprediksi (\emph{predicted label}) yang kemudian kedua label tersebut akan divisualisasikan menjadi \emph{matrix} yang dibagi menjadi tiap kelas kontrol, dimana \emph{predicted label} menjadi sumbu X dan \emph{true label} menjadi sumbu Y. Dari visualisasi \emph{confusion matrix}, dapat diamati bahwa keseluruhan 600 \emph{dataset} validasi yang telah diuji berdasarkan label yang sebenarnya sudah terprediksi dengan benar.
 
 %Gambar 4.3
 \begin{figure} [H] \centering
   % Nama dari file gambar yang diinputkan
-  \includegraphics[width=0.2965\textwidth]{gambar/bab4/model5 (30cm)/matrix.png}
+  \includegraphics[width=0.35\textwidth]{gambar/bab4/model5 (30cm)/matrix.png}
   % Keterangan gambar yang diinputkan
   \caption{\emph{Confusion Matrix} Model Hasil Pelatihan}
   % Label referensi dari gambar yang diinputkan
@@ -99,9 +99,7 @@ Kemudian dari \emph{confusion matrix}, didapatkan hasil klasifikasi yang dapat d
   Stop  & 120          & 480         & 0           & 0           \\ \hline
 \end{longtable}
 
-Berdasarkan Tabel \ref{tb:cm_model} diatas, dapat dilihat pada semua kelas memiliki 120 data citra yang termasuk dalam \emph{true positive}, 480 data citra yang termasuk dalam \emph{true negative}, 0 data citra yang termasuk dalam \emph{false positive}, dan 0 data citra yang termasuk dalam \emph{false negative}. 
-
-Dari hasil klasifikasi tersebut, selanjutnya dapat dihitung nilai validasi model. Nilai validasi yang dihitung yaitu \emph{accuracy}, \emph{precision}, \emph{recall}, dan \emph{f-1 score}. Penggambaran lebih detail dapat dilihat pada Tabel \ref{tb:vs_model}. 
+Berdasarkan Tabel \ref{tb:cm_model} diatas, dapat dilihat pada semua kelas memiliki 120 data citra yang termasuk dalam \emph{true positive}, 480 data citra yang termasuk dalam \emph{true negative}, 0 data citra yang termasuk dalam \emph{false positive}, dan 0 data citra yang termasuk dalam \emph{false negative}. Dari hasil klasifikasi tersebut, selanjutnya dapat dihitung nilai validasi model. Nilai validasi yang dihitung yaitu \emph{accuracy}, \emph{precision}, \emph{recall}, dan \emph{f-1 score}. Penggambaran lebih detail dapat dilihat pada Tabel \ref{tb:vs_model}. 
 
 %Tabel 4.3
 \begin{longtable}{|l|c|c|c|c|}
