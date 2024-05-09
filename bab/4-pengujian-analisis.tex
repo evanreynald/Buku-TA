@@ -121,9 +121,37 @@ Dilihat dari Tabel \ref{tb:vs_model}, nilai \emph{accuracy}, \emph{precision}, \
 
 \section{Pengujian Performa Model dengan menggunakan Variasi Jarak}
 
-Pada skenario pengujian selanjutnya, model diuji berdasarkan beberapa variasi jarak. Pengujian jarak berguna untuk mengetahui performa dan tingkat akurasi model jika input citra diambil dari jarak yang berbeda-beda. Hal ini perlu diuji karena semakin jauh jarak pendeteksi citra, maka semakin kecil data visual citra yang diperoleh. Variasi jarak yang digunakan adalah 30 sentimeter, 50 sentimeter, 70 sentimeter, 90 sentimeter, dan 110 sentimeter. 
+Pada skenario pengujian selanjutnya, model diuji berdasarkan beberapa variasi jarak. Pengujian jarak berguna untuk mengetahui performa dan tingkat akurasi model jika input citra diambil dari jarak yang berbeda-beda. Hal ini perlu diuji karena semakin jauh jarak pendeteksi citra, maka semakin kecil data visual citra yang diperoleh. Variasi jarak yang digunakan adalah 30 sentimeter, 50 sentimeter, 70 sentimeter, 90 sentimeter, dan 110 sentimeter. Contoh \emph{dataset} untuk pengujian variasi jarak dapat dilihat pada Gambar \ref{fig:Variasi Jarak} di bawah.
 
-Model diuji menggunakan \emph{dataset} validasi yang terdiri dari 600 data citra yang dibagi rata sebanyak 120 data citra yang dikelompokkan ke dalam lima kelas. Pengujian model dihitung dengan menggunakan \emph{confusion matrix}. Yang kemudian, dari \emph{confusion matrix} didapatkan nilai \emph{true positive} (TP), \emph{true negative} (TN), \emph{false positive} (FP), dan \emph{false negative} (FN) dari masing-masing kelas yang diuji. Selanjutnya dari keempat variabel tersebut, dapat dihitung \emph{accuracy}, \emph{precision}, \emph{recall}, dan \emph{f-1 score}. 
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.4\linewidth}
+      \includegraphics[width=\linewidth]{gambar/bab4/30.jpg}
+      \caption{Jarak 30 sentimeter}
+      \label{fig:imageaa}
+  \end{subfigure}
+  \hfill % adds horizontal space between the figures
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{gambar/bab4/50.jpg}
+    \caption{Jarak 50 sentimeter}
+    \label{fig:imagebb}
+  \end{subfigure}
+  \vspace{1cm} % adds vertical space between the rows of images
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{gambar/bab4/70.jpg}
+    \caption{Jarak 70 sentimeter}
+    \label{fig:imagecc}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\linewidth}
+    \includegraphics[width=\linewidth]{gambar/bab4/90.jpg}
+    \caption{Jarak 90 sentimeter}
+    \label{fig:imagedd}
+  \end{subfigure}
+  \caption{Variasi \emph{Dataset} Pengujian Jarak}
+  \label{fig:Variasi Jarak}
+\end{figure}
+
+Model diuji menggunakan \emph{dataset} validasi yang terdiri dari 600 data citra yang dibagi rata sebanyak 120 data citra yang dikelompokkan ke dalam lima kelas. Pengujian model dihitung dengan menggunakan \emph{confusion matrix}. Yang kemudian, dari \emph{confusion matrix} didapatkan nilai \emph{true positive} (TP), \emph{true negative} (TN), \emph{false positive} (FP), dan \emph{false negative} (FN) dari masing-masing kelas yang diuji. Selanjutnya dari keempat variabel tersebut, dapat dihitung \emph{accuracy}, \emph{precision}, \emph{recall}, dan \emph{f-1 score}. Nilai-nilai ini mencerminkan seberapa baik model mampu mengidentifikasi kelas yang benar (recall), seberapa akurat prediksi yang diberikan (precision), serta keseimbangan antara keduanya melalui f-1 score. 
 
 \subsection{Jarak 30 sentimeter}
 
@@ -157,6 +185,8 @@ Kemudian dari \emph{confusion matrix} yang didapat, diperoleh nilai TP, TN, FP, 
 
 Dari nilai TP, TN , FP, dan FN diatas, dapat dihitung nilai \emph{accuracy}, \emph{precision}, \emph{recall}, dan \emph{f-1 score} seperti yang tertera pada Tabel \ref{tb:vs_model2}. Pada semua kelas, didapat nilai \emph{accuracy} sebesar 100\%, nilai \emph{precision} sebesar 100\%, nilai \emph{recall} sebesar 100\%, dan nilai \emph{f-1 score} sebesar 100\%. Keempat variabel tersebut dapat bernilai bagus karena hasil perhitungannya berbanding lurus dengan perhitungan \emph{confusion matrix}. 
 
+Nilai-nilai ini menunjukkan bahwa model dapat mengenali perbedaan antara kelas dengan akurasi tinggi, dan mampu mendeteksi kelas yang benar setiap kali diberikan input pada jarak 30 sentimeter. Selain itu, keempat variabel tersebut dapat bernilai bagus karena hasil perhitungannya berbanding lurus dengan perhitungan \emph{confusion matrix}. 
+
 %Tabel 4.5
 \begin{longtable}{|l|c|c|c|c|}
   \caption{Hasil Validasi Nilai Model dengan Jarak 30 cm}
@@ -185,7 +215,7 @@ Selanjutnya, pengujian dilakukan dengan variasi jarak 50 sentimeter. Dari data p
   \label{fig:matrix3}
 \end{figure}
 
-Pada Tabel \ref{tb:cm_model3} yang disajikan menampilkan hasil pengujian model klasifikasi yang digunakan untuk mengendalikan kursi roda melalui gestur mata dari jarak 50 sentimeter. Untuk semua kelas, angka True Positive mencatat 120, menunjukkan bahwa model secara konsisten berhasil mengidentifikasi setiap gestur dengan benar sebanyak 120 kali. True Negative, yang juga mencapai 480 untuk setiap kelas, mengindikasikan bahwa model sangat efisien dalam tidak salah mengklasifikasikan gestur lain sebagai gestur yang sedang diuji. Sementara itu, nilai untuk False Positive dan False Negative adalah nol, menunjukkan bahwa tidak ada kesalahan dalam pengklasifikasian gestur. Secara keseluruhan, tabel ini menggambarkan performa yang sangat baik dari model dalam mengklasifikasikan gestur mata dari jarak 50 sentimeter untuk pengendalian kursi roda, dengan tingkat akurasi dan keandalan yang tinggi.
+Pada Tabel \ref{tb:cm_model3} yang disajikan menampilkan hasil pengujian model klasifikasi yang digunakan untuk mengendalikan kursi roda melalui gestur mata dari jarak 50 sentimeter. Untuk semua kelas, angka \emph{True Positive} mencatat 120, menunjukkan bahwa model secara konsisten berhasil mengidentifikasi setiap gestur dengan benar sebanyak 120 kali. \emph{True Negative}, yang juga mencapai 480 untuk setiap kelas, mengindikasikan bahwa model sangat efisien dalam tidak salah mengklasifikasikan gestur lain sebagai gestur yang sedang diuji. Sementara itu, nilai untuk \emph{False Positive} dan \emph{False Negative} adalah nol, menunjukkan bahwa tidak ada kesalahan dalam pengklasifikasian gestur. Secara keseluruhan, tabel ini menggambarkan performa yang sangat baik dari model dalam mengklasifikasikan gestur mata dari jarak 50 sentimeter untuk pengendalian kursi roda, dengan tingkat akurasi dan keandalan yang tinggi.
 
 %Tabel 4.6
 \begin{longtable}{|l|c|c|c|c|}
@@ -219,7 +249,7 @@ Berdasarkan nilai TP, TN, FP, dan FN yang didapatkan, dapat didapatkan nilai 100
 
 \subsection{Jarak 70 sentimeter}
 
-Pada tahap pengujian berikutnya, dilakukan pengujian model dengan jarak 70 sentimeter. Dari \emph{confusion matrix} pada Gambar \ref{fig:matrix5}, dapat diamati performa model klasifikasi gestur dalam mengontrol pergerakan kursi roda, yang mencakup lima kelas: Kanan, Kiri, Maju, Mundur, dan Stop. Kinerja model secara keseluruhan sangat baik dengan setiap kelas kecuali 'Maju'. Untuk kelas 'Maju', model berhasil mengidentifikasi 117 kasus dengan benar namun, ada 3 kasus yang keliru diidentifikasi sebagai 'Mundur', menunjukkan sedikit kelemahan dalam membedakan antara dua gestur ini.
+Pada tahap pengujian berikutnya, dilakukan pengujian model dengan jarak 70 sentimeter. Dari \emph{confusion matrix} pada Gambar \ref{fig:matrix5}, dapat diamati performa model secara keseluruhan sangat baik dengan setiap kelas kecuali 'Maju'. Pada kelas 'Maju', terlihat bahwa model berhasil mengidentifikasi 117 kasus dengan benar namun, ada 3 kasus yang keliru diidentifikasi sebagai 'Mundur', menunjukkan sedikit kelemahan dalam membedakan antara dua gestur ini.
 
 %Gambar 4.7
 \begin{figure} [H] \centering
@@ -231,7 +261,7 @@ Pada tahap pengujian berikutnya, dilakukan pengujian model dengan jarak 70 senti
   \label{fig:matrix5}
 \end{figure}
 
-Dari analisis tabel performa klasifikasi model dengan jarak 70 sentimeter dapat dilihat untuk kelas Kanan, Kiri, dan Stop, model mencapai \emph{True Positives} (TP) maksimal yaitu 120, dengan \emph{True Negatives} (TN) 480, dan tidak ada \emph{False Positives} (FP) atau \emph{False Negatives} (FN), menandakan tidak ada kesalahan klasifikasi. Sementara itu, kelas Maju juga menunjukkan kinerja yang baik dengan 117 TP dan 3 FN, yang berarti ada tiga kasus di mana gestur Maju tidak diidentifikasi dengan benar. Untuk kelas Mundur, terdapat sedikit gangguan di mana meskipun mendapat 120 TP, terdapat 3 FP yang berarti model salah mengklasifikasikan tiga gestur lain sebagai Mundur.
+Pada Tabel \ref{tb:cm_model5}, untuk kelas Kanan, Kiri, dan Stop, model mencapai nilai TP maksimal yaitu 120, dengan TN 480, dan FP atau FN, menandakan tidak ada kesalahan klasifikasi. Untuk kelas Maju menunjukkan 117 TP dan 3 FN, yang berarti ada tiga kasus di mana gestur Maju tidak diidentifikasi dengan benar. Untuk kelas Mundur, terdapat sedikit gangguan di mana meskipun mendapat 120 TP, terdapat 3 FP yang berarti model salah mengklasifikasikan tiga gestur lain sebagai Mundur.
 
 %Tabel 4.8
 \begin{longtable}{|l|c|c|c|c|}
@@ -247,7 +277,9 @@ Dari analisis tabel performa klasifikasi model dengan jarak 70 sentimeter dapat 
   Stop  & 120          & 480         & 0           & 0           \\ \hline
 \end{longtable}
 
-Pada Tabel \ref{tb:vs_model5}, untuk kelas Maju, model menunjukkan hasil dengan \emph{Accuracy} sebesar 99.50\%, \emph{Precision} 100\%, \emph{Recall} 97.50\%, dan \emph{F1-Score} 98.73\%. Untuk kelas Mundur, model mencatat \emph{Accuracy} 99.50\%, namun dengan \emph{Precision} sedikit menurun menjadi 97.56\%, yang mencerminkan adanya beberapa kesalahan dalam memprediksi gestur sebagai Mundur. Namun, dengan \emph{Recall} 100\% dan \emph{F1-Score} 98.77\%, dapat dilihat bahwa model tersebut secara konsisten mengidentifikasi semua gestur Mundur yang sebenarnya.
+\newpage
+
+Pada Tabel \ref{tb:vs_model5}, untuk kelas Maju, model menunjukkan hasil dengan \emph{Accuracy} sebesar 99.50\%, \emph{Precision} 100\%, \emph{Recall} 97.50\%, dan \emph{F1-Score} 98.73\%. Untuk kelas Mundur, model mencatat \emph{Accuracy} 99.50\%, namun dengan \emph{Precision} sedikit menurun menjadi 97.56\%, yang mencerminkan adanya beberapa kesalahan dalam memprediksi gestur sebagai Mundur. Namun, dengan \emph{Recall} 100\% dan \emph{F1-Score} 98.77\%, dapat dilihat bahwa model tersebut secara konsisten mengidentifikasi semua gestur Mundur yang sebenarnya. Secara keseluruhan, hasil ini menunjukkan bahwa model memiliki performa yang baik dalam mengenali kedua gestur tersebut.
 
 %Tabel 4.9
 \begin{longtable}{|l|c|c|c|c|}
@@ -265,7 +297,9 @@ Pada Tabel \ref{tb:vs_model5}, untuk kelas Maju, model menunjukkan hasil dengan 
 
 \subsection{Jarak 90 sentimeter}
 
-Skenario pengujian jarak yang terakhir adalah dengan jarak 90 sentimeter dari kamera ke objek yang dijadikan data citra. Melalui analisis \emph{confusion matrix} pada Gambar \ref{fig:matrix6} untuk kelas Kanan, model berhasil mengidentifikasi 119 dari 120 gestur dengan benar, hanya salah satu gestur diklasifikasikan sebagai Maju. Untuk kelas Kiri, model menunjukkan kelemahan yang lebih signifikan dengan hanya 114 gestur yang diklasifikasikan dengan benar dan 6 gestur yang salah diklasifikasikan sebagai Maju. Hal ini menunjukkan kesulitan model dalam membedakan gestur Kiri dari Maju. Untuk kelas Maju, ada satu gestur yang salah diklasifikasikan sebagai Mundur. Sementara itu, kelas Mundur dan Stop memiliki tingkat akurasi yang tinggi, meskipun kelas Stop mengalami empat gestur yang salah diklasifikasikan sebagai Mundur. Kesalahan ini mungkin disebabkan oleh kemiripan gestur atau penurunan akurasi deteksi karena peningkatan jarak, sebab semakin jauh jarak maka semakin kecil data citra yang didapat.
+Skenario pengujian jarak yang terakhir adalah dengan jarak 90 sentimeter dari kamera ke objek yang dijadikan data citra. Melalui analisis \emph{confusion matrix} pada Gambar \ref{fig:matrix6} untuk kelas Kanan, model berhasil mengidentifikasi 119 dari 120 gestur dengan benar, hanya salah satu gestur diklasifikasikan sebagai Maju. Untuk kelas Kiri, model menunjukkan kelemahan yang lebih signifikan dengan hanya 114 gestur yang diklasifikasikan dengan benar dan 6 gestur yang salah diklasifikasikan sebagai Maju. 
+
+Hal ini menunjukkan kesulitan model dalam membedakan gestur Kiri dari Maju. Untuk kelas Maju, ada satu gestur yang salah diklasifikasikan sebagai Mundur. Sementara itu, kelas Mundur dan Stop memiliki tingkat akurasi yang tinggi, meskipun kelas Stop mengalami empat gestur yang salah diklasifikasikan sebagai Mundur. Kesalahan ini mungkin disebabkan oleh kemiripan gestur atau penurunan akurasi deteksi karena peningkatan jarak, sebab semakin jauh jarak maka semakin kecil data citra yang didapat.
   
 %Gambar 4.8
 \begin{figure} [H] \centering
@@ -277,7 +311,7 @@ Skenario pengujian jarak yang terakhir adalah dengan jarak 90 sentimeter dari ka
   \label{fig:matrix6}
 \end{figure}
 
-Dari hasil perhitungan \emph{confusion matrix} didapatkan hasil klasifikasi model. Untuk kelas Kanan, model hampir sempurna dengan 119 TP dan hanya satu FN, menunjukkan efektivitas tinggi dalam mengenali gestur ini. Sementara itu, kelas Kiri mengalami sedikit kesulitan dengan 6 FN, mengindikasikan beberapa kasus di mana gestur Kiri tidak terdeteksi dengan akurat. Untuk kelas Maju, model ini mengalami 11 FP dan satu FN, menandakan bahwa peningkatan kemampuan model dalam membedakan gestur Maju dari yang lain diperlukan. Kelas Mundur menunjukkan performa yang sangat baik dengan tidak adanya FP atau FN. Akhirnya, untuk kelas Stop, ada satu FP dan empat FN, yang menunjukkan bahwa beberapa gestur Stop tidak teridentifikasi sebagai Stop.
+Dari hasil perhitungan \emph{confusion matrix} didapatkan hasil klasifikasi model pada Tabel \ref{tb:cm_model6}. Untuk kelas Kanan, hasilnya 119 TP dan hanya satu FN, menunjukkan efektivitas tinggi dalam mengenali gestur ini. Sementara itu, kelas Kiri mengalami sedikit kesulitan dengan 6 FN, mengindikasikan beberapa kasus di mana gestur Kiri tidak terdeteksi dengan akurat. Untuk kelas Maju, model ini mengalami 11 FP dan satu FN. Kelas Mundur menunjukkan performa yang sangat baik dengan tidak adanya FP atau FN. Akhirnya, untuk kelas Stop, ada satu FP dan empat FN, yang menunjukkan bahwa beberapa gestur Stop tidak teridentifikasi sebagai Stop.
 
 %Tabel 4.10
 \begin{longtable}{|l|c|c|c|c|}
@@ -293,9 +327,7 @@ Dari hasil perhitungan \emph{confusion matrix} didapatkan hasil klasifikasi mode
   Stop  & 116          & 479         & 1           & 4           \\ \hline
 \end{longtable}
 
-\newpage
-
-Dari hasil perhitungan yang dilakukan berdasarkan nilai TP, TN, FP, dan FN, pada Tabel \ref{tb:vs_model6} berisi hasil validasi untuk setiap kelas dalam model klasifikasi gestur yang dikembangkan. Untuk kelas Kanan, model menunjukkan keakuratan tinggi dengan \textit{Accuracy} sebesar 99.83\%, \textit{Precision} 100\%, \textit{Recall} 99.17\%, dan \textit{F1-Score} 99.58\%. Pada kelas Kiri, model mencatatkan \textit{Accuracy} 99\%, \textit{Precision} 100\%, \textit{Recall} 95\%, dan \textit{F1-Score} 97.44\%. Untuk kelas Maju, metrik yang tercatat adalah \textit{Accuracy} 98\%, \textit{Precision} 91.54\%, \textit{Recall} 99.17\%, dan \textit{F1-Score} 95.20\%. Kelas Mundur menunjukkan performa sempurna dengan 100\% di semua metrik, dan kelas Stop memiliki \textit{Accuracy} 99.17\%, \textit{Precision} 99.15\%, \textit{Recall} 96.67\%, serta \textit{F1-Score} 97.89\%. 
+Pada Tabel \ref{tb:vs_model6} berisi hasil validasi untuk setiap kelas dalam model. Untuk kelas Kanan, model menunjukkan keakuratan tinggi dengan \textit{Accuracy} sebesar 99.83\%, \textit{Precision} 100\%, \textit{Recall} 99.17\%, dan \textit{F1-Score} 99.58\%. Pada kelas Kiri, model mencatatkan \textit{Accuracy} 99\%, \textit{Precision} 100\%, \textit{Recall} 95\%, dan \textit{F1-Score} 97.44\%. Untuk kelas Maju, metrik yang tercatat adalah \textit{Accuracy} 98\%, \textit{Precision} 91.54\%, \textit{Recall} 99.17\%, dan \textit{F1-Score} 95.20\%. Kelas Mundur menunjukkan performa sempurna dengan 100\% di semua metrik, dan kelas Stop memiliki \textit{Accuracy} 99.17\%, \textit{Precision} 99.15\%, \textit{Recall} 96.67\%, serta \textit{F1-Score} 97.89\%. 
 
 %Tabel 4.11
 \begin{longtable}{|l|c|c|c|c|}
@@ -311,13 +343,37 @@ Dari hasil perhitungan yang dilakukan berdasarkan nilai TP, TN, FP, dan FN, pada
   Stop  & 99.17\%            & 99.15\%             & 96.67\%           & 97.89\%            \\ \hline
 \end{longtable}
 
-Pengujian performa model dengan variasi jarak 30 sentimeter, 50 sentimeter, 70 sentimeter, dan 90 sentimeter menunjukkan tren yang jelas bahwa semakin jauh jarak, performa model semakin berkurang. Hal ini dibuktikan dengan penurunan nilai akurasi, presisi, recall, dan f1 score seiring bertambahnya jarak. Pada jarak 30 sentimeter dan 50 sentimeter, model mencapai performa terbaik dengan akurasi yang tinggi, serta nilai presisi, recall, dan f1 score yang konsisten di setiap kelas perintah. Namun, ketika jarak meningkat 70 sentimeter, mulai terlihat penurunan performa, dengan semakin banyak prediksi yang keliru pada matriks kebingungan. Pada jarak 90 sentimeter, penurunan performa menjadi lebih signifikan dalam nilai presisi, recall, dan f1 score terutama pada kelas "Maju" dan kelas "Mundur".
+Pengujian performa model dengan variasi jarak 30 sentimeter, 50 sentimeter, 70 sentimeter, dan 90 sentimeter menunjukkan tren yang jelas bahwa semakin jauh jarak, performa model semakin berkurang. Hal ini dibuktikan dengan penurunan nilai akurasi, presisi, recall, dan f1 score seiring bertambahnya jarak. Pada jarak 30 sentimeter dan 50 sentimeter, model mencapai performa terbaik dengan akurasi yang tinggi, serta nilai presisi, recall, dan f1 score yang konsisten di setiap kelas perintah. Namun, ketika jarak meningkat 70 sentimeter, mulai terlihat penurunan performa. Pada jarak 90 sentimeter, penurunan performa menjadi lebih signifikan dalam nilai presisi, recall, dan f1 score terutama pada kelas "Maju" dan kelas "Mundur".
 
 Secara keseluruhan, hasil pengujian ini menegaskan bahwa jarak antara kamera dan pengguna memiliki pengaruh yang signifikan terhadap performa model. Model bekerja paling optimal pada jarak 30 sentimeter, sedangkan jarak yang lebih jauh seperti 70 sentimeter dan 90 sentimeter performa model menjadi kurang optimal. Dengan demikian, pemilihan jarak ideal menjadi penting dalam implementasi sistem kontrol kursi roda berbasis \emph{gesture} mata.
 
 \section{Pengujian Performa Model dengan menggunakan Variasi Pencahayaan}
 
-Pada sistem kontrol kursi roda berbasis \emph{gesture} mata, variasi pencahayaan memiliki pengaruh signifikan terhadap performa model deteksi. Model yang diimplementasikan harus mampu beroperasi secara andal dalam berbagai kondisi pencahayaan. Sub-bab ini akan membahas pengujian performa model dengan menggunakan variasi pencahayaan. Tujuan dari pengujian ini adalah untuk mengevaluasi tingkat keberhasilan dan ketidakberhasilan model dalam mendeteksi gerakan mata pada tiga kondisi pencahayaan, seperti pencahayaan terang (131 Lux), normal (77 Lux), dan redup (35 Lux).
+Pada sistem kontrol kursi roda berbasis \emph{gesture} mata, variasi pencahayaan memiliki pengaruh signifikan terhadap performa model deteksi. Model yang diimplementasikan harus mampu beroperasi secara andal dalam berbagai kondisi pencahayaan. Sub-bab ini akan membahas pengujian performa model dengan menggunakan variasi pencahayaan. Tujuan dari pengujian ini adalah untuk mengevaluasi tingkat keberhasilan dan ketidakberhasilan model dalam mendeteksi gerakan mata pada tiga kondisi pencahayaan, seperti pencahayaan terang (131 Lux), normal (77 Lux), dan redup (35 Lux). Contoh \emph{dataset} pengujian variasi pencahayaan dapat dilihat pada Gambar \ref{fig:Variasi Lux} di bawah.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.4\linewidth}
+      \includegraphics[width=\linewidth]{gambar/bab4/33.png}
+      \caption{35 Lux}
+      \label{fig:imagea}
+  \end{subfigure}
+  \hfill % adds horizontal space between the figures
+  \begin{subfigure}[b]{0.4\linewidth}
+      \includegraphics[width=\linewidth]{gambar/bab4/55.png}
+      \caption{55 Lux}
+      \label{fig:imageb}
+  \end{subfigure}
+  \vspace{1cm} % adds vertical space between the rows of images
+  \begin{subfigure}[b]{0.4\linewidth}
+      \centering % centers the image
+      \includegraphics[width=\linewidth]{gambar/bab4/131.png}
+      \caption{131 Lux}
+      \label{fig:imagec}
+  \end{subfigure}
+  \caption{Variasi \emph{Dataset} Pengujian Lux}
+  \label{fig:Variasi Lux}
+\end{figure}
 
 Jenis pencahayaan yang diuji adalah \emph{ambient light}, yang mensimulasikan pencahayaan lingkungan sekitar dengan variasi intensitas yang berbeda. \emph{Ambient light} adalah pencahayaan umum yang ada di sekitar lingkungan, yang dapat berasal dari sumber cahaya alami seperti sinar matahari atau buatan seperti lampu. Tingkat keberhasilan dan ketidakberhasilan dihitung dalam persentase, dengan data yang dikumpulkan selama tiga puluh sesi pengujian. Hasil dari analisis ini akan memberikan gambaran mengenai seberapa baik model dapat beradaptasi terhadap variasi pencahayaan yang berbeda.
 
