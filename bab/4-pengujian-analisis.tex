@@ -830,7 +830,7 @@ Waktu output rata-rata motor untuk perintah "Kanan" adalah 6,013 detik, dengan v
   Stop           & 19:46:40.654        &                         \\ \hline
   Kanan          & 19:46:43.208        & \multirow{2}{*}{6.344}  \\ \cline{1-2}
   Stop           & 19:46:49.552        &                         \\ \hline
-  Kanan          & 19:46:52.829        & \multirow{2}{*}{7.163}  \\ \cline{1-2}
+  Kanan          & 19:46:52.829        & 7.163  \\ \hline
   Stop           & 19:46:59.992        &                         \\ \hline
   Kanan          & 19:47:03.195        & \multirow{2}{*}{6.317}  \\ \cline{1-2}
   Stop           & 19:47:09.512        &                         \\ \hline
@@ -882,7 +882,7 @@ Waktu output rata-rata motor untuk perintah "Kanan" adalah 6,013 detik, dengan v
 
 Selanjutnya dilakukan pengujian kestabilan motor terhadap perintah "Kiri." Tujuan dari pengujian ini adalah untuk mengevaluasi apakah waktu output yang dijalankan oleh motor tetap stabil dan konsisten setiap kali perintah "Kiri" diberikan oleh pengguna melalui sistem kontrol gerakan mata. Hasil pengujian dapat dilihat pada Tabel \ref{tb:motorkiri} di bawah. Dapat diamati bahwa waktu output rata-rata motor untuk perintah "Kiri" adalah 6,469 detik, dengan rentang waktu mulai dari 5,931 hingga 8,032 detik. 
 
-Sebagian besar waktu output motor berada dalam kisaran 6 detik, menunjukkan bahwa motor kursi roda dapat merespons perintah "Kiri" dengan tingkat stabilitas dan konsistensi yang baik.  Namun, terdapat beberapa variabilitas yang terlihat, seperti waktu output motor mencapai 8,032 detik. Secara keseluruhan, pengujian ini menunjukkan bahwa sistem kontrol kursi roda mampu memberikan waktu respons yang cukup stabil untuk perintah "Kiri".
+Sebagian besar waktu output motor berada dalam kisaran 6 detik, menunjukkan bahwa motor kursi roda dapat merespons perintah "Kiri" dengan tingkat stabilitas dan konsistensi yang baik. Namun, terdapat beberapa variabilitas yang terlihat, seperti waktu output motor mencapai 8,032 detik, yang mencerminkan kemungkinan adanya faktor-faktor tertentu yang mempengaruhi waktu respons. Secara keseluruhan, pengujian ini menunjukkan bahwa sistem kontrol kursi roda mampu memberikan waktu respons yang cukup stabil untuk perintah "Kiri", sehingga memastikan keamanan pengguna dalam mengoperasikan kursi roda. Hal ini penting untuk meningkatkan efisiensi dalam menjalankan berbagai perintah gerakan.
 
 %Tabel 4.24
 \begin{longtable}{|c|c|c|}
@@ -917,7 +917,7 @@ Sebagian besar waktu output motor berada dalam kisaran 6 detik, menunjukkan bahw
   Stop           & 20:17:44.072        &                         \\ \hline
   Kiri           & 20:17:45.988        & \multirow{2}{*}{6.398}  \\ \cline{1-2}
   Stop           & 20:17:52.386        &                         \\ \hline
-  Kiri           & 20:17:54.387        & \multirow{2}{*}{6.433}  \\ \cline{1-2}
+  Kiri           & 20:17:54.387        & 6.433  \\ \hline
   Stop           & 20:18:00.820        &                         \\ \hline
   Kiri           & 20:18:03.504        & \multirow{2}{*}{8.032}  \\ \cline{1-2}
   Stop           & 20:18:11.536        &                         \\ \hline
@@ -957,9 +957,7 @@ Sebagian besar waktu output motor berada dalam kisaran 6 detik, menunjukkan bahw
 
 Pengujian berikutnya adalah pengujian kestabilan motor terhadap perintah "Maju". Pengujian ini bertujuan untuk mengevaluasi apakah waktu output motor tetap konsisten setiap kali pengguna memberikan perintah "Maju" melalui sistem kontrol gerakan mata. 
 
-Tabel \ref{tb:motormaju} di bawah menunjukkan hasil pengujian kestabilan motor kursi roda untuk perintah "Maju." Waktu rata-rata motor untuk perintah "Maju" adalah 6,532 detik, dengan rentang antara 6,285 hingga 6,796 detik. Sebagian besar waktu output motor berada di kisaran 6,4 hingga 6,6 detik, menunjukkan bahwa motor kursi roda dapat merespons perintah "Maju" dengan cukup stabil dan konsisten.
-
-Secara keseluruhan, sistem kontrol kursi roda mampu memberikan waktu respons yang stabil untuk perintah "Maju." Meskipun ada beberapa variasi dalam waktu output, hasil ini menunjukkan bahwa sistem dapat merespons perintah "Maju" dengan cukup baik.
+Tabel \ref{tb:motormaju} di bawah menunjukkan hasil pengujian kestabilan motor kursi roda untuk perintah "Maju." Waktu rata-rata motor untuk perintah "Maju" adalah 6,532 detik, dengan rentang antara 6,285 hingga 6,796 detik. Sebagian besar waktu output motor berada di kisaran 6,4 hingga 6,6 detik, menunjukkan bahwa motor kursi roda dapat merespons perintah "Maju" dengan cukup stabil. Secara keseluruhan, sistem kontrol mampu memberikan waktu respons yang stabil untuk perintah "Maju." Meskipun ada beberapa variasi dalam waktu output, hasil ini menunjukkan bahwa sistem dapat merespons perintah "Maju" dengan cukup baik.
 
 %Tabel 4.25
 \begin{longtable}{|c|c|c|}
@@ -1043,6 +1041,7 @@ Dari hasil pengujian yang tertera pada Tabel \ref{tb:motormundur} di bawah, wakt
   \hline
   \rowcolor[HTML]{C0C0C0} 
   \textbf{Kelas} & \textbf{Motor Time} & \textbf{Detection Time} \\ \hline
+
   Mundur & 18:55:51.283 & \multirow{2}{*}{7.149} \\ \cline{1-2}
   Stop   & 18:55:58.432 &                        \\ \hline
   Mundur & 18:56:00.166 & \multirow{2}{*}{6.682} \\ \cline{1-2}
@@ -1057,7 +1056,7 @@ Dari hasil pengujian yang tertera pada Tabel \ref{tb:motormundur} di bawah, wakt
   Stop   & 18:56:40.333 &                        \\ \hline
   Mundur & 18:56:42.269 & \multirow{2}{*}{7.028} \\ \cline{1-2}
   Stop   & 18:56:49.297 &                        \\ \hline
-  Mundur & 18:56:51.030 & \multirow{2}{*}{6.654} \\ \cline{1-2}
+  Mundur & 18:56:51.030 & 6.654 \\ \hline
   Stop   & 18:56:57.684 &                        \\ \hline
   Mundur & 18:56:59.267 & \multirow{2}{*}{6.932} \\ \cline{1-2}
   Stop   & 18:57:06.199 &                        \\ \hline
@@ -1118,6 +1117,7 @@ Berdasarkan pengamatan dari Tabel \ref{tb:motorstop} di bawah, waktu output rata
   \hline
   \rowcolor[HTML]{C0C0C0} 
   \textbf{Kelas} & \textbf{Motor Time} & \textbf{Detection Time} \\ \hline
+
   Stop           & 16:51:16.866        & \multirow{2}{*}{4,952}  \\ \cline{1-2}
   Maju           & 16:51:21.818        &                         \\ \hline
   Stop           & 16:51:26.379        & \multirow{2}{*}{5,039}  \\ \cline{1-2}
