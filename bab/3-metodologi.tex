@@ -233,6 +233,7 @@ Skema alat ini dijelaskan secara rinci pada Gambar \ref{fig:Skematik Alat}. Sist
   \caption{Skematik Alat}
   % Label referensi dari gambar yang diinputkan
   \label{fig:Skematik Alat}
+  \parencite{ekatama2024perancangan}
 \end{figure}
 
 Kode instruksi ini kemudian dikombinasikan dengan parameter kecepatan maksimal yang telah ditetapkan oleh pengguna. Kombinasi antara kode instruksi dan parameter kecepatan ini menjadi satu paket data yang berfungsi untuk mengontrol gerakan kursi roda. Paket data tersebut kemudian ditransmisikan secara nirkabel, baik melalui Bluetooth atau WiFi, ke modul ESP32 Devkit V1.
@@ -245,11 +246,12 @@ ESP32 berperan penting dalam mengendalikan motor kursi roda. ESP32 bertindak seb
 
 \begin{figure} [H] \centering
   % Nama dari file gambar yang diinputkan
-  \includegraphics[scale=0.5]{gambar/bab3/10. Mengirim Data String WiFi.png}
+  \includegraphics[scale=0.55]{gambar/bab3/10. Mengirim Data String WiFi.png}
   % Keterangan gambar yang diinputkan
   \caption{\emph{Flowchart} Mengirim Data String Melalui WiFi}
   % Label referensi dari gambar yang diinputkan
   \label{fig:Flowchart 10 Mengirim String WiFi}
+  \parencite{ekatama2024perancangan}
 \end{figure}
 
 Alur kerja program ini menggunakan pustaka \emph{socket}, \emph{time}, dan \emph{datetime}. Pustaka \emph{socket} menyediakan antarmuka untuk membuat dan mengelola soket, sehingga memungkinkan koneksi serta pengiriman dan penerimaan data melalui jaringan. Pustaka \emph{time} menawarkan fungsi-fungsi terkait waktu, seperti \emph{time.sleep()} yang sering digunakan untuk menghentikan sementara eksekusi program selama periode waktu tertentu. Pustaka \emph{datetime} digunakan untuk mendapatkan informasi waktu secara \emph{real-time}.
@@ -260,7 +262,7 @@ Setelah koneksi berhasil, program akan berjalan dalam perulangan tak terbatas. P
 
 \subsection{Menerima Data String Melalui \emph{Access Point} WiFi pada ESP32}
 
-Program ini dirancang sebagai server WiFi yang mampu menerima data dari \emph{client} yang terhubung dan memprosesnya. Program ini memanfaatkan pustaka WiFi untuk mengonfigurasi dan mengelola koneksi WiFi pada ESP32. Pustaka Arduino juga digunakan untuk menyediakan fungsi dasar pemrograman mikrokontroler. Variabel \emph{ssid} digunakan untuk menyimpan nama jaringan WiFi yang akan dibuat, sementara variabel \emph{password} menyimpan kata sandi WiFi server. Kedua variabel ini penting agar ESP32 dapat dikonfigurasi sebagai \emph{Access Point}. Kemudian, objek \emph{server} dibuat dari kelas \emph{WiFiServer} untuk menangani koneksi pada port 80.
+Program ini dirancang sebagai server WiFi yang mampu menerima data dari \emph{client} yang terhubung dan memprosesnya. Program ini memanfaatkan pustaka WiFi untuk mengonfigurasi dan mengelola koneksi WiFi pada ESP32. Variabel \emph{ssid} digunakan untuk menyimpan nama jaringan WiFi yang akan dibuat, sementara variabel \emph{password} menyimpan kata sandi WiFi server. Kedua variabel ini penting agar ESP32 dapat dikonfigurasi sebagai \emph{Access Point}. Kemudian, objek \emph{server} dibuat dari kelas \emph{WiFiServer} untuk menangani koneksi pada port 80.
 
 Di dalam fungsi \emph{void setup()}, \emph{Serial.begin()} digunakan untuk menginisialisasi komunikasi serial dengan kecepatan 115200 bps. Selanjutnya, ESP32 dikonfigurasi sebagai \emph{Access Point} menggunakan SSID dan kata sandi yang telah ditentukan. Setelah \emph{Access Point} berhasil dikonfigurasi, alamat IP ESP32 disimpan dalam variabel \emph{IP} dan ditampilkan di \emph{Serial Monitor}. Fungsi \emph{server.begin()} digunakan untuk memulai server pada port 80.
 
@@ -269,6 +271,7 @@ Di dalam fungsi \emph{void setup()}, \emph{Serial.begin()} digunakan untuk mengi
 \includegraphics[scale=0.5]{gambar/bab3/4. String WiFi.png}
 \caption{\emph{Flowchart} Menerima Data String Melalui \emph{Access Point} WiFi Pada ESP32}
 \label{fig:Flowchart 4 String}
+\parencite{ekatama2024perancangan}
 \end{figure}
 
 Fungsi \emph{void loop()} berjalan terus-menerus setelah \emph{void setup()} dieksekusi. Di dalam fungsi ini, \emph{WiFiClient} digunakan untuk memeriksa apakah ada \emph{client} yang terhubung ke server. Jika ada \emph{client} yang terhubung, program masuk ke dalam blok \emph{if}. Data yang dikirimkan kemudian dibaca secara terus-menerus melalui \emph{while} hingga \emph{client} mengirimkan karakter \emph{newline} ('\textbackslash n'). Nilai variabel ditampilkan di \emph{Serial Monitor} \parencite{ekatama2024perancangan}.
@@ -282,6 +285,7 @@ Program ini dirancang untuk mengendalikan motor DC berdasarkan perintah yang dit
 \includegraphics[scale=0.5]{gambar/bab3/8. Kontrol Motor WiFi.png}
 \caption{\emph{Flowchart} Kontrol Motor Kursi Roda Melalui \emph{Access Point} WiFi}
 \label{fig:Flowchart 8 Kontrol WiFi}
+\parencite{ekatama2024perancangan}
 \end{figure}
 
 Program ini menggunakan pustaka WiFi untuk mengonfigurasi dan mengelola koneksi WiFi pada ESP32, serta pustaka Arduino untuk fungsi dasar pemrograman mikrokontroler. Variabel \emph{ssid} dan \emph{password} menyimpan nama dan kata sandi untuk \emph{access point} yang dibuat oleh ESP32, sementara objek \emph{server} dari kelas \emph{WiFiServer} menangani koneksi pada port 80. Variabel \emph{pwmpin1, dir1,} dan \emph{dir2} mengendalikan motor kiri, sedangkan \emph{pwmPin2}, \emph{dir3}, dan \emph{dir4} mengendalikan motor kanan. Setiap variabel dihubungkan ke pin GPIO tertentu pada ESP32 untuk kontrol motor. Array \emph{stdir} menyimpan kondisi arah motor, sementara variabel \emph{pwmChannel1, pwmChannel2, freq, res, PWM1\_DutyCycle, maxspeed}, dan \emph{turnspeed} digunakan untuk mengonfigurasi frekuensi dan resolusi PWM, serta kecepatan motor.
