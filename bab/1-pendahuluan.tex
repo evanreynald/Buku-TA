@@ -19,12 +19,12 @@ Dalam mewujudkan solusi tersebut, maka penelitian ini difokuskan untuk mengemban
 \section{Permasalahan}
 \label{sec:permasalahan}
 
-Berdasarkan hal-hal yang telah dipaparkan pada latar belakang, para penderita ALS tidak dapat menggerakkan otot pada seluruh anggota badan selain mata dan akan kesulitan jika harus mengontrol pergerakan kursi roda elektrik yang menggunakan joystick. Maka dari itu, dibutuhkan suatu metode untuk mengontrol pergerakan kursi roda dengan lebih praktis yaitu dengan menggunakan visi komputer berbasis gerakan mata dan NUC \textit{(Next Unit of Computing)}. MediaPipe digunakan sebagai \textit{framework} untuk visi komputer karena kemampuannya untuk \textit{real-time performance}, \textit{cross-platform}, dan juga proses integrasi ke \textit{framework} lain yang lebih mudah \parencite{lugaresi2019mediapipe}. NUC yang akan digunakan sebagai pengolah data visi komputer, sebaiknya memiliki GPU \textit{(Graphic Processing Unit)} sehingga dapat memproses data visi komputer dengan lebih cepat dan efisien.
+Berdasarkan hal-hal yang telah dipaparkan pada latar belakang, para penderita ALS tidak dapat menggerakkan otot pada seluruh anggota badan selain mata dan akan kesulitan jika harus mengontrol pergerakan kursi roda elektrik yang menggunakan joystick. Maka dari itu, dibutuhkan suatu metode untuk mengontrol pergerakan kursi roda dengan lebih praktis yaitu dengan menggunakan visi komputer berbasis pose mata. MediaPipe digunakan sebagai \textit{framework} untuk visi komputer karena kemampuannya untuk \textit{real-time performance}, \textit{cross-platform}, dan juga proses integrasi ke \textit{framework} lain yang lebih mudah \parencite{lugaresi2019mediapipe}. NUC digunakan sebagai pengolah data visi komputer memiliki performa CPU \emph{Central Processing Unit} yang kuat sehingga dapat memproses data visi komputer dengan cepat dan efisien.
 
 \section{Tujuan}
 \label{sec:Tujuan}
 
-Tujuan dari penelitian ini adalah untuk mengembangkan sistem kontrol untuk kursi roda yang dapat dikendalikan menggunakan MediaPipe sesuai dengan gestur mata dari kamera dan diimplementasikan ke NUC \textit{(Next Unit of Computing)}.
+Tujuan dari penelitian ini adalah untuk mengembangkan sistem kontrol untuk kursi roda yang dapat dikendalikan menggunakan CNN \emph{(Convolutional Neural Network)} sesuai dengan pose mata dari kamera dan diimplementasikan ke NUC \textit{(Next Unit of Computing)}.
 
 \section{Batasan Masalah}
 \label{sec:batasanmasalah}
@@ -35,11 +35,13 @@ Adapun beberapa batasan masalah pada penelitian ini adalah:
 
   \item Laptop atau NUC digunakan sebagai pengolah data visi komputer.
   
-  \item Deteksi visi komputer dari kamera menggunakan MediaPipe berbasis gestur mata.
+  \item Deteksi visi komputer dari kamera menggunakan MediaPipe berbasis pose mata.
 
   \item Subjek yang digunakan pada dataset merupakan etnis Batak Indonesia, dimana bentuk mata yang dimiliki berbeda dengan bentuk mata etnis lainnya.
+  
+  \item Dataset diambil dari sudut pandang depan mata \emph{(front view)}, sehingga tidak memperhitungkan variasi sudut pandang lainnya.
 
-  \item Klasifikasi posisi mata menggunakan \emph{Convolutional Neural Network} (CNN).
+  \item Klasifikasi pose mata menggunakan \emph{Convolutional Neural Network} (CNN).
 
   \item Pengujian sistem akan dilakukan dalam lingkungan yang terkendali, dengan keterbatasan terhadap variasi lingkungan luar ruangan.
 
@@ -53,9 +55,9 @@ Adapun manfaat yang diharapkan dari ponelitian ini adalah sebagai berikut:
 
 \begin{enumerate}[nolistsep]
 
-  \item Bagi penulis, proses pengerjaan penelitian dan Tugas Akhir ini akan membantu untuk mengembangkan pemahaman mendalam tentang teknologi MediaPipe, NUC, dan aplikasi pengenalan gestur mata.
+  \item Bagi penulis, proses pengerjaan penelitian dari tugas akhir ini akan membantu untuk mengembangkan pemahaman mendalam tentang teknologi CNN, MediaPipe, NUC, dan aplikasi pengenalan pose mata.
   \item Bagi pengguna kursi roda, diharap akan mendapatkan manfaat langsung dari pengembangan sistem kontrol yang lebih baik. Mereka akan memiliki alat yang lebih mudah digunakan dan intuitif untuk bergerak, yang akan meningkatkan kemandirian dan mobilitas mereka dalam kehidupan sehari-hari.
-  \item Bagi penelitian selanjutnya, penulis berharap penelitian ini akan menyediakan dasar yang kuat dalam pengembangan teknologi pengenalan gestur mata dan pengendalian kursi roda yang dapat mendorong pengembangan teknologi mobilitas dan aksesibilitas yang lebih maju dan fleksibel sehingga membuka peluang untuk inovasi dalam mengintegrasikan teknologi pengenalan gestur mata ke dalam berbagai aplikasi lain.
+  \item Bagi penelitian selanjutnya, penulis berharap penelitian ini akan menyediakan dasar yang kuat dalam pengembangan teknologi pengenalan pose mata dan pengendalian kursi roda yang dapat mendorong pengembangan teknologi mobilitas dan aksesibilitas yang lebih maju dan fleksibel sehingga membuka peluang untuk inovasi dalam mengintegrasikan teknologi pengenalan pose mata ke dalam berbagai aplikasi lain.
 
 \end{enumerate}
 
@@ -68,25 +70,25 @@ Laporan penelitian tugas akhir ini terbagi menjadi beberapa bab dengan sistemati
 
   \item \textbf{BAB I Pendahuluan}
 
-        Bab ini berisi latar belakang penelitian, permasalahan, tujuan penelitian, batasan masalah, manfaat penelitian, dan sistematika penulisan. Latar belakang penelitian menjelaskan alasan diperlukannya pengembangan sistem kontrol kursi roda berbasis gerakan mata. Permasalahan mengidentifikasi permasalahan yang ingin dipecahkan, sedangkan tujuan penelitian merumuskan hasil yang diharapkan dari penelitian ini.
+        Bab ini berisi latar belakang penelitian, permasalahan, tujuan penelitian, batasan masalah, manfaat penelitian, dan sistematika penulisan. Latar belakang penelitian menjelaskan alasan diperlukannya pengembangan sistem kontrol kursi roda berbasis pose mata. Permasalahan mengidentifikasi permasalahan yang ingin dipecahkan, sedangkan tujuan penelitian merumuskan hasil yang diharapkan dari penelitian ini.
 
         \vspace{2ex}
 
   \item \textbf{BAB II Tinjauan Pustaka}
 
-        Bab ini berisi tinjauan pustaka yang meliputi dasar teori dan penelitian sebelumnya yang relevan dengan penelitian ini. Beberapa topik yang dibahas meliputi teknologi pengenalan gerakan mata, algoritma klasifikasi gerakan mata, serta implementasi sistem kontrol kursi roda. Bab ini juga mengulas penelitian-penelitian terdahulu terkait penggunaan teknologi serupa pada aplikasi kontrol kursi roda.
+        Bab ini berisi tinjauan pustaka yang meliputi dasar teori dan penelitian sebelumnya yang relevan dengan penelitian ini. Beberapa topik yang dibahas meliputi teknologi pengenalan pose mata, algoritma klasifikasi pose mata, serta implementasi sistem kontrol kursi roda. Bab ini juga mengulas penelitian-penelitian terdahulu terkait penggunaan teknologi serupa pada aplikasi kontrol kursi roda.
 
         \vspace{2ex}
 
   \item \textbf{BAB III Metodologi}
 
-        Bab ini berisi perancangan sistem kontrol kursi roda berbasis gerakan mata, mulai dari arsitektur perangkat keras dan perangkat lunak, desain algoritma klasifikasi, hingga implementasi sistem pada perangkat NUC. Selain itu, bab ini juga menjelaskan langkah-langkah integrasi sistem pengenalan gerakan mata dengan penggerak motor kursi roda.
+        Bab ini berisi perancangan sistem kontrol kursi roda berbasis pose mata, mulai dari arsitektur perangkat keras dan perangkat lunak, desain algoritma klasifikasi, hingga implementasi sistem pada perangkat NUC. Selain itu, bab ini juga menjelaskan langkah-langkah integrasi sistem pengenalan pose mata dengan penggerak motor kursi roda.
 
         \vspace{2ex}
 
   \item \textbf{BAB IV Pengujian dan Analisa}
 
-        Bab ini berisi hasil pengujian dan analisa performa sistem kontrol kursi roda berbasis gerakan mata. Pengujian dilakukan terhadap enam aspek utama, yaitu pengujian performa model menggunakan confusion matrix, variasi jarak, variasi pencahayaan, performa frame per second (FPS), waktu inferensi ke waktu respons, dan kestabilan motor kursi roda.
+        Bab ini berisi hasil pengujian dan analisa performa sistem kontrol kursi roda berbasis pose mata. Pengujian dilakukan terhadap enam aspek utama, yaitu pengujian performa model menggunakan confusion matrix, variasi jarak, variasi pencahayaan, performa frame per second (FPS), waktu inferensi ke waktu respons, dan kestabilan motor kursi roda.
 
         \vspace{2ex}
 
