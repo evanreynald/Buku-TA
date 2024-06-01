@@ -8,7 +8,7 @@ Proses pengerjaan dilakukan sesuai dengan desain sistem berikut dan implementasi
 %Section 3.1
 \section{Metode yang digunakan}
 \label{sec:deskripsisistem}
-Pada penelitian ini diintegrasikan teknologi visi komputer dengan sistem tertanam agar dapat mengontrol gerak kursi roda menggunakan gerakan mata (\emph{eye gesture}). Gambar \ref{fig:software} merupakan blok diagram \emph{software} yang diimplementasikan dalam penelitian ini.
+Pada penelitian ini diintegrasikan teknologi visi komputer dengan sistem tertanam agar dapat mengontrol gerak kursi roda menggunakan pose mata (\emph{eye gesture}). Gambar \ref{fig:software} merupakan blok diagram \emph{software} yang diimplementasikan dalam penelitian ini.
 
 %Gambar 3.1
 \begin{figure} [H] \centering
@@ -100,7 +100,7 @@ Proses ini sangat penting dalam aplikasi pengenalan wajah dan analisis visual, d
 \subsection{Klasifikasi Pose Mata}
 Setelah proses estimasi pose mata selesai, langkah selanjutnya adalah mengelompokkan citra-citra hasil estimasi ke dalam dataset. Dataset ini akan memiliki 5 kelas berbeda, mewakili perintah untuk bergerak ke kanan, bergerak ke kiri, bergerak maju, bergerak mundur, dan berhenti. 
 
-Pengelompokan ini memungkinkan sistem untuk mempelajari dan memahami pola-pola gerakan mata yang berkaitan dengan masing-masing perintah, sehingga membantu pengembangan algoritma yang dapat secara efektif menerjemahkan isyarat visual menjadi aksi nyata. Dengan demikian, penggunaan dataset yang terstruktur dan terklasifikasi sangat krusial dalam meningkatkan keakuratan respons kursi roda terhadap perintah yang diberikan oleh pengguna.
+Pengelompokan ini memungkinkan sistem untuk mempelajari dan memahami pola-pola pose mata yang berkaitan dengan masing-masing perintah, sehingga membantu pengembangan algoritma yang dapat secara efektif menerjemahkan isyarat visual menjadi aksi nyata. Dengan demikian, penggunaan dataset yang terstruktur dan terklasifikasi sangat krusial dalam meningkatkan keakuratan respons kursi roda terhadap perintah yang diberikan oleh pengguna.
 
 % Tabel 3.2
 \begin{table}[H]
@@ -166,9 +166,9 @@ Setelah proses \emph{training} selesai, hasil dari model prediksi yang dibuat ak
 
 \subsection{Implementasi ke NUC \textit{(Next Unit of Computing)}}
 
-Langkah berikutnya setelah model CNN dioptimasi adalah implementasi model tersebut ke dalam NUC. Ini melibatkan integrasi kode, pengaturan lingkungan runtime, dan pengujian model pada perangkat NUC untuk mengontrol pergerakan kursi roda berbasis gestur mata. Proses ini dimulai dengan integrasi kode untuk menghubungkan model dengan komponen perangkat keras seperti \emph{microcontroller} dan perangkat lunak di NUC. Model CNN yang disimpan dalam format h5 kemudian dimuat, memastikan bahwa model siap digunakan dalam lingkungan NUC.
+Langkah berikutnya setelah model CNN dioptimasi adalah implementasi model tersebut ke dalam NUC. Ini melibatkan integrasi kode, pengaturan lingkungan runtime, dan pengujian model pada perangkat NUC untuk mengontrol pergerakan kursi roda berbasis pose mata. Proses ini dimulai dengan integrasi kode untuk menghubungkan model dengan komponen perangkat keras seperti \emph{microcontroller} dan perangkat lunak di NUC. Model CNN yang disimpan dalam format h5 kemudian dimuat, memastikan bahwa model siap digunakan dalam lingkungan NUC.
 
-Selanjutnya, pengaturan lingkungan runtime dilakukan untuk memastikan kompatibilitas antara perangkat keras NUC dan perangkat lunak yang dibutuhkan oleh model. Hal ini mencakup instalasi pustaka seperti TensorFlow, OpenCV, dan pustaka lain yang diperlukan. Pengaturan ini juga memastikan bahwa NUC dapat menjalankan model secara efisien dengan memanfaatkan sumber daya perangkat keras yang tersedia, seperti CPU atau GPU. Tahap berikutnya adalah pengujian model pada perangkat NUC. Pengujian ini melibatkan simulasi perintah gerakan kursi roda berbasis gestur mata. Data gerakan mata yang dikumpulkan melalui kamera diproses oleh model CNN untuk menghasilkan perintah kontrol gerakan seperti "Maju", "Mundur", "Kanan", "Kiri", dan "Stop". Perintah ini kemudian dikirim ke sistem kontrol kursi roda untuk menggerakkan motor sesuai arah yang diinginkan. Selama pengujian, dilakukan pemantauan performa model dalam mendeteksi pose mata dan memberikan respons yang tepat terhadap perintah yang diberikan oleh pengguna.
+Selanjutnya, pengaturan lingkungan runtime dilakukan untuk memastikan kompatibilitas antara perangkat keras NUC dan perangkat lunak yang dibutuhkan oleh model. Hal ini mencakup instalasi pustaka seperti TensorFlow, OpenCV, dan pustaka lain yang diperlukan. Pengaturan ini juga memastikan bahwa NUC dapat menjalankan model secara efisien dengan memanfaatkan sumber daya perangkat keras yang tersedia, seperti CPU atau GPU. Tahap berikutnya adalah pengujian model pada perangkat NUC. Pengujian ini melibatkan simulasi perintah gerakan kursi roda berbasis pose mata. Data pose mata yang dikumpulkan melalui kamera diproses oleh model CNN untuk menghasilkan perintah kontrol gerakan seperti "Maju", "Mundur", "Kanan", "Kiri", dan "Stop". Perintah ini kemudian dikirim ke sistem kontrol kursi roda untuk menggerakkan motor sesuai arah yang diinginkan. Selama pengujian, dilakukan pemantauan performa model dalam mendeteksi pose mata dan memberikan respons yang tepat terhadap perintah yang diberikan oleh pengguna.
 
 Selain itu, stabilitas dan kecepatan respons model juga dievaluasi dalam berbagai kondisi pencahayaan dan jarak antara pengguna dengan kamera. Dengan demikian, implementasi ke NUC memastikan bahwa model CNN dapat berfungsi secara real-time dalam mengontrol pergerakan kursi roda berdasarkan pose mata pengguna.
 
@@ -182,7 +182,7 @@ Untuk mendukung penelitian ini, perangkat kontrol yang sudah dikembangkan dibuat
 \subsection{\emph{Hardware} dan \emph{Software} yang Digunakan}
 \label{sec:hardware dan software}
 
-Pada penelitian ini, berbagai perangkat keras dan perangkat lunak digunakan untuk membangun sistem kontrol kursi roda berbasis gerakan mata. Berikut adalah daftar perangkat keras dan perangkat lunak yang digunakan:
+Pada penelitian ini, berbagai perangkat keras dan perangkat lunak digunakan untuk membangun sistem kontrol kursi roda berbasis pose mata. Berikut adalah daftar perangkat keras dan perangkat lunak yang digunakan:
 
 %List 3.1
 \begin{enumerate}[itemsep=0cm] 

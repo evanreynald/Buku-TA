@@ -83,7 +83,7 @@ Setelah didapatkan grafik akurasi dan \emph{loss} untuk hasil pelatihan model, s
   \label{fig:matrix11}
 \end{figure}
 
-Pada Tabel \ref{tb:cm_model1} didapatkan hasil klasifikasi model untuk kelas Kanan, hasilnya 119 TP dan hanya satu FN, menunjukkan efektivitas tinggidalam mengenali gestur ini. Sementara itu, kelas Kiri mengalami sedikit kesulitan dengan 6 FN, mengindikasikan beberapa kasus di mana gestur Kiri tidak terdeteksi dengan akurat. Untukkelas Maju, model ini mengalami 11 FP dan satu FN. Kelas Mundur menunjukkan performayang sangat baik dengan tidak adanya FP atau FN. Akhirnya, untuk kelas Stop, ada satu FP danempat FN, yang menunjukkan bahwa beberapa gestur Stop tidak teridentifikasi sebagai Stop.
+Pada Tabel \ref{tb:cm_model1} didapatkan hasil klasifikasi model untuk kelas "Kanan", hasilnya 119 TP dan hanya satu FN, menunjukkan efektivitas tinggi dalam mengenali pose ini. Sementara itu, kelas "Kiri" mengalami sedikit kesulitan dengan 6 FN, mengindikasikan beberapa kasus di mana pose "Kiri" tidak terdeteksi dengan akurat. Untuk kelas "Maju", model ini mengalami 11 FP dan satu FN. Kelas "Mundur" menunjukkan performa yang sangat baik dengan tidak adanya FP atau FN. Akhirnya, untuk kelas "Stop", ada satu FP dan empat FN, yang menunjukkan bahwa beberapa pose "Stop" tidak teridentifikasi sebagai "Stop".
 
 \begin{longtable}{|l|c|c|c|c|}
   \caption{Hasil klasifikasi Model Pertama}
@@ -98,7 +98,7 @@ Pada Tabel \ref{tb:cm_model1} didapatkan hasil klasifikasi model untuk kelas Kan
   Stop  & 116          & 479         & 1           & 4           \\ \hline
 \end{longtable}
 
-Pada Tabel \ref{tb:vs_model1} berisi hasil validasi untuk kelas Kanan, model menunjukkan \emph{accuracy} sebesar 99.83\%, \emph{precision} 100\%,\emph{recall} 99.17\%, dan \emph{f1-Score} 99.58\%. Pada kelas Kiri, model mencatatkan \emph{accuracy 99\%}, \emph{precision} 100\%, \emph{recall} 95\%, dan \emph{f1-Score} 97.44\%. Untuk kelas Maju, metrik yang tercatat adalah \emph{accuracy} 98\%, \emph{precision} 91.54\%, \emph{recall} 99.17\%, dan \emph{f1-Score} 95.20\%. Kelas Mundur menunjukkan performa sempurna dengan 100\% di semua metrik, dan kelas Stop memiliki \emph{accuracy} 99.17\%, \emph{precision} 99.15\%, \emph{recall} 96.67\%, serta \emph{f1-Score} 97.89\%. Nilai validasi yang dihitung yaitu \emph{accuracy}, \emph{precision}, \emph{recall}, dan \emph{f-1 score}. 
+Pada Tabel \ref{tb:vs_model1} berisi hasil validasi untuk kelas "Kanan", model menunjukkan \emph{accuracy} sebesar 99.83\%, \emph{precision} 100\%,\emph{recall} 99.17\%, dan \emph{f1-Score} 99.58\%. Pada kelas "Kiri", model mencatatkan \emph{accuracy 99\%}, \emph{precision} 100\%, \emph{recall} 95\%, dan \emph{f1-Score} 97.44\%. Untuk kelas "Maju", metrik yang tercatat adalah \emph{accuracy} 98\%, \emph{precision} 91.54\%, \emph{recall} 99.17\%, dan \emph{f1-Score} 95.20\%. Kelas "Mundur" menunjukkan performa sempurna dengan 100\% di semua metrik, dan kelas "Stop" memiliki \emph{accuracy} 99.17\%, \emph{precision} 99.15\%, \emph{recall} 96.67\%, serta \emph{f1-Score} 97.89\%. Nilai validasi yang dihitung yaitu \emph{accuracy}, \emph{precision}, \emph{recall}, dan \emph{f-1 score}. 
 
 %Tabel 4.3
 \begin{longtable}{|l|c|c|c|c|}
@@ -322,7 +322,7 @@ Pada tahap pengujian berikutnya, dilakukan pengujian model dengan jarak 70 senti
   \label{fig:matrix5}
 \end{figure}
 
-Pada Tabel \ref{tb:cm_model5}, untuk kelas Kanan, Kiri, dan Stop, model mencapai nilai TP maksimal yaitu 120, dengan TN 480, dan FP atau FN, menandakan tidak ada kesalahan klasifikasi. Untuk kelas Maju menunjukkan 117 TP dan 3 FN, yang berarti ada tiga kasus di mana pose Maju tidak diidentifikasi dengan benar. Untuk kelas Mundur, terdapat sedikit gangguan di mana meskipun mendapat 120 TP, terdapat 3 FP yang berarti model salah mengklasifikasikan tiga pose lain sebagai Mundur.
+Pada Tabel \ref{tb:cm_model5}, untuk kelas "Kanan", "Kiri", dan "Stop", model mencapai nilai TP maksimal yaitu 120, dengan TN 480, dan FP atau FN, menandakan tidak ada kesalahan klasifikasi. Untuk kelas "Maju" menunjukkan 117 TP dan 3 FN, yang berarti ada tiga kasus di mana pose Maju tidak diidentifikasi dengan benar. Untuk kelas "Mundur", terdapat sedikit gangguan di mana meskipun mendapat 120 TP, terdapat 3 FP yang berarti model salah mengklasifikasikan tiga pose lain sebagai "Mundur".
 
 %Tabel 4.8
 \begin{longtable}{|l|c|c|c|c|}
@@ -339,7 +339,7 @@ Pada Tabel \ref{tb:cm_model5}, untuk kelas Kanan, Kiri, dan Stop, model mencapai
 \end{longtable}
 
 
-Pada Tabel \ref{tb:vs_model5}, untuk kelas Maju, model menunjukkan hasil dengan \emph{Accuracy} sebesar 99.50\%, \emph{Precision} 100\%, \emph{Recall} 97.50\%, dan \emph{F1-Score} 98.73\%. Untuk kelas Mundur, model mencatat \emph{Accuracy} 99.50\%, namun dengan \emph{Precision} sedikit menurun menjadi 97.56\%, yang mencerminkan adanya beberapa kesalahan dalam memprediksi pose sebagai Mundur. Namun, dengan \emph{Recall} 100\% dan \emph{F1-Score} 98.77\%, dapat dilihat bahwa model tersebut secara konsisten mengidentifikasi semua pose Mundur yang sebenarnya. Secara keseluruhan, hasil ini menunjukkan bahwa model memiliki performa yang baik dalam mengenali kedua pose tersebut.
+Pada Tabel \ref{tb:vs_model5}, untuk kelas "Maju", model menunjukkan hasil dengan \emph{Accuracy} sebesar 99.50\%, \emph{Precision} 100\%, \emph{Recall} 97.50\%, dan \emph{F1-Score} 98.73\%. Untuk kelas "Mundur", model mencatat \emph{Accuracy} 99.50\%, namun dengan \emph{Precision} sedikit menurun menjadi 97.56\%, yang mencerminkan adanya beberapa kesalahan dalam memprediksi pose sebagai "Mundur". Namun, dengan \emph{Recall} 100\% dan \emph{F1-Score} 98.77\%, dapat dilihat bahwa model tersebut secara konsisten mengidentifikasi semua pose "Mundur" yang sebenarnya. Secara keseluruhan, hasil ini menunjukkan bahwa model memiliki performa yang baik dalam mengenali kedua pose tersebut.
 
 %Tabel 4.9
 \begin{longtable}{|l|c|c|c|c|}
@@ -359,7 +359,7 @@ Pada Tabel \ref{tb:vs_model5}, untuk kelas Maju, model menunjukkan hasil dengan 
 
 Skenario pengujian jarak yang terakhir adalah dengan jarak 90 sentimeter dari kamera ke objek yang dijadikan data citra. Melalui analisis \emph{confusion matrix} pada Gambar \ref{fig:matrix6} untuk kelas "Maju", model berhasil mengidentifikasi 106 dari 120 pose dengan benar, dengan 14 pose diklasifikasikan sebagai "Mundur". Untuk kelas "Mundur", model menunjukkan kelemahan yang lebih signifikan dengan 114 pose yang diklasifikasikan dengan benar dan 6 pose yang salah diklasifikasikan sebagai "Maju". 
 
-Hal ini menunjukkan kesulitan model dalam membedakan antara pose "Maju" dan "Mundur". Sementara itu, kelas "Kanan", "Kiri", dan "Stop" memiliki tingkat akurasi yang tinggi yaitu semua 120 pose terdeteksi dengan benar. Kesalahan ini mungkin disebabkan oleh kemiripan pose atau penurunan akurasi deteksi karena peningkatan jarak, sebab semakin jauh jarak maka semakin kecil data citra yang didapat. Untuk meningkatkan kinerja model, perlu dilakukan penambahan data pelatihan dengan variasi pose yang lebih banyak serta peningkatan kualitas pengambilan gambar untuk mengurangi efek jarak. 
+Hal ini menunjukkan kesulitan model dalam membedakan antara pose "Maju" dan "Mundur". Sementara itu, kelas "Kanan", "Kiri", dan "Stop" memiliki tingkat akurasi yang tinggi yaitu semua 120 pose terdeteksi dengan benar. Kesalahan ini mungkin disebabkan oleh kemiripan pose atau penurunan akurasi deteksi karena peningkatan jarak, sebab semakin jauh jarak maka semakin kecil data citra yang didapat. 
   
 %Gambar 4.8
 \begin{figure} [H] \centering
@@ -387,7 +387,7 @@ Dari hasil perhitungan \emph{confusion matrix} didapatkan hasil klasifikasi mode
   Stop  & 120          & 480         & 0           & 0           \\ \hline
 \end{longtable}
 
-Pada Tabel \ref{tb:vs_model6} berisi hasil validasi untuk setiap kelas dalam model. Untuk kelas Kanan, model menunjukkan keakuratan tinggi dengan \textit{Accuracy} sebesar 100\%, \textit{Precision} 100\%, \textit{Recall} 100\%, dan \textit{F1-Score} 100\%. Pada kelas Kiri, model mencatatkan \textit{Accuracy} 100\%, \textit{Precision} 100\%, \textit{Recall} 100\%, dan \textit{F1-Score} 100\%. Untuk kelas Maju, metrik yang tercatat adalah \textit{Accuracy} 96.67\%, \textit{Precision} 94.64\%, \textit{Recall} 88.33\%, dan \textit{F1-Score} 91.38\%. Kelas Mundur memiliki memiliki \textit{Accuracy} 96.67\%, \textit{Precision} 89.06\%, \textit{Recall} 95\%, serta \textit{F1-Score} 91.94\%, dan kelas Stop memiliki \textit{Accuracy} 100\%, \textit{Precision} 100\%, \textit{Recall} 100\%, serta \textit{F1-Score} 100\%. 
+Pada Tabel \ref{tb:vs_model6} berisi hasil validasi untuk setiap kelas dalam model. Untuk kelas "Kanan", model menunjukkan \textit{Accuracy} sebesar 100\%, \textit{Precision} 100\%, \textit{Recall} 100\%, dan \textit{F1-Score} 100\%. Pada kelas "Kiri", model mencatatkan \textit{Accuracy} 100\%, \textit{Precision} 100\%, \textit{Recall} 100\%, dan \textit{F1-Score} 100\%. Untuk kelas "Maju", metrik yang tercatat adalah \textit{Accuracy} 96.67\%, \textit{Precision} 94.64\%, \textit{Recall} 88.33\%, dan \textit{F1-Score} 91.38\%. Kelas "Mundur" memiliki memiliki \textit{Accuracy} 96.67\%, \textit{Precision} 89.06\%, \textit{Recall} 95\%, serta \textit{F1-Score} 91.94\%, dan kelas "Stop" memiliki \textit{Accuracy} 100\%, \textit{Precision} 100\%, \textit{Recall} 100\%, serta \textit{F1-Score} 100\%.
 
 %Tabel 4.11
 \begin{longtable}{|l|c|c|c|c|}
@@ -403,11 +403,11 @@ Pada Tabel \ref{tb:vs_model6} berisi hasil validasi untuk setiap kelas dalam mod
   Stop  & 100\%            & 100\%             & 100\%           & 100\%            \\ \hline
 \end{longtable}
 
-Pengujian performa model dengan variasi jarak menunjukkan tren yang jelas bahwa semakin jauh jarak, performa model semakin berkurang. Hal ini dibuktikan dengan penurunan nilai akurasi, presisi, recall, dan f1 score seiring bertambahnya jarak. Hasil pengujian ini menegaskan bahwa jarak antara kamera dan pengguna memiliki pengaruh yang signifikan terhadap performa model. Model bekerja paling optimal pada jarak 30 sentimeter, sedangkan jarak yang lebih jauh seperti 70 sentimeter dan 90 sentimeter performa model menjadi kurang optimal terutama pada kelas "Maju" dan kelas "Mundur". Dengan demikian, pemilihan jarak ideal menjadi penting dalam implementasi sistem kontrol kursi roda berbasis pose mata. Selain itu, perlu dipertimbangkan penggunaan teknologi kamera dengan resolusi lebih tinggi atau teknik pemrosesan citra yang lebih canggih untuk mengurangi dampak penurunan performa pada jarak yang lebih jauh. 
+Pengujian performa model dengan variasi jarak menunjukkan tren yang jelas bahwa semakin jauh jarak, performa model semakin berkurang. Hal ini dibuktikan dengan penurunan nilai \emph{accuracy, precision, recall, dan f1 score} seiring bertambahnya jarak. Hasil pengujian ini menegaskan bahwa jarak antara kamera dan pengguna memiliki pengaruh yang signifikan terhadap performa model. Model bekerja paling optimal pada jarak 30 sentimeter dan 50 sentimeter, sedangkan jarak yang lebih jauh seperti 70 sentimeter dan 90 sentimeter performa model menjadi kurang optimal terutama pada kelas "Maju" dan kelas "Mundur". Dengan demikian, pemilihan jarak yang ideal menjadi penting dalam implementasi sistem kontrol kursi roda berbasis pose mata.
 
 \section{Pengujian Performa Model dengan menggunakan Variasi Pencahayaan}
 
-Pada sistem kontrol kursi roda berbasis pose mata, variasi pencahayaan memiliki pengaruh signifikan terhadap performa deteksi model. Model harus mampu beroperasi dalam berbagai kondisi pencahayaan. Sub-bab ini akan membahas pengujian performa model dengan menggunakan variasi pencahayaan. Tujuan dari pengujian ini adalah untuk mengevaluasi tingkat keberhasilan dan ketidakberhasilan model dalam mendeteksi gerakan mata pada tiga kondisi pencahayaan, seperti pencahayaan terang (131 Lux), redup (55 Lux), dan gelap (35 Lux). Contoh \emph{dataset} pengujian variasi pencahayaan dapat dilihat pada Gambar \ref{fig:Variasi Lux}.
+Pada sistem kontrol kursi roda berbasis pose mata, variasi pencahayaan memiliki pengaruh signifikan terhadap performa deteksi model. Model harus mampu beroperasi dalam berbagai kondisi pencahayaan. Sub-bab ini akan membahas pengujian performa model dengan menggunakan variasi pencahayaan. Tujuan dari pengujian ini adalah untuk mengevaluasi tingkat keberhasilan dan ketidakberhasilan model dalam mendeteksi pose mata pada tiga kondisi pencahayaan, seperti pencahayaan terang (131 Lux), pencahayaan redup (55 Lux), dan pencahayaan gelap (35 Lux). Contoh \emph{dataset} pengujian variasi pencahayaan dapat dilihat pada Gambar \ref{fig:Variasi Lux}.
 
 \begin{figure}[H]
   \centering
@@ -437,7 +437,7 @@ Jenis pencahayaan yang diuji adalah \emph{ambient light}, yang mensimulasikan pe
 
 \subsection{Pengujian pada cahaya 35 Lux}
 
-Pengujian pada kondisi pencahayaan 35 lux bertujuan untuk mengevaluasi performa model dalam mendeteksi gerakan mata pada situasi pencahayaan yang gelap. Kondisi ini mensimulasikan lingkungan dengan cahaya minimal yaitu di ruangan yang hanya diterangi lampu yang gelap. Pada pengujian ini ditunjukkan kemampuan model dalam mengeksekusi perintah kontrol pada pencahayaan rendah. Hasil pengujian ini akan memberikan gambaran mengenai kemampuan model dalam mengenali gerakan mata pada kondisi pencahayaan yang gelap. Selain itu, pengujian ini juga penting untuk memastikan bahwa model tetap berfungsi dengan baik di bawah kondisi pencahayaan yang tidak ideal, yang sering kali terjadi dalam penggunaan sehari-hari.
+Pengujian pada kondisi pencahayaan 35 lux bertujuan untuk mengevaluasi performa model dalam mendeteksi pose mata pada situasi pencahayaan yang gelap. Kondisi ini mensimulasikan lingkungan dengan cahaya minimal yaitu di ruangan yang hanya diterangi lampu yang gelap. Pada pengujian ini ditunjukkan kemampuan model dalam mengeksekusi perintah kontrol pada pencahayaan rendah. Hasil pengujian ini akan memberikan gambaran mengenai kemampuan model dalam mengenali pose mata pada kondisi pencahayaan yang gelap. Selain itu, pengujian ini juga penting untuk memastikan bahwa model tetap berfungsi dengan baik di bawah kondisi pencahayaan yang tidak ideal, yang sering kali terjadi dalam penggunaan sehari-hari.
 
 %Tabel 4.12
 \begin{longtable}{|l|c|c|c|c|}
@@ -457,7 +457,7 @@ Berdasarkan hasil pengujian performa model dengan variasi pencahayaan 35 Lux pad
 
 \subsection{Pengujian pada cahaya 55 Lux}
 
-Pada bagian ini, akan dianalisis bagaimana model beroperasi di bawah pencahayaan sebesar 55 Lux. Pencahayaan ini mensimulasikan kondisi ruangan yang redup. Pengujian ini bertujuan untuk memastikan bahwa model dapat mendeteksi dan mengklasifikasikan gerakan mata dengan akurasi tinggi dalam kondisi pencahayaan redup. Hasil pengujian ini akan memberikan gambaran mengenai kemampuan model beradaptasi dengan baik terhadap variasi pencahayaan dalam lingkungan sehari-hari. Selain itu, analisis ini juga akan membantu dalam mengidentifikasi potensi kelemahan model yang mungkin perlu diperbaiki untuk meningkatkan kinerja secara keseluruhan dalam berbagai kondisi pencahayaan. Dengan demikian, kita dapat mengembangkan solusi yang lebih \emph{robust} untuk aplikasi di dunia nyata.
+Pada bagian ini, akan dianalisis bagaimana model beroperasi di bawah pencahayaan sebesar 55 Lux. Pencahayaan ini mensimulasikan kondisi ruangan yang redup. Pengujian ini bertujuan untuk memastikan bahwa model dapat mendeteksi dan mengklasifikasikan pose mata dengan akurasi tinggi dalam kondisi pencahayaan redup. Hasil pengujian ini akan memberikan gambaran mengenai kemampuan model beradaptasi dengan baik terhadap variasi pencahayaan dalam lingkungan sehari-hari. Selain itu, analisis ini juga akan membantu dalam mengidentifikasi potensi kelemahan model yang mungkin perlu diperbaiki untuk meningkatkan kinerja secara keseluruhan dalam berbagai kondisi pencahayaan. Dengan demikian, kita dapat mengembangkan solusi yang lebih \emph{robust} untuk aplikasi di dunia nyata.
 
 %Tabel 4.13
 \begin{longtable}{|l|c|c|c|c|}
@@ -492,7 +492,7 @@ Pada Tabel \ref{tb:lux55}, pengujian kinerja model dengan pencahayaan 55 Lux, ha
 
 \subsection{Pengujian pada cahaya 131 Lux}
 
-Pengujian kinerja model pada kondisi pencahayaan 131 Lux dilakukan untuk mengevaluasi kemampuan sistem kontrol kursi roda berbasis gerakan mata dalam lingkungan dengan pencahayaan terang. Pengujian ini bertujuan untuk memastikan bahwa model dapat mendeteksi dan mengklasifikasikan gerakan mata dengan akurasi tinggi dalam kondisi pencahayaan terang. Hasil pengujian ini akan memberikan gambaran mengenai kemampuan model beradaptasi dengan baik terhadap variasi pencahayaan dalam lingkungan sehari-hari yang lebih terang. Dengan memahami bagaimana model bekerja di bawah pencahayaan terang, kita dapat mengidentifikasi potensi peningkatan atau penyesuaian yang diperlukan untuk memastikan kinerja optimal dalam berbagai kondisi pencahayaan.
+Pengujian kinerja model pada kondisi pencahayaan 131 Lux dilakukan untuk mengevaluasi kemampuan sistem kontrol kursi roda berbasis pose mata dalam lingkungan dengan pencahayaan terang. Pengujian ini bertujuan untuk memastikan bahwa model dapat mendeteksi dan mengklasifikasikan pose mata dengan akurasi tinggi dalam kondisi pencahayaan terang. Hasil pengujian ini akan memberikan gambaran mengenai kemampuan model beradaptasi dengan baik terhadap variasi pencahayaan dalam lingkungan sehari-hari yang lebih terang. Dengan memahami bagaimana model bekerja di bawah pencahayaan terang, kita dapat mengidentifikasi potensi peningkatan atau penyesuaian yang diperlukan untuk memastikan kinerja optimal dalam berbagai kondisi pencahayaan.
 
 %Tabel 4.14
 \begin{longtable}{|l|c|c|c|c|}
@@ -508,17 +508,17 @@ Pengujian kinerja model pada kondisi pencahayaan 131 Lux dilakukan untuk mengeva
   Stop           & 30                                                                                           & 0                                                                                                 & 100\%                                                                                            & 0\%                                                                                                  \\ \hline
 \end{longtable}
 
-Berdasarkan Tabel \ref{tb:lux131} diatas, hasil menunjukkan bahwa model memiliki tingkat akurasi yang sempurna dalam mendeteksi semua perintah gerakan mata. Setiap perintah, termasuk "Kanan", "Kiri", "Maju", "Mundur", dan "Stop", berhasil terdeteksi dengan tingkat keberhasilan 100\% tanpa ada satu pun kesalahan atau kegagalan deteksi. Hasil ini menegaskan bahwa model bekerja secara optimal dalam kondisi pencahayaan terang, menunjukkan bahwa pencahayaan 131 Lux mendukung model untuk memberikan kinerja yang sangat andal dalam mengenali dan mengklasifikasikan pose mata dengan tepat.
+Berdasarkan Tabel \ref{tb:lux131} diatas, hasil menunjukkan bahwa model memiliki tingkat akurasi yang sempurna dalam mendeteksi semua perintah pose mata. Setiap perintah, termasuk "Kanan", "Kiri", "Maju", "Mundur", dan "Stop", berhasil terdeteksi dengan tingkat keberhasilan 100\% tanpa ada satu pun kesalahan atau kegagalan deteksi. Hasil ini menegaskan bahwa model bekerja secara optimal dalam kondisi pencahayaan terang, menunjukkan bahwa pencahayaan 131 Lux mendukung model untuk memberikan kinerja yang sangat andal dalam mengenali dan mengklasifikasikan pose mata dengan tepat.
 
 \section{Pengujian Performa \emph{Frame Per Second} (FPS) pada Sistem}
 
-Pengujian performa \emph{Frame Per Second} (FPS) bertujuan untuk mengevaluasi kecepatan sistem dalam memproses gerakan mata secara \emph{real-time} untuk mengontrol kursi roda. FPS merupakan indikator penting dalam menilai kelancaran dan responsivitas sistem, terutama dalam aplikasi yang memerlukan deteksi gerakan dan pengambilan keputusan yang cepat. Pada sub-bagian ini, dilakukan pengujian performa FPS untuk memastikan bahwa sistem dapat mempertahankan tingkat kecepatan pemrosesan yang memadai. Pengujian dilakukan sebanyak tiga puluh kali pada setiap kelas.
+Pengujian performa \emph{Frame Per Second} (FPS) bertujuan untuk mengevaluasi kecepatan sistem dalam memproses pose mata secara \emph{real-time} untuk mengontrol kursi roda. FPS merupakan indikator penting dalam menilai kelancaran dan responsivitas sistem, terutama dalam aplikasi yang memerlukan deteksi pose dan pengambilan keputusan yang cepat. Pada sub-bagian ini, dilakukan pengujian performa FPS untuk memastikan bahwa sistem dapat mempertahankan tingkat kecepatan pemrosesan yang memadai. Pengujian dilakukan sebanyak tiga puluh kali pada setiap kelas.
 
-Hasil pengujian pada Tabel \ref{tb:fpskanankiri} menunjukkan bahwa performa FPS pada laptop secara konsisten lebih tinggi dibandingkan Intel NUC. Pada perintah "Kanan," FPS rata-rata pada laptop mencapai 12,745, sementara pada Intel NUC hanya mencapai 10,567. Pada perintah "Kiri", FPS rata-rata pada laptop mencapai 12,635, sedangkan pada Intel NUC hanya mencapai 10,617. Perbedaan kinerja FPS ini menunjukkan bahwa laptop mampu memproses gambar lebih cepat dan stabil dibandingkan Intel NUC. Untuk perintah "Kanan", kisaran FPS pada laptop berada antara 10,389 hingga 13,959, sementara pada Intel NUC antara 7,762 hingga 12,177. Sedangkan pada perintah "Kiri", kisaran FPS pada laptop berada antara 10,617 hingga 14,280, sementara pada Intel NUC antara 8,554 hingga 13,127.
+Hasil pengujian pada Tabel \ref{tb:fpskanankiri} menunjukkan bahwa performa FPS pada laptop secara konsisten lebih tinggi dibandingkan Intel NUC. Pada perintah "Kanan", FPS rata-rata pada laptop mencapai 12,745, sementara pada Intel NUC hanya mencapai 10,567. Pada perintah "Kiri", FPS rata-rata pada laptop mencapai 12,635, sedangkan pada Intel NUC hanya mencapai 10,617. Perbedaan kinerja FPS ini menunjukkan bahwa laptop mampu memproses gambar lebih cepat dan stabil dibandingkan Intel NUC. Untuk perintah "Kanan", kisaran FPS pada laptop berada antara 10,389 hingga 13,959, sementara pada Intel NUC antara 7,762 hingga 12,177. Sedangkan pada perintah "Kiri", kisaran FPS pada laptop berada antara 10,617 hingga 14,280, sementara pada Intel NUC antara 8,554 hingga 13,127.
 
 %Tabel 4.15
 \begin{longtable}{|c|c|c|c|c|c|c|}
-  \caption{Hasil Performa FPS pada Kelas Kanan dan Kiri}
+  \caption{Hasil Performa FPS pada Kelas "Kanan" dan "Kiri"}
   \label{tb:fpskanankiri} \\ 
   \cline{1-3} \cline{5-7}
   \rowcolor[HTML]{C0C0C0} 
@@ -526,7 +526,7 @@ Hasil pengujian pada Tabel \ref{tb:fpskanankiri} menunjukkan bahwa performa FPS 
   \cline{1-3} \cline{5-7} 
   \endfirsthead
   
-  \caption[]{Hasil Performa FPS pada Kelas Kanan dan Kiri (Lanjutan..)} \\
+  \caption[]{Hasil Performa FPS pada Kelas "Kanan" dan "Kiri" (Lanjutan..)} \\
   \cline{1-3} \cline{5-7}
   \rowcolor[HTML]{C0C0C0} 
   \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} &\cellcolor[HTML]{FFFFFF}  & \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} \\ 
@@ -572,11 +572,11 @@ Hasil pengujian pada Tabel \ref{tb:fpskanankiri} menunjukkan bahwa performa FPS 
   Kanan          & 13.765              & 10.257           &  & Kiri           & 12.814              & 11.979           \\ \cline{1-3} \cline{5-7} 
 \end{longtable}
 
-Selanjutnya, berdasarkan hasil pengujian performa \emph{Frame Per Second} (FPS) dari Tabel \ref{tb:fpsmajumundur}, pada perintah "Maju," FPS rata-rata pada laptop adalah 13,078 dengan kisaran antara 11,098 hingga 14,142, sedangkan pada Intel NUC, FPS rata-rata adalah 10,068 dengan kisaran antara 7,558 hingga 12,068. Sementara itu, pada perintah "Mundur," FPS rata-rata pada laptop mencapai 13,507 dengan kisaran antara 11,100 hingga 14,458, sementara pada Intel NUC, FPS rata-rata adalah 9,734 dengan kisaran antara 6,661 hingga 12,032.
+Selanjutnya, berdasarkan hasil pengujian performa \emph{Frame Per Second} (FPS) dari Tabel \ref{tb:fpsmajumundur}, pada perintah "Maju", FPS rata-rata pada laptop adalah 13,078 dengan kisaran antara 11,098 hingga 14,142, sedangkan pada Intel NUC, FPS rata-rata adalah 10,068 dengan kisaran antara 7,558 hingga 12,068. Sementara itu, pada perintah "Mundur", FPS rata-rata pada laptop mencapai 13,507 dengan kisaran antara 11,100 hingga 14,458, sementara pada Intel NUC, FPS rata-rata adalah 9,734 dengan kisaran antara 6,661 hingga 12,032.
 
 %Tabel 4.16
 \begin{longtable}{|c|c|c|c|c|c|c|}
-  \caption{Hasil Performa FPS pada Kelas Maju dan Mundur}
+  \caption{Hasil Performa FPS pada Kelas "Maju" dan "Mundur"}
   \label{tb:fpsmajumundur} \\ 
   
  % Header for the first page
@@ -587,7 +587,7 @@ Selanjutnya, berdasarkan hasil pengujian performa \emph{Frame Per Second} (FPS) 
  \endfirsthead
 
  % Header for the subsequent pages
- \caption[]{Hasil Performa FPS pada Kelas Maju dan Mundur (Lanjutan..)} \\
+ \caption[]{Hasil Performa FPS pada Kelas "Maju" dan "Mundur" (Lanjutan..)} \\
  \cline{1-3} \cline{5-7}
  \rowcolor[HTML]{C0C0C0}
  \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} &\cellcolor[HTML]{FFFFFF}  & \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} \\ 
@@ -643,7 +643,7 @@ Sebaliknya, kisaran FPS pada Intel NUC lebih bervariasi, dengan nilai minimum se
 
 %Tabel 4.17
 \begin{longtable}{|c|c|c|}
-  \caption{Hasil Performa FPS pada Kelas Stop}
+  \caption{Hasil Performa FPS pada Kelas "Stop"}
   \label{tb:fpsstop} \\ 
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -651,7 +651,7 @@ Sebaliknya, kisaran FPS pada Intel NUC lebih bervariasi, dengan nilai minimum se
   \hline
   \endfirsthead
 
-  \caption[]{Hasil Performa FPS pada Kelas Stop (Lanjutan..)} \\
+  \caption[]{Hasil Performa FPS pada Kelas "Stop" (Lanjutan..)} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
   \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} \\ 
@@ -697,19 +697,19 @@ Sebaliknya, kisaran FPS pada Intel NUC lebih bervariasi, dengan nilai minimum se
   Stop           & 13.530              & 10.028           \\ \hline
 \end{longtable}
 
-Secara keseluruhan, laptop memiliki performa FPS rata-rata yang lebih tinggi dibandingkan Intel NUC untuk semua perintah gerakan mata. Laptop mampu memproses gerakan mata dengan kecepatan dan stabilitas yang lebih baik, memberikan kontrol yang lebih responsif terhadap kursi roda. Variabilitas FPS pada laptop juga lebih rendah, menunjukkan kestabilan pemrosesan yang lebih baik dibandingkan Intel NUC.
+Secara keseluruhan, laptop memiliki performa FPS rata-rata yang lebih tinggi dibandingkan Intel NUC untuk semua perintah pose mata. Laptop mampu memproses pose mata dengan kecepatan dan stabilitas yang lebih baik, memberikan kontrol yang lebih responsif terhadap kursi roda. Variabilitas FPS pada laptop juga lebih rendah, menunjukkan kestabilan pemrosesan yang lebih baik dibandingkan Intel NUC.
 
 Meskipun performa FPS pada Intel NUC lebih rendah dibandingkan laptop, perangkat ini tetap memiliki beberapa keunggulan. Pertama, Intel NUC memiliki desain yang kecil dan kompak, sehingga lebih mudah dipasang pada kursi roda dan tidak memakan banyak ruang. Kedua, konsumsi daya Intel NUC lebih rendah dibandingkan laptop, membuatnya lebih efisien dan ideal untuk aplikasi dengan daya terbatas. Ketiga, Intel NUC menyediakan berbagai opsi konektivitas, seperti HDMI, USB, dan jaringan, sehingga memudahkan integrasi dengan komponen sistem lain. 
 
 \section{Pengujian Waktu \emph{Inference Time} pada Model dan \emph{Response Time} pada Motor Kursi Roda}
 
-Pengujian waktu \emph{Inference Time} pada model dan \emph{Response Time} pada motor kursi roda bertujuan untuk mengevaluasi seberapa cepat sistem kontrol kursi roda berbasis gerakan mata dapat merespons perintah dari pengguna. \emph{Inference Time} mengukur waktu yang dibutuhkan oleh model untuk mendeteksi dan mengklasifikasikan gerakan mata, sementara \emph{Response Time} mengukur waktu yang diperlukan motor kursi roda untuk mulai bergerak setelah menerima sinyal dari model. \emph{Response Time} dihitung dengan mengurangi waktu antara \emph{Motor Time} dengan \emph{Sent Time}. Untuk mendapatkan hasil yang representatif, pengujian akan dilakukan untuk setiap kelas perintah (seperti "Maju," "Mundur," "Kanan," "Kiri," dan "Stop") sebanyak 30 kali pengujian per kelas. Pada kelas perintah "Maju," motor kursi roda akan menggunakan PWM \emph{(Pulse Width Modulation)} dengan kecepatan \emph{max speed} sebesar 70, sedangkan pada kelas perintah lainnya seperti "Mundur," "Kanan," dan "Kiri," motor akan menggunakan PWM dengan kecepatan \emph{turn speed} sebesar 35.
+Pengujian waktu \emph{Inference Time} pada model dan \emph{Response Time} pada motor kursi roda bertujuan untuk mengevaluasi seberapa cepat sistem kontrol kursi roda berbasis pose mata dapat merespons perintah dari pengguna. \emph{Inference Time} mengukur waktu yang dibutuhkan oleh model untuk mendeteksi dan mengklasifikasikan pose mata, sementara \emph{Response Time} mengukur waktu yang diperlukan motor kursi roda untuk mulai bergerak setelah menerima sinyal dari model. \emph{Response Time} dihitung dengan mengurangi waktu antara \emph{Motor Time} dengan \emph{Sent Time}. Untuk mendapatkan hasil yang representatif, pengujian akan dilakukan untuk setiap kelas perintah (seperti "Maju," "Mundur," "Kanan," "Kiri," dan "Stop") sebanyak 30 kali pengujian per kelas. Pada kelas perintah "Maju," motor kursi roda akan menggunakan PWM \emph{(Pulse Width Modulation)} dengan kecepatan \emph{max speed} sebesar 70, sedangkan pada kelas perintah lainnya seperti "Mundur," "Kanan," dan "Kiri," motor akan menggunakan PWM dengan kecepatan \emph{turn speed} sebesar 35.
 
-Pertama-tama dilakukan pengujian waktu \emph{Inference Time} pada model dan \emph{Response Time} pada motor kursi roda untuk perintah "Kanan." Pengujian ini bertujuan untuk mengevaluasi seberapa cepat sistem kontrol kursi roda berbasis gerakan mata dapat merespons perintah "Kanan" dari pengguna. Setiap pengujian dilakukan sebanyak 30 kali untuk memastikan hasil yang konsisten dan representatif. Berdasarkan Tabel \ref{tb:delaykanan}, ditunjukkan waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda untuk perintah "Kanan." Rata-rata \emph{response time} keseluruhan untuk perintah "Kanan" adalah 0,2328 detik, dengan variabilitas waktu respons berkisar antara 0,035 hingga 0,399 detik. \emph{Inference Time}, yaitu waktu yang dibutuhkan oleh model untuk mendeteksi dan mengklasifikasikan perintah "Kanan," memiliki rata-rata sekitar 0,0626 detik. Variabilitas \emph{Inference Time} cukup kecil, dengan kisaran antara 0,0491 hingga 0,0777 detik.
+Pertama-tama dilakukan pengujian waktu \emph{Inference Time} pada model dan \emph{Response Time} pada motor kursi roda untuk perintah "Kanan." Pengujian ini bertujuan untuk mengevaluasi seberapa cepat sistem kontrol kursi roda berbasis pose mata dapat merespons perintah "Kanan" dari pengguna. Setiap pengujian dilakukan sebanyak 30 kali untuk memastikan hasil yang konsisten dan representatif. Berdasarkan Tabel \ref{tb:delaykanan}, ditunjukkan waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda untuk perintah "Kanan." Rata-rata \emph{response time} keseluruhan untuk perintah "Kanan" adalah 0,2328 detik, dengan variabilitas waktu respons berkisar antara 0,035 hingga 0,399 detik. \emph{Inference Time}, yaitu waktu yang dibutuhkan oleh model untuk mendeteksi dan mengklasifikasikan perintah "Kanan," memiliki rata-rata sekitar 0,0626 detik. Variabilitas \emph{Inference Time} cukup kecil, dengan kisaran antara 0,0491 hingga 0,0777 detik.
 
 %Tabel 4.18
 \begin{longtable}{|c|c|c|c|c|c|}
-  \caption{Hasil Pengujian \emph{Response Time} pada Kelas Kanan}
+  \caption{Hasil Pengujian \emph{Response Time} pada Kelas "Kanan"}
   \label{tb:delaykanan} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -752,7 +752,7 @@ Sementara itu, rata-rata waktu respons motor kursi roda (\emph{Response Time}) u
 
 %Tabel 4.19
 \begin{longtable}{|c|c|c|c|c|c|}
-  \caption{Hasil Pengujian \emph{Response Time} pada Kelas Kiri}
+  \caption{Hasil Pengujian \emph{Response Time} pada Kelas "Kiri"}
   \label{tb:delaykiri} \\
   \hline
   \rowcolor[HTML]{C0C0C0}
@@ -795,7 +795,7 @@ Rata-rata waktu respons motor kursi roda (\emph{Response Time}) adalah 0,4337 de
 
 %Tabel 4.20
 \begin{longtable}{|c|c|c|c|c|c|c|c|}
-  \caption{Hasil Pengujian \emph{Response Time} pada Kelas Maju}
+  \caption{Hasil Pengujian \emph{Response Time} pada Kelas "Maju"}
   \label{tb:delaymaju} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -834,11 +834,11 @@ Rata-rata waktu respons motor kursi roda (\emph{Response Time}) adalah 0,4337 de
 
 Hasil pengujian berikutnya dapat dilihat pada Tabel \ref{tb:delaymundur} menunjukkan waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda untuk perintah "Mundur." Rata-rata waktu respons keseluruhan untuk perintah "Mundur" adalah 0,1409 detik, dengan variabilitas yang relatif rendah di antara 30 pengujian. Waktu rata-rata untuk deteksi dan klasifikasi perintah "Mundur" oleh model (\emph{Inference Time}) adalah sekitar 0,0637 detik, dengan variabilitas yang kecil, kisaran antara 0,0481 hingga 0,0795 detik.
 
-Rata-rata waktu respons motor kursi roda (\emph{Response Time}) adalah 0,1409 detik, dengan variabilitas waktu respons berkisar antara 0,026 hingga 0,426 detik.Meskipun variabilitas waktu respons masih ada, hasil ini menunjukkan bahwa sistem kontrol kursi roda berbasis gerakan mata mampu memberikan kontrol yang andal dan responsif terhadap perintah "Mundur."
+Rata-rata waktu respons motor kursi roda (\emph{Response Time}) adalah 0,1409 detik, dengan variabilitas waktu respons berkisar antara 0,026 hingga 0,426 detik.Meskipun variabilitas waktu respons masih ada, hasil ini menunjukkan bahwa sistem kontrol kursi roda berbasis pose mata mampu memberikan kontrol yang andal dan responsif terhadap perintah "Mundur."
 
 %Tabel 4.21
 \begin{longtable}{|c|c|c|c|c|c|}
-  \caption{Hasil Pengujian \emph{Response Time} pada Kelas Mundur}
+  \caption{Hasil Pengujian \emph{Response Time} pada Kelas "Mundur"}
   \label{tb:delaymundur} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -881,7 +881,7 @@ Rata-rata waktu respons motor kursi roda (\emph{Response Time}) adalah 0,4318 de
 
 %Tabel 4.22
 \begin{longtable}{|c|c|c|c|c|c|}
-  \caption{Hasil Pengujian \emph{Response Time} pada Kelas Stop}
+  \caption{Hasil Pengujian \emph{Response Time} pada Kelas "Stop"}
   \label{tb:delaystop} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -920,19 +920,19 @@ Rata-rata waktu respons motor kursi roda (\emph{Response Time}) adalah 0,4318 de
 
 Dari semua hasil pengujian pada masing-masing kelas seperti yang tertera pada tabel-tabel di atas, dapat dilihat bahwa perintah "Kiri" memiliki waktu respons terendah dengan rata-rata 0,0933 detik, menunjukkan bahwa sistem dapat merespons perintah "Kiri" dengan cepat dan akurat. Sementara itu, perintah "Maju" dan "Stop" memiliki waktu respons yang lebih tinggi, masing-masing 0,4337 detik dan 0,4318 detik, menunjukkan bahwa sistem memerlukan waktu lebih lama untuk merespons perintah tersebut. Hal tersebut dikarenakan perintah "Maju" memiliki nilai \emph{Pulse Width Modulation} (PWM) yang lebih besar dibandingkan perintah lainnya.
 
-\emph{Inference Time} untuk semua perintah berada pada kisaran yang sama, antara 0,0626 hingga 0,0666 detik, menunjukkan bahwa model dapat mendeteksi dan mengklasifikasikan gerakan mata dengan cepat dan konsisten di semua kelas. Secara keseluruhan, hasil ini menunjukkan bahwa sistem kontrol kursi roda berbasis gerakan mata memiliki kinerja yang andal dan responsif, terutama pada perintah "Kanan," "Kiri," dan "Mundur," yang memiliki waktu respons rata-rata di bawah 0,25 detik. Selain itu, kecepatan deteksi dan klasifikasi yang cepat memastikan bahwa sistem dapat beradaptasi dengan perubahan gerakan mata secara real-time, memungkinkan navigasi yang lebih intuitif dan mengurangi risiko keterlambatan atau kesalahan interpretasi. Ini menambah keandalan sistem dalam berbagai kondisi lingkungan dan membantu meningkatkan pengalaman pengguna secara keseluruhan.
+\emph{Inference Time} untuk semua perintah berada pada kisaran yang sama, antara 0,0626 hingga 0,0666 detik, menunjukkan bahwa model dapat mendeteksi dan mengklasifikasikan pose mata dengan cepat dan konsisten di semua kelas. Secara keseluruhan, hasil ini menunjukkan bahwa sistem kontrol kursi roda berbasis pose mata memiliki kinerja yang andal dan responsif, terutama pada perintah "Kanan," "Kiri," dan "Mundur," yang memiliki waktu respons rata-rata di bawah 0,25 detik. Selain itu, kecepatan deteksi dan klasifikasi yang cepat memastikan bahwa sistem dapat beradaptasi dengan perubahan pose mata secara \emph{real-time}, memungkinkan navigasi yang lebih intuitif dan mengurangi risiko keterlambatan atau kesalahan interpretasi. Ini menambah keandalan sistem dalam berbagai kondisi lingkungan dan membantu meningkatkan pengalaman pengguna secara keseluruhan.
 
 \section{Pengujian Kestabilan pada Motor Kursi Roda}
 
-Pada skenario pengujian yang terakhir adalah pengujian kestabilan pada motor kursi roda. Pengujian kestabilan pada motor kursi roda bertujuan untuk memastikan bahwa waktu output yang dijalankan oleh motor tetap stabil untuk setiap input yang diberikan oleh pengguna melalui sistem kontrol gerakan mata. Stabilitas waktu output ini sangat penting untuk memberikan pengalaman penggunaan yang aman, nyaman, dan konsisten bagi pengguna kursi roda. Pengujian dilakukan per kelas perintah (seperti "Kanan," "Kiri," "Maju," "Mundur," dan "Stop") dengan masing-masing kelas diuji sebanyak 30 kali.
+Pada skenario pengujian yang terakhir adalah pengujian kestabilan pada motor kursi roda. Pengujian kestabilan pada motor kursi roda bertujuan untuk memastikan bahwa waktu output yang dijalankan oleh motor tetap stabil untuk setiap input yang diberikan oleh pengguna melalui sistem kontrol pose mata. Stabilitas waktu output ini sangat penting untuk memberikan pengalaman penggunaan yang aman, nyaman, dan konsisten bagi pengguna kursi roda. Pengujian dilakukan per kelas perintah (seperti "Kanan," "Kiri," "Maju," "Mundur," dan "Stop") dengan masing-masing kelas diuji sebanyak 30 kali.
 
-\subsection{Kestabilan Motor terhadap Perintah Kanan}
+\subsection{Kestabilan Motor terhadap Perintah "Kanan"}
 
-Variasi pengujian pertama yang dilakukan adalah pengujian kestabilan motor terhadap perintah "Kanan." Pengujian ini bertujuan untuk mengevaluasi apakah waktu output yang dijalankan oleh motor tetap stabil setiap kali perintah "Kanan" diberikan oleh pengguna. Hasil pengujian dapat dilihat pada Tabel \ref{tb:motorkanan}, dimana waktu output motor (\emph{Motor Time}) diukur untuk setiap input yang diberikan oleh pengguna melalui sistem kontrol gerakan mata dan lama motor berjalan dihitung berdasarkan selisih waktu antara waktu output motor pertama dan terakhir.
+Variasi pengujian pertama yang dilakukan adalah pengujian kestabilan motor terhadap perintah "Kanan." Pengujian ini bertujuan untuk mengevaluasi apakah waktu output yang dijalankan oleh motor tetap stabil setiap kali perintah "Kanan" diberikan oleh pengguna. Hasil pengujian dapat dilihat pada Tabel \ref{tb:motorkanan}, dimana waktu output motor (\emph{Motor Time}) diukur untuk setiap input yang diberikan oleh pengguna melalui sistem kontrol pose mata dan lama motor berjalan dihitung berdasarkan selisih waktu antara waktu output motor pertama dan terakhir.
 
 %Tabel 4.23
 \begin{longtable}{|c|c|c|}
-  \caption{Hasil Pengujian Kestabilan Motor pada Kelas Kanan} 
+  \caption{Hasil Pengujian Kestabilan Motor pada Kelas "Kanan"} 
   \label{tb:motorkanan} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -940,7 +940,7 @@ Variasi pengujian pertama yang dilakukan adalah pengujian kestabilan motor terha
   \hline
   \endfirsthead
 
-  \caption[]{Hasil Pengujian Kestabilan Motor pada Kelas Kanan (Lanjutan..)} \\
+  \caption[]{Hasil Pengujian Kestabilan Motor pada Kelas "Kanan" (Lanjutan..)} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
   \textbf{Kelas} & \textbf{\emph{Motor Time}} & \textbf{Lama Motor Berjalan} \\ 
@@ -1021,15 +1021,15 @@ Variasi pengujian pertama yang dilakukan adalah pengujian kestabilan motor terha
 
 Waktu output rata-rata motor untuk perintah "Kanan" adalah 6,013 detik, dengan variabilitas waktu berkisar antara 5,439 hingga 7,163 detik dengan nilai standar deviasi sebesar 0,408. Rentang waktu yang relatif sempit menunjukkan bahwa motor kursi roda dapat merespons perintah "Kanan" dengan cukup stabil dan konsisten. Secara keseluruhan, pengujian kestabilan motor kursi roda menunjukkan bahwa sistem kontrol mampu memberikan waktu respons yang stabil untuk perintah "Kanan." Meskipun terdapat sedikit variasi dalam waktu respons, kisaran waktu yang relatif sempit memperkuat keandalan sistem kontrol.
 
-\subsection{Kestabilan Motor terhadap Perintah Kiri}
+\subsection{Kestabilan Motor terhadap Perintah "Kiri"}
 
-Selanjutnya dilakukan pengujian kestabilan motor terhadap perintah "Kiri." Tujuan dari pengujian ini adalah untuk mengevaluasi apakah waktu output yang dijalankan oleh motor tetap stabil dan konsisten setiap kali perintah "Kiri" diberikan oleh pengguna melalui sistem kontrol gerakan mata. Hasil pengujian dapat dilihat pada Tabel \ref{tb:motorkiri}. Dapat diamati bahwa waktu output rata-rata motor untuk perintah "Kiri" adalah 6,469 detik, dengan rentang waktu mulai dari 5,931 hingga 8,032 detik dengan nilai standar deviasi sebesar 0,371.
+Selanjutnya dilakukan pengujian kestabilan motor terhadap perintah "Kiri." Tujuan dari pengujian ini adalah untuk mengevaluasi apakah waktu output yang dijalankan oleh motor tetap stabil dan konsisten setiap kali perintah "Kiri" diberikan oleh pengguna melalui sistem kontrol pose mata. Hasil pengujian dapat dilihat pada Tabel \ref{tb:motorkiri}. Dapat diamati bahwa waktu output rata-rata motor untuk perintah "Kiri" adalah 6,469 detik, dengan rentang waktu mulai dari 5,931 hingga 8,032 detik dengan nilai standar deviasi sebesar 0,371.
 
 Sebagian besar waktu output motor berada dalam kisaran 6 detik, menunjukkan bahwa motor kursi roda dapat merespons perintah "Kiri" dengan tingkat stabilitas dan konsistensi yang baik. Namun, terdapat beberapa variabilitas yang terlihat, seperti waktu output motor mencapai 8,032 detik, yang mencerminkan kemungkinan adanya faktor-faktor tertentu yang mempengaruhi waktu respons. Secara keseluruhan, pengujian ini menunjukkan bahwa sistem kontrol kursi roda mampu memberikan waktu respons yang cukup stabil untuk perintah "Kiri", sehingga memastikan keamanan pengguna dalam mengoperasikan kursi roda.
 
 %Tabel 4.24
 \begin{longtable}{|c|c|c|}
-  \caption{Hasil Pengujian Kestabilan Motor pada Kelas Kiri} 
+  \caption{Hasil Pengujian Kestabilan Motor pada Kelas "Kiri"} 
   \label{tb:motorkiri} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -1037,7 +1037,7 @@ Sebagian besar waktu output motor berada dalam kisaran 6 detik, menunjukkan bahw
   \hline
   \endfirsthead
 
-  \caption[]{Hasil Pengujian Kestabilan Motor pada Kelas Kiri (Lanjutan..)} \\
+  \caption[]{Hasil Pengujian Kestabilan Motor pada Kelas "Kiri" (Lanjutan..)} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
   \textbf{Kelas} & \textbf{\emph{Motor Time}} & \textbf{Lama Motor Berjalan} \\ 
@@ -1114,15 +1114,15 @@ Sebagian besar waktu output motor berada dalam kisaran 6 detik, menunjukkan bahw
   Stop           & 20:20:17.920        &                         \\ \hline
 \end{longtable}
 
-\subsection{Kestabilan Motor terhadap Perintah Maju}
+\subsection{Kestabilan Motor terhadap Perintah "Maju"}
 
-Pengujian berikutnya adalah pengujian kestabilan motor terhadap perintah "Maju". Pengujian ini bertujuan untuk mengevaluasi apakah waktu output motor tetap konsisten setiap kali pengguna memberikan perintah "Maju" melalui sistem kontrol gerakan mata. 
+Pengujian berikutnya adalah pengujian kestabilan motor terhadap perintah "Maju". Pengujian ini bertujuan untuk mengevaluasi apakah waktu output motor tetap konsisten setiap kali pengguna memberikan perintah "Maju" melalui sistem kontrol pose mata. 
 
 Tabel \ref{tb:motormaju} menunjukkan hasil pengujian kestabilan motor kursi roda untuk perintah "Maju." Waktu rata-rata motor untuk perintah "Maju" adalah 6,532 detik, dengan rentang antara 6,285 hingga 6,796 detik dan nilai standar deviasi sebesar 0,117. Sebagian besar waktu output motor berada di kisaran 6,4 hingga 6,6 detik, menunjukkan bahwa motor kursi roda dapat merespons perintah "Maju" dengan stabil. Namun ada beberapa variasi yang terlihat, seperti waktu output motor mencapai 6,796 detik, yang menunjukkan adanya faktor-faktor tertentu yang mempengaruhi waktu respons.
 
 %Tabel 4.25
 \begin{longtable}{|c|c|c|}
-  \caption{Hasil Pengujian Kestabilan Motor pada Kelas Maju}  
+  \caption{Hasil Pengujian Kestabilan Motor pada Kelas "Maju"}  
   \label{tb:motormaju} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -1130,7 +1130,7 @@ Tabel \ref{tb:motormaju} menunjukkan hasil pengujian kestabilan motor kursi roda
   \hline
   \endfirsthead
 
-  \caption[]{Hasil Pengujian Kestabilan Motor pada Kelas Maju (Lanjutan..)} \\
+  \caption[]{Hasil Pengujian Kestabilan Motor pada Kelas "Maju" (Lanjutan..)} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
   \textbf{Kelas} & \textbf{\emph{Motor Time}} & \textbf{Lama Motor Berjalan} \\ 
@@ -1207,15 +1207,15 @@ Tabel \ref{tb:motormaju} menunjukkan hasil pengujian kestabilan motor kursi roda
   Stop           & 18:05:46.602        &                         \\ \hline
 \end{longtable}
 
-\subsection{Kestabilan Motor terhadap Perintah Mundur}
+\subsection{Kestabilan Motor terhadap Perintah "Mundur"}
 
-Selanjutnya, dilakukan pengujian untuk mengukur seberapa stabil motor kursi roda merespons perintah "Mundur." Tujuan pengujian ini adalah untuk memastikan bahwa waktu output motor tetap konsisten setiap kali pengguna memberikan perintah "Mundur" melalui sistem kontrol gerakan mata. 
+Selanjutnya, dilakukan pengujian untuk mengukur seberapa stabil motor kursi roda merespons perintah "Mundur." Tujuan pengujian ini adalah untuk memastikan bahwa waktu output motor tetap konsisten setiap kali pengguna memberikan perintah "Mundur" melalui sistem kontrol pose mata. 
 
 Dari hasil pengujian yang tertera pada Tabel \ref{tb:motormundur}, waktu output rata-rata motor untuk perintah "Mundur" adalah 6,863 detik, dengan kisaran waktu antara 6,470 hingga 7,235 detik dan nilai standar deviasi sebesar 0,156, menunjukkan bahwa motor kursi roda dapat merespons perintah "Mundur" dengan stabil dan konsisten. Namun terdapat sedikit variasi dalam waktu output motor, seperti waktu output motor mencapai 7,235 detik, yang menunjukkan adanya faktor-faktor tertentu yang mempengaruhi waktu respons. Pengujian ini menunjukkan bahwa sistem mampu memberikan waktu respons yang cukup stabil untuk perintah "Mundur".
 
 %Tabel 4.26
 \begin{longtable}{|c|c|c|}
-  \caption{Hasil Pengujian Kestabilan Motor pada Kelas Mundur}  
+  \caption{Hasil Pengujian Kestabilan Motor pada Kelas "Mundur"}  
   \label{tb:motormundur} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -1223,7 +1223,7 @@ Dari hasil pengujian yang tertera pada Tabel \ref{tb:motormundur}, waktu output 
   \hline
   \endfirsthead
 
-  \caption[]{Hasil Pengujian Kestabilan Motor pada Kelas Mundur (Lanjutan..)} \\
+  \caption[]{Hasil Pengujian Kestabilan Motor pada Kelas "Mundur" (Lanjutan..)} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
   \textbf{Kelas} & \textbf{\emph{Motor Time}} & \textbf{Lama Motor Berjalan} \\ 
@@ -1300,7 +1300,7 @@ Dari hasil pengujian yang tertera pada Tabel \ref{tb:motormundur}, waktu output 
   Stop   & 19:00:05.366 &                        \\ \hline
 \end{longtable}
 
-\subsection{Kestabilan Motor terhadap Perintah Stop}
+\subsection{Kestabilan Motor terhadap Perintah "Stop"}
 
 Pengujian yang terakhir adalah pengujian kestabilan motor terhadap perintah "Stop". Perintah "Stop" memiliki peran krusial dalam menghentikan pergerakan kursi roda secara tepat waktu dan akurat. Tujuan pengujian ini adalah untuk mengukur waktu respons motor saat diberikan perintah "Stop," serta memastikan bahwa waktu output motor tetap stabil dan konsisten.
 
@@ -1308,7 +1308,7 @@ Berdasarkan pengamatan dari Tabel \ref{tb:motorstop}, waktu output rata-rata mot
 
 %Tabel 4.27
 \begin{longtable}{|c|c|c|}
-  \caption{Hasil Pengujian Kestabilan Motor pada Kelas Stop}  
+  \caption{Hasil Pengujian Kestabilan Motor pada Kelas "Stop"}  
   \label{tb:motorstop} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -1316,7 +1316,7 @@ Berdasarkan pengamatan dari Tabel \ref{tb:motorstop}, waktu output rata-rata mot
   \hline
   \endfirsthead
 
-  \caption[]{Hasil Pengujian Kestabilan Motor pada Kelas Stop (Lanjutan..)} \\
+  \caption[]{Hasil Pengujian Kestabilan Motor pada Kelas "Stop" (Lanjutan..)} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
   \textbf{Kelas} & \textbf{\emph{Motor Time}} & \textbf{Lama Motor Berjalan} \\ 
@@ -1395,4 +1395,4 @@ Berdasarkan pengamatan dari Tabel \ref{tb:motorstop}, waktu output rata-rata mot
 
 Pengujian kestabilan motor kursi roda terhadap berbagai perintah ("Kanan," "Kiri," "Maju," "Mundur," dan "Stop") menunjukkan tingkat konsistensi yang bervariasi. Waktu output rata-rata untuk perintah "Kanan" adalah 6,013 detik, dengan nilai standar deviasi sebesar 0,408, menunjukkan adanya variasi yang lebih besar dalam respons motor. Untuk perintah "Kiri," waktu output rata-rata adalah 6,469 detik, dengan nilai standar deviasi sebesar 0,371, menandakan bahwa motor merespons perintah ini dengan cukup stabil meski terdapat beberapa variasi. Perintah "Maju" memiliki waktu output rata-rata 6,532 detik, dengan nilai standar deviasi sebesar 0,117, menunjukkan konsistensi yang baik. Sementara itu, perintah "Mundur" menunjukkan waktu output rata-rata 6,863 detik, dengan nilai standar deviasi sebesar 0,156, menandakan perintah yang paling stabil. Perintah "Stop" memiliki waktu output rata-rata tercepat, yaitu 4,933 detik, dengan nilai standar deviasi sebesar 0,361, menunjukkan bahwa motor merespons perintah "Stop" dengan cukup konsisten.
 
-Secara keseluruhan, sistem kontrol kursi roda mampu merespons semua perintah dengan tingkat stabilitas yang baik. Perintah "Maju" menunjukkan stabilitas respons terbaik dengan rentang waktu output yang sempit, sementara perintah "Kiri" memiliki variasi waktu output terbesar. Meskipun terdapat variasi kecil dalam waktu output pada masing-masing kelas, hasil pengujian ini menunjukkan bahwa motor kursi roda merespons perintah dengan konsisten.
+Secara keseluruhan, sistem kontrol kursi roda mampu merespons semua perintah dengan tingkat stabilitas yang baik. Perintah "Maju" menunjukkan stabilitas respons terbaik dengan rentang waktu output yang sempit, sementara perintah "Kanan" memiliki variasi waktu output terbesar. Meskipun terdapat variasi kecil dalam waktu output pada masing-masing kelas, hasil pengujian ini menunjukkan bahwa motor kursi roda merespons perintah dengan konsisten.
