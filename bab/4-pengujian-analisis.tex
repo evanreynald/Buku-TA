@@ -86,7 +86,7 @@ Setelah didapatkan grafik akurasi dan \emph{loss} untuk hasil pelatihan model, s
 Pada Tabel \ref{tb:cm_model1} didapatkan hasil klasifikasi model untuk kelas "Kanan", hasilnya 119 TP dan hanya satu FN, menunjukkan efektivitas tinggi dalam mengenali pose ini. Sementara itu, kelas "Kiri" mengalami sedikit kesulitan dengan 6 FN, mengindikasikan beberapa kasus di mana pose "Kiri" tidak terdeteksi dengan akurat. Untuk kelas "Maju", model ini mengalami 11 FP dan satu FN. Kelas "Mundur" menunjukkan performa yang sangat baik dengan tidak adanya FP atau FN. Akhirnya, untuk kelas "Stop", ada satu FP dan empat FN, yang menunjukkan bahwa beberapa pose "Stop" tidak teridentifikasi sebagai "Stop".
 
 \begin{longtable}{|l|c|c|c|c|}
-  \caption{Hasil klasifikasi Model Pertama}
+  \caption{Hasil Klasifikasi Model Pertama}
   \label{tb:cm_model1} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -150,7 +150,7 @@ Kemudian dari \emph{confusion matrix}, didapatkan hasil klasifikasi yang dapat d
 
 %Tabel 4.2
 \begin{longtable}{|l|c|c|c|c|}
-  \caption{Hasil klasifikasi Model Kedua}
+  \caption{Hasil Klasifikasi Model Kedua}
   \label{tb:cm_model} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -435,7 +435,7 @@ Pada sistem kontrol kursi roda berbasis pose mata, variasi pencahayaan memiliki 
 
 Jenis pencahayaan yang diuji adalah \emph{ambient light}, yang mensimulasikan pencahayaan lingkungan sekitar dengan variasi intensitas yang berbeda. \emph{Ambient light} adalah pencahayaan umum yang ada di sekitar lingkungan, yang dapat berasal dari sumber cahaya alami seperti sinar matahari atau buatan seperti lampu. Tingkat keberhasilan dan ketidakberhasilan dihitung dalam persentase, dengan data yang dikumpulkan selama tiga puluh sesi pengujian. Hasil dari analisis ini akan memberikan gambaran mengenai seberapa baik model dapat beradaptasi terhadap variasi pencahayaan yang berbeda.
 
-\subsection{Pengujian pada cahaya 35 Lux}
+\subsection{Pencahayaan 35 Lux}
 
 Pengujian pada kondisi pencahayaan 35 lux bertujuan untuk mengevaluasi performa model dalam mendeteksi pose mata pada situasi pencahayaan yang gelap. Kondisi ini mensimulasikan lingkungan dengan cahaya minimal yaitu di ruangan yang hanya diterangi lampu yang gelap. Pada pengujian ini ditunjukkan kemampuan model dalam mengeksekusi perintah kontrol pada pencahayaan rendah. Hasil pengujian ini akan memberikan gambaran mengenai kemampuan model dalam mengenali pose mata pada kondisi pencahayaan yang gelap. Selain itu, pengujian ini juga penting untuk memastikan bahwa model tetap berfungsi dengan baik di bawah kondisi pencahayaan yang tidak ideal, yang sering kali terjadi dalam penggunaan sehari-hari.
 
@@ -455,7 +455,7 @@ Pengujian pada kondisi pencahayaan 35 lux bertujuan untuk mengevaluasi performa 
 
 Berdasarkan hasil pengujian performa model dengan variasi pencahayaan 35 Lux pada Tabel \ref{tb:lux35}, model menunjukkan tingkat keberhasilan yang sempurna pada kelas "Kanan", "Kiri", dan "Stop" dengan masing-masing tingkat keberhasilan 100\%. Namun, pada kelas "Maju", tingkat keberhasilan sebesar 90\% dengan 3 kesalahan deteksi (10\%), dan pada kelas "Mundur", tingkat keberhasilan 93.33\% dengan 2 kesalahan deteksi (6.67\%). Hasil ini menunjukkan bahwa meskipun model umumnya memiliki performa yang baik, akurasi deteksi pada kelas "Maju" dan "Mundur" dipengaruhi oleh variasi pencahayaan.
 
-\subsection{Pengujian pada cahaya 55 Lux}
+\subsection{Pencahayaan 55 Lux}
 
 Pada bagian ini, akan dianalisis bagaimana model beroperasi di bawah pencahayaan sebesar 55 Lux. Pencahayaan ini mensimulasikan kondisi ruangan yang redup. Pengujian ini bertujuan untuk memastikan bahwa model dapat mendeteksi dan mengklasifikasikan pose mata dengan akurasi tinggi dalam kondisi pencahayaan redup. Hasil pengujian ini akan memberikan gambaran mengenai kemampuan model beradaptasi dengan baik terhadap variasi pencahayaan dalam lingkungan sehari-hari. Selain itu, analisis ini juga akan membantu dalam mengidentifikasi potensi kelemahan model yang mungkin perlu diperbaiki untuk meningkatkan kinerja secara keseluruhan dalam berbagai kondisi pencahayaan. Dengan demikian, kita dapat mengembangkan solusi yang lebih \emph{robust} untuk aplikasi di dunia nyata.
 
@@ -490,7 +490,7 @@ Pada bagian ini, akan dianalisis bagaimana model beroperasi di bawah pencahayaan
 
 Pada Tabel \ref{tb:lux55}, pengujian kinerja model dengan pencahayaan 55 Lux, hasil menunjukkan bahwa model secara umum memiliki tingkat akurasi yang baik. Perintah "Kanan", "Kiri", dan "Stop" mencapai tingkat keberhasilan 100\% tanpa ada kegagalan deteksi. Sementara itu, perintah "Maju" dan "Mundur" masing-masing mencapai tingkat keberhasilan 96,67\% dan 93,33\%, dengan tingkat ketidakberhasilan sebesar 3,33\% dan 6,67\%. Perbedaan dalam tingkat keberhasilan ini menunjukkan bahwa model sedikit kurang optimal dalam mendeteksi perintah "Maju" dan "Mundur" dibandingkan dengan perintah lainnya. Meski demikian, hasil keseluruhan tetap menunjukkan bahwa model memiliki kinerja yang andal dalam lingkungan bercahaya redup.
 
-\subsection{Pengujian pada cahaya 131 Lux}
+\subsection{Pencahayaan 131 Lux}
 
 Pengujian kinerja model pada kondisi pencahayaan 131 Lux dilakukan untuk mengevaluasi kemampuan sistem kontrol kursi roda berbasis pose mata dalam lingkungan dengan pencahayaan terang. Pengujian ini bertujuan untuk memastikan bahwa model dapat mendeteksi dan mengklasifikasikan pose mata dengan akurasi tinggi dalam kondisi pencahayaan terang. Hasil pengujian ini akan memberikan gambaran mengenai kemampuan model beradaptasi dengan baik terhadap variasi pencahayaan dalam lingkungan sehari-hari yang lebih terang. Dengan memahami bagaimana model bekerja di bawah pencahayaan terang, kita dapat mengidentifikasi potensi peningkatan atau penyesuaian yang diperlukan untuk memastikan kinerja optimal dalam berbagai kondisi pencahayaan.
 
@@ -701,15 +701,15 @@ Secara keseluruhan, laptop memiliki performa FPS rata-rata yang lebih tinggi dib
 
 Meskipun performa FPS pada Intel NUC lebih rendah dibandingkan laptop, perangkat ini tetap memiliki beberapa keunggulan. Pertama, Intel NUC memiliki desain yang kecil dan kompak, sehingga lebih mudah dipasang pada kursi roda dan tidak memakan banyak ruang. Kedua, konsumsi daya Intel NUC lebih rendah dibandingkan laptop, membuatnya lebih efisien dan ideal untuk aplikasi dengan daya terbatas. Ketiga, Intel NUC menyediakan berbagai opsi konektivitas, seperti HDMI, USB, dan jaringan, sehingga memudahkan integrasi dengan komponen sistem lain. 
 
-\section{Pengujian Waktu \emph{Inference Time} pada Model dan \emph{Response Time} pada Motor Kursi Roda}
+\section{Pengujian \emph{Inference Time} pada Model dan \emph{Response Time} pada Motor Kursi Roda}
 
-Pengujian waktu \emph{Inference Time} pada model dan \emph{Response Time} pada motor kursi roda bertujuan untuk mengevaluasi seberapa cepat sistem kontrol kursi roda berbasis pose mata dapat merespons perintah dari pengguna. \emph{Inference Time} mengukur waktu yang dibutuhkan oleh model untuk mendeteksi dan mengklasifikasikan pose mata, sementara \emph{Response Time} mengukur waktu yang diperlukan motor kursi roda untuk mulai bergerak setelah menerima sinyal dari model. \emph{Response Time} dihitung dengan mengurangi waktu antara \emph{Motor Time} dengan \emph{Sent Time}. Untuk mendapatkan hasil yang representatif, pengujian akan dilakukan untuk setiap kelas perintah (seperti "Maju," "Mundur," "Kanan," "Kiri," dan "Stop") sebanyak 30 kali pengujian per kelas. Pada kelas perintah "Maju," motor kursi roda akan menggunakan PWM \emph{(Pulse Width Modulation)} dengan kecepatan \emph{max speed} sebesar 70, sedangkan pada kelas perintah lainnya seperti "Mundur," "Kanan," dan "Kiri," motor akan menggunakan PWM dengan kecepatan \emph{turn speed} sebesar 35.
+Pengujian \emph{Inference Time} pada model dan \emph{Response Time} pada motor kursi roda bertujuan untuk mengevaluasi seberapa cepat sistem kontrol kursi roda berbasis pose mata dapat merespons perintah dari pengguna. \emph{Inference Time} mengukur waktu yang dibutuhkan oleh model untuk mendeteksi dan mengklasifikasikan pose mata, sementara \emph{Response Time} mengukur waktu yang diperlukan motor kursi roda untuk mulai bergerak setelah menerima sinyal dari model. \emph{Response Time} dihitung dengan mengurangi waktu antara \emph{Motor Time} dengan \emph{Sent Time}. Untuk mendapatkan hasil yang representatif, pengujian akan dilakukan untuk setiap kelas perintah (seperti "Maju," "Mundur," "Kanan," "Kiri," dan "Stop") sebanyak 30 kali pengujian per kelas. Pada kelas perintah "Maju," motor kursi roda akan menggunakan PWM \emph{(Pulse Width Modulation)} dengan kecepatan \emph{max speed} sebesar 70, sedangkan pada kelas perintah lainnya seperti "Mundur," "Kanan," dan "Kiri," motor akan menggunakan PWM dengan kecepatan \emph{turn speed} sebesar 35.
 
-Pertama-tama dilakukan pengujian waktu \emph{Inference Time} pada model dan \emph{Response Time} pada motor kursi roda untuk perintah "Kanan." Pengujian ini bertujuan untuk mengevaluasi seberapa cepat sistem kontrol kursi roda berbasis pose mata dapat merespons perintah "Kanan" dari pengguna. Setiap pengujian dilakukan sebanyak 30 kali untuk memastikan hasil yang konsisten dan representatif. Berdasarkan Tabel \ref{tb:delaykanan}, ditunjukkan waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda untuk perintah "Kanan." Rata-rata \emph{response time} keseluruhan untuk perintah "Kanan" adalah 0,2328 detik, dengan variabilitas waktu respons berkisar antara 0,035 hingga 0,399 detik. \emph{Inference Time}, yaitu waktu yang dibutuhkan oleh model untuk mendeteksi dan mengklasifikasikan perintah "Kanan," memiliki rata-rata sekitar 0,0626 detik. Variabilitas \emph{Inference Time} cukup kecil, dengan kisaran antara 0,0491 hingga 0,0777 detik.
+Pertama-tama dilakukan pengujian \emph{Inference Time} pada model dan \emph{Response Time} pada motor kursi roda untuk perintah "Kanan." Pengujian ini bertujuan untuk mengevaluasi seberapa cepat sistem kontrol kursi roda berbasis pose mata dapat merespons perintah "Kanan" dari pengguna. Setiap pengujian dilakukan sebanyak 30 kali untuk memastikan hasil yang konsisten dan representatif. Berdasarkan Tabel \ref{tb:delaykanan}, ditunjukkan waktu \emph{Inference Time} pada model dan \emph{Response Time} pada motor kursi roda untuk perintah "Kanan." Rata-rata \emph{response time} keseluruhan untuk perintah "Kanan" adalah 0,2328 detik, dengan variabilitas waktu respons berkisar antara 0,035 hingga 0,399 detik. \emph{Inference Time}, yaitu waktu yang dibutuhkan oleh model untuk mendeteksi dan mengklasifikasikan perintah "Kanan," memiliki rata-rata sekitar 0,0626 detik. Variabilitas \emph{Inference Time} cukup kecil, dengan kisaran antara 0,0491 hingga 0,0777 detik.
 
 %Tabel 4.18
 \begin{longtable}{|c|c|c|c|c|c|}
-  \caption{Hasil Pengujian \emph{Response Time} pada Kelas "Kanan"}
+  \caption{Hasil Pengujian \emph{Inference Time} dan \emph{Response Time} pada Kelas "Kanan"}
   \label{tb:delaykanan} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -746,13 +746,13 @@ Pertama-tama dilakukan pengujian waktu \emph{Inference Time} pada model dan \emp
       Kanan & 0.073888 & 21:49:37.936 & 21:49:37.998 & 21:49:37.998 & 0.062 \\ \hline
 \end{longtable}
 
-Selanjutnya, pada Tabel \ref{tb:delaykiri} ditunjukkan waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda untuk perintah "Kiri." Rata-rata waktu respons keseluruhan untuk perintah "Kiri" adalah 0,0933 detik, dengan variabilitas yang relatif rendah di antara 30 pengujian. Waktu rata-rata untuk deteksi dan klasifikasi perintah "Kiri" oleh model (\emph{Inference Time}) adalah sekitar 0,0640 detik, dengan kisaran antara 0,0525 hingga 0,0826 detik.
+Selanjutnya, pada Tabel \ref{tb:delaykiri} ditunjukkan waktu \emph{Inference Time} pada model dan \emph{Response Time} pada motor kursi roda untuk perintah "Kiri." Rata-rata waktu respons keseluruhan untuk perintah "Kiri" adalah 0,0933 detik, dengan variabilitas yang relatif rendah di antara 30 pengujian. Waktu rata-rata untuk deteksi dan klasifikasi perintah "Kiri" oleh model (\emph{Inference Time}) adalah sekitar 0,0640 detik, dengan kisaran antara 0,0525 hingga 0,0826 detik.
 
 Sementara itu, rata-rata waktu respons motor kursi roda (\emph{Response Time}) untuk perintah "Kiri" adalah 0,0933 detik, dengan variabilitas waktu respons berkisar antara 0,023 hingga 0,234 detik. Waktu pengiriman perintah (\emph{Sent Time}) dan penerimaan sinyal (\emph{Received Time}) menunjukkan keterlambatan minimal antara model dan motor, dengan selisih biasanya dalam hitungan milidetik. Hasil ini menunjukkan bahwa sistem dapat merespons perintah "Kiri" dengan cepat dan akurat.
 
 %Tabel 4.19
 \begin{longtable}{|c|c|c|c|c|c|}
-  \caption{Hasil Pengujian \emph{Response Time} pada Kelas "Kiri"}
+  \caption{Hasil Pengujian \emph{Inference Time} dan \emph{Response Time} pada Kelas "Kiri"}
   \label{tb:delaykiri} \\
   \hline
   \rowcolor[HTML]{C0C0C0}
@@ -789,13 +789,13 @@ Sementara itu, rata-rata waktu respons motor kursi roda (\emph{Response Time}) u
       Kiri & 0.063332 & 21:33:03.528 & 21:33:03.580 & 21:33:03.580 & 0.052 \\ \hline
 \end{longtable}
 
-Pada hasil pengujian berikutnya yang tertera pada Tabel \ref{tb:delaymaju}, ditunjukkan waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda untuk perintah "Maju." Rata-rata waktu respons keseluruhan untuk perintah "Maju" adalah 0,4337 detik, dengan variabilitas yang relatif tinggi di antara 30 pengujian. Waktu rata-rata untuk deteksi dan klasifikasi perintah "Maju" oleh model (\emph{Inference Time}) adalah sekitar 0,0656 detik, dengan variabilitas yang kecil, kisaran antara 0,0560 hingga 0,0753 detik.
+Pada hasil pengujian berikutnya yang tertera pada Tabel \ref{tb:delaymaju}, ditunjukkan waktu \emph{Inference Time} pada model dan \emph{Response Time} pada motor kursi roda untuk perintah "Maju." Rata-rata waktu respons keseluruhan untuk perintah "Maju" adalah 0,4337 detik, dengan variabilitas yang relatif tinggi di antara 30 pengujian. Waktu rata-rata untuk deteksi dan klasifikasi perintah "Maju" oleh model (\emph{Inference Time}) adalah sekitar 0,0656 detik, dengan variabilitas yang kecil, kisaran antara 0,0560 hingga 0,0753 detik.
 
 Rata-rata waktu respons motor kursi roda (\emph{Response Time}) adalah 0,4337 detik, dengan variabilitas waktu respons yang lebih besar, berkisar antara 0,217 hingga 0,767 detik. Waktu pengiriman perintah (\emph{Sent Time}) dan penerimaan sinyal (\emph{Received Time}) menunjukkan keterlambatan minimal antara model dan motor, dengan selisih biasanya hanya dalam hitungan milidetik. Hasil ini menunjukkan bahwa sistem dapat merespons perintah "Maju" dengan cepat.
 
 %Tabel 4.20
 \begin{longtable}{|c|c|c|c|c|c|c|c|}
-  \caption{Hasil Pengujian \emph{Response Time} pada Kelas "Maju"}
+  \caption{Hasil Pengujian \emph{Inference Time} dan \emph{Response Time} pada Kelas "Maju"}
   \label{tb:delaymaju} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -832,13 +832,13 @@ Rata-rata waktu respons motor kursi roda (\emph{Response Time}) adalah 0,4337 de
       Maju & 0.062296 & 02:21:55.326 & 02:21:55.375 & 02:21:55.772 & 0.446 \\ \hline
 \end{longtable}
 
-Hasil pengujian berikutnya dapat dilihat pada Tabel \ref{tb:delaymundur} menunjukkan waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda untuk perintah "Mundur." Rata-rata waktu respons keseluruhan untuk perintah "Mundur" adalah 0,1409 detik, dengan variabilitas yang relatif rendah di antara 30 pengujian. Waktu rata-rata untuk deteksi dan klasifikasi perintah "Mundur" oleh model (\emph{Inference Time}) adalah sekitar 0,0637 detik, dengan variabilitas yang kecil, kisaran antara 0,0481 hingga 0,0795 detik.
+Hasil pengujian berikutnya dapat dilihat pada Tabel \ref{tb:delaymundur} menunjukkan waktu \emph{Inference Time} pada model dan \emph{Response Time} pada motor kursi roda untuk perintah "Mundur." Rata-rata waktu respons keseluruhan untuk perintah "Mundur" adalah 0,1409 detik, dengan variabilitas yang relatif rendah di antara 30 pengujian. Waktu rata-rata untuk deteksi dan klasifikasi perintah "Mundur" oleh model (\emph{Inference Time}) adalah sekitar 0,0637 detik, dengan variabilitas yang kecil, kisaran antara 0,0481 hingga 0,0795 detik.
 
 Rata-rata waktu respons motor kursi roda (\emph{Response Time}) adalah 0,1409 detik, dengan variabilitas waktu respons berkisar antara 0,026 hingga 0,426 detik.Meskipun variabilitas waktu respons masih ada, hasil ini menunjukkan bahwa sistem kontrol kursi roda berbasis pose mata mampu memberikan kontrol yang andal dan responsif terhadap perintah "Mundur."
 
 %Tabel 4.21
 \begin{longtable}{|c|c|c|c|c|c|}
-  \caption{Hasil Pengujian \emph{Response Time} pada Kelas "Mundur"}
+  \caption{Hasil Pengujian \emph{Inference Time} dan \emph{Response Time} pada Kelas "Mundur"}
   \label{tb:delaymundur} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -875,13 +875,13 @@ Rata-rata waktu respons motor kursi roda (\emph{Response Time}) adalah 0,1409 de
       Mundur & 0.065692 & 03:33:00.552 & 03:33:00.607 & 03:33:00.607 & 0.055 \\ \hline
 \end{longtable}
 
-Pengujian yang terakhir dapat dilihat pada Tabel \ref{tb:delaystop} yang menunjukkan waktu dari \emph{Inference Time} pada model ke \emph{Response Time} pada motor kursi roda untuk perintah "Stop." Rata-rata waktu respons keseluruhan untuk perintah "Stop" adalah 0,4318 detik, dengan variabilitas yang relatif rendah di antara 30 pengujian. Waktu rata-rata untuk deteksi dan klasifikasi perintah "Stop" oleh model (\emph{Inference Time}) adalah sekitar 0,0666 detik, dengan variabilitas yang kecil, kisaran antara 0,0554 hingga 0,0816 detik.
+Pengujian yang terakhir dapat dilihat pada Tabel \ref{tb:delaystop} yang menunjukkan waktu \emph{Inference Time} pada model dan \emph{Response Time} pada motor kursi roda untuk perintah "Stop." Rata-rata waktu respons keseluruhan untuk perintah "Stop" adalah 0,4318 detik, dengan variabilitas yang relatif rendah di antara 30 pengujian. Waktu rata-rata untuk deteksi dan klasifikasi perintah "Stop" oleh model (\emph{Inference Time}) adalah sekitar 0,0666 detik, dengan variabilitas yang kecil, kisaran antara 0,0554 hingga 0,0816 detik.
 
 Rata-rata waktu respons motor kursi roda (\emph{Response Time}) adalah 0,4318 detik, dengan variabilitas waktu respons berkisar antara 0,396 hingga 0,785 detik. Waktu pengiriman perintah (\emph{Sent Time}) dan penerimaan sinyal (\emph{Received Time}) menunjukkan keterlambatan minimal antara model dan motor, dengan selisih hanya dalam hitungan milidetik. Hasil ini menunjukkan bahwa sistem mampu memberikan kontrol yang andal dan responsif terhadap perintah "Stop."
 
 %Tabel 4.22
 \begin{longtable}{|c|c|c|c|c|c|}
-  \caption{Hasil Pengujian \emph{Response Time} pada Kelas "Stop"}
+  \caption{Hasil Pengujian \emph{Inference Time} dan \emph{Response Time} pada Kelas "Stop"}
   \label{tb:delaystop} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 

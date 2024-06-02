@@ -6,7 +6,7 @@
 Proses pengerjaan dilakukan sesuai dengan desain sistem berikut dan implementasinya. Perancangan sistem adalah konsep pembuatan dan perancangan infrastruktur. Implementasi sistem adalah proses pengerjaan yang dilakukan berdasarkan desain sistem yang telah dibuat sebelumnya.
 
 %Section 3.1
-\section{Metode yang digunakan}
+\section{Metode yang Digunakan}
 \label{sec:deskripsisistem}
 Pada penelitian ini diintegrasikan teknologi visi komputer dengan sistem tertanam agar dapat mengontrol gerak kursi roda menggunakan pose mata (\emph{eye gesture}). Gambar \ref{fig:software} merupakan blok diagram \emph{software} yang diimplementasikan dalam penelitian ini.
 
@@ -44,21 +44,21 @@ Pada penelitian ini akan digunakan salah satu fitur dari MediaPipe yaitu MediaPi
   % Nama dari file gambar yang diinputkan
   \includegraphics[scale=0.5]{gambar/bab3/landmark2.png}
   % Keterangan gambar yang diinputkan
-  \caption{Arsitektur pada MediaPipe Face Mesh \textit{Landmarks}}
+  \caption{\textit{Landmark} pada MediaPipe Face Mesh}
   % Label referensi dari gambar yang diinputkan
   \label{fig:landmark}
 \end{figure}
 
-Proses pengerjaan penelitian ini akan memanfaatkan teknologi \emph{eye pose detection} dari MediaPipe Face Mesh untuk mengontrol gerak kursi roda. Terdapat beberapa titik yang dibagi menjadi 4 kelas yaitu LEFT\_EYE (kelopak mata sebelah kiri), LEFT\_IRIS (iris mata sebelah kiri), RIGHT\_EYE (kelopak mata sebelah kiri), dan RIGHT\_IRIS (iris mata sebelah kiri). Titik-titik tersebut atau yang disebut dengan \emph{keypoints} akan digunakan pada estimasi pose. Titik-titik \emph{keypoints} yang digunakan pada estimasi pose ini dapat dilihat pada Tabel \ref{tbl:titik keypoints}.
+Proses pengerjaan penelitian ini akan memanfaatkan teknologi \emph{eye pose detection} dari MediaPipe Face Mesh untuk mengontrol gerak kursi roda. Terdapat beberapa titik yang dibagi menjadi 4 kelas yaitu LEFT\_EYE (kelopak mata sebelah kiri), LEFT\_IRIS (iris mata sebelah kiri), RIGHT\_EYE (kelopak mata sebelah kiri), dan RIGHT\_IRIS (iris mata sebelah kiri). Titik-titik tersebut atau yang disebut dengan \emph{landmark} akan digunakan pada estimasi pose. Titik-titik \emph{landmark} yang digunakan pada estimasi pose ini dapat dilihat pada Tabel \ref{tbl:titik keypoints}.
 
 % Tabel 3.1
 \begin{table}[H]
 \centering
-    \caption{Tabel Titik \emph{Keypoints} yang Relevan pada Tahap Estimasi Pose Kelopak Mata dan Iris Mata}
+    \caption{Titik \emph{Landmark} yang Relevan pada Tahap Estimasi Pose Kelopak Mata dan Iris Mata}
     \label{tbl:titik keypoints}
     \begin{tabular}{|c|c|}                                                                        
      \hline
-      Nama        & Keypoints                                                       \\ 
+      Nama        & \emph{Landmark}                                                       \\ 
       \hline
       LEFT\_EYE   &362,382,381,380,374,373,390,249,263,466,388,387,386,385,384,398  \\ 
       \hline
