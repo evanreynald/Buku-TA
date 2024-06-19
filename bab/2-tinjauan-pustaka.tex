@@ -211,6 +211,40 @@ Untuk memahami bagaimana model klasifikasi bekerja, kita perlu memahami beberapa
 
 Kesimpulannya adalah \emph{accuracy} mengukur seberapa sering model membuat prediksi yang benar dari keseluruhan prediksi. \emph{Precision} menilai seberapa banyak prediksi positif yang benar-benar positif. \emph{Recall} mengukur seberapa baik model dalam menangkap semua kasus positif yang sebenarnya. \emph{F1-score} memberikan keseimbangan antara presisi dan recall, yang berguna ketika kita membutuhkan keseimbangan antara kedua metrik tersebut. Dengan menggunakan metrik ini, model dapat dievaluasi dan ditingkatkan sesuai dengan kebutuhan.
 
+\section{\emph{Pulse Width Modulation} (PWM)}
+
+\emph{Pulse Width Modulation} (PWM) adalah metode pengaturan sinyal digital yang digunakan untuk mengontrol daya yang disediakan ke perangkat elektronik. PWM menghasilkan sinyal pulsa dengan lebar pulsa yang dapat diatur, yang memungkinkan pengontrolan daya yang diberikan ke perangkat. PWM digunakan dalam berbagai aplikasi, termasuk pengendalian motor, pengendalian lampu, dan pengendalian suhu. PWM bekerja dengan menghasilkan sinyal pulsa dengan lebar pulsa yang dapat diatur, yang kemudian diubah menjadi sinyal analog dengan menggunakan filter. Pada Gambar \ref{fig:pwm} merupakan contoh PWM dalam induktor ideal yang digerakkan oleh sumber tegangan yang dimodulasi sebagai serangkaian pulsa (-V), menghasilkan arus seperti sinusoidal dalam induktor (-B). Pulsa tegangan persegi panjang tetap menghasilkan bentuk gelombang arus yang semakin halus, seiring dengan meningkatnya frekuensi pengalihan. Bentuk gelombang arus adalah integral dari bentuk gelombang tegangan. 
+
+\begin{figure} [ht] \centering
+  % Nama dari file gambar yang diinputkan
+  \includegraphics[scale=0.4]{gambar/pwm.png}
+  % Keterangan gambar yang diinputkan
+  \caption{Visualisasi PWM}
+  % Label referensi dari gambar yang diinputkan
+  \label{fig:pwm}
+\end{figure}
+
+PWM memiliki beberapa keuntungan dibandingkan dengan metode pengaturan daya lainnya, seperti pengaturan tegangan atau arus. Salah satu keuntungan utama dari PWM adalah efisiensi energi yang lebih tinggi, karena daya yang disediakan ke perangkat hanya diatur dengan mengubah lebar pulsa sinyal, bukan dengan mengubah tegangan atau arus. Selain itu, PWM juga memungkinkan pengontrolan daya yang lebih halus dan presisi, karena lebar pulsa sinyal dapat diatur dalam rentang yang sangat luas. PWM juga dapat digunakan untuk mengontrol kecepatan motor DC, mengatur kecerahan lampu LED, dan mengontrol suhu dalam sistem pemanas dan pendingin.
+
+Dalam aplikasi ini, PWM digunakan untuk mengontrol kecepatan motor DC pada kursi roda elektrik. Dengan menggunakan PWM, kecepatan motor dapat diatur dengan presisi, sehingga pengguna dapat mengontrol kursi roda dengan lebih mudah dan nyaman. PWM juga memungkinkan pengguna untuk mengatur kecepatan motor sesuai dengan kebutuhan, sehingga kursi roda dapat bergerak dengan lancar dan stabil. Dengan menggunakan PWM, kursi roda dapat bergerak dengan lebih efisien dan efektif, sehingga pengguna dapat menggunakannya dengan lebih nyaman dan aman. Nilai PWM yang digunakan dalam penelitian ini terdapat 2 yaitu, \emph{turn speed} sebesar 40 pwm atau 15 rpm dan \emph{max speed} sebesar 80 pwm atau 32 rpm.
+
+\section{ESP32 DevKit V1}
+
+ESP32 DevKit V1 pertama kali dirilis oleh Espressif Systems pada tahun 2016. ESP32, sebagai penerus dari ESP8266, diperkenalkan dengan berbagai peningkatan fitur dan performa yang signifikan. ESP32 DevKit V1 adalah modul pengembangan berbasis mikrokontroler ESP32 yang dirancang oleh Espressif Systems. Modul ini sangat populer di kalangan pengembang \emph{Internet of Things} (IoT) karena kinerjanya yang tinggi dan fiturnya yang kaya. ESP32 DevKit V1 memiliki prosesor dual-core dengan kecepatan hingga 240 MHz, memberikan kemampuan pemrosesan yang tinggi untuk aplikasi yang membutuhkan performa tinggi. Modul ini dilengkapi dengan konektivitas Wi-Fi 802.11 b/g/n dan Bluetooth 4.2, memungkinkan berbagai jenis komunikasi nirkabel dalam satu perangkat. Dengan RAM 520 KB dan penyimpanan flash eksternal yang bervariasi, biasanya antara 4 MB dan 16 MB, modul ini cukup memadai untuk menjalankan aplikasi yang kompleks. ESP32 Devkit V1 dapat dilihat pada Gambar \ref{fig:esp32}.
+
+\begin{figure} [ht] \centering
+  % Nama dari file gambar yang diinputkan
+  \includegraphics[scale=0.2]{gambar/esp32.jpg}
+  % Keterangan gambar yang diinputkan
+  \caption{ESP32 Devkit V1}
+  % Label referensi dari gambar yang diinputkan
+  \label{fig:esp32}
+\end{figure}
+
+Selain itu, ESP32 DevKit V1 memiliki banyak pin GPIO yang dapat diprogram untuk berbagai fungsi seperti PWM, ADC, DAC, UART, SPI, dan I2C, sehingga memberikan fleksibilitas yang tinggi dalam berinteraksi dengan berbagai sensor dan aktuator. Modul ini juga dilengkapi dengan sensor suhu internal dan sensor efek hall yang dapat digunakan untuk berbagai aplikasi sensor. Dalam hal efisiensi energi, ESP32 mendukung berbagai mode hemat energi seperti \emph{deep sleep} dan \emph{light sleep}, yang sangat berguna untuk aplikasi yang bergantung pada baterai.
+
+ESP32 DevKit V1 sering digunakan dalam berbagai proyek IoT, seperti \emph{smart home}, \emph{monitoring} lingkungan, proyek robotika, dan sistem keamanan. Modul ini dapat diprogram menggunakan berbagai lingkungan pengembangan, termasuk Arduino IDE, PlatformIO, dan Espressif IoT Development Framework (ESP-IDF). Dengan fitur yang kaya, dukungan komunitas yang luas, dan kemampuan pemrograman yang fleksibel, ESP32 DevKit V1 adalah pilihan yang sangat baik bagi pengembang yang ingin membangun perangkat IoT yang efisien. Dalam penelitian ini, selain sebagai \emph{controller} kursi roda, ESP32 Devkit V1 juga digunakan sebagai \emph{Access Point}, yang memungkinkan perangkat lain dapat terhubung ke jaringan Wi-Fi lokal yang dibentuk oleh ESP32, untuk menerima data dari perangkat lain.
+
 \section{\textit{Next Unit of Computing} (NUC)}
 
 Pada tahun 2012, Intel meluncurkan arsitektur \textit{Next Unit of Computing}, yang disebut dengan konsep "NUC", yang sebenarnya adalah \textit{mini quasi-system PC}. Intel Hades Canyon NUC generasi pertama mengungguli semua PC mini lainnya dengan ukuran tablet 7 inci. Performa yang kuat, berbagai antarmuka dan desain penampilan yang luar biasa adalah unik di hadapan produk dari berbagai OEM, bahkan lebih baik daripada Mac mini\parencite{8858650}. NUC dapat dilihat pada Gambar \ref{fig:Perangkat NUC}.

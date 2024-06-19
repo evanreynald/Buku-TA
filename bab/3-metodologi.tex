@@ -19,7 +19,7 @@ Pada penelitian ini diintegrasikan teknologi visi komputer dengan sistem tertana
   % Label referensi dari gambar yang diinputkan
   \label{fig:software}
 \end{figure}
-
+ 
 \subsection{Mendapatkan Citra}
 
 Dalam mengerjakan penelitian ini, langkah pertama yang dilakukan adalah pengambilan citra menggunakan kamera atau sumber gambar lainnya. Citra yang diambil harus cukup jelas dan terfokus pada area wajah agar fitur mata dapat diidentifikasi dengan akurat. Pengambilan citra dapat dilihat pada Gambar \ref{fig:citra}.\\
@@ -107,14 +107,14 @@ Pengelompokan ini memungkinkan sistem untuk mempelajari dan memahami pola-pola p
 \centering
     \caption{Tabel Contoh Klasifikasi Citra}
     \label{tbl:contoh-klasifikasi}
-    \begin{tabular}{|c|c|}
+    \begin{tabular}{|c|c|c|}
         \hline
-        Pose              & Citra              \\ \hline
-        Kanan                & \includegraphics[scale=0.25]{gambar/bab3/kanan.png}   \\ \hline
-        Kiri                & \includegraphics[scale=0.25]{gambar/bab3/kiri.png}   \\ \hline
-        Maju               & \includegraphics[scale=0.25]{gambar/bab3/maju.png}  \\ \hline
-        Mundur               & \includegraphics[scale=0.25]{gambar/bab3/mundur.png}  \\ \hline
-        Stop               & \includegraphics[scale=0.25]{gambar/bab3/stop.png}  \\ \hline
+        Pose              & Citra    & Klasifikasi          \\ \hline
+        Kanan                & \includegraphics[scale=0.25]{gambar/bab3/kanan.png} & \includegraphics[width=5cm, height=0.8cm]{gambar/bab3/matakanan.jpg}   \\ \hline
+        Kiri                & \includegraphics[scale=0.25]{gambar/bab3/kiri.png} & \includegraphics[width=5cm, height=0.8cm]{gambar/bab3/matakiri.jpg}   \\ \hline
+        Maju               & \includegraphics[scale=0.25]{gambar/bab3/maju.png} & \includegraphics[width=5cm, height=0.8cm]{gambar/bab3/matamaju.jpg}  \\ \hline
+        Mundur               & \includegraphics[scale=0.25]{gambar/bab3/mundur.png} & \includegraphics[width=5cm, height=0.8cm]{gambar/bab3/matamundur.jpg}  \\ \hline
+        Stop               & \includegraphics[scale=0.25]{gambar/bab3/stop.png} & \includegraphics[width=5cm, height=0.8cm]{gambar/bab3/matastop.jpg}  \\ \hline
     \end{tabular}
 \end{table}
 
@@ -146,9 +146,9 @@ Selanjutnya, lapisan \emph{flatten} digunakan untuk mengubah tensor hasil konvol
   \label{fig:3dlayercnn}
 \end{figure}
 
-Sebelum dataset di-\emph{training} menggunakan \emph{layer} CNN, dilakukan beberapa teknik \emph{preprocessing} seperti augmentasi data dan \emph{tuning} parameter. Augmentasi data dilakukan untuk meningkatkan variasi data pelatihan dan mencegah \emph{overfitting}. Teknik augmentasi yang digunakan antara lain \emph{rotation, shearing}, dan \emph{brightness}. Selain augmentasi, \emph{tuning} parameter juga merupakan bagian penting dalam proses ini. \emph{Tuning} parameter melibatkan pengaturan \emph{hyperparameter} model seperti jumlah lapisan konvolusi, ukuran filter, ukuran kernel pooling, tingkat \emph{dropout}, dan ukuran \emph{batch}. Ditambahkan juga beberapa \emph{callbacks} yaitu \emph{rlrop} dan \emph{early stop}. Proses ini bertujuan untuk menemukan kombinasi parameter yang optimal sehingga model dapat dilatih secara efisien dan akurat.
+Sebelum dataset di-\emph{training} menggunakan \emph{layer} CNN, dilakukan beberapa teknik \emph{preprocessing} seperti augmentasi data dan \emph{tuning} parameter. Augmentasi data dilakukan untuk meningkatkan variasi data pelatihan dan mencegah \emph{overfitting}. Teknik augmentasi yang digunakan antara lain \emph{rescale}, \emph{rotation\_range} sebesar 10, \emph{shear\_range} sebesar 0.1, dan \emph{brightness\_range} dari 0.8 (80\%) sampai 1.2 (120\%). Selain augmentasi, \emph{tuning} parameter juga merupakan bagian penting dalam proses ini. \emph{Tuning} parameter melibatkan pengaturan \emph{hyperparameter} model seperti jumlah lapisan konvolusi, ukuran filter, ukuran kernel pooling, tingkat \emph{dropout}, dan ukuran \emph{batch}. Ditambahkan juga beberapa \emph{callbacks} yaitu \emph{rlrop} dan \emph{early stop}. Proses ini bertujuan untuk menemukan kombinasi parameter yang optimal sehingga model dapat dilatih secara efisien dan akurat.
 
-Selain itu, semua gambar dinormalisasi dengan me\emph{rescale}nya ke rentang [0, 1], dengan cara dibagi dengan nilai 265, untuk memastikan bahwa nilai \emph{pixel} konsisten di seluruh dataset. Ini membantu model belajar lebih cepat dan meningkatkan kinerja secara keseluruhan. Dataset kemudian dibagi menjadi tiga bagian: data pelatihan \emph{(training)}, data validasi \emph{(validation)}, dan data pengujian \emph{(testing)}. Pembagian ini memungkinkan model diuji dan divalidasi selama proses pelatihan untuk memantau kinerja secara akurat. Penggunaan CNN dalam optimasi dataset diharapkan dapat menghasilkan model yang mampu mengenali pola dan fitur pose mata dengan akurat, sehingga sistem dapat memberikan respons yang tepat terhadap perubahan perintah yang diberikan oleh pengguna. Spesifikasi perangkat \emph{hardware} yang digunakan untuk \emph{training} dapat dilihat pada Tabel \ref{tb:speklaptop}.
+Selain itu, semua gambar dinormalisasi dengan me\emph{rescale}nya ke rentang [0, 1], dengan cara dibagi dengan nilai 255, untuk memastikan bahwa nilai \emph{pixel} konsisten di seluruh dataset. Ini membantu model belajar lebih cepat dan meningkatkan kinerja secara keseluruhan. Dataset kemudian dibagi menjadi tiga bagian: data pelatihan \emph{(training)}, data validasi \emph{(validation)}, dan data pengujian \emph{(testing)}. Pembagian ini memungkinkan model diuji dan divalidasi selama proses pelatihan untuk memantau kinerja secara akurat. Penggunaan CNN dalam optimasi dataset diharapkan dapat menghasilkan model yang mampu mengenali pola dan fitur pose mata dengan akurat, sehingga sistem dapat memberikan respons yang tepat terhadap perubahan perintah yang diberikan oleh pengguna. Spesifikasi perangkat \emph{hardware} yang digunakan untuk \emph{training} dapat dilihat pada Tabel \ref{tb:speklaptop}.
 
 \begin{longtable}{|c|c|c|}
   \caption{Spesifikasi Perangkat Keras}
@@ -288,8 +288,8 @@ Program ini dirancang untuk mengendalikan motor DC berdasarkan perintah yang dit
 \parencite{ekatama2024perancangan}
 \end{figure}
 
-Program ini menggunakan pustaka WiFi untuk mengonfigurasi dan mengelola koneksi WiFi pada ESP32, serta pustaka Arduino untuk fungsi dasar pemrograman mikrokontroler. Variabel \emph{ssid} dan \emph{password} menyimpan nama dan kata sandi untuk \emph{access point} yang dibuat oleh ESP32, sementara objek \emph{server} dari kelas \emph{WiFiServer} menangani koneksi pada port 80. Variabel \emph{pwmpin1, dir1,} dan \emph{dir2} mengendalikan motor kiri, sedangkan \emph{pwmPin2}, \emph{dir3}, dan \emph{dir4} mengendalikan motor kanan. Setiap variabel dihubungkan ke pin GPIO tertentu pada ESP32 untuk kontrol motor. Array \emph{stdir} menyimpan kondisi arah motor, sementara variabel \emph{pwmChannel1, pwmChannel2, freq, res, PWM1\_DutyCycle, maxspeed}, dan \emph{turnspeed} digunakan untuk mengonfigurasi frekuensi dan resolusi PWM, serta kecepatan motor.
+Program ini menggunakan pustaka WiFi untuk mengonfigurasi dan mengelola koneksi WiFi pada ESP32, serta pustaka Arduino untuk fungsi dasar pemrograman mikrokontroler. Variabel \emph{ssid} dan \emph{password} menyimpan nama dan kata sandi untuk \emph{access point} yang dibuat oleh ESP32, sementara objek \emph{server} dari kelas \emph{WiFiServer} menangani koneksi pada port 80. Variabel \emph{pwmpin1} pada pin 5, \emph{dir1} pada pin 18, dan \emph{dir2} pada pin 19 mengendalikan motor kiri, sedangkan \emph{pwmPin2} pada pin 25, \emph{dir3} pada pin 32, dan \emph{dir4} pada pin 33 mengendalikan motor kanan. Setiap variabel dihubungkan ke pin GPIO tertentu pada ESP32 untuk kontrol motor. Array \emph{stdir} menyimpan kondisi arah motor, sementara variabel \emph{pwmChannel1} yaitu 0, \emph{pwmChannel2} yaitu 1, \emph{freq} sebesar 15 kHz, \emph{res} sebesar 8, PWM1\_DutyCycle, \emph{maxspeed}, dan \emph{turnspeed}digunakan untuk mengonfigurasi frekuensi dan resolusi PWM, serta kecepatan motor.
 
-Fungsi \emph{void setup()} dijalankan satu kali saat program dimulai. Dalam fungsi ini, \emph{Serial.begin()} menginisialisasi komunikasi serial pada 115200 bps, kemudian \emph{access point} dibuat sesuai SSID dan kata sandi yang ditentukan. IP \emph{Address} ditampilkan pada \emph{Serial Monitor}, dan \emph{server} dimulai pada port 80. Pin kontrol motor diatur sebagai \emph{output}, dan saluran PWM dikonfigurasi dengan \emph{ledcSetup()}. PWM dibagi menjadi 2 kecepatan, yaitu \emph{max speed} dengan nilai sebesar 70 dan \emph{turn speed} dengan nilai sebesar 35.
+Fungsi \emph{void setup()} dijalankan satu kali saat program dimulai. Dalam fungsi ini, \emph{Serial.begin()} menginisialisasi komunikasi serial pada 115200 bps, kemudian \emph{access point} dibuat sesuai SSID dan kata sandi yang ditentukan. IP \emph{Address} ditampilkan pada \emph{Serial Monitor}, dan \emph{server} dimulai pada port 80. Pin kontrol motor diatur sebagai \emph{output}, dan saluran PWM dikonfigurasi dengan \emph{ledcSetup()}. PWM dibagi menjadi 2 kecepatan statis, yaitu \emph{max speed} dan \emph{turn speed}.
 
 Pada fungsi \emph{void loop()}, koneksi \emph{client} diperiksa. Jika ada \emph{client} yang terhubung, ESP32 akan membaca data hingga karakter \emph{newline} ('\textbackslash n') dan mengurai data tersebut menjadi variabel arah. Kontrol motor dilakukan menggunakan pernyataan \emph{if-else} berdasarkan nilai variabel arah yang diterima. Setiap kondisi melibatkan perulangan \emph{while} untuk memastikan perubahan kecepatan motor terjadi secara bertahap. \emph{digitalWrite()} menetapkan arah motor, sementara \emph{ledcWrite()} mengendalikan kecepatan motor. Perulangan ini terus berlanjut selama ESP32 menerima data melalui WiFi \parencite{ekatama2024perancangan}.

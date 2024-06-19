@@ -408,7 +408,7 @@ Pengujian performa model dengan variasi jarak menunjukkan tren yang jelas bahwa 
 \section{Pengujian Performa Model dengan menggunakan Variasi Pencahayaan}
 
 Pada sistem kontrol kursi roda berbasis pose mata, variasi pencahayaan memiliki pengaruh signifikan terhadap performa deteksi model. Model harus mampu beroperasi dalam berbagai kondisi pencahayaan. Sub-bab ini akan membahas pengujian performa model dengan menggunakan variasi pencahayaan. Tujuan dari pengujian ini adalah untuk mengevaluasi tingkat keberhasilan dan ketidakberhasilan model dalam mendeteksi pose mata pada tiga kondisi pencahayaan, yaitu pencahayaan gelap (35 Lux), pencahayaan redup (55 Lux), dan pencahayaan terang (131 Lux). Contoh \emph{dataset} pengujian variasi pencahayaan dapat dilihat pada Gambar \ref{fig:Variasi Lux}.
-
+ 
 \begin{figure}[H]
   \centering
   \begin{subfigure}[b]{0.4\linewidth}
@@ -441,7 +441,7 @@ Pengujian pada kondisi pencahayaan 35 lux bertujuan untuk mengevaluasi performa 
 
 %Tabel 4.12
 \begin{longtable}{|l|c|c|c|c|}
-  \caption{Pengujian Kinerja Model dengan Pencahayaan 35 Lux}
+  \caption{Pengujian Performa Model dengan Pencahayaan 35 Lux}
   \label{tb:lux35} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -461,14 +461,14 @@ Pada bagian ini, akan dianalisis bagaimana model beroperasi di bawah pencahayaan
 
 %Tabel 4.13
 \begin{longtable}{|l|c|c|c|c|}
-  \caption{Pengujian Kinerja Model dengan Pencahayaan 55 Lux}
+  \caption{Pengujian Performa Model dengan Pencahayaan 55 Lux}
   \label{tb:lux55} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
   \textbf{Kelas} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Keberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Ketidakberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Persentase \\ Keberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Persentase\\ Ketidakberhasilan\end{tabular}}} \\ \hline
   \endfirsthead
   
-  \caption[]{Pengujian Kinerja Model dengan Pencahayaan 55 Lux \textit{(Lanjutan...)}} \\
+  \caption[]{Pengujian Performa Model dengan Pencahayaan 55 Lux \textit{(Lanjutan...)}} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
   \textbf{Kelas} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Keberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Ketidakberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Persentase \\ Keberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Persentase\\ Ketidakberhasilan\end{tabular}}} \\ \hline
@@ -496,7 +496,7 @@ Pengujian kinerja model pada kondisi pencahayaan 131 Lux dilakukan untuk mengeva
 
 %Tabel 4.14
 \begin{longtable}{|l|c|c|c|c|}
-  \caption{Pengujian Kinerja Model dengan Pencahayaan 131 Lux}
+  \caption{Pengujian Performa Model dengan Pencahayaan 131 Lux}
   \label{tb:lux131} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
@@ -510,202 +510,576 @@ Pengujian kinerja model pada kondisi pencahayaan 131 Lux dilakukan untuk mengeva
 
 Berdasarkan Tabel \ref{tb:lux131} diatas, hasil menunjukkan bahwa model memiliki tingkat akurasi yang sempurna dalam mendeteksi semua perintah pose mata. Setiap perintah, termasuk "Kanan", "Kiri", "Maju", "Mundur", dan "Stop", berhasil terdeteksi dengan tingkat keberhasilan 100\% tanpa ada satu pun kesalahan atau kegagalan deteksi. Hasil ini menegaskan bahwa model bekerja secara optimal dalam kondisi pencahayaan terang, menunjukkan bahwa pencahayaan 131 Lux mendukung model untuk memberikan kinerja yang sangat andal dalam mengenali dan mengklasifikasikan pose mata dengan tepat.
 
+\section{Pengujian Performa Model terhadap Subjek}
+
+Pada sub-bab ini, dilakukan pengujian terhadap subjek yang berbeda-beda di lingkungan yang tidak ideal. Pengujian ini bertujuan untuk mengevaluasi sejauh mana model klasifikasi dapat beradaptasi dengan subjek yang berbeda. Pada pengujian ini, terdapat 3 subjek yang digunakan dengan jarak 30 cm dari kamera. Setiap subjek memiliki bentuk mata yang berbeda-beda. Pengujian akan dilakukan secara \emph{real-time} dengan hasil pengujian berupa data \emph{boolean} yang akan direpresentasikan sebagai berhasil jika model mengklasifikan pose subjek dengan benar dan tidak berhasil jika model mengklasifikan pose subjek dengan tidak benar. Untuk contoh data citra pada subjek pertama dapat pada Gambar \ref{fig:subjek1}.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.329\linewidth}
+      \includegraphics[width=\linewidth]{gambar/4.7/azzam/kanan.png}
+      \caption{Pose "Kanan"}
+      \label{fig:azzam1}
+  \end{subfigure}
+  \hfill % adds horizontal space between the figures
+  \begin{subfigure}[b]{0.329\linewidth}
+    \includegraphics[width=\linewidth]{gambar/4.7/azzam/kiri.png}
+    \caption{Pose "Kiri"}
+    \label{fig:azzam2}
+  \end{subfigure}
+  \vspace{1cm} % adds vertical space between the rows of images
+  \begin{subfigure}[b]{0.329\linewidth}
+    \includegraphics[width=\linewidth]{gambar/4.7/azzam/maju.png}
+    \caption{Pose "Maju"}
+    \label{fig:azzam3}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\linewidth}
+    \includegraphics[width=\linewidth]{gambar/4.7/azzam/mundur.png}
+    \caption{Pose "Mundur"}
+    \label{fig:azzam4}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\linewidth}
+    \includegraphics[width=\linewidth]{gambar/4.7/azzam/stop.png}
+    \caption{Pose "Stop"}
+    \label{fig:azzam5}
+  \end{subfigure}
+  \caption{Contoh Data Citra pada Subjek Pertama}
+  \label{fig:subjek1}
+\end{figure}
+
+Pada Tabel \ref{tb:subjek1} dapat dilihat hasil pengujian terhadap subjek pertama. Dari 300 kali pengujian, terdapat 278 keberhasilan dan 22 ketidakberhasilan, dengan persentase keberhasilan sebesar 92,66\% dan persentase ketidakberhasilan sebesar 7,33\%. Hal ini menunjukkan bahwa model klasifikasi pose mata mampu memberikan hasil yang cukup baik pada subjek pertama dan mampu mengklasifikasikan pose subjek dengan cukup akurat.
+
+\begin{longtable}{|c|c|c|c|c|}
+  \caption{Pengujian Performa Model terhadap Subjek Pertama}
+  \label{tb:subjek1} \\
+  \hline
+  \rowcolor[HTML]{C0C0C0} 
+  \multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Pengujian\end{tabular}}}  & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Keberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Ketidakberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Persentase \\ Keberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Persentase\\ Ketidakberhasilan\end{tabular}}} \\ \hline
+  300  & 278                                                                                 & 22                                                                                        & 92.66\%                                                                                   & 7.33\%                                                                                         \\ \hline
+\end{longtable}
+
+Selanjutnya, dilakukan pengujian terhadap subjek kedua. Pengujian ini bertujuan untuk mengevaluasi sejauh mana model klasifikasi dapat beradaptasi dengan subjek kedua. Pengujian akan dilakukan secara \emph{real-time} dengan hasil pengujian berupa data \emph{boolean} yang akan direpresentasikan sebagai berhasil jika model mengklasifikan pose subjek dengan benar dan tidak berhasil jika model mengklasifikan pose subjek dengan tidak benar. Untuk contoh data citra pada subjek kedua dapat pada Gambar \ref{fig:subjek2}.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.329\linewidth}
+      \includegraphics[width=\linewidth]{gambar/4.7/dimas/kanan.png}
+      \caption{Pose "Kanan"}
+      \label{fig:dimas1}
+  \end{subfigure}
+  \hfill % adds horizontal space between the figures
+  \begin{subfigure}[b]{0.329\linewidth}
+    \includegraphics[width=\linewidth]{gambar/4.7/dimas/kiri.png}
+    \caption{Pose "Kiri"}
+    \label{fig:dimas2}
+  \end{subfigure}
+  \vspace{1cm} % adds vertical space between the rows of images
+  \begin{subfigure}[b]{0.329\linewidth}
+    \includegraphics[width=\linewidth]{gambar/4.7/dimas/maju.png}
+    \caption{Pose "Maju"}
+    \label{fig:dimas3}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\linewidth}
+    \includegraphics[width=\linewidth]{gambar/4.7/dimas/mundur.png}
+    \caption{Pose "Mundur"}
+    \label{fig:dimas4}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\linewidth}
+    \includegraphics[width=\linewidth]{gambar/4.7/dimas/stop.png}
+    \caption{Pose "Stop"}
+    \label{fig:dimas5}
+  \end{subfigure}
+  \caption{Contoh Data Citra pada Subjek Kedua}
+  \label{fig:subjek2}
+\end{figure}
+
+Hasil pengujian terhadap subjek kedua dapat dilihat pada Tabel \ref{tb:subjek2}. Dari 300 kali pengujian, terdapat 273 keberhasilan dan 27 ketidakberhasilan, dengan persentase keberhasilan sebesar 91\% dan persentase ketidakberhasilan sebesar 9\%. Hal ini menunjukkan bahwa model klasifikasi pose mata mampu memberikan hasil yang cukup baik pada subjek kedua dan mampu mengklasifikasikan pose subjek dengan cukup akurat.
+
+\begin{longtable}{|c|c|c|c|c|}
+  \caption{Pengujian Performa Model terhadap Subjek Kedua}
+  \label{tb:subjek2} \\
+  \hline
+  \rowcolor[HTML]{C0C0C0} 
+  \multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Pengujian\end{tabular}}}  & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Keberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Ketidakberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Persentase \\ Keberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Persentase\\ Ketidakberhasilan\end{tabular}}} \\ \hline
+  300  & 273                                                                                  & 27                                                                                        & 91\%                                                                                   & 9\%                                                                                         \\ \hline
+\end{longtable}
+
+Kemudian, dilakukan pengujian terhadap subjek ketiga. Pengujian ini bertujuan untuk mengevaluasi sejauh mana model klasifikasi dapat beradaptasi dengan subjek ketiga. Pengujian akan dilakukan secara \emph{real-time} dengan hasil pengujian berupa data \emph{boolean} yang akan direpresentasikan sebagai berhasil jika model mengklasifikan pose subjek dengan benar dan tidak berhasil jika model mengklasifikan pose subjek dengan tidak benar. Untuk contoh data citra pada subjek ketiga dapat pada Gambar \ref{fig:subjek3}.
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.329\linewidth}
+      \includegraphics[width=\linewidth]{gambar/4.7/rani/kanan.png}
+      \caption{Pose "Kanan"}
+      \label{fig:rani1}
+  \end{subfigure}
+  \hfill % adds horizontal space between the figures
+  \begin{subfigure}[b]{0.329\linewidth}
+    \includegraphics[width=\linewidth]{gambar/4.7/rani/kiri.png}
+    \caption{Pose "Kiri"}
+    \label{fig:rani2}
+  \end{subfigure}
+  \vspace{1cm} % adds vertical space between the rows of images
+  \begin{subfigure}[b]{0.329\linewidth}
+    \includegraphics[width=\linewidth]{gambar/4.7/rani/maju.png}
+    \caption{Pose "Maju"}
+    \label{fig:rani3}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\linewidth}
+    \includegraphics[width=\linewidth]{gambar/4.7/rani/mundur.png}
+    \caption{Pose "Mundur"}
+    \label{fig:rani4}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.32\linewidth}
+    \includegraphics[width=\linewidth]{gambar/4.7/rani/stop.png}
+    \caption{Pose "Stop"}
+    \label{fig:rani5}
+  \end{subfigure}
+  \caption{Contoh Data Citra pada Subjek Ketiga}
+  \label{fig:subjek3}
+\end{figure}
+
+Untuk hasil pengujian terhadap subjek ketiga dapat dilihat pada Tabel \ref{tb:subjek3}. Dari 300 kali pengujian, terdapat 284 keberhasilan dan 16 ketidakberhasilan, dengan persentase keberhasilan sebesar 94,66\% dan persentase ketidakberhasilan sebesar 5,33\%. Hal ini menunjukkan bahwa model klasifikasi pose mata mampu memberikan hasil yang cukup baik pada subjek ketiga dan mampu mengklasifikasikan pose subjek dengan cukup akurat.
+
+\begin{longtable}{|c|c|c|c|c|}
+  \caption{Pengujian Performa Model terhadap Subjek Ketiga}
+  \label{tb:subjek3} \\
+  \hline
+  \rowcolor[HTML]{C0C0C0} 
+  \multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Pengujian\end{tabular}}}  & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Keberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Ketidakberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Persentase \\ Keberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Persentase\\ Ketidakberhasilan\end{tabular}}} \\ \hline
+  300  & 284                                                                                  & 16                                                                                        & 94.66\%                                                                                   & 5.33\%                                                                                         \\ \hline
+\end{longtable}
+
+Pada pengujian ini, dapat disimpulkan bahwa model klasifikasi pose mata menunjukkan kinerja yang sangat memuaskan, terutama pada subjek ketiga, dengan tingkat keberhasilan mencapai 94,66\%. Keberhasilan ini kemungkinan besar disebabkan oleh ciri khas bentuk mata subjek ketiga yang lebih mudah untuk dikenali dan diproses oleh model. Sebaliknya, hasil yang lebih rendah pada subjek pertama dan kedua mungkin disebabkan oleh kompleksitas bentuk mata mereka yang memberikan tantangan lebih besar bagi model dalam melakukan pengenalan yang akurat.
+
+Namun, jika dilihat secara keseluruhan, model klasifikasi pose mata ini telah terbukti mampu memberikan hasil yang cukup baik terhadap ketiga subjek yang diuji. Hal ini mengindikasikan bahwa model tersebut memiliki kapasitas yang baik dalam beradaptasi dengan variasi individu yang berbeda dan mampu memberikan respons yang akurat dan handal dalam berbagai kondisi.
+
 \section{Pengujian Performa \emph{Frame Per Second} (FPS) pada Sistem Kontrol Kursi Roda}
 
-Pengujian performa \emph{Frame Per Second} (FPS) bertujuan untuk mengevaluasi kecepatan sistem dalam memproses pose mata secara \emph{real-time} untuk mengontrol kursi roda. FPS merupakan indikator penting dalam menilai kelancaran dan responsivitas sistem, terutama dalam aplikasi yang memerlukan deteksi pose dan pengambilan keputusan yang cepat. Pada sub-bagian ini, dilakukan pengujian performa FPS untuk memastikan bahwa sistem dapat mempertahankan tingkat kecepatan pemrosesan yang memadai. Pengujian dilakukan sebanyak tiga puluh kali pada setiap kelas.
+Pengujian performa \emph{Frame Per Second} (FPS) bertujuan untuk mengevaluasi kecepatan sistem dalam memproses pose mata secara \emph{real-time} untuk mengontrol kursi roda. FPS merupakan indikator penting dalam menilai kelancaran dan responsivitas sistem, terutama dalam aplikasi yang memerlukan deteksi pose dan pengambilan keputusan yang cepat. Pengujian ini dilakukan pada dua perangkat yang berbeda, yaitu laptop dan Intel NUC, untuk membandingkan performa FPS pada kedua perangkat tersebut. Pengujian dilakukan sebanyak 30 kali pada setiap kelas. Untuk spesifikasi laptop dapat dilihat pada Tabel \ref{tb:speklaptop} dan spesifikasi Intel NUC pada Tabel \ref{tb:speknuc}.
 
-Hasil pengujian pada Tabel \ref{tb:fpskanankiri} menunjukkan bahwa performa FPS pada laptop secara konsisten lebih tinggi dibandingkan Intel NUC. Pada perintah "Kanan", FPS rata-rata pada laptop mencapai 12,745, sementara pada Intel NUC hanya mencapai 10,567. Pada perintah "Kiri", FPS rata-rata pada laptop mencapai 12,635, sedangkan pada Intel NUC hanya mencapai 10,617. Perbedaan kinerja FPS ini menunjukkan bahwa laptop mampu memproses gambar lebih cepat dan stabil dibandingkan Intel NUC. Untuk perintah "Kanan", kisaran FPS pada laptop berada antara 10,389 hingga 13,959, sementara pada Intel NUC antara 7,762 hingga 12,177. Sedangkan pada perintah "Kiri", kisaran FPS pada laptop berada antara 10,617 hingga 14,280, sementara pada Intel NUC antara 8,554 hingga 13,127.
-
-%Tabel 4.15
-\begin{longtable}{|c|c|c|c|c|c|c|}
-  \caption{Hasil Performa FPS pada Kelas "Kanan" dan "Kiri"}
-  \label{tb:fpskanankiri} \\ 
-  \cline{1-3} \cline{5-7}
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} &\cellcolor[HTML]{FFFFFF}  & \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} \\ 
-  \cline{1-3} \cline{5-7} 
-  \endfirsthead
-  
-  \caption[]{Hasil Performa FPS pada Kelas "Kanan" dan "Kiri" (Lanjutan..)} \\
-  \cline{1-3} \cline{5-7}
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} &\cellcolor[HTML]{FFFFFF}  & \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} \\ 
-  \cline{1-3} \cline{5-7} 
-  \endhead
-
-  \cline{1-3} \cline{5-7}
-  \multicolumn{7}{r}{\textit{(Tabel bersambung..)}} \\ 
-  \endfoot
-
-  \cline{1-3} \cline{5-7}
-  \endlastfoot
-
-  Kanan          & 13.007              & 10.018           &  & Kiri           & 10.819              & 13.127           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 13.293              & 11.369           &  & Kiri           & 12.150              & 10.089           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 10.927              & 10.043           &  & Kiri           & 13.880              & 11.828           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 10.697              & 7.762            &  & Kiri           & 14.280              & 10.205           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 13.125              & 11.295           &  & Kiri           & 10.916              & 9.879            \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 13.672              & 12.177           &  & Kiri           & 12.748              & 8.665            \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 11.709              & 11.977           &  & Kiri           & 10.617              & 9.901            \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 13.803              & 10.231           &  & Kiri           & 13.403              & 11.823           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 12.866              & 10.057           &  & Kiri           & 12.335              & 10.071           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 12.687              & 11.284           &  & Kiri           & 13.354              & 10.061           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 12.236              & 10.222           &  & Kiri           & 12.110              & 10.147           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 13.295              & 10.307           &  & Kiri           & 13.025              & 11.725           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 12.297              & 10.119           &  & Kiri           & 13.230              & 12.093           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 13.139              & 11.097           &  & Kiri           & 14.249              & 8.660            \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 13.439              & 9.025            &  & Kiri           & 11.462              & 11.752           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 13.644              & 11.983           &  & Kiri           & 13.121              & 8.554            \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 13.380              & 9.974            &  & Kiri           & 12.739              & 10.001           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 13.271              & 11.311           &  & Kiri           & 11.925              & 9.930            \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 12.906              & 8.927            &  & Kiri           & 12.713              & 10.125           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 13.689              & 11.751           &  & Kiri           & 13.314              & 10.047           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 12.937              & 11.887           &  & Kiri           & 13.879              & 11.830           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 12.909              & 9.864            &  & Kiri           & 11.505              & 10.171           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 13.348              & 11.985           &  & Kiri           & 13.413              & 9.846            \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 13.959              & 10.505           &  & Kiri           & 12.483              & 10.051           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 10.389              & 9.972            &  & Kiri           & 11.470              & 11.838           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 12.073              & 11.274           &  & Kiri           & 12.808              & 10.086           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 11.279              & 10.540           &  & Kiri           & 12.279              & 11.760           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 11.669              & 10.023           &  & Kiri           & 13.388              & 12.355           \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 12.948              & 9.763            &  & Kiri           & 12.619              & 9.906            \\ \cline{1-3} \cline{5-7} 
-  Kanan          & 13.765              & 10.257           &  & Kiri           & 12.814              & 11.979           \\ \cline{1-3} \cline{5-7} 
+\begin{longtable}{|c|c|}
+  \caption{Spesifikasi NUC}
+  \label{tb:speknuc} \\
+  \hline
+  \rowcolor[HTML]{D9D9D9} 
+  \textbf{Perangkat} & \textbf{Spesifikasi}   \\ \hline
+  CPU                & Intel Core   i7-1165G7 \\ \hline
+  RAM                & 32 GB DDR4             \\ \hline
+  Storage            & 256 GB SSD             \\ \hline
 \end{longtable}
 
-Selanjutnya, berdasarkan hasil pengujian performa \emph{Frame Per Second} (FPS) dari Tabel \ref{tb:fpsmajumundur}, pada perintah "Maju", FPS rata-rata pada laptop adalah 13,078 dengan kisaran antara 11,098 hingga 14,142, sedangkan pada Intel NUC, FPS rata-rata adalah 10,068 dengan kisaran antara 7,558 hingga 12,068. Sementara itu, pada perintah "Mundur", FPS rata-rata pada laptop mencapai 13,507 dengan kisaran antara 11,100 hingga 14,458, sementara pada Intel NUC, FPS rata-rata adalah 9,734 dengan kisaran antara 6,661 hingga 12,032.
+Hasil pengujian pada Gambar \ref{fig:fpskananlaptop} dan Gambar \ref{fig:fpskanannuc} menunjukkan bahwa performa FPS pada laptop secara konsisten lebih tinggi dibandingkan Intel NUC. Pada perintah "Kanan", FPS rata-rata pada laptop mencapai 12,745, sementara pada Intel NUC hanya mencapai 10,567. Untuk perintah "Kanan", kisaran FPS pada laptop berada antara 10,389 hingga 13,959, sementara pada Intel NUC antara 7,762 hingga 12,177.
 
-%Tabel 4.16
-\begin{longtable}{|c|c|c|c|c|c|c|}
-  \caption{Hasil Performa FPS pada Kelas "Maju" dan "Mundur"}
-  \label{tb:fpsmajumundur} \\ 
-  
- % Header for the first page
- \cline{1-3} \cline{5-7}
- \rowcolor[HTML]{C0C0C0}
- \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} &\cellcolor[HTML]{FFFFFF}  & \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} \\ 
- \cline{1-3} \cline{5-7} 
- \endfirsthead
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.48\linewidth}
+    \centering
+    \begin{tikzpicture}
+     \begin{axis}[
+      width=8.4cm, % Set the width of the chart
+      height=6cm, % Set the height of the chart
+      ybar interval,
+      enlarge x limits=0, 
+      ymax=16, 
+      ymin=0, 
+      minor y tick num=0,
+      ytick={2, 4, 6 , 8, 10, 12, 14, 16},
+      yticklabels={2, 4, 6 , 8, 10, 12, 14, 16},
+      xticklabel style={rotate=90, font=\fontsize{6}{7.2}\selectfont},
+      xlabel={Percobaan},
+      ylabel={FPS Laptop},
+      ylabel near ticks,
+      ylabel style={
+      at={(axis description cs:-0.15,1.05)},
+      anchor=south west,
+      rotate=-90}
+    ]
+    \addplot +[fill = pink, draw = black] coordinates{ 
+        (1, 13.007) (2, 13.293) (3, 10.927) (4, 10.697) (5, 13.125) (6, 13.672)
+        (7, 11.709) (8, 13.803) (9, 12.866) (10, 12.687) (11, 12.236) (12, 13.295)
+	      (13, 12.297) (14, 13.139) (15, 13.439) (16, 13.644) (17, 13.380) (18, 13.271)
+        (19, 12.906) (20, 13.689) (21, 12.937) (22, 12.909) (23,  13.348) (24, 13.959)
+        (25, 10.389) (26, 12.073) (27, 11.279) (28, 11.669) (29, 12.948) (30, 13.765) (31,0)
+    };
+    \end{axis}
+  \end{tikzpicture}
+  \caption{FPS Kelas "Kanan" pada Laptop}
+  \label{fig:fpskananlaptop}
+  \end{subfigure}
+  \hfill % adds horizontal space between the figures
+  \begin{subfigure}[b]{0.48\linewidth}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+      width=8.2cm, % Set the width of the chart
+      height=6cm, % Set the height of the chart
+      ybar interval,
+      enlarge x limits=0, 
+      ymax=16, 
+      ymin=0, 
+      minor y tick num=0,
+      ytick={2, 4, 6 , 8, 10, 12, 14, 16},
+      yticklabels={2, 4, 6 , 8, 10, 12, 14, 16},
+      xticklabel style={rotate=90, font=\fontsize{6}{7.2}\selectfont},
+      xlabel={Percobaan},
+      ylabel={FPS NUC},
+      ylabel near ticks,
+      ylabel style={
+      at={(axis description cs:-0.15,1.05)},
+      anchor=south west,
+      rotate=-90}
+    ]
+    \addplot +[fill = green, draw = black] coordinates{  
+        (1, 10.018) (2, 11.369) (3, 10.043) (4, 7.762) (5, 11.295) (6, 12.177)
+        (7, 11.977) (8, 10.231) (9, 10.057) (10, 11.284) (11, 10.222) (12, 10.307)
+	      (13, 10.119) (14, 11.097) (15, 9.025) (16, 11.983) (17, 9.974) (18, 11.311)
+        (19,  8.927) (20, 11.751) (21, 11.887) (22, 9.864) (23,   11.985) (24, 10.505)
+        (25, 9.972) (26, 11.274) (27, 10.540) (28, 10.023) (29, 9.763) (30, 10.257) (31,0)
+    };
+    \end{axis}
+  \end{tikzpicture}
+  \caption{FPS Kelas "Kanan" pada NUC}
+  \label{fig:fpskanannuc}
+  \end{subfigure}
+  \caption{Perbandingan Grafik Batang FPS Kelas "Kanan" pada Laptop dan NUC}
+  \label{fig:fpskanan}
+\end{figure}
 
- % Header for the subsequent pages
- \caption[]{Hasil Performa FPS pada Kelas "Maju" dan "Mundur" (Lanjutan..)} \\
- \cline{1-3} \cline{5-7}
- \rowcolor[HTML]{C0C0C0}
- \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} &\cellcolor[HTML]{FFFFFF}  & \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} \\ 
- \cline{1-3} \cline{5-7} 
- \endhead
+Pada Gambar \ref{fig:fpskirilaptop} dan Gambar \ref{fig:fpskirinuc}, perintah "Kiri", FPS rata-rata pada laptop mencapai 12,635, sedangkan pada Intel NUC hanya mencapai 10,617. Perbedaan kinerja FPS ini menunjukkan bahwa laptop mampu memproses gambar lebih cepat dan stabil dibandingkan Intel NUC. Pada perintah "Kiri", kisaran FPS pada laptop berada antara 10,617 hingga 14,280, sementara pada Intel NUC antara 8,554 hingga 13,127. 
 
- % Footer for all pages except the last
- \cline{1-3} \cline{5-7}
- \multicolumn{7}{r}{\textit{(Tabel bersambung..)}} \\
- \endfoot
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=8.2cm, % Set the width of the chart
+        height=6cm, % Set the height of the chart
+        ybar interval,
+        enlarge x limits=0, 
+        ymax=16, 
+        ymin=0, 
+        minor y tick num=0,
+        ytick={2, 4, 6 , 8, 10, 12, 14, 16},
+        yticklabels={2, 4, 6 , 8, 10, 12, 14, 16},
+        xticklabel style={rotate=90, font=\fontsize{6}{7.2}\selectfont},
+        xlabel={Percobaan},
+        ylabel={FPS Laptop},
+        ylabel near ticks,
+        ylabel style={
+        at={(axis description cs:-0.15,1.05)},
+        anchor=south west,
+        rotate=-90}
+      ]
+      \addplot +[fill = pink, draw = black] coordinates{  
+          (1, 10.819) (2, 12.150) (3, 13.880) (4, 14.280) (5, 10.916) (6,  12.748)
+          (7,  10.617) (8,  13.403) (9, 12.335) (10, 13.354) (11, 12.110) (12, 13.025)
+          (13, 13.230) (14, 14.249) (15, 11.462) (16, 13.121) (17,  12.739) (18, 11.925)
+          (19, 12.713) (20, 13.314) (21, 13.879) (22, 11.505) (23,   13.413) (24, 12.483)
+          (25, 11.470) (26, 12.808) (27, 12.279) (28, 13.388) (29, 12.619) (30, 12.814) (31,0)
+      };
+      \end{axis}
+    \end{tikzpicture}
+    \caption{FPS Kelas "Kiri" pada Laptop}
+    \label{fig:fpskirilaptop}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=8.2cm, % Set the width of the chart
+        height=6cm, % Set the height of the chart
+        ybar interval,
+        enlarge x limits=0, 
+        ymax=16, 
+        ymin=0, 
+        minor y tick num=0,
+        ytick={2, 4, 6 , 8, 10, 12, 14, 16},
+        yticklabels={2, 4, 6 , 8, 10, 12, 14, 16},
+        xticklabel style={rotate=90, font=\fontsize{6}{7.2}\selectfont},
+        xlabel={Percobaan},
+        ylabel={FPS NUC},
+        ylabel near ticks,
+        ylabel style={
+        at={(axis description cs:-0.15,1.05)},
+        anchor=south west,
+        rotate=-90}
+      ]
+      \addplot +[fill = green, draw = black] coordinates{  
+          (1, 13.127) (2, 10.089) (3, 11.828) (4, 10.205) (5, 9.879) (6, 8.665)
+          (7,  9.901) (8, 11.823) (9, 10.071) (10, 10.061) (11, 10.147) (12, 11.725)
+          (13, 12.093) (14, 8.660) (15, 11.752) (16,  8.554) (17, 10.001) (18,  9.930)
+          (19, 10.125) (20, 10.047) (21, 11.830) (22, 10.171) (23, 9.846) (24, 10.051)
+          (25, 11.838) (26, 10.086) (27, 11.760) (28, 12.355) (29, 9.906) (30, 11.979) (31,0)
+      };
+      \end{axis}
+    \end{tikzpicture}
+    \caption{FPS Kelas "Kiri" pada NUC}
+    \label{fig:fpskirinuc}
+  \end{subfigure}
+  \caption{Perbandingan Grafik Batang FPS Kelas "Kiri" pada Laptop dan NUC}
+  \label{fig:fpskiri}
+\end{figure}
 
- % Footer for the last page
- \cline{1-3} \cline{5-7}
- \endlastfoot
+Selanjutnya, berdasarkan hasil pengujian performa \emph{Frame Per Second} (FPS) dari Gambar \ref{fig:fpsmajulaptop} dan Gambar \ref{fig:fpsmajunuc}, pada perintah "Maju", FPS rata-rata pada laptop adalah 13,078 dengan kisaran antara 11,098 hingga 14,142, sedangkan pada Intel NUC, FPS rata-rata adalah 10,068 dengan kisaran antara 7,558 hingga 12,068 yang menunjukkan bahwa laptop memiliki performa FPS yang lebih tinggi dibandingkan Intel NUC.
 
-  % Content of the table
-  Maju           & 13.574              & 9.883            &  & Mundur         & 14.144              & 8.695            \\ \cline{1-3} \cline{5-7} 
-  Maju           & 13.792              & 10.030           &  & Mundur         & 14.076              & 9.992            \\ \cline{1-3} \cline{5-7} 
-  Maju           & 11.709              & 12.068           &  & Mundur         & 13.874              & 9.845            \\ \cline{1-3} \cline{5-7} 
-  Maju           & 13.372              & 11.429           &  & Mundur         & 11.190              & 11.983           \\ \cline{1-3} \cline{5-7} 
-  Maju           & 13.923              & 9.969            &  & Mundur         & 13.725              & 10.024           \\ \cline{1-3} \cline{5-7} 
-  Maju           & 13.048              & 10.374           &  & Mundur         & 13.693              & 11.980           \\ \cline{1-3} \cline{5-7} 
-  Maju           & 12.818              & 10.066           &  & Mundur         & 14.066              & 10.045           \\ \cline{1-3} \cline{5-7} 
-  Maju           & 11.867              & 11.375           &  & Mundur         & 14.028              & 10.116           \\ \cline{1-3} \cline{5-7} 
-  Maju           & 12.701              & 10.430           &  & Mundur         & 13.852              & 9.863            \\ \cline{1-3} \cline{5-7} 
-  Maju           & 13.710              & 10.021           &  & Mundur         & 13.271              & 11.958           \\ \cline{1-3} \cline{5-7} 
-  Maju           & 13.882              & 9.565            &  & Mundur         & 13.308              & 10.026           \\ \cline{1-3} \cline{5-7} 
-  Maju           & 12.945              & 8.903            &  & Mundur         & 14.076              & 10.444           \\ \cline{1-3} \cline{5-7} 
-  Maju           & 12.120              & 11.475           &  & Mundur         & 13.201              & 11.415           \\ \cline{1-3} \cline{5-7} 
-  Maju           & 13.302              & 8.879            &  & Mundur         & 14.040              & 7.512            \\ \cline{1-3} \cline{5-7} 
-  Maju           & 12.778              & 10.026           &  & Mundur         & 13.606              & 9.935            \\ \cline{1-3} \cline{5-7} 
-  Maju           & 13.728              & 8.557            &  & Mundur         & 14.195              & 8.612            \\ \cline{1-3} \cline{5-7} 
-  Maju           & 13.972              & 10.014           &  & Mundur         & 13.660              & 8.403            \\ \cline{1-3} \cline{5-7} 
-  Maju           & 13.437              & 9.865            &  & Mundur         & 13.265              & 10.269           \\ \cline{1-3} \cline{5-7} 
-  Maju           & 12.809              & 10.123           &  & Mundur         & 14.458              & 8.545            \\ \cline{1-3} \cline{5-7} 
-  Maju           & 12.971              & 10.102           &  & Mundur         & 13.465              & 10.016           \\ \cline{1-3} \cline{5-7} 
-  Maju           & 12.206              & 9.941            &  & Mundur         & 13.505              & 9.981            \\ \cline{1-3} \cline{5-7} 
-  Maju           & 13.330              & 7.558            &  & Mundur         & 13.840              & 9.979            \\ \cline{1-3} \cline{5-7} 
-  Maju           & 13.263              & 9.849            &  & Mundur         & 13.855              & 10.015           \\ \cline{1-3} \cline{5-7} 
-  Maju           & 14.142              & 11.985           &  & Mundur         & 13.223              & 12.032           \\ \cline{1-3} \cline{5-7} 
-  Maju           & 11.098              & 9.988            &  & Mundur         & 14.083              & 7.481            \\ \cline{1-3} \cline{5-7} 
-  Maju           & 12.809              & 9.782            &  & Mundur         & 13.281              & 6.661            \\ \cline{1-3} \cline{5-7} 
-  Maju           & 12.813              & 8.755            &  & Mundur         & 11.100              & 8.592            \\ \cline{1-3} \cline{5-7} 
-  Maju           & 13.392              & 9.944            &  & Mundur         & 13.888              & 7.570            \\ \cline{1-3} \cline{5-7} 
-  Maju           & 13.915              & 10.013           &  & Mundur         & 12.248              & 10.004           \\ \cline{1-3} \cline{5-7} 
-  Maju           & 12.905              & 11.077           &  & Mundur         & 12.984              & 10.034           \\ \cline{1-3} \cline{5-7} 
-\end{longtable}
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=8.2cm, % Set the width of the chart
+        height=6cm, % Set the height of the chart
+        ybar interval,
+        enlarge x limits=0, 
+        ymax=16, 
+        ymin=0, 
+        minor y tick num=0,
+        ytick={2, 4, 6 , 8, 10, 12, 14, 16},
+        yticklabels={2, 4, 6 , 8, 10, 12, 14, 16},
+        xticklabel style={rotate=90, font=\fontsize{6}{7.2}\selectfont},
+        xlabel={Percobaan},
+        ylabel={FPS Laptop},
+        ylabel near ticks,
+        ylabel style={
+        at={(axis description cs:-0.15,1.05)},
+        anchor=south west,
+        rotate=-90}
+      ]
+      \addplot +[fill = pink, draw = black] coordinates{  
+          (1, 13.574) (2, 13.792) (3, 11.709) (4, 13.372) (5, 13.923) (6,  13.048)
+          (7,  12.818) (8, 11.867) (9, 12.701) (10, 13.710) (11, 13.882) (12, 12.945)
+          (13, 12.120) (14, 13.302) (15, 12.778) (16, 13.728) (17,  13.972) (18, 13.437)
+          (19, 12.809) (20, 12.971) (21, 12.206) (22, 13.330) (23, 13.263) (24, 14.142)
+          (25,  11.098) (26, 12.809) (27, 12.813) (28,  13.392) (29, 13.915) (30, 12.905) (31,0)
+      };
+      \end{axis}
+    \end{tikzpicture}
+    \caption{FPS Kelas "Maju" pada Laptop}
+    \label{fig:fpsmajulaptop}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=8.2cm, % Set the width of the chart
+        height=6cm, % Set the height of the chart
+        ybar interval,
+        enlarge x limits=0, 
+        ymax=16, 
+        ymin=0, 
+        minor y tick num=0,
+        ytick={2, 4, 6 , 8, 10, 12, 14, 16},
+        yticklabels={2, 4, 6 , 8, 10, 12, 14, 16},
+        xticklabel style={rotate=90, font=\fontsize{6}{7.2}\selectfont},
+        xlabel={Percobaan},
+        ylabel={FPS NUC},
+        ylabel near ticks,
+        ylabel style={
+        at={(axis description cs:-0.15,1.05)},
+        anchor=south west,
+        rotate=-90}
+      ]
+      \addplot +[fill = green, draw = black] coordinates{ 
+          (1,9.883) (2,10.030) (3,12.068) (4,11.429) (5,9.969) (6,10.374) (7,10.066) 
+          (8,11.375) (9,10.430) (10,10.021) (11,9.565) (12,8.903) (13,11.475) (14,8.879) 
+          (15,10.026) (16,8.557) (17,10.014) (18,9.865) (19,10.123) (20,10.102) (21,9.941) 
+          (22,7.558) (23,9.849) (24,11.985) (25,9.988) (26,9.782) (27,8.755) (28, 9.944) (29, 10.013) (30, 11.077) (31,0)
+      };
+      \end{axis}
+    \end{tikzpicture}
+    \caption{FPS Kelas "Maju" pada NUC}
+    \label{fig:fpsmajunuc}
+  \end{subfigure}
+  \caption{Perbandingan Grafik Batang FPS Kelas "Maju" pada Laptop dan NUC}
+  \label{fig:fpsmaju}
+\end{figure}
 
+Sementara itu, pada perintah "Mundur", FPS rata-rata pada laptop mencapai 13,507 dengan kisaran antara 11,100 hingga 14,458, menunjukkan bahwa laptop memiliki performa FPS yang lebih tinggi dibandingkan Intel NUC. Sementara, pada Intel NUC, FPS rata-rata adalah 9,734 dengan kisaran antara 6,661 hingga 12,032 yang menunjukkan bahwa laptop memiliki performa FPS yang lebih tinggi dibandingkan Intel NUC.
 
-Pada hasil pengujian terakhir di Tabel \ref{tb:fpsstop}, terlihat bahwa laptop memiliki kisaran FPS yang cukup stabil, dengan nilai minimum 10,415 dan maksimum 13,972. Ini menunjukkan bahwa laptop mampu menjaga performa pemrosesan gambar secara konsisten, yang penting untuk pengendalian kursi roda yang responsif.
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=8.2cm, % Set the width of the chart
+        height=6cm, % Set the height of the chart
+        ybar interval,
+        enlarge x limits=0, 
+        ymax=16, 
+        ymin=0, 
+        minor y tick num=0,
+        ytick={2, 4, 6 , 8, 10, 12, 14, 16},
+        yticklabels={2, 4, 6 , 8, 10, 12, 14, 16},
+        xticklabel style={rotate=90, font=\fontsize{6}{7.2}\selectfont},
+        xlabel={Percobaan},
+        ylabel={FPS Laptop},
+        ylabel near ticks,
+        ylabel style={
+        at={(axis description cs:-0.15,1.05)},
+        anchor=south west,
+        rotate=-90}
+      ]
+      \addplot +[fill = pink, draw = black] coordinates{  
+        (1,14.144) (2,14.076) (3,13.874) (4,11.190) (5,13.725) (6,13.693) 
+        (7,14.066) (8,14.028) (9,13.852) (10,13.271) (11,13.308) (12,14.076) 
+        (13,13.201) (14,14.040) (15,13.606) (16,14.195) (17,13.660) (18,13.265) 
+        (19,14.458) (20,13.465) (21,13.505) (22,13.840) (23,13.855) (24,13.223) 
+        (25,14.083) (26,13.281) (27,11.100) (28, 13.888) (29, 12.248) (30, 12.984) (31,0)
+      };
+      \end{axis}
+    \end{tikzpicture}
+    \caption{FPS Kelas "Mundur" pada Laptop}
+    \label{fig:fpsmundurlaptop}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=8.2cm, % Set the width of the chart
+        height=6cm, % Set the height of the chart
+        ybar interval,
+        enlarge x limits=0, 
+        ymax=16, 
+        ymin=0, 
+        minor y tick num=0,
+        ytick={2, 4, 6 , 8, 10, 12, 14, 16},
+        yticklabels={2, 4, 6 , 8, 10, 12, 14, 16},
+        xticklabel style={rotate=90, font=\fontsize{6}{7.2}\selectfont},
+        xlabel={Percobaan},
+        ylabel={FPS NUC},
+        ylabel near ticks,
+        ylabel style={
+        at={(axis description cs:-0.15,1.05)},
+        anchor=south west,
+        rotate=-90}
+      ]
+      \addplot +[fill = green, draw = black] coordinates{  
+        (1,8.695) (2,9.992) (3,9.845) (4,11.983) (5,10.024) (6,11.980) (7,10.045) 
+        (8,10.116) (9,9.863) (10,11.958) (11,10.026) (12,10.444) (13,11.415) 
+        (14,7.512) (15,9.935) (16,8.612) (17,8.403) (18,10.269) (19,8.545) 
+        (20,10.016) (21,9.981) (22,9.979) (23,10.015) (24,12.032) (25,7.481) 
+        (26,6.661) (27,8.592) (28, 7.570) (29, 10.004) (30, 10.034) (31,0)
+      };
+      \end{axis}
+    \end{tikzpicture}
+    \caption{FPS Kelas "Mundur" pada NUC}
+    \label{fig:fpsmundurnuc}
+  \end{subfigure}
+  \caption{Perbandingan Grafik Batang FPS Kelas "Mundur" pada Laptop dan NUC}
+  \label{fig:fpsmundur}
+\end{figure}
 
-Sebaliknya, kisaran FPS pada Intel NUC lebih bervariasi, dengan nilai minimum serendah 8,405 dan maksimum 12,448. Variasi ini mungkin disebabkan oleh keterbatasan sumber daya pemrosesan Intel NUC dibandingkan dengan laptop. Pada perintah "Stop", rata-rata nilai FPS pada laptop adalah 12,580, sementara rata-rata nilai FPS pada Intel NUC adalah 10,127.
+Pada hasil pengujian terakhir di Tabel \ref{fig:fpsstoplaptop} dan Gambar \ref{fig:fpsstopnuc}, terlihat bahwa laptop memiliki kisaran FPS yang cukup stabil, dengan nilai minimum 10,415 dan maksimum 13,972. Ini menunjukkan bahwa laptop mampu menjaga performa pemrosesan gambar secara konsisten, yang penting untuk pengendalian kursi roda yang responsif. Sebaliknya, kisaran FPS pada Intel NUC lebih bervariasi, dengan nilai minimum serendah 8,405 dan maksimum 12,448. Variasi ini mungkin disebabkan oleh keterbatasan sumber daya pemrosesan Intel NUC dibandingkan dengan laptop. Pada perintah "Stop", rata-rata nilai FPS pada laptop adalah 12,580, sementara rata-rata nilai FPS pada Intel NUC adalah 10,127.
 
-%Tabel 4.17
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=8.2cm, % Set the width of the chart
+        height=6cm, % Set the height of the chart
+        ybar interval,
+        enlarge x limits=0, 
+        ymax=16, 
+        ymin=0, 
+        minor y tick num=0,
+        ytick={2, 4, 6 , 8, 10, 12, 14, 16},
+        yticklabels={2, 4, 6 , 8, 10, 12, 14, 16},
+        xticklabel style={rotate=90, font=\fontsize{6}{7.2}\selectfont},
+        xlabel={Percobaan},
+        ylabel={FPS Laptop},
+        ylabel near ticks,
+        ylabel style={
+        at={(axis description cs:-0.15,1.05)},
+        anchor=south west,
+        rotate=-90}
+      ]
+      \addplot +[fill = pink, draw = black] coordinates{ 
+        (1,13.574) (2,13.792) (3,11.709) (4,13.372) (5,13.923) (6,10.987) (7,10.857) 
+        (8,12.701) (9,10.875) (10,10.787) (11,12.945) (12,12.120) (13,13.302) 
+        (14,12.778) (15,13.728) (16,13.972) (17,13.437) (18,12.809) (19,12.971) 
+        (20,12.206) (21,10.415) (22,13.263) (23,11.098) (24,10.440) (25,13.392) 
+        (26,13.915) (27,12.905) (28, 12.813) (29, 12.778) (30, 13.530) (31,0)
+      };
+      \end{axis}
+    \end{tikzpicture}
+    \caption{FPS Kelas "Stop" pada Laptop}
+    \label{fig:fpsstoplaptop}
+  \end{subfigure}
+  \hfill
+  \begin{subfigure}[b]{0.48\textwidth}
+    \centering
+    \begin{tikzpicture}
+      \begin{axis}[
+        width=8.2cm, % Set the width of the chart
+        height=6cm, % Set the height of the chart
+        ybar interval,
+        enlarge x limits=0, 
+        ymax=16, 
+        ymin=0, 
+        minor y tick num=0,
+        ytick={2, 4, 6 , 8, 10, 12, 14, 16},
+        yticklabels={2, 4, 6 , 8, 10, 12, 14, 16},
+        xticklabel style={rotate=90, font=\fontsize{6}{7.2}\selectfont},
+        xlabel={Percobaan},
+        ylabel={FPS NUC},
+        ylabel near ticks,
+        ylabel style={
+        at={(axis description cs:-0.15,1.05)},
+        anchor=south west,
+        rotate=-90}
+      ]
+      \addplot +[fill = green, draw = black] coordinates{  
+        (1,10.009) (2,8.586) (3,11.490) (4,10.355) (5,8.607) (6,9.676) 
+        (7,12.448) (8,9.958) (9,8.405) (10,10.278) (11,11.967) (12,8.564) 
+        (13,8.573) (14,10.062) (15,9.948) (16,10.009) (17,10.122) (18,11.799) 
+        (19,12.034) (20,10.029) (21,9.972) (22,9.994) (23,10.029) (24,9.972) 
+        (25,11.520) (26,8.831) (27,8.593) (28, 11.931) (29, 10.010) (30, 10.028) (31,0)
+      };
+      \end{axis}
+    \end{tikzpicture}
+    \caption{FPS Kelas "Stop" pada NUC}
+    \label{fig:fpsstopnuc}
+    \end{subfigure}
+  \caption{Perbandingan Grafik Batang FPS Kelas "Stop" pada Laptop dan NUC}
+  \label{fig:fpsstop}
+  \end{figure}
+
+Berdasarkan Tabel \ref{tb:fpsall} yang menunjukkan rata-rata FPS untuk kelas "Kanan," "Kiri," "Maju," "Mundur," dan "Stop" pada Laptop dan Intel NUC, dapat dilihat bahwa laptop memiliki performa FPS rata-rata yang lebih tinggi dibandingkan Intel NUC untuk semua perintah pose mata. Untuk kelas "Kanan," Laptop mencatat rata-rata FPS sebesar 12.745, sementara NUC hanya mencapai 10.567. Selisih sekitar 2.178 FPS ini menunjukkan bahwa Laptop memproses perintah "Kanan" lebih cepat dan stabil dibandingkan NUC. Pada kelas "Kiri," perbedaan performa serupa juga terlihat dengan Laptop mencapai rata-rata FPS sebesar 12.635 dibandingkan NUC yang hanya mencapai 10.617, menunjukkan selisih 2.018 FPS yang mendukung keunggulan Laptop.
+
+Selanjutnya, untuk kelas "Maju," Laptop menunjukkan performa yang jauh lebih baik dengan rata-rata FPS sebesar 13.078 dibandingkan dengan NUC yang hanya mencapai 10.068, menciptakan selisih signifikan sebesar 3.01 FPS. Pada kelas "Mundur," perbedaan kinerja semakin mencolok dengan Laptop mencapai rata-rata FPS sebesar 13.507 sementara NUC hanya 9.734, menciptakan selisih 3.773 FPS. Hal ini menunjukkan bahwa Laptop memiliki kemampuan pemrosesan yang jauh lebih efisien dibandingkan NUC dalam menangani perintah "Mundur." Terakhir, pada kelas "Stop," Laptop mencatat rata-rata FPS sebesar 12.580, sedangkan NUC hanya 10.127, dengan selisih 2.453 FPS, yang kembali menunjukkan keunggulan Laptop.
+
 \begin{longtable}{|c|c|c|}
-  \caption{Hasil Performa FPS pada Kelas "Stop"}
-  \label{tb:fpsstop} \\ 
+  \caption{Rata-rata Performa FPS pada Semua Kelas}
+  \label{tb:fpsall} \\
   \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} \\ 
-  \hline
-  \endfirsthead
-
-  \caption[]{Hasil Performa FPS pada Kelas "Stop" (Lanjutan..)} \\
-  \hline
-  \rowcolor[HTML]{C0C0C0} 
-  \textbf{Kelas} & \textbf{FPS Laptop} & \textbf{FPS NUC} \\ 
-  \hline
-  \endhead
-
-  \hline
-  \multicolumn{3}{r}{\textit{(Tabel bersambung..)}} \\ 
-  \endfoot
-
-  \hline
-  \endlastfoot
-
-  Stop           & 13.574              & 10.009           \\ \hline
-  Stop           & 13.792              & 8.586            \\ \hline
-  Stop           & 11.709              & 11.490           \\ \hline
-  Stop           & 13.372              & 10.355           \\ \hline
-  Stop           & 13.923              & 8.607            \\ \hline
-  Stop           & 10.987              & 9.676            \\ \hline
-  Stop           & 10.857              & 12.448           \\ \hline
-  Stop           & 12.701              & 9.958            \\ \hline
-  Stop           & 10.875              & 8.405            \\ \hline
-  Stop           & 10.787              & 10.278           \\ \hline
-  Stop           & 12.945              & 11.967           \\ \hline
-  Stop           & 12.120              & 8.564            \\ \hline
-  Stop           & 13.302              & 8.573            \\ \hline
-  Stop           & 12.778              & 10.062           \\ \hline
-  Stop           & 13.728              & 9.948            \\ \hline
-  Stop           & 13.972              & 10.009           \\ \hline
-  Stop           & 13.437              & 10.122           \\ \hline
-  Stop           & 12.809              & 11.799           \\ \hline
-  Stop           & 12.971              & 12.034           \\ \hline
-  Stop           & 12.206              & 10.029           \\ \hline
-  Stop           & 10.415              & 9.972            \\ \hline
-  Stop           & 13.263              & 9.994            \\ \hline
-  Stop           & 11.098              & 10.029           \\ \hline
-  Stop           & 10.440              & 9.972            \\ \hline
-  Stop           & 13.392              & 11.520           \\ \hline
-  Stop           & 13.915              & 8.831            \\ \hline
-  Stop           & 12.905              & 8.593            \\ \hline
-  Stop           & 12.813              & 11.931           \\ \hline
-  Stop           & 12.778              & 10.010           \\ \hline
-  Stop           & 13.530              & 10.028           \\ \hline
+  \rowcolor[HTML]{D0D0D0} 
+  \multicolumn{1}{|c|}{\cellcolor[HTML]{D0D0D0}}                                 & \multicolumn{2}{c|}{\cellcolor[HTML]{D0D0D0}\textbf{Rata-rata FPS}}         \\ \cline{2-3} 
+  \rowcolor[HTML]{D0D0D0} 
+  \multicolumn{1}{|c|}{\multirow{-2}{*}{\cellcolor[HTML]{D0D0D0}\textbf{Kelas}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{D0D0D0}\textbf{Laptop}} & \textbf{NUC} \\ \hline
+  Kanan                                                                          & \multicolumn{1}{c|}{12.745}                                  & 10.567       \\ \hline
+  Kiri                                                                           & \multicolumn{1}{c|}{12.635}                                  & 10.617       \\ \hline
+  Maju                                                                           & \multicolumn{1}{c|}{13.078}                                  & 10.068       \\ \hline
+  Mundur                                                                         & \multicolumn{1}{c|}{13.507}                                  & 9.734        \\ \hline
+  Stop                                                                           & \multicolumn{1}{c|}{12.580}                                  & 10.127       \\ \hline
+ 
 \end{longtable}
-
-Secara keseluruhan, laptop memiliki performa FPS rata-rata yang lebih tinggi dibandingkan Intel NUC untuk semua perintah pose mata. Laptop mampu memproses pose mata dengan kecepatan dan stabilitas yang lebih baik, memberikan kontrol yang lebih responsif terhadap kursi roda. Variabilitas FPS pada laptop juga lebih rendah, menunjukkan kestabilan pemrosesan yang lebih baik dibandingkan Intel NUC.
 
 Meskipun performa FPS pada Intel NUC lebih rendah dibandingkan laptop, perangkat ini tetap memiliki beberapa keunggulan. Pertama, Intel NUC memiliki desain yang kecil dan kompak, sehingga lebih mudah dipasang pada kursi roda dan tidak memakan banyak ruang. Kedua, konsumsi daya Intel NUC lebih rendah dibandingkan laptop, membuatnya lebih efisien dan ideal untuk aplikasi dengan daya terbatas. Ketiga, Intel NUC menyediakan berbagai opsi konektivitas, seperti HDMI, USB, dan jaringan, sehingga memudahkan integrasi dengan komponen sistem lain. 
 
 \section{Pengujian \emph{Inference Time} pada Model dan \emph{Response Time} pada Motor Kursi Roda}
 
-Pengujian \emph{Inference Time} pada model dan \emph{Response Time} pada motor kursi roda bertujuan untuk mengevaluasi seberapa cepat sistem kontrol kursi roda berbasis pose mata dapat merespons perintah dari pengguna. \emph{Inference Time} mengukur waktu yang dibutuhkan oleh model untuk mendeteksi dan mengklasifikasikan pose mata, sementara \emph{Response Time} mengukur waktu yang diperlukan motor kursi roda untuk mulai bergerak setelah menerima sinyal dari model. \emph{Response Time} dihitung dengan mengurangi waktu antara \emph{Motor Time} dengan \emph{Sent Time}. Untuk mendapatkan hasil yang representatif, pengujian akan dilakukan untuk setiap kelas perintah (seperti "Maju," "Mundur," "Kanan," "Kiri," dan "Stop") sebanyak 30 kali pengujian per kelas. Pada kelas perintah "Maju," motor kursi roda akan menggunakan PWM \emph{(Pulse Width Modulation)} dengan kecepatan \emph{max speed} sebesar 70, sedangkan pada kelas perintah lainnya seperti "Mundur," "Kanan," dan "Kiri," motor akan menggunakan PWM dengan kecepatan \emph{turn speed} sebesar 35.
+Pengujian \emph{Inference Time} pada model dan \emph{Response Time} pada motor kursi roda bertujuan untuk mengevaluasi seberapa cepat sistem kontrol kursi roda berbasis pose mata dapat merespons perintah dari pengguna. \emph{Inference Time} mengukur waktu yang dibutuhkan oleh model untuk mendeteksi dan mengklasifikasikan pose mata, sementara \emph{Response Time} mengukur waktu yang diperlukan motor kursi roda untuk mulai bergerak setelah menerima sinyal dari model. \emph{Response Time} dihitung dengan mengurangi waktu antara \emph{Motor Time} dengan \emph{Sent Time}. Untuk mendapatkan hasil yang representatif, pengujian akan dilakukan untuk setiap kelas perintah (seperti "Maju," "Mundur," "Kanan," "Kiri," dan "Stop") sebanyak 30 kali pengujian per kelas.
 
-Pertama-tama dilakukan pengujian \emph{Inference Time} pada model dan \emph{Response Time} pada motor kursi roda untuk perintah "Kanan." Pengujian ini bertujuan untuk mengevaluasi seberapa cepat sistem kontrol kursi roda berbasis pose mata dapat merespons perintah "Kanan" dari pengguna. Setiap pengujian dilakukan sebanyak 30 kali untuk memastikan hasil yang konsisten dan representatif. Berdasarkan Tabel \ref{tb:delaykanan}, ditunjukkan waktu \emph{Inference Time} pada model dan \emph{Response Time} pada motor kursi roda untuk perintah "Kanan." Rata-rata \emph{response time} keseluruhan untuk perintah "Kanan" adalah 0,2328 detik, dengan variabilitas waktu respons berkisar antara 0,035 hingga 0,399 detik. \emph{Inference Time}, yaitu waktu yang dibutuhkan oleh model untuk mendeteksi dan mengklasifikasikan perintah "Kanan," memiliki rata-rata sekitar 0,0626 detik. Variabilitas \emph{Inference Time} cukup kecil, dengan kisaran antara 0,0491 hingga 0,0777 detik.
+Berdasarkan Tabel \ref{tb:delaykanan}, ditunjukkan waktu \emph{Inference Time} pada model dan \emph{Response Time} pada motor kursi roda untuk perintah "Kanan." Rata-rata \emph{response time} keseluruhan untuk perintah "Kanan" adalah 0,2328 detik, dengan variabilitas waktu respons berkisar antara 0,035 hingga 0,399 detik. \emph{Inference Time}, yaitu waktu yang dibutuhkan oleh model untuk mendeteksi dan mengklasifikasikan perintah "Kanan," memiliki rata-rata sekitar 0,0626 detik. Variabilitas \emph{Inference Time} cukup kecil, dengan kisaran antara 0,0491 hingga 0,0777 detik.
 
 %Tabel 4.18
 \begin{longtable}{|c|c|c|c|c|c|}
@@ -918,7 +1292,22 @@ Rata-rata waktu respons motor kursi roda (\emph{Response Time}) adalah 0,4318 de
       Stop & 0.074920 & 02:21:56.425 & 02:21:56.505 & 02:21:56.875 & 0.450 \\ \hline
 \end{longtable}
 
-Dari semua hasil pengujian pada masing-masing kelas seperti yang tertera pada tabel-tabel di atas, dapat dilihat bahwa perintah "Kiri" memiliki waktu respons terendah dengan rata-rata 0,0933 detik, menunjukkan bahwa sistem dapat merespons perintah "Kiri" dengan cepat dan akurat. Sementara itu, perintah "Maju" dan "Stop" memiliki waktu respons yang lebih tinggi, masing-masing 0,4337 detik dan 0,4318 detik, menunjukkan bahwa sistem memerlukan waktu lebih lama untuk merespons perintah tersebut. Hal tersebut dikarenakan perintah "Maju" memiliki nilai \emph{Pulse Width Modulation} (PWM) yang lebih besar dibandingkan perintah lainnya.
+Dari semua hasil pengujian pada masing-masing kelas seperti yang tertera pada tabel-tabel di atas, dapat dilihat bahwa perintah "Kiri" memiliki waktu respons terendah dengan rata-rata 0,0933 detik, menunjukkan bahwa sistem dapat merespons perintah "Kiri" dengan cepat dan akurat. Sementara itu, perintah "Maju" dan "Stop" memiliki waktu respons yang lebih tinggi, masing-masing 0,4337 detik dan 0,4318 detik, menunjukkan bahwa sistem memerlukan waktu lebih lama untuk merespons perintah tersebut. Hal tersebut dikarenakan perintah "Maju" memiliki nilai \emph{Pulse Width Modulation} (PWM) yang lebih besar dibandingkan perintah lainnya. Untuk rata-rata \emph{inference time} dan \emph{response time} pada semua kelas dapat dilihat pada Tabel \ref{tb:rata2delay}.
+
+\begin{longtable}{|l|cc|}
+  \caption{Rata-rata \emph{Inference Time} dan \emph{Response Time} untuk Semua Kelas}
+  \label{tb:rata2delay} \\
+  \hline
+  \rowcolor[HTML]{D0D0D0} 
+  \multicolumn{1}{|c|}{\cellcolor[HTML]{D0D0D0}}                                 & \multicolumn{2}{c|}{\cellcolor[HTML]{D0D0D0}\textbf{Rata-rata}}                                       \\ \cline{2-3} 
+  \rowcolor[HTML]{D0D0D0} 
+  \multicolumn{1}{|c|}{\multirow{-2}{*}{\cellcolor[HTML]{D0D0D0}\textbf{Kelas}}} & \multicolumn{1}{c|}{\cellcolor[HTML]{D0D0D0}\textbf{Inference Time (s)}} & \textbf{Response Time (s)} \\ \hline
+  Kanan                                                                          & \multicolumn{1}{c|}{0.0626}                                              & 0.2328                     \\ \hline
+  Kiri                                                                           & \multicolumn{1}{c|}{0.0640}                                              & 0.0933                     \\ \hline
+  Maju                                                                           & \multicolumn{1}{c|}{0.0656}                                              & 0.4337                     \\ \hline
+  Mundur                                                                         & \multicolumn{1}{c|}{0.0637}                                              & 0.1409                     \\ \hline
+  Stop                                                                           & \multicolumn{1}{c|}{0.0666}                                              & 0.4318                     \\ \hline
+\end{longtable}
 
 \emph{Inference Time} untuk semua perintah berada pada kisaran yang sama, antara 0,0626 hingga 0,0666 detik, menunjukkan bahwa model dapat mendeteksi dan mengklasifikasikan pose mata dengan cepat dan konsisten di semua kelas. Secara keseluruhan, hasil ini menunjukkan bahwa sistem kontrol kursi roda berbasis pose mata memiliki kinerja yang andal dan responsif, terutama pada perintah "Kanan," "Kiri," dan "Mundur," yang memiliki waktu respons rata-rata di bawah 0,25 detik. Selain itu, kecepatan deteksi dan klasifikasi yang cepat memastikan bahwa sistem dapat beradaptasi dengan perubahan pose mata secara \emph{real-time}, memungkinkan navigasi yang lebih intuitif dan mengurangi risiko keterlambatan atau kesalahan interpretasi. Ini menambah keandalan sistem dalam berbagai kondisi lingkungan dan membantu meningkatkan pengalaman pengguna secara keseluruhan.
 
@@ -1001,7 +1390,7 @@ Variasi pengujian pertama yang dilakukan adalah pengujian kestabilan motor terha
   Stop           & 19:49:00.971        &                         \\ \hline
   Kanan          & 19:49:03.503        & \multirow{2}{*}{5.578}  \\ \cline{1-2}
   Stop           & 19:49:09.081        &                         \\ \hline
-  Kanan          & 19:49:11.799        & \multirow{2}{*}{5.980}  \\ \cline{1-2}
+  Kanan          & 19:49:11.799        & 5.980  \\ \hline
   Stop           & 19:49:17.779        &                         \\ \hline
   Kanan          & 19:49:20.358        & \multirow{2}{*}{5.871}  \\ \cline{1-2}
   Stop           & 19:49:26.229        &                         \\ \hline
@@ -1017,9 +1406,7 @@ Variasi pengujian pertama yang dilakukan adalah pengujian kestabilan motor terha
   Stop           & 19:50:08.644        &                         \\ \hline
 \end{longtable}
 
-\newpage
-
-Waktu output rata-rata motor untuk perintah "Kanan" adalah 6,013 detik, dengan variabilitas waktu berkisar antara 5,439 hingga 7,163 detik dengan nilai standar deviasi sebesar 0,408. Rentang waktu yang relatif sempit menunjukkan bahwa motor kursi roda dapat merespons perintah "Kanan" dengan cukup stabil dan konsisten. Secara keseluruhan, pengujian kestabilan motor kursi roda menunjukkan bahwa sistem kontrol mampu memberikan waktu respons yang stabil untuk perintah "Kanan." Meskipun terdapat sedikit variasi dalam waktu respons, kisaran waktu yang relatif sempit memperkuat keandalan sistem kontrol.
+Waktu output rata-rata motor untuk perintah "Kanan" adalah 6,013 detik, dengan variabilitas waktu berkisar antara 5,439 hingga 7,163 detik dengan nilai standar deviasi sebesar 0,408. Rentang waktu yang relatif sempit menunjukkan bahwa motor kursi roda dapat merespons perintah "Kanan" dengan cukup stabil dan konsisten. Secara keseluruhan, pengujian kestabilan motor kursi roda menunjukkan bahwa sistem kontrol mampu memberikan waktu respons yang stabil untuk perintah "Kanan".
 
 \subsection{Kestabilan Motor terhadap Perintah "Kiri"}
 
@@ -1054,7 +1441,7 @@ Sebagian besar waktu output motor berada dalam kisaran 6 detik, menunjukkan bahw
 
   Kiri           & 20:16:00.873        & \multirow{2}{*}{6.546}  \\ \cline{1-2}
   Stop           & 20:16:07.419        &                         \\ \hline
-  Kiri           & 20:16:09.819        & \multirow{2}{*}{6.751}  \\ \cline{1-2}
+  Kiri           & 20:16:09.819        & 6.751  \\ \hline
   Stop           & 20:16:16.570        &                         \\ \hline
   Kiri           & 20:16:18.719        & \multirow{2}{*}{6.133}  \\ \cline{1-2}
   Stop           & 20:16:24.852        &                         \\ \hline
@@ -1199,7 +1586,7 @@ Tabel \ref{tb:motormaju} menunjukkan hasil pengujian kestabilan motor kursi roda
   Stop           & 18:05:13.308        &                         \\ \hline
   Maju           & 18:05:15.418        & \multirow{2}{*}{6.500}  \\ \cline{1-2}
   Stop           & 18:05:21.918        &                         \\ \hline
-  Maju           & 18:05:23.734        & \multirow{2}{*}{6.386}  \\ \cline{1-2}
+  Maju           & 18:05:23.734        & 6.386  \\ \hline
   Stop           & 18:05:30.120        &                         \\ \hline
   Maju           & 18:05:31.967        & \multirow{2}{*}{6.421}  \\ \cline{1-2}
   Stop           & 18:05:38.388        &                         \\ \hline
@@ -1280,7 +1667,7 @@ Dari hasil pengujian yang tertera pada Tabel \ref{tb:motormundur}, waktu output 
   Stop   & 18:58:40.349 &                        \\ \hline
   Mundur & 18:58:42.064 & \multirow{2}{*}{6.948} \\ \cline{1-2}
   Stop   & 18:58:49.012 &                        \\ \hline
-  Mundur & 18:58:50.901 & 6.780 \\ \hline
+  Mundur & 18:58:50.901 & \multirow{2}{*}{6.780} \\ \cline{1-2}
   Stop   & 18:58:57.681 &                        \\ \hline
   Mundur & 18:58:59.331 & \multirow{2}{*}{6.819} \\ \cline{1-2}
   Stop   & 18:59:06.150 &                        \\ \hline
@@ -1361,7 +1748,7 @@ Berdasarkan pengamatan dari Tabel \ref{tb:motorstop}, waktu output rata-rata mot
   Maju           & 16:53:28.100        &                         \\ \hline
   Stop           & 16:53:32.816        & \multirow{2}{*}{5.283}  \\ \cline{1-2}
   Maju           & 16:53:38.099        &                         \\ \hline
-  Stop           & 16:53:42.950        & \multirow{2}{*}{4.883}  \\ \cline{1-2}
+  Stop           & 16:53:42.950        & 4.883  \\ \hline
   Maju           & 16:53:47.833        &                         \\ \hline
   Stop           & 16:53:52.261        & \multirow{2}{*}{5.041}  \\ \cline{1-2}
   Maju           & 16:53:57.302        &                         \\ \hline
@@ -1383,7 +1770,7 @@ Berdasarkan pengamatan dari Tabel \ref{tb:motorstop}, waktu output rata-rata mot
   Maju           & 17:32:54.144        &                         \\ \hline
   Stop           & 17:32:59.260        & \multirow{2}{*}{5.118}  \\ \cline{1-2}
   Maju           & 17:33:04.378        &                         \\ \hline
-  Stop           & 17:33:08.959        & 5.785  \\ \hline
+  Stop           & 17:33:08.959        & \multirow{2}{*}{5.785}  \\ \cline{1-2}
   Maju           & 17:33:14.744        &                         \\ \hline
   Stop           & 17:33:18.943        & \multirow{2}{*}{5.265}  \\ \cline{1-2}
   Maju           & 17:33:24.208        &                         \\ \hline
@@ -1393,6 +1780,56 @@ Berdasarkan pengamatan dari Tabel \ref{tb:motorstop}, waktu output rata-rata mot
   Maju           & 17:33:41.677        &                         \\ \hline
 \end{longtable}
 
-Pengujian kestabilan motor kursi roda terhadap berbagai perintah ("Kanan," "Kiri," "Maju," "Mundur," dan "Stop") menunjukkan tingkat konsistensi yang bervariasi. Waktu output rata-rata untuk perintah "Kanan" adalah 6,013 detik, dengan nilai standar deviasi sebesar 0,408, menunjukkan adanya variasi yang lebih besar dalam respons motor. Untuk perintah "Kiri," waktu output rata-rata adalah 6,469 detik, dengan nilai standar deviasi sebesar 0,371, menandakan bahwa motor merespons perintah ini dengan cukup stabil meski terdapat beberapa variasi. Perintah "Maju" memiliki waktu output rata-rata 6,532 detik, dengan nilai standar deviasi sebesar 0,117, menunjukkan konsistensi yang baik. Sementara itu, perintah "Mundur" menunjukkan waktu output rata-rata 6,863 detik, dengan nilai standar deviasi sebesar 0,156, menandakan perintah yang paling stabil. Perintah "Stop" memiliki waktu output rata-rata tercepat, yaitu 4,933 detik, dengan nilai standar deviasi sebesar 0,361, menunjukkan bahwa motor merespons perintah "Stop" dengan cukup konsisten.
+Pengujian kestabilan motor kursi roda terhadap berbagai perintah ("Kanan," "Kiri," "Maju," "Mundur," dan "Stop") menunjukkan tingkat konsistensi yang bervariasi. Waktu output rata-rata untuk perintah "Kanan" adalah 6,013 detik, dengan nilai standar deviasi sebesar 0,408, menunjukkan adanya variasi yang lebih besar dalam respons motor. Untuk perintah "Kiri," waktu output rata-rata adalah 6,469 detik, dengan nilai standar deviasi sebesar 0,371, menandakan bahwa motor merespons perintah ini dengan cukup stabil meski terdapat beberapa variasi. Perintah "Maju" memiliki waktu output rata-rata 6,532 detik, dengan nilai standar deviasi sebesar 0,117, menunjukkan konsistensi yang baik. Sementara itu, perintah "Mundur" menunjukkan waktu output rata-rata 6,863 detik, dengan nilai standar deviasi sebesar 0,156, menandakan perintah yang paling stabil. Perintah "Stop" memiliki waktu output rata-rata tercepat, yaitu 4,933 detik, dengan nilai standar deviasi sebesar 0,361, menunjukkan bahwa motor merespons perintah "Stop" dengan cukup konsisten. Rata-rata kestabilan motor pada semua kelas dapat dilihat pada Tabel \ref{tb:rata2stabil}.
+
+\begin{longtable}{|l|cl|c|}
+  \caption{Rata-rata Kestabilan Motor pada Semua Kelas}  
+  \label{tb:rata2stabil} \\
+  \hline
+  \rowcolor[HTML]{D0D0D0} 
+  \textbf{Kelas} & \multicolumn{2}{c|}{\cellcolor[HTML]{D0D0D0}\textbf{\begin{tabular}[c]{@{}c@{}}Rata-rata \\ Lama Motor Berjalan (s)\end{tabular}}} & \cellcolor[HTML]{D9D9D9}\textbf{Standar Deviasi} \\ \hline
+  Kanan          & \multicolumn{2}{c|}{6.013}                                                                                                         & 0.408                                            \\ \hline
+  Kiri           & \multicolumn{2}{c|}{6.469}                                                                                                         & 0.371                                            \\ \hline
+  Maju           & \multicolumn{2}{c|}{6.532}                                                                                                         & 0.117                                            \\ \hline
+  Mundur         & \multicolumn{2}{c|}{6.863}                                                                                                         & 0.156                                            \\ \hline
+  Stop           & \multicolumn{2}{c|}{4.933}                                                                                                         & 0.361                                            \\ \hline
+\end{longtable}
 
 Secara keseluruhan, sistem kontrol kursi roda mampu merespons semua perintah dengan tingkat stabilitas yang baik. Perintah "Maju" menunjukkan stabilitas respons terbaik dengan rentang waktu output yang sempit, sementara perintah "Kanan" memiliki variasi waktu output terbesar. Meskipun terdapat variasi kecil dalam waktu output pada masing-masing kelas, hasil pengujian ini menunjukkan bahwa motor kursi roda merespons perintah dengan konsisten.
+
+\section{Pengujian Pada Lingkungan Tidak Ideal}
+
+Pada pengujian ini, dilakukan pengujian pada lingkungan yang tidak ideal untuk mengetahui sejauh mana sistem kontrol kursi roda dapat beroperasi dalam kondisi lingkungan yang tidak ideal yaitu kondisi perubahan pencahayaan, perubahan latar belakang, serta lintasan yang lebih luas. Pengujian ini juga dilakukan untuk mengetahui sejauh mana performa model dapat beradaptasi dengan kondisi lingkungan yang berbeda dan tetap memberikan respons yang akurat. Pengujian ini akan dilakukan secara \emph{real-time} sehingga data yang dihasilkan berupa persentase keberhasilan dan ketidakberhasilan deteksi pose. Untuk lingkungan pengujian memiliki panjang lintasan sebesar 18,8 meter. Lintasan pengujian dapat dilihat pada Gambar \ref{fig:trek}.
+
+\begin{figure} [H] \centering
+  % Nama dari file gambar yang diinputkan
+  \includegraphics[scale=0.08]{gambar/4.7/1.jpg}
+  % Keterangan gambar yang diinputkan
+  \caption{Lintasan Pengujian pada Lingkungan Tidak Ideal}
+  % Label referensi dari gambar yang diinputkan
+  \label{fig:trek}
+\end{figure}
+
+Pada Tabel \ref{tb:notideal} dapat dilihat bahwa hasil pengujian menunjukkan bahwa model klasifikasi pose mata mampu memberikan hasil yang cukup baik pada lingkungan yang tidak ideal. Dari 300 kali pengujian, terdapat 281 keberhasilan dan 19 ketidakberhasilan, dengan persentase keberhasilan sebesar 93,66\% dan persentase ketidakberhasilan sebesar 6,33\%. Hasil ini menunjukkan bahwa model klasifikasi pose mata mampu beradaptasi dengan cukup baik pada lingkungan yang tidak ideal dan memberikan respons yang akurat.
+
+\begin{longtable}{|c|c|c|c|c|}
+  \caption{Pengujian pada Lingkungan yang Tidak Ideal}
+  \label{tb:notideal} \\
+  \hline
+  \rowcolor[HTML]{C0C0C0} 
+  \multicolumn{1}{|c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Pengujian\end{tabular}}}  & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Keberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Jumlah \\ Ketidakberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Persentase \\ Keberhasilan\end{tabular}}} & \multicolumn{1}{c|}{\textbf{\begin{tabular}[c]{@{}c@{}}Persentase\\ Ketidakberhasilan\end{tabular}}} \\ \hline
+  300  & 289                                                                                  & 11                                                                                        & 96.33\%                                                                                  & 3.66\%                                                                                         \\ \hline
+\end{longtable}
+
+Kemudian setelah diuji pada lingkungan yang tidak ideal, selanjutnya kursi roda diuji juga pada tanjakan dengan sudut kemiringan sebesar 5 derajat dan panjang sebesar 6 meter. Tanjakan yang digunakan pada pengujian yaitu tanjakan pada Tower 2 ITS yang dapat dilihat pada Gambar \ref{fig:tanjakan}.
+
+\begin{figure} [H] \centering
+  % Nama dari file gambar yang diinputkan
+  \includegraphics[scale=0.23]{gambar/4.7/2.jpg}
+  % Keterangan gambar yang diinputkan
+  \caption{Tanjakan Kursi Roda pada Tower 2 ITS}
+  % Label referensi dari gambar yang diinputkan
+  \label{fig:tanjakan}
+\end{figure}
+
+Pada tanjakan, kursi roda berhasil menanjak dengan baik tanpa terjadi kendala dengan kecepatan PWM yang digunakan sebesar 200 atau 84 rpm. Untuk kecepatan kursi roda dalam kondisi menanjak, perlu diperhatikan faktor bobot pengguna kursi roda. Semakin berat bobot pengguna kursi roda, maka kecepatan kursi roda yang dibutuhkan untuk menanjak akan semakin besar.
