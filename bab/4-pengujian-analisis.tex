@@ -1295,7 +1295,7 @@ Rata-rata waktu respons motor kursi roda (\emph{Response Time}) adalah 0,4318 de
 Dari semua hasil pengujian pada masing-masing kelas seperti yang tertera pada tabel-tabel di atas, dapat dilihat bahwa perintah "Kiri" memiliki waktu respons terendah dengan rata-rata 0,0933 detik, menunjukkan bahwa sistem dapat merespons perintah "Kiri" dengan cepat dan akurat. Sementara itu, perintah "Maju" dan "Stop" memiliki waktu respons yang lebih tinggi, masing-masing 0,4337 detik dan 0,4318 detik, menunjukkan bahwa sistem memerlukan waktu lebih lama untuk merespons perintah tersebut. Hal tersebut dikarenakan perintah "Maju" memiliki nilai \emph{Pulse Width Modulation} (PWM) yang lebih besar dibandingkan perintah lainnya. Untuk rata-rata \emph{inference time} dan \emph{response time} pada semua kelas dapat dilihat pada Tabel \ref{tb:rata2delay}.
 
 \begin{longtable}{|l|cc|}
-  \caption{Rata-rata \emph{Inference Time} dan \emph{Response Time} untuk Semua Kelas}
+  \caption{Rata-rata \emph{Inference Time} dan \emph{Response Time} pada Semua Kelas}
   \label{tb:rata2delay} \\
   \hline
   \rowcolor[HTML]{D0D0D0} 
@@ -1799,7 +1799,7 @@ Secara keseluruhan, sistem kontrol kursi roda mampu merespons semua perintah den
 
 \section{Pengujian Pada Lingkungan Tidak Ideal}
 
-Pada pengujian ini, dilakukan pengujian pada lingkungan yang tidak ideal untuk mengetahui sejauh mana sistem kontrol kursi roda dapat beroperasi dalam kondisi lingkungan yang tidak ideal yaitu kondisi perubahan pencahayaan, perubahan latar belakang, serta lintasan yang lebih luas. Pengujian ini juga dilakukan untuk mengetahui sejauh mana performa model dapat beradaptasi dengan kondisi lingkungan yang berbeda dan tetap memberikan respons yang akurat. Pengujian ini akan dilakukan secara \emph{real-time} sehingga data yang dihasilkan berupa persentase keberhasilan dan ketidakberhasilan deteksi pose. Untuk lingkungan pengujian memiliki panjang lintasan sebesar 18,8 meter. Lintasan pengujian dapat dilihat pada Gambar \ref{fig:trek}.
+Pada pengujian ini, dilakukan pengujian pada lingkungan yang tidak ideal untuk mengetahui sejauh mana sistem kontrol kursi roda dapat beroperasi dalam kondisi lingkungan yang tidak ideal yaitu kondisi perubahan pencahayaan, perubahan latar belakang, serta lintasan yang lebih luas. Pengujian ini juga dilakukan untuk mengetahui sejauh mana performa model dapat beradaptasi dengan kondisi lingkungan yang berbeda dan tetap memberikan respons yang akurat. Pengujian ini akan dilakukan secara \emph{real-time} sehingga data yang dihasilkan berupa persentase keberhasilan dan ketidakberhasilan deteksi pose. Pengujian dilakukan pada ruang terbuka di Gedung AJ Teknik Elektro ITS. Untuk lingkungan pengujian memiliki panjang lintasan sebesar 18,8 meter. Lintasan pengujian dapat dilihat pada Gambar \ref{fig:trek}.
 
 \begin{figure} [H] \centering
   % Nama dari file gambar yang diinputkan
@@ -1810,10 +1810,10 @@ Pada pengujian ini, dilakukan pengujian pada lingkungan yang tidak ideal untuk m
   \label{fig:trek}
 \end{figure}
 
-Pada Tabel \ref{tb:notideal} dapat dilihat bahwa hasil pengujian menunjukkan bahwa model klasifikasi pose mata mampu memberikan hasil yang cukup baik pada lingkungan yang tidak ideal. Dari 300 kali pengujian, terdapat 281 keberhasilan dan 19 ketidakberhasilan, dengan persentase keberhasilan sebesar 93,66\% dan persentase ketidakberhasilan sebesar 6,33\%. Hasil ini menunjukkan bahwa model klasifikasi pose mata mampu beradaptasi dengan cukup baik pada lingkungan yang tidak ideal dan memberikan respons yang akurat.
+Pada Tabel \ref{tb:notideal} dapat dilihat bahwa hasil pengujian menunjukkan bahwa model klasifikasi pose mata mampu memberikan hasil yang cukup baik pada lingkungan yang tidak ideal. Dari 300 kali pengujian, terdapat 289 keberhasilan dan 11 ketidakberhasilan, dengan persentase keberhasilan sebesar 96,33\% dan persentase ketidakberhasilan sebesar 3,66\%. Hasil ini menunjukkan bahwa model klasifikasi pose mata mampu beradaptasi dengan cukup baik pada lingkungan yang tidak ideal dan memberikan respons yang akurat.
 
 \begin{longtable}{|c|c|c|c|c|}
-  \caption{Pengujian pada Lingkungan yang Tidak Ideal}
+  \caption{Pengujian pada Lingkungan Tidak Ideal}
   \label{tb:notideal} \\
   \hline
   \rowcolor[HTML]{C0C0C0} 
